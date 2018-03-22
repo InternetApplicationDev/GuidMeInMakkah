@@ -1,0 +1,52 @@
+/* index Sections */
+#sectionOne{
+  background-image: url("full_placeholder.png");
+}
+#sectionTwo{
+  background-image: url("background-2579719_1920.jpg");
+}
+.icon{
+  margin-left: 41%;
+}
+.boxes{
+  margin-left: 14%;
+  padding: 10%;
+}
+/* navigation bar */
+.navbar{
+  width: 100%;
+  height: 75px;
+  top: 0px;
+  position: absolute;
+  z-index: 999;
+  background-color: #000;
+  opacity: 0.8;
+}
+nav ul{
+  background-color: #616161;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.navmenu li{
+  list-style: none;
+  float: left;
+  font-family: 'Amaranth', sans-serif;
+  color: #fff;
+}
+.navmenu li.navmenu-right {
+  float: right;
+  color: #D38A8A;
+}
+.navmenu li a{
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px;
+  text-transform: uppercase;
+  color: inherit;
+}
+.navmenu li a:hover{
+  background-color: #9e9e9e;
+  text-decoration: underline;
+}
