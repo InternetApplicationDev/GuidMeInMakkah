@@ -1,9 +1,9 @@
 /* index Sections */
 #sectionOne{
-  background-image: url("full_placeholder.png");
+  background-image: url("../images/full_placeholder.png");
 }
 #sectionTwo{
-  background-image: url("background-2579719_1920.jpg");
+  background-image: url("../images/background-2579719_1920.jpg");
 }
 .icon{
   margin-left: 41%;
