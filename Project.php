@@ -2,10 +2,18 @@
 <html>
 <head>
  <link rel="stylesheet" type="text/css" href="CSS/project.css">
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
 </head>
 <body>
-
-
+  <div class="navbar">
+    <ul class="navmenu">
+      <li><a href="#Coffe">Cafe</a></li>
+      <li><a href="#Restaurants">Restaurants</a></li>
+      <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
+      <li class="navmenu-right"><a href="#signUp">Sign Up</a></li>
+      <li class="navmenu-right"><a href="#login">Login</a></li>
+    </ul>
+  </div>
 <div class ="header">
 
 PROJECT
