@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
 </head>
 <body>
+
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="#Coffe">Cafe</a></li>
@@ -14,6 +15,7 @@
       <li class="navmenu-right"><a href="#login">Login</a></li>
     </ul>
   </div>
+
   <div class ="header">
 
     PROJECT
