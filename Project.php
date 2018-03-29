@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
- <link rel="stylesheet" type="text/css" href="project.css">
+ <link rel="stylesheet" type="text/css" href="CSS/project.css">
 </head>
 <body>
 
 
 <div class ="header">
 
-PROJECT 
+PROJECT
 <div class="logo"> <img class="img" src="restaurant.png" alt="LOGO" > </div>
 
  </div>
@@ -16,7 +16,7 @@ PROJECT
 
 	<h1> Makkah: </h1>
 	<form action="pro2.php" method="POST">
-<div class="container"> 
+<div class="container">
 
 	<?php
 
@@ -35,4 +35,3 @@ for ($i = 0; $i < $count; $i++) {
 </form>
 </body>
 </html>
-
