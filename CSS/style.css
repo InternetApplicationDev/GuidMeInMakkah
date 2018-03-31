@@ -266,7 +266,7 @@ hr {
 }
 .image_heart{
   position: absolute;
-  margin-left:-27%;
+  margin-left:-23%;
   margin-top:3%;
   height:7%;
   width:4%;
@@ -317,8 +317,6 @@ input:hover[type="submit"] {
     .top{
       margin: 10%;
       margin-top: 1%;
-      height: 30%;
-      width: 80%;
       background: linear-gradient(to right, rgba(90, 80, 60, 1) , rgba(17, 90, 12, 0.5));
 
     }
