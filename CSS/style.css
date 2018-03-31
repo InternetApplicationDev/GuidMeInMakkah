@@ -96,7 +96,6 @@ nav ul{
   max-height: 100%;
   height: 100%;
   background-image: url("../images/Backgrounds/Restaurant-Background-icons.png");
-  background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
 }
@@ -219,14 +218,11 @@ hr {
 }
 /************************************************** Comments in Profile **************************************************/
 .profileComments{
-  /* position:relative; */
-  float: right;
-  width:75%;
-  margin-left:50%;
-  margin-top:0%;
-}
-.profile_right .profileComments{
-  /* padding-top:0%; */
+  position:relative;
+  float: left;
+  width:90%;
+  margin: 5%;
+  margin-top:5%;
 }
 /**************************************************rating**************************************************/
 .rating > span:hover:before {
@@ -295,9 +291,6 @@ hr {
 .Larrow:active{
   transform: scale(1.3);
 }
-
-
-
 /**************************************************input  attrbu**************************************************/
 input[type="submit"] {
   width: 100px; /* width of image */
@@ -307,9 +300,6 @@ input:hover[type="submit"] {
   width: 100px; /* width of image */
   height: 30px; /* height of image */
 }
-
-
-
 /**************************************************sub contents**************************************************/
 .content {
   font: 12px Verdana, Arial, Helvetica, sans-serif;  }
