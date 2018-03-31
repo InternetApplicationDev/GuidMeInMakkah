@@ -266,10 +266,10 @@ hr {
 }
 .image_heart{
   position: absolute;
-  margin-left:-23%;
+  margin-left:-35%;
   margin-top:3%;
-  height:7%;
-  width:4%;
+  height:28%;
+  width:8%;
 }
 .inner_top_image{
   position: relative;
@@ -315,6 +315,7 @@ input:hover[type="submit"] {
       width: 20%; height:500px;
     }
     .top{
+	  position: relative;
       margin: 10%;
       margin-top: 1%;
       background: linear-gradient(to right, rgba(90, 80, 60, 1) , rgba(17, 90, 12, 0.5));
@@ -345,15 +346,5 @@ input:hover[type="submit"] {
       height:100%;
       margin:0%;
 
-
-    }
-    .footerRCB {
-
-      margin-top: 50%;
-      padding: 60px;
-      width: 90%;
-      height: 20%;
-      clear: both;
-      background-color: #aaa0aa;
 
     }

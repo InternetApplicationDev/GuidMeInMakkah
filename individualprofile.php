@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="theBackGround">
 <head>
  <link rel="stylesheet" type="text/css" href="CSS/style.css">
  <script type = "text/javascript" src = "JS/javaSceipt.js"></script>
@@ -30,19 +30,18 @@
 	<image class="inner_top_image" src="images/coffee shop.jpg" height="35%" width="35%">
 	<image  src="images/unhreat.png" onclick="changeImageOnclick()" id="imgClickAndChange" class="image_heart"/>
 	</image>
-	<h1 style=" position: absolute;margin-left:57%;margin-top:-8.5%;color: white;">209</h1>
-	<h1 style=" position: absolute;margin-left:29%;margin-top:-10%;color: white;"> coffee shop name
+	<h1 style=" position: absolute;margin-left:38%;margin-top:-10%;color: white;"> coffee shop name
 	<div class="rating">
 	<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 	</div>
 	</h1>
-	<image src="images/count of resv.png" height="18%" width="13%"  style=" position:absolute; margin-left:29%;margin-top:1%;"/>
-
+	
 	</div>
 
-	<form action="reser.php" method="post" style=" position: absolute;margin-left:40%;margin-top:-7%;">
+	<form action="reser.php" method="post" style="margin-left:40%;margin-top:-7%;">
 		<input type="submit" value="Reservation">
 	</form>
+	
 	<div id="content">
 		<div class="col1">
 		<table style="width: 100%; height:60%; margin-top:30%;border: 1px solid lightgrey">
@@ -51,7 +50,8 @@
 			<tr><th ><a href="#Comment" class="a_link"/> Comment<hr></th></tr>
 		</table> </div>
 		<div class="col2">
-			<p> Home page > Coffee shop list > name of shop </p>
+		</br>
+			<p> Home page > Coffee shop list > name of shop</p>
 			<h1>General information</h1>
 			<p>The application will calculate the perfect weight and the recommended daily
 			amounts of calories. And you can contact with your dietitian to ask them for
