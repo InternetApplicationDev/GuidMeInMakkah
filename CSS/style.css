@@ -232,16 +232,16 @@ hr {
 
 
 /**********************      links         ********************/
-a:link {
+.a_link:link {
   color: green;
   background-color: transparent;
   text-decoration: none;
 }
-a:hover {
+.a_link:hover {
   color: red;
   background-color: transparent;
 }
-a:active {
+.a_link:active {
   color: pink;
   background-color: transparent;
   text-decoration: underline;
@@ -288,18 +288,12 @@ a:active {
 
 /**********************       input  attrbu         ********************/
 input[type="submit"] {
-  background-color:white;
   width: 100px; /* width of image */
   height: 30px; /* height of image */
-  border: 1px solid black;
-  border-radius: 10%;
 }
 input:hover[type="submit"] {
-  background-color:grey;
   width: 100px; /* width of image */
   height: 30px; /* height of image */
-  border: 1px solid black;
-  border-radius: 10%;
 }
 
 

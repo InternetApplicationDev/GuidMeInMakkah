@@ -48,9 +48,9 @@ PROJECT
 	<div id="content">
 		<div class="col1">
 		<table style="width: 100%; height:60%; margin-top:30%;border: 1px solid lightgrey">
-			<tr><th ><a href="#desc" />Description <hr></th></tr>
-			<tr><th ><a href="#Menu" />Menu & price<hr></th></tr>
-			<tr><th ><a href="#Comment" /> Comment<hr></th></tr>
+			<tr><th ><a href="#desc" class="a_link" />Description <hr></th></tr>
+			<tr><th ><a href="#Menu" class="a_link"/>Menu & price<hr></th></tr>
+			<tr><th ><a href="#Comment" class="a_link"/> Comment<hr></th></tr>
 		</table> </div>
 		<div class="col2">
 			<p> Home page > Coffee shop list > name of shop </p>
@@ -152,7 +152,7 @@ PROJECT
 					</div></h1></td>
 					</tr>
 				</table></td>
-				<td><input type="submit" value="Submit"></td>
+				<td><input type="submit" value="Submit" ></td>
 				</tr>
 			</table>
 		</form>
