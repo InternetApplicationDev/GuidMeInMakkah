@@ -2,35 +2,7 @@
 <html>
 <head>
  <link rel="stylesheet" type="text/css" href="CSS/style.css">
- 
- <script language="javascript">
-    function changeImageOnclick() {
-		// add to database as favor page
-        if (document.getElementById("imgClickAndChange").src == "http://localhost/projects_2018/images/hreat.png") 
-        {
-            document.getElementById("imgClickAndChange").src = "images/unhreat.png";
-        }
-		else 
-        {
-            document.getElementById("imgClickAndChange").src = "images/hreat.png";
-        }
-    }
-
-	function LarrowOnclick() {
-		// chack alt to change img to previos img
-		 // check if it is first img or not
-		 document.getElementById("Menus_food").src = "images/Menu_0.jpg";
-	}
-	
-	
-	function RarrowOnclick() {
-		// chack alt to change img to next img
-		// check if it is last img or not
-		document.getElementById("Menus_food").src = "images/Menu_2.jpg";
-		
-	}
-	
-	</script>
+ <script type = "text/javascript" src = "JS/javaSceipt.js"></script>
  
 </head>
 <body>
