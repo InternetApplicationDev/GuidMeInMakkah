@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html class="theBackGround">
 <head>
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
 </head>
-<body>
+<body class="centerPage">
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.html"><img src="images/logo-small.png"/></a></li>
