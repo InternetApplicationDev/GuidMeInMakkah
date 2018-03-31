@@ -37,6 +37,7 @@
   width: 100%;
   height: 75px;
   top: 0px;
+  left: 0;
   position: absolute;
   z-index: 999;
   background-color: #000;
@@ -146,6 +147,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
+  border: #000;
 }
 hr {
   width:80%;
@@ -155,8 +157,7 @@ hr {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
-  margin-top: 10%;
-  margin-left: 6%;
+  margin-top: 30%;
   text-align: center;
   float: left;
 }
