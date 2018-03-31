@@ -26,16 +26,17 @@
 .icon{
   margin-left: 35%;
 }
-.section .boxes{
-  margin-left: 14%;
-  padding: 10%;
+.slide .boxes {
+  margin-left: 29%;
+}
+.slide .boxes img{
+  padding: 3%;
 }
 /************************************************** navigation bar /**************************************************/
 .navbar{
   width: 100%;
   height: 75px;
   top: 0px;
-  right: 0px;
   position: absolute;
   z-index: 999;
   background-color: #000;

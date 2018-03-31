@@ -27,16 +27,39 @@
     </div>
     <div class="section">
       <div class="slide" id="sectionTwoFirst">
+        <div class="boxes">
+          <a href="#Coffe"><img id="Cafe" src="images/icons/coffee-cup.png" /></a>
+          <a href="Restaurants"><img id="Restaurant" src="images/icons/tray.png" /></a>
+          <a href="Cafe_and_Restaurants"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" /></a>
+        </div>
       </div>
       <div class="slide" id="sectionTwoSecond">
+        <div class="boxes">
+          <a href="#Coffe"><img id="Cafe" src="images/icons/coffee-cup.png" /></a>
+          <a href="Restaurants"><img id="Restaurant" src="images/icons/tray.png" /></a>
+          <a href="Cafe_and_Restaurants"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" /></a>
+        </div>
       </div>
-      <div class="slide" id="sectionTwoThird">        
+      <div class="slide" id="sectionTwoThird">
+        <div class="boxes">
+          <a href="#Coffe"><img id="Cafe" src="images/icons/coffee-cup.png" /></a>
+          <a href="Restaurants"><img id="Restaurant" src="images/icons/tray.png" /></a>
+          <a href="Cafe_and_Restaurants"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" /></a>
+        </div>
       </div>
     </div>
   </div>
   <script>
   $(document).ready(function(){
-    $('#wrapper').fullpage();
+    $('#wrapper').fullpage({
+      controlArrows: false,
+      loopBottom: true,
+      afterRender: function () {
+        setInterval(function () {
+          $.fn.fullpage.moveSlideRight();
+        }, 3000);
+      }
+    });
   });
 </script>
 </body>
