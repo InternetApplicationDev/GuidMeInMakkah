@@ -1,4 +1,4 @@
-/* index Sections */
+/************************************************** index Page Sections **************************************************/
 #sectionOne{
   background-image: url("../images/full_placeholder.png");
 }
@@ -8,11 +8,11 @@
 .icon{
   margin-left: 41%;
 }
-.boxes{
+.section .boxes{
   margin-left: 14%;
   padding: 10%;
 }
-/********************************************** navigation bar ********************************************************************/
+/************************************************** navigation bar /**************************************************/
 .navbar{
   width: 100%;
   height: 75px;
@@ -50,4 +50,85 @@ nav ul{
 .navmenu li a:hover{
   background-color: #9e9e9e;
   text-decoration: underline;
+}
+/************************************************** Header and footer **************************************************/
+.header {
+  text-align: right;
+  font-size: 50px;
+  padding: 60px;
+  height: 50%;
+  width: 70%;
+  margin: auto;
+  margin-top: 3%;
+}
+.footer {
+  margin-top: 40px;
+  padding: 60px;
+  width: 90%;
+  height: 50%;
+  background-color: #f0f0f5;
+}
+/************************************************** text **************************************************/
+.text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  border:none;
+  color: blue;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+h1 {
+  padding-top: 10px;
+  margin-left :160px;
+}
+/************************************************** list boxes **************************************************/
+.logo {
+
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.box {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  margin: auto;
+  padding: 10px;
+  margin-top:10px;
+}
+.img {
+  display: block;
+  width:100%;
+  height: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #ffffff;
+}
+.box:hover .overlay {
+  opacity: 0.5;
+}
+/************************************************** other listpage styling **************************************************/
+.container {
+  width:80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+hr {
+  width:80%;
+  margin: auto;
 }
