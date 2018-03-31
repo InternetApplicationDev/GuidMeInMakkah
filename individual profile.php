@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
- <link rel="stylesheet" type="text/css" href="CSS/tmpStyle.css">
+ <link rel="stylesheet" type="text/css" href="CSS/style.css">
  
  <script language="javascript">
     function changeImageOnclick() {
@@ -44,8 +44,8 @@
       <li class="navmenu-right"><a href="#login">Login</a></li>
     </ul>
  </div>
-</br></br></br>
- <div class ="header">
+</br></br>
+ <div class ="headerRCB">
 
 PROJECT 
 <div class="logo"> <img class="img" src="restaurant.png" alt="LOGO" > </div>
@@ -54,7 +54,7 @@ PROJECT
  
  <hr>
 
-<div class="container"> 
+<div class="containerRCB"> 
 	<div class="top"> 
 	
 	<image class="inner_top_image" src="images/coffee shop.jpg" height="35%" width="35%">
@@ -175,7 +175,7 @@ PROJECT
 				<td><table style="margin-left:-30%">
 					<tr><td style="font-size: 20px;color: gray;">user name</td></tr>
 					<tr><td><textarea rows="4" cols="50"  placeholder="write your comments"></textarea></td></tr>
-					<tr><td >Your rating:<h1 style="margin-right:30%;margin-top:-7%;"><div class="rating" >
+					<tr><td >Your rating:<h1 style="margin-right:25%;margin-top:-7%;"><div class="rating">
 					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 					</div></h1></td>
 					</tr>
@@ -190,7 +190,7 @@ PROJECT
 		<?php
 			// how many comments of this page from Database and prinit
 			// instid of num 10 it will be var
-			for ($i = 1; $i <= 3; $i++){
+			for ($i = 1; $i <= 10; $i++){
 				echo '<h4>'.$i.'-</h4>';
 		?>
 				<table style="margin-left:2%">
@@ -212,7 +212,7 @@ PROJECT
 
 </div>
 
-<div class="footer">Footer</div>
+<div class="footerRCB">Footer</div>
 
 </body>
 </html>
