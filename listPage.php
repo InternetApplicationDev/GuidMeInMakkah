@@ -19,7 +19,7 @@
     <div class="logo"> <img class="img" src="images/restaurant.png" alt="LOGO" > </div>
   </div>
   <hr>
-  <h1> Makkah: </h1>
+  <h1 class="listPageh1"> Makkah: </h1>
   <form action="pro2.php" method="POST">
     <div class="container">
       <?php
