@@ -5,8 +5,23 @@
   background-position: center;
   background-size: 100%;
 }
-#sectionTwo{
-  background-image: url("../images/background-2579719_1920.jpg");
+#sectionTwoFirst{
+  background-image: url("../images/Cafe-Background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+#sectionTwoSecond{
+  background-image: url("../images/Restaurant-Background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+#sectionTwoThird{
+  background-image: url("../images/Cafe-and-Restaurant-Background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }
 .icon{
   margin-left: 35%;
