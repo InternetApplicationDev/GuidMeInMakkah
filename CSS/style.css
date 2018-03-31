@@ -95,7 +95,7 @@ nav ul{
   overflow: auto;
   max-height: 100%;
   height: 100%;
-  background: #c72
+  background-image: url("../images/Backgrounds/Restaurant-Background-icons.png");
 }
 .centerPage{
   overflow:auto;
@@ -215,15 +215,15 @@ hr {
   padding-left: 4%;
 }
 /************************************************** Comments in Profile **************************************************/
-.profile_right{
-  padding: 0%;
-}
 .profileComments{
   /* position:relative; */
   float: right;
-  width:90%;
+  width:75%;
   margin-left:50%;
   margin-top:0%;
+}
+.profile_right .profileComments{
+  /* padding-top:0%; */
 }
 /**************************************************rating**************************************************/
 .rating > span:hover:before {
