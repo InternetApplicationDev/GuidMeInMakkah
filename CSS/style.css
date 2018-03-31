@@ -1,6 +1,9 @@
 /************************************************** index Page Sections **************************************************/
 #sectionOne{
-  background-image: url("../images/full_placeholder.png");
+  background-image: url("../images/The-logo-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }
 #sectionTwo{
   background-image: url("../images/background-2579719_1920.jpg");
