@@ -63,7 +63,7 @@ nav ul{
   display: block;
   text-decoration: none;
   text-align: center;
-  padding: 14px;
+  padding: 10px;
   text-transform: uppercase;
   color: inherit;
 }
@@ -88,6 +88,23 @@ nav ul{
   position: absolute;
   background-color: #616161;
 }
+/************************************************** Center Page **************************************************/
+.centerPage{
+  overflow: auto;
+  height: 100%;
+  width: 85%;
+  margin: 75 auto;
+  padding: 0 20px;
+  border: 1px solid black;
+  border-width: 0 1px;
+  background: #eee;
+}
+.theBackGround{
+  overflow: hidden;
+  height: 100%;
+  background: #c72
+}
+
 /************************************************** text **************************************************/
 .text {
   position: absolute;
@@ -157,7 +174,7 @@ hr {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
-  margin-top: 30%;
+  margin-top: 5%;
   text-align: center;
   float: left;
 }

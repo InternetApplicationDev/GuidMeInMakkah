@@ -1,0 +1,6 @@
+Index --> FullPage.js : https://github.com/alvarotrigo/fullPage.js
+
+All pages except index layout --> How to Centre and Layout Pages Without a Wrapper: http://camendesign.com/code/developpeurs_sans_frontieres
+
+Profile --> How TO - Profile Card: https://www.w3schools.com/howto/howto_css_profile_card.asp
+
