@@ -65,11 +65,11 @@ nav ul{
   margin-top: 3%;
 }
 .footer {
-  margin-top: 40px;
-  padding: 60px;
-  width: 90%;
-  height: 50%;
-  background-color: #f0f0f5;
+  width: 100%;
+  height: 75px;
+  right: 0px;
+  position: absolute;
+  background-color: #616161;
 }
 /************************************************** text **************************************************/
 .text {
@@ -134,4 +134,41 @@ h1 {
 hr {
   width:80%;
   margin: auto;
+}
+/************************************************** profile card **************************************************/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin-top: 10%;
+    margin-left: 6%;
+    text-align: center;
+    float: left;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
 }
