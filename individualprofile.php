@@ -5,7 +5,7 @@
  <script type = "text/javascript" src = "JS/javaSceipt.js"></script>
 
 </head>
-<body>
+<body class="centerPage">
 
 <div class="navbar">
     <ul class="navmenu">
@@ -30,13 +30,13 @@
 	<image class="inner_top_image" src="images/coffee shop.jpg" height="35%" width="35%">
 	<image  src="images/unhreat.png" onclick="changeImageOnclick()" id="imgClickAndChange" class="image_heart"/>
 	</image>
-	<h1 style=" position: absolute;margin-left:68%;margin-top:-8.5%;color: white;">209</h1>
+	<h1 style=" position: absolute;margin-left:57%;margin-top:-8.5%;color: white;">209</h1>
 	<h1 style=" position: absolute;margin-left:29%;margin-top:-10%;color: white;"> coffee shop name
 	<div class="rating">
 	<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 	</div>
 	</h1>
-	<image src="images/count of resv.png" height="18%" width="13%"  style=" position:absolute; margin-left:36%;margin-top:2%;"/>
+	<image src="images/count of resv.png" height="18%" width="13%"  style=" position:absolute; margin-left:29%;margin-top:1%;"/>
 
 	</div>
 
@@ -182,7 +182,7 @@
 
 </div>
 
-<div class="footerRCB">Footer</div>
+<div class="footer">Footer</div>
 
 </body>
 </html>
