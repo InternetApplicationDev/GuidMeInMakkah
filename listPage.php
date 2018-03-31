@@ -23,9 +23,9 @@
   <form action="pro2.php" method="POST">
     <div class="container">
       <?php
-      $count = 15;
+      $count = 16;
       for ($i = 0; $i < $count; $i++) {
-        echo " 	 <div class=\"box\">
+        print " 	 <div class=\"box\">
         <img src=\"images/java.png\" alt=\"Avatar\" class=\"img\">
         <div class=\"overlay\">
         <a href=\"pro2.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> Click </a>
