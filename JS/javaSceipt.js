@@ -1,7 +1,7 @@
 
 function changeImageOnclick() {
 	// add to database as favor page
-	if (document.getElementById("imgClickAndChange").src == "http://localhost/projects_2018/images/hreat.png") 
+	if (document.getElementById("imgClickAndChange").src == "http://localhost/project_2018/images/hreat.png") 
 	{
 		document.getElementById("imgClickAndChange").src = "images/unhreat.png";
 	}

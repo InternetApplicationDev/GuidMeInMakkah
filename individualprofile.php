@@ -7,22 +7,20 @@
 </head>
 <body>
 
-<div class="navbar" >
+<div class="navbar">
     <ul class="navmenu">
+      <li><a href="index.html"><img src="images/logo-small.png"/></a></li>
       <li><a href="#Coffe">Cafe</a></li>
       <li><a href="#Restaurants">Restaurants</a></li>
       <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
       <li class="navmenu-right"><a href="#signUp">Sign Up</a></li>
       <li class="navmenu-right"><a href="#login">Login</a></li>
     </ul>
- </div>
-</br></br>
- <div class ="headerRCB">
-
-PROJECT
-<div class="logo"> <img class="img" src="restaurant.png" alt="LOGO" > </div>
-
- </div>
+  </div>
+  <div class ="header">
+    PROJECT
+    <div class="logo"> <img class="img" src="images/restaurant.png" alt="LOGO" > </div>
+  </div>
 
  <hr>
 
@@ -48,9 +46,9 @@ PROJECT
 	<div id="content">
 		<div class="col1">
 		<table style="width: 100%; height:60%; margin-top:30%;border: 1px solid lightgrey">
-			<tr><th ><a href="#desc" />Description <hr></th></tr>
-			<tr><th ><a href="#Menu" />Menu & price<hr></th></tr>
-			<tr><th ><a href="#Comment" /> Comment<hr></th></tr>
+			<tr><th ><a href="#desc" class="a_link" />Description <hr></th></tr>
+			<tr><th ><a href="#Menu" class="a_link"/>Menu & price<hr></th></tr>
+			<tr><th ><a href="#Comment" class="a_link"/> Comment<hr></th></tr>
 		</table> </div>
 		<div class="col2">
 			<p> Home page > Coffee shop list > name of shop </p>
@@ -152,7 +150,7 @@ PROJECT
 					</div></h1></td>
 					</tr>
 				</table></td>
-				<td><input type="submit" value="Submit"></td>
+				<td><input type="submit" value="Submit" ></td>
 				</tr>
 			</table>
 		</form>
