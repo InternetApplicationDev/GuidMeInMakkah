@@ -182,7 +182,7 @@
 
 </div>
 
-<div class="footerRCB">Footer</div>
+<div class="footer">Footer</div>
 
 </body>
 </html>
