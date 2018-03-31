@@ -7,22 +7,20 @@
 </head>
 <body>
 
-<div class="navbar" >
+<div class="navbar">
     <ul class="navmenu">
+      <li><a href="index.html"><img src="images/logo-small.png"/></a></li>
       <li><a href="#Coffe">Cafe</a></li>
       <li><a href="#Restaurants">Restaurants</a></li>
       <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
       <li class="navmenu-right"><a href="#signUp">Sign Up</a></li>
       <li class="navmenu-right"><a href="#login">Login</a></li>
     </ul>
- </div>
-</br></br>
- <div class ="headerRCB">
-
-PROJECT
-<div class="logo"> <img class="img" src="restaurant.png" alt="LOGO" > </div>
-
- </div>
+  </div>
+  <div class ="header">
+    PROJECT
+    <div class="logo"> <img class="img" src="images/restaurant.png" alt="LOGO" > </div>
+  </div>
 
  <hr>
 
