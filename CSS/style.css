@@ -209,10 +209,21 @@ hr {
   border: 1px solid black;
   float: right;
   margin-top: 5%;
-  margin-right: 3%;
+  margin-right: 4%;
 }
 .Favorite img{
-  padding-left: 5%;
+  padding-left: 4%;
+}
+/************************************************** Comments in Profile **************************************************/
+.profile_right{
+  padding: 0%;
+}
+.profileComments{
+  /* position:relative; */
+  float: right;
+  width:90%;
+  margin-left:50%;
+  margin-top:0%;
 }
 /**************************************************rating**************************************************/
 .rating > span:hover:before {
@@ -247,16 +258,14 @@ hr {
   text-decoration: underline;
 }
 
-
 /**************************************************by id**************************************************/
 #desc,#Comment,#Menu{
   position:relative;
-  float: left; width:90%;  margin: 5%; margin-top:17%;
-
+  float: left;
+  width:90%;
+  margin: 5%;
+  margin-top:17%;
 }
-
-
-
 /**************************************************images**************************************************/
 .image_heart:hover{
   opacity:0.9;

@@ -27,12 +27,34 @@
     <a href="#"><i class="fa fa-facebook"></i></a>
     <p><button>Contact</button></p>
   </div>
-  <div class="Favorite">
-    <img src="images/add.png"/>
-    <img src="images/add.png"/>
-    <img src="images/add.png"/>
-    <img src="images/add.png"/>
-    <img src="images/add.png"/>
+  <div class="profile_right">
+    <div class="Favorite">
+      <img src="images/add.png"/>
+      <img src="images/add.png"/>
+      <img src="images/add.png"/>
+      <img src="images/add.png"/>
+      <img src="images/add.png"/>
+    </div>
+    <div class="profileComments">
+      <h1>Comment</h1>
+      <?php
+      for ($i = 1; $i <= 5; $i++){
+        echo '<h4>'.$i.'-</h4>';
+        ?>
+        <table style="margin-left:2%">
+          <tr>
+            <td> <img src="images/pesonal icon.jpg" height="35%" width="35%" /> </td>
+            <td><table style="margin-left:-100%">
+              <tr><td style="font-size: 20px;color: gray;">user name</td> </tr>
+              <tr><td>user comments</td> </tr>
+            </table></td>
+          </tr>
+        </table>
+        <?php
+        echo '<hr>';
+      }
+      ?>
+    </div>
   </div>
   <div class="footer">Footer</div>
 </body>
