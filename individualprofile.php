@@ -10,9 +10,9 @@
 <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.html"><img src="images/logo-small.png"/></a></li>
-      <li><a href="#Coffe">Cafe</a></li>
-      <li><a href="#Restaurants">Restaurants</a></li>
-      <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
+      <li><a href="listPage.php">Cafe</a></li>
+      <li><a href="listPage.php">Restaurants</a></li>
+      <li><a href="listPage.php">Cafe & Restaurants</a></li>
       <li class="navmenu-right"><a href="#signUp">Sign Up</a></li>
       <li class="navmenu-right"><a href="#login">Login</a></li>
     </ul>
@@ -35,13 +35,13 @@
 	<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 	</div>
 	</h1>
-	
+
 	</div>
 
 	<form action="reser.php" method="post" style="margin-left:40%;margin-top:-7%;">
 		<input type="submit" value="Reservation">
 	</form>
-	
+
 	<div id="content">
 		<div class="col1">
 		<table style="width: 100%; height:60%; margin-top:30%;border: 1px solid lightgrey">

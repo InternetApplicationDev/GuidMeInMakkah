@@ -92,7 +92,7 @@ nav ul{
 }
 /************************************************** Center Page **************************************************/
 .theBackGround{
-  overflow: auto;
+  overflow-y: auto;
   max-height: 100%;
   height: 100%;
   background-image: url("../images/Backgrounds/Restaurant-Background-icons.png");
@@ -100,7 +100,7 @@ nav ul{
   background-size: 100%;
 }
 .centerPage{
-  overflow:auto;
+  overflow-y:auto;
   height: 100%;
   width: 85%;
   margin: 5%;
