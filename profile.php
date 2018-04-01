@@ -17,7 +17,6 @@
       <li class="navmenu-right"><a href="profile.php">Login</a></li>
     </ul>
   </div>
-  </div>
   <div class="card">
     <img src="images/pesonal icon.jpg" alt="profile picture" style="width:100%">
     <h1>Name</h1>
