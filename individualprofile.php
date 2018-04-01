@@ -17,7 +17,6 @@
       <li class="navmenu-right"><a href="profile.php">Login</a></li>
     </ul>
   </div>
-  </div>
   <div class ="header">
    RESTAURANTS LIST 
     <div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>
