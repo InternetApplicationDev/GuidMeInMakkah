@@ -77,9 +77,11 @@ nav ul{
   font-size: 50px;
   padding: 60px;
   height: 10%;
-  width: 70%;
+  width: 80%;
   margin: auto;
   margin-top: 3%;
+    color: #D38A8A;
+
 }
 .footer {
   position: fixed;
@@ -92,7 +94,7 @@ nav ul{
 }
 /************************************************** Center Page **************************************************/
 .theBackGround{
-  overflow: auto;
+  overflow-y: auto;
   max-height: 100%;
   height: 100%;
   background-image: url("../images/Backgrounds/Restaurant-Background-icons.png");
@@ -100,7 +102,7 @@ nav ul{
   background-size: 100%;
 }
 .centerPage{
-  overflow:auto;
+  overflow-y:auto;
   height: 100%;
   width: 85%;
   margin: 5%;
@@ -115,12 +117,13 @@ nav ul{
   top: 45%;
   left: 50%;
   border:none;
-  color: blue;
+  color: black;
   text-align: center;
-  font-size: 16px;
+  font-size: 200%;
   cursor: pointer;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+
 }
 .listPageh1 {
   padding-top: 10px;
@@ -135,11 +138,12 @@ nav ul{
 
 .box {
   position: relative;
-  width: 200px;
-  height: 250px;
+  width: 260px;
+  height: 350px;
   margin: auto;
-  padding: 10px;
+  padding: 0.3%;
   margin-top:10px;
+
 }
 .img {
   display: block;
@@ -163,7 +167,7 @@ nav ul{
 }
 /************************************************** other listpage styling **************************************************/
 .container {
-  width:80%;
+  width:90%;
   display: flex;
   flex-wrap: wrap;
   margin: auto;

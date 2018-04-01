@@ -10,12 +10,13 @@
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.html"><img src="images/logo-small.png"/></a></li>
-      <li><a href="#Coffe">Cafe</a></li>
-      <li><a href="#Restaurants">Restaurants</a></li>
-      <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
+      <li><a href="listPage.php">Cafe</a></li>
+      <li><a href="listPage.php">Restaurants</a></li>
+      <li><a href="listPage.php">Cafe & Restaurants</a></li>
       <li class="navmenu-right"><a href="#signUp">Sign Up</a></li>
-      <li class="navmenu-right"><a href="#login">Login</a></li>
+      <li class="navmenu-right"><a href="profile.php">Login</a></li>
     </ul>
+  </div>
   </div>
   <div class="card">
     <img src="images/pesonal icon.jpg" alt="profile picture" style="width:100%">
