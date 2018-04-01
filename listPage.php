@@ -19,7 +19,6 @@
     <div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>
   </div>
   <hr>
-<!--  <h1 class="listPageh1"> Makkah: </h1>-->
     <form method="POST">
     <div class="container">
       <?php
