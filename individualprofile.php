@@ -118,9 +118,9 @@
 		</br></br>
 		<center><table>
 			<tr>
-			<td><image  src="images/Larrow.png" alt="image_1" class="Larrow" onclick="LarrowOnclick() "height="20%" weight="20%"/> </td>
+			<td><image  src="images/Larrow.png" alt="image_1" class="Larrow" onclick="LarrowOnclick() "height="100px" weight="100px"/> </td>
 			<td><image  src="images/Menu_1.jpg" id="Menus_food" height="580" width="400"/> </td>
-			<td><image  src="images/Rarrow.png" alt="image_3" class="Rarrow" onclick="RarrowOnclick()" height="20%" weight="20%"/> </td>
+			<td><image  src="images/Rarrow.png" alt="image_3" class="Rarrow" onclick="RarrowOnclick()" height="100px" weight="100px"/> </td>
 			</tr>
 		</table></center>
 
@@ -160,7 +160,7 @@
 		<?php
 			// how many comments of this page from Database and prinit
 			// instid of num 10 it will be var
-			for ($i = 1; $i <= 10; $i++){
+			for ($i = 1; $i <= 3; $i++){
 				echo '<h4>'.$i.'-</h4>';
 		?>
 				<table style="margin-left:2%">
