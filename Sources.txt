@@ -4,3 +4,4 @@ All pages except index layout --> How to Centre and Layout Pages Without a Wrapp
 
 Profile --> How TO - Profile Card: https://www.w3schools.com/howto/howto_css_profile_card.asp
 
+Round TextArea: http://jsfiddle.net/chqy9dja/1/
