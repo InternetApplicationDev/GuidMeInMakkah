@@ -1,11 +1,22 @@
+$(document).ready(function(){
+	$('#wrapper').fullpage({
+		controlArrows: false,
+		loopBottom: true,
+		afterRender: function () {
+			setInterval(function () {
+				$.fn.fullpage.moveSlideRight();
+			}, 3000);
+		}
+	});
+});
 
 function changeImageOnclick() {
 	// add to database as favor page
-	if (document.getElementById("imgClickAndChange").src == "http://localhost/project_2018/images/hreat.png") 
+	if (document.getElementById("imgClickAndChange").src == "http://localhost/project_2018/images/hreat.png")
 	{
 		document.getElementById("imgClickAndChange").src = "images/unhreat.png";
 	}
-	else 
+	else
 	{
 		document.getElementById("imgClickAndChange").src = "images/hreat.png";
 	}
@@ -22,5 +33,5 @@ function RarrowOnclick() {
 	// chack alt to change img to next img
 	// check if it is last img or not
 	document.getElementById("Menus_food").src = "images/Menu_2.jpg";
-	
+
 }
