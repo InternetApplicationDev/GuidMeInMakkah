@@ -35,3 +35,44 @@ function RarrowOnclick() {
 	document.getElementById("Menus_food").src = "images/Menu_2.jpg";
 
 }
+			/*	RESERVATION FORM	*/
+
+function validateForm() {
+	// check complete required 'Name'
+if (isEmpty(document.getElementById('data_3').value.trim())) {
+alert('Name is required!');
+return false;
+}
+	// Validate email
+if (!validateEmail(document.getElementById('data_5').value.trim())) {
+alert('Email must be a valid email address!');
+return false;
+}
+	// check complete required 'Date'
+if (isEmpty(document.getElementById('data_6').value.trim())) {
+alert('Date is required!');
+return false;
+}
+	// check complete required 'Time' 
+if (isEmpty(document.getElementById('data_7').value.trim())) {
+alert('Time is required!');
+return false;
+}
+
+// check complete required 'Time' 
+if (isEmpty(document.getElementById('data_9').value.trim())) {
+alert('Celebrity is required!');
+return false;
+}
+
+return true;
+}	
+
+
+	// check empty  
+function isEmpty(str) { return (str.length === 0 || !str.trim()); }
+	// Validate email
+function validateEmail(email) {
+var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
+return isEmpty(email) || re.test(email);
+}
