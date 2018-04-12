@@ -49,12 +49,12 @@
         </ul>
         <div id="developersNames">
           <ul class="devNames">
-            <li>Ebtsam Alkhuzai</li>
-            <li>Esraa Samkari</li>
-            <li>Joanna Assaeedi</li>
-            <li>Joud Alajlan</li>
-            <li>Rozan Alghamdi</li>
-            <li>Wafaa Alshaikhi</li>
+            <li>Ebtsam Alkhuzai &ensp; </li>
+            <li>Esraa Samkari </li>
+            <li>Joanna Assaeedi </li>
+            <li>Joud Alajlan </li>
+            <li>Rozan Alghamdi </li>
+            <li>Wafaa Alshaikhi </li>
           </ul>
         </div>
       </div>

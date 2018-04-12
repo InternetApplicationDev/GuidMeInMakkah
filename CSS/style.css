@@ -46,7 +46,7 @@
 }
 
 .pace .pace-progress {
-  background: #C4C406;
+  background: #22df80;
   position: fixed;
   z-index: 2000;
   top: 0;
@@ -115,12 +115,12 @@
   text-decoration: none;
   text-align: center;
   padding: 10px;
-  padding-left: 65%;
+  padding-left: 200px;
   text-transform: uppercase;
   color: inherit;
 }
 .devNames{
-  padding-left: 20%;
+  padding-left: 260px;
   list-style-type: none;
 }
 #developersNames{
