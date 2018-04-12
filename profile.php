@@ -6,6 +6,9 @@
   <script type = "text/javascript" src = "JS/javaSceipt.js"></script>
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Sweet Alert  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
 </head>
 <body class="centerPage">
   <div class="navbar">
@@ -63,7 +66,7 @@
         <li><a href="#" onclick="showDevFunction()">Developers</a></li>
         <li><a href="about.html">About us</a></li>
         <li><a href="contactUs.html">Contact us</a></li>
-        <li><a href="#">siteMap</a></li>
+        <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
       </ul>
       <div id="developersNames">
         <ul class="devNames">

@@ -35,33 +35,54 @@ function RarrowOnclick() {
 	document.getElementById("Menus_food").src = "images/Menu_2.jpg";
 
 }
-/*	RESERVATION FORM	*/
+
+
+///////////////////////////////////////////////////	RESERVATION FORM ///////////////////////////////////////////////////
 
 function validateForm() {
 	// check complete required 'Name'
 	if (isEmpty(document.getElementById('data_3').value.trim())) {
-		alert('Name is required!');
+		swal({
+			type: 'error',
+			title: 'Oops...',
+			text: 'Name is required!',
+		})
 		return false;
 	}
 	// Validate email
 	if (!validateEmail(document.getElementById('data_5').value.trim())) {
-		alert('Email must be a valid email address!');
+		swal({
+			type: 'error',
+			title: 'Oops...',
+			text: 'Email must be a valid email address!',
+		})
 		return false;
 	}
 	// check complete required 'Date'
 	if (isEmpty(document.getElementById('data_6').value.trim())) {
-		alert('Date is required!');
+		swal({
+			type: 'error',
+			title: 'Oops...',
+			text: 'Date is required!',
+		})
 		return false;
 	}
 	// check complete required 'Time'
 	if (isEmpty(document.getElementById('data_7').value.trim())) {
-		alert('Time is required!');
+		swal({
+			type: 'error',
+			title: 'Oops...',
+			text: 'Time is required!',
+		})
 		return false;
 	}
-
 	// check complete required 'Time'
 	if (isEmpty(document.getElementById('data_9').value.trim())) {
-		alert('Celebrity is required!');
+		swal({
+			type: 'error',
+			title: 'Oops...',
+			text: 'Occasion is required!',
+		})
 		return false;
 	}
 
@@ -89,4 +110,13 @@ function showDevFunction() {
 		x.style.display="block";
 		footer.style.height = "180px";
 	}
+}
+
+/////////////////////////////////////////////////// footer siteMap ///////////////////////////////////////////////////
+function showSiteMap(){
+	swal({
+		// text : "<img src= './images/GuideMeInMakkah_small.png'>",
+		imageUrl: './images/GuideMeInMakkah_small.png',
+		showConfirmButton: false,
+	});
 }

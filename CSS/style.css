@@ -88,6 +88,7 @@
   color: #616161;
 }
 .footmenu li a{
+  clear: both;
   display: block;
   text-decoration: none;
   text-align: center;
@@ -97,7 +98,7 @@
   color: inherit;
 }
 .devNames{
-  padding-left: 23%;
+  padding-left: 20%;
   list-style-type: none;
 }
 #developersNames{
