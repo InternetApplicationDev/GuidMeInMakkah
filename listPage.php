@@ -2,6 +2,7 @@
 <html class="theBackGround">
 <head>
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <script type="text/javascript" src= "JS/javaSceipt.js"></script>
 </head>
 <body class="centerPage">
   <div class="navbar">
@@ -15,11 +16,11 @@
     </ul>
   </div>
   <div class ="header">
-   RESTAURANTS LIST
+    RESTAURANTS LIST
     <div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>
   </div>
   <hr>
-    <form method="POST">
+  <form method="POST">
     <div class="container">
       <?php
       $count = 16;
@@ -48,7 +49,7 @@
             <li >Joanna Assaeedi</li>
             <li>Joud Alajlan</li>
             <li>Rozan</li>
-            <li>Wafaa</li>
+            <li>Wafaa Alshaikhi</li>
           </ul>
         </div>
       </div>
