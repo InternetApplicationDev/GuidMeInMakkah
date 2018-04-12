@@ -3,6 +3,7 @@
 <head>
   <title>Profile</title>
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <script type = "text/javascript" src = "JS/javaSceipt.js"></script>
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -56,6 +57,25 @@
       ?>
     </div>
   </div>
-<div class="footer">Footer</div>
+  <div class="footer" id="theFooter">
+    <div class="footbar">
+      <ul class="footmenu">
+        <li><a href="#" onclick="showDevFunction()">Developers</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contactUs.html">Contact us</a></li>
+        <li><a href="#">siteMap</a></li>
+      </ul>
+      <div id="developersNames">
+        <ul class="devNames">
+          <li>Ebtsam Alkhuzai</li>
+          <li>Esraa Samkari</li>
+          <li >Joanna Assaeedi</li>
+          <li>Joud Alajlan</li>
+          <li>Rozan</li>
+          <li>Wafaa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

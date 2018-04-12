@@ -43,15 +43,9 @@
   background-color: #000;
   opacity: 0.8;
 }
-nav ul{
-  background-color: #616161;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-.navmenu li{
+.navmenu li, .footmenu li{
   list-style: none;
-  float: left;
+  float:left;
   font-family: 'Amaranth', sans-serif;
   color: #fff;
 }
@@ -92,6 +86,23 @@ nav ul{
   height: 75px;
   background: #222;
   color: #616161;
+}
+.footmenu li a{
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  padding-left: 65%;
+  text-transform: uppercase;
+  color: inherit;
+}
+.devNames{
+  padding-left: 20%;
+  list-style-type: none;
+}
+#developersNames{
+  clear: both;
+  display: none;
 }
 /************************************************** Center Page **************************************************/
 .theBackGround{

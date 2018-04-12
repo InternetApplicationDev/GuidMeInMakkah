@@ -15,7 +15,7 @@
     </ul>
   </div>
   <div class ="header">
-   RESTAURANTS LIST 
+   RESTAURANTS LIST
     <div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>
   </div>
   <hr>
@@ -33,6 +33,25 @@
         ?>
       </div>
     </form>
-    <div class="footer">Footer</div>
+    <div class="footer" id="theFooter">
+      <div class="footbar">
+        <ul class="footmenu">
+          <li><a href="#" onclick="showDevFunction()">Developers</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contactUs.html">Contact us</a></li>
+          <li><a href="#">siteMap</a></li>
+        </ul>
+        <div id="developersNames">
+          <ul class="devNames">
+            <li>Ebtsam Alkhuzai</li>
+            <li>Esraa Samkari</li>
+            <li >Joanna Assaeedi</li>
+            <li>Joud Alajlan</li>
+            <li>Rozan</li>
+            <li>Wafaa</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
   </html>
