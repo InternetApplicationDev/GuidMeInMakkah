@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="theBackGround">
+<head>
+  <title>RegistrationForm</title>
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <script type="text/javascript" src= "JS/javaSceipt.js"></script>
+  <!-- Sweet Alert  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
+  <!-- pace preloader -->
+ <script src="JS/pace.js"></script>
+</head>
+<body class="centerPage">
+  <div class="navbar">
+    <ul class="navmenu">
+      <li><a href="index.html"><img src="images/logo-small.png"/></a></li>
+      <li><a href="#Coffe">Cafe</a></li>
+      <li><a href="#Restaurants">Restaurants</a></li>
+      <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
+      <li class="navmenu-right"><a href="#signUp">Sign Up</a></li>
+      <li class="navmenu-right"><a href="#login">Login</a></li>
+    </ul>
+  </div>
+
+  <div class ="header">
+    Sign Up
+
+    <div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>
+  </div>
+  <hr>
+
+  <form method="post" action="Registration.html" onSubmit="return validateForm();">
+    <div class="container">
+    
+     <div>
+        <!-- name -->
+        <div class= "register1"> First Name : <span style="color: red;"> *</span><br/>
+          <input type="text" id="fname" name="fname" class="roundTextArea"/>
+        </div>
+         <br/>
+        <!-- last name  -->
+        <div class= "register1">Last Name : <span style="color: red;"> *</span> <br/>
+          <input type="text" id="lname" name="lname" class="roundTextArea"/>
+        </div>
+         <br/>
+        <div class= "register1">E-mail : <span style="color: red;"> *</span><br/>
+          <input type="text" id="email" name="email"  value="example@xxxxx.com" class="roundTextArea"/>
+        </div>
+        <br/>
+        <div class= "register1"> Password :<span style="color: red;"> *</span><br/>
+          <input type="text" id="password" name="password"class="roundTextArea"/>
+        </div>
+        <br/>
+        <div class= "register1"> Confirm Password :<span style="color: red;"> *</span> <br/>
+          <input type="text" id="cpassword" name="cpassword"class="roundTextArea"/>
+        </div>
+         <br/>
+        <div class= "regesterSubmit"><input name="skip_Submit" value="Submit" type="submit" class="submitbutton"/>
+          <!-- <input name="form" value="Form to Email" type="submit" /> -->
+        </div>
+       </div>
+      </div>
+  </form>
+  <div class="footer" id="theFooter">
+    <div class="footbar">
+      <ul class="footmenu">
+        <li><a href="#" onclick="showDevFunction()">Developers</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contactUs.html">Contact us</a></li>
+        <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
+      </ul>
+      <div id="developersNames">
+        <ul class="devNames">
+          <li>Ebtsam Alkhuzai</li>
+          <li>Esraa Samkari</li>
+          <li>Joanna Assaeedi</li>
+          <li>Joud Alajlan</li>
+          <li>Rozan Alghamdi</li>
+          <li>Wafaa Alshaikhi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
