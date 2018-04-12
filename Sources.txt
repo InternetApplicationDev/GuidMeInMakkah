@@ -9,3 +9,5 @@ Round TextArea: http://jsfiddle.net/chqy9dja/1/
 fix Developers names collapse: https://stackoverflow.com/questions/3453422/why-does-my-button-need-to-be-clicked-twice-for-the-event-handler-to-work-the-fi?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
 Dialog --> Sweet Alert2 : https://sweetalert2.github.io/
+
+Page pre-loader --> PACE: http://github.hubspot.com/pace/docs/welcome/ 
