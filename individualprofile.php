@@ -27,7 +27,7 @@
   </div>
 
   <hr>
- </br>
+  </br>
   <div class="fix_layout_center">
 	  <div class="emptyBlackBackground">
 			
@@ -42,19 +42,141 @@
 	 
   </div>
   
+  
   </br>
   <p class="pathThisPageAsText"> home  > list > coffee shope name </p>
+ <hr><hr>
+ <div class="contenerTheRestOfcontint">
   <table class="tableButtonReservation">
 	<tr>
 	<th>&nbsp &nbsp  <font color="white">150</font> <font color="yellow">RS</font></th>
 	<th> <button class="buttonReservation">Reservation</button> </th>
 	</tr>
   </table>
+  <br>
+  <div class="subBar">
+    <ul class="navmenu">
+      <li><a href="#desci">Description </a></li>
+	  <li><a href="#addr"> Address </a></li>
+      <li><a href="#menu"> Menu </a></li>
+      <li><a href="#comm"> Comment </a></li>
+    </ul>
+  </div>
   
-  </br>
-  </br>
   
+  <div id="desci"></div>
+  <h1>Description</h1>
+  <textarea class="description" rows="8" cols="50">
+	At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
+   </textarea>
+	<div class="imagesSliders">
+		<img id="1" src="images/cafe-intro-backfound.jpg" border="0" alt="image"/>
+		<img id="2" src="images/Cafe-and-Restaurant-Background.jpg" border="0" alt="image"/>
+		<img id="3" src="images/Cafe-Background.jpg" border="0" alt="image"/>
+    </div>
+	
+	<img  src="images/unhreat.png" title= "favorite"  onclick="changeImageOnclick()" id="imgClickAndChange" class="image_heart"/>
+   
+   <div class="contenerOfAddress">
+		<h1 id="addr">Address</h1>
+		<div class="addressMap">
+		<ul>
+			<li class="addressMap_1"><image  src="images/map_icon.png" height="45px" weight="45px"/> </li>
+			<li><h4>Makkah</h4></li>
+		</ul>
+		
+		</div>
+		
+		<div class="imgAdrress">
+			<img  src="images/map_1.jpg" />
+		</div>
+		
+	</div>
+	
+	
+	<br><br>
+    <h1 id="menu">Menu</h1>
+	<div >
+		<table>
+			<tr>
+			  <td><image  src="images/Menu_1.jpg" id="Menus_food" height="580" width="400"/> </td>
+			  <td><image  src="images/Larrow.png" title= "previous"  class="Larrow" onclick="LarrowOnclick()" height="70px" weight="70px"/> </td>
+			  <td><image  src="images/Rarrow.png" title= "next"  class="Rarrow" onclick="RarrowOnclick()" height="70px" weight="70px"/> </td>
+			</tr>
+		</table>
+	</div>
+	
+	<br><br><br><br><br>
+	
+	
+	
+	
+	<br><br><br><br></br>
+  </div>
+  
+<div class="containerComments">
+	<!--comments sections-->
+  <div class="content">
+    <div class="Comment">
+      <h1>Comment</h1>
+      <!--
+      if(has been log in)
+      can commant
+      else
+      <center><hr><p style="font-size: 25px; color: red;">YOU MUST LOGIN FIRST TO COMMANTS</p><hr></center>
+    -->
+    <form action="individualprofile.php" method="post" >
+      <table>
+        <tr>
+          <td> <img src="images/pesonal icon.jpg" class="imgUserInCommetn"/> </td>
+          <td><table style="margin-left:-20%">
+            <tr><td class="userNameInComment">user name</td></tr>
+            <tr><td><textarea id="TAtest" name="CommentTA" rows="4" cols="50"  placeholder="write your comments"></textarea></td></tr>
+            <tr><td >Your rating:<div class="stars" onclick="numOfRating()">
+			<input type="radio" id="star5" name="star" value="5" >
+			<label for="star5"></label>
+			<input type="radio" id="star4" name="star" value="4">
+			<label for="star4"></label>
+			<input type="radio" id="star3" name="star" value="3" >
+			<label for="star3"></label>
+			<input type="radio" id="star2" name="star" value="2" >
+			<label for="star2"></label>
+			<input type="radio" id="star1" name="star" value="1">
+			<label for="star1"></label>
+		   </div></td>
+          </tr>
+        </table></td>
+        <td><input type="submit" value="Submit" name="submit"></td>
+		<td><input id="starValue" name="getStarValue" type="hidden" value="0"></td>
+      </tr>
+    </table>
+  </form>
 
+  <hr>
+  <hr>
+  <?php
+  // how many comments of this page from file and prinit
+  $data = file ('Files/Comments/page.txt'); 
+  $n = count ($data);
+  
+  for ( $j=0; $j < $n; $j++){
+	$getUseANDCom = retrieveUsersComments($data[$j]);
+    ?>
+    <div class="commentsUserBox" >
+		<p class="userNameInComment"><?php echo $getUseANDCom[0]; ?></p>
+		<img src="images/pesonal icon.jpg" />
+		<div><p class="userCommentInComment"><?php echo $getUseANDCom[1]; ?></p></div>
+	</div>
+    <?php
+    echo '<br><hr>';
+  } // for end
+  ?>
+  
+</div>
+</div>
+</div>
+
+ 
 <div class="footer">Footer</div>
 
 </body>
