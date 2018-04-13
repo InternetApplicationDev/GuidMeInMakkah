@@ -36,7 +36,7 @@
           $idReturant=2;
           $idBoth=3;
 
-          echo '<a href="listPage.php?id='.$idCoffee.'" ><p class="iconName">Cafe</p><img id="Cafe" src="images/icons/coffee-cup.png" /></a>';
+          echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" /></a>';
           echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" /></a>';
           echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" /></a>';
           ?>

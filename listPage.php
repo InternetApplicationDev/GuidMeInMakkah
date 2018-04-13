@@ -50,7 +50,7 @@ echo'<div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="
 	//LATER WE WILL TAKE THE NUMBER OF THE COFFEE'S STORD IN DATABSE WITH SELECT AND PUT THE NO IN COUNR VARIBLE BUT THIS IS INITIALLY
 	//SELECT TO TAKE THE NO OF COFFEE'S
 		$count = 7;
-		 $dbc = @mysqli_connect ('localhost', 'root', 'JoooJooo');
+		 $dbc = @mysqli_connect ('localhost', 'root', '12345678');
 	 @mysqli_select_db ($dbc,'db');
 
 	  for ($i = 0; $i <= $count; $i++) {
