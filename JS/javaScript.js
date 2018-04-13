@@ -10,6 +10,7 @@ $(document).ready(function(){
 	});
 });
 
+
 function changeImageOnclick() {
 	// add to database as favor page
 	if (document.getElementById("imgClickAndChange").src == "http://localhost/project_2018/images/hreat.png")

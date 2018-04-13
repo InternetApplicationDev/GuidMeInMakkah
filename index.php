@@ -8,7 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> <!-- link javascript -->
   <script src="JS/jquery.fullPage.js"></script>
   <script type = "text/javascript" src = "JS/javaScript.js"></script>
-   <!-- pace preloader -->
+  <!-- pace preloader -->
   <script src="JS/pace.js"></script>
 </head>
 <body>
@@ -31,49 +31,43 @@
     <div class="section">
       <div class="slide" id="sectionTwoFirst">
         <div class="boxes">
-		
-		
-		
-		
-         <?php
-			$idCoffee=1;
-			$idReturant=2;
-			$idBoth=3;
-			
-			echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" /></a>';
-			echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" /></a>';
-			echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" /></a>';
-			?>
-		  
-		  
+          <?php
+          $idCoffee=1;
+          $idReturant=2;
+          $idBoth=3;
+
+          echo '<a href="listPage.php?id='.$idCoffee.'" ><p class="iconName">Cafe</p><img id="Cafe" src="images/icons/coffee-cup.png" /></a>';
+          echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" /></a>';
+          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" /></a>';
+          ?>
         </div>
       </div>
       <div class="slide" id="sectionTwoSecond">
         <div class="boxes">
-           <?php
-			$idCoffee=1;
-			$idReturant=2;
-			$idBoth=3;
-			
-			echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" /></a>';
-			echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" /></a>';
-			echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" /></a>';
-			?>
-			
+          <?php
+          $idCoffee=1;
+          $idReturant=2;
+          $idBoth=3;
+
+          echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png"</a>';
+          echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" /></a>';
+          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" /></a>';
+          ?>
+
         </div>
       </div>
       <div class="slide" id="sectionTwoThird">
         <div class="boxes">
-            <?php
-			$idCoffee=1;
-			$idReturant=2;
-			$idBoth=3;
-			
-			echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" /></a>';
-			echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" /></a>';
-			echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" /></a>';
-			?>
-			
+          <?php
+          $idCoffee=1;
+          $idReturant=2;
+          $idBoth=3;
+
+          echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" /></a>';
+          echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" /></a>';
+          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" /></a>';
+          ?>
+
         </div>
       </div>
     </div>

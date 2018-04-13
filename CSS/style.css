@@ -32,6 +32,16 @@
 .slide .boxes img{
   padding: 3%;
 }
+.iconName {
+  position: absolute;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+}
+.boxes:hover .iconName {
+  visibility: visible;
+  opacity: 1;
+}
 /************************************************** pace pre-loader**************************************************/
 .pace {
   -webkit-pointer-events: none;
