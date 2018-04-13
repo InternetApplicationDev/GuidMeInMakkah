@@ -138,7 +138,26 @@ function addUserRate($userName,$userRate,$pageName){
 	
 	}
 ?>
-
+<script>
+	  function Slider(){
+		$(".imagesSliders #1").show("fade",400);
+		$(".imagesSliders #1").delay(5500).hide("slide",{direction:'left'},400);
+		
+		var sc = $(".imagesSliders img").size();
+		var count = 2;
+		 
+		setInterval(function (){
+			$(".imagesSliders #"+count).show("slide",{direction:'right'},400);
+			$(".imagesSliders #"+count).delay(5500).hide("slide",{direction:'left'},400);
+	  
+			if(count == sc){
+				count = 1;
+			}else{
+				count = count+1 ;
+			}
+		}, 6500);
+	  }
+  </script>
 
 <html class="theBackGround">
 <head>
