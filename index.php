@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="CSS/style.css" />
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> <!-- link javascript -->
   <script src="JS/jquery.fullPage.js"></script>
-  <script type = "text/javascript" src = "JS/javaSceipt.js"></script>
+  <script type = "text/javascript" src = "JS/javaScript.js"></script>
    <!-- pace preloader -->
   <script src="JS/pace.js"></script>
 </head>

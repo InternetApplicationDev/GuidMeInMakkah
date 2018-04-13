@@ -3,7 +3,7 @@
 <head>
   <title>Profile</title>
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
-  <script type = "text/javascript" src = "JS/javaSceipt.js"></script>
+  <script type = "text/javascript" src = "JS/javaScript.js"></script>
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Sweet Alert  -->

@@ -46,7 +46,7 @@
 }
 
 .pace .pace-progress {
-  background: #22df80;
+  background: #C4C406;
   position: fixed;
   z-index: 2000;
   top: 0;
@@ -114,8 +114,7 @@
   display: block;
   text-decoration: none;
   text-align: center;
-  padding: 10px;
-  padding-left: 200px;
+  padding: 10px 10px 10px 200px;
   text-transform: uppercase;
   color: inherit;
 }
