@@ -10,6 +10,7 @@ $(document).ready(function(){
 	});
 });
 
+<<<<<<< HEAD
 
 function changeImageOnclick() {
 	// add to database as favor page
@@ -38,6 +39,8 @@ function RarrowOnclick() {
 }
 
 
+=======
+>>>>>>> a2ca3bfe23df9c2a751df8418e3e54d96d287857
 ///////////////////////////////////////////////////	RESERVATION FORM ///////////////////////////////////////////////////
 
 function validateForm() {
