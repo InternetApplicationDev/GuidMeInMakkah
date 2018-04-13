@@ -182,8 +182,23 @@ function addUserRate($userName,$userRate,$pageName){
     </ul>
   </div>
   <div class ="header">
-    RESTAURANTS LIST
-    <div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>
+    <?php
+	  if ($_GET[id]==1){
+echo'COFFEE LIST ';
+echo'<div class="logo"> <img class="img" src="images/icons/coffee-cup-black.png" alt="LOGO" > </div>';
+}
+else if ($_GET[id]==2){ //if the user click to the resturant
+//change the pic to restaurant black
+	echo'RESTAURANTS LIST ';
+	echo'<div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>';
+}
+else{//if the user click to the both
+echo'RESTAURANTS AND COFFEE LIST ';
+//change the pic to both black
+echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.png" alt="LOGO" > </div>';
+}
+    ?>
+   
   </div>
 
   <hr>
