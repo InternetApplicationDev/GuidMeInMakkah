@@ -2,7 +2,7 @@
 <html class="theBackGround">
 <head>
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
-  <script type = "text/javascript" src = "JS/javaSceipt.js"></script>
+  <script type = "text/javascript" src = "JS/javaScript.js"></script>
 
 </head>
 <body class="centerPage">
