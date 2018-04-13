@@ -382,3 +382,90 @@ hr {
         margin-left: 1in;
         margin-bottom: 20px;
       }
+	/****************************************header of individual profile*********************************/
+	
+	 .fix_layout_center {
+		 width:890px;
+		 height:250px;
+		 margin-left:10%;
+		 
+	 }
+	 .imageIntro{
+		 width:100%;
+		 height:100%;
+		 margin:-28.1% auto;
+		 position:relative;
+	 }
+	  .imageIntro img{
+		 width:100%;
+		 height:100%;
+	 }
+	 
+	 .emptyBlackBackground{
+		 width:100%;
+		 height:100%;
+		 background-color: #000;
+		 position:relative;
+	 }
+	 
+	 .textBlackBackground{
+		 width:100%;
+		 height:100%;
+		 background-color: rgba(0, 0, 0, 0.4);
+		 position:relative;
+		 margin:-31.0% auto;
+		 
+	 }
+	 
+	.textBlackBackground #textSliderImg{
+	   color: #ffffff;
+	   font-family: "Times New Roman", Times, serif;
+	   font-style: oblique;
+	   font-size: 27px;
+	   padding-top:7%;
+	   text-align: center;
+	 }
+	 
+	 .starsBlackBackground {
+		 position:relative;
+		 padding-top:15%;
+		 padding-left:40.5%;
+		 width:19%;
+		 height:60%;
+	 }
+	 
+	 .pathThisPageAsText {
+		margin-left:10%;
+		color: gray;
+		font-size: 19px;
+	 }
+	 
+	.tableButtonReservation{
+		width:270px;
+		height:40px;
+		position:relative;
+		margin-top:-4.3%;
+		margin-left:66.0%;
+		background-color:black;
+		border: 1px solid black;
+	} 
+	 
+	.buttonReservation{
+		width:90%;
+		height:40px;
+		margin-left:10%;
+		background-color: gray;
+		font-weight: bold;
+		color:white;
+	} 
+	
+	.buttonReservation:active{
+		background-color: #D38A8A;
+		color:black;
+	} 
+	  
+	  
+	  
+	  
+	  
+	  
