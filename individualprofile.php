@@ -1,4 +1,145 @@
 <!DOCTYPE html>
+<?php
+
+function searchUserNameInIndexFile($userName,$pageName){
+	$data = file ('Files/filesCommentIndex.txt'); 
+	$fp = fopen('Files/filesCommentIndex.txt', "r");  
+	
+	$n = count ($data);
+	$result=0; // 0-> no found user and page name
+				// 1-> found user name
+				 // 2-> found user and page name
+	$tmpFilePointer=0; // depend on this value it will chane seek pointer
+	$tmpName=""; // find match between user name and useres names in file
+	$tmpPage=""; // find match between page name and pages names in file
+	$tmpLengthOfFoundName; // to calculat the position of page names
+	
+	// search user name from file, if it found change var result to 1
+	for ($i = 0; $i < $n; $i++) { // search line by line
+		for ($coun = 1; $coun < strlen($data[$i]); $coun++){ // search char by char in the current line
+			$tmpChar = substr( $data[$i], $coun, 1 ); // get current char
+			if($tmpChar == ']'){ // end name
+				$tmpLengthOfFoundName = strlen(substr( $data[$i],0,++$coun)); // sum the len of current user name
+				break; // we do not need to search the rest of the current string
+			}
+			else 
+				$tmpName .=$tmpChar; // to make full user name from char pices
+			
+		}
+		
+		if($tmpName == $userName){ // found user name from file
+			$tmpFilePointer+=$tmpLengthOfFoundName; // calculat the postion of page name for this user
+			$result=1; // found user name
+			break;
+		}
+		
+		$tmpFilePointer=$tmpFilePointer+strlen($data[$i]); // calculat the postion by adding len of previous line
+		$tmpName=""; // to make another user name from file
+	} 
+	
+	// if found user name than go search for page name 
+	 //else return result value 0 to add user name and page name to file
+	if ($result==1){
+		// change current position
+		fseek($fp,$tmpFilePointer);
+		$pagesNames = fgets($fp);
+		
+		for ($i = 1; $i < strlen($pagesNames); $i++){
+			$tmpChar = substr( $pagesNames, $i, 1 ); // get current char
+			$tmpFilePointer++;
+			if($tmpPage == $pageName){
+				$result = 2; // found page name
+				break;
+			}else if($tmpChar == ')'){ // end name
+				$tmpPage ="";
+				break; // end of pages name
+			}else if($tmpChar == ','){
+				$tmpPage ="";
+				continue;
+			}else 
+				$tmpPage .=$tmpChar; // to make full page name from char pices
+		} // end for
+	}
+	
+	
+	fclose($fp);
+	
+	if($result==1){ // found just user name without page name,so add page name to this user
+		// copy the rest of file content
+		$fp = fopen("Files/filesCommentIndex.txt", "r");
+		fseek($fp,$tmpFilePointer);
+		$tmpReminderOfFileString="";
+		while (!feof($fp)){
+			$tmpReminderOfFileString .= fgets($fp);
+		}
+		fclose($fp);
+		
+		// add new page name and appand the copy rest after this page name
+		$fp = fopen('Files/filesCommentIndex.txt', 'rw+');
+		fseek($fp,$tmpFilePointer);
+		fwrite($fp,",".$pageName.$tmpReminderOfFileString,500);
+		fclose($fp);
+		return $result;
+	}
+	else if($result==0){ // nothing found, so add both user and page name
+		$fp = fopen('Files/filesCommentIndex.txt', 'ab');
+		fwrite($fp,"[".$userName."](".$pageName.")\n");
+		fclose($fp);
+		return $result;
+	}
+
+return $result;	
+}
+
+function addUserNameComment($userName,$comments,$pageName){
+	$fp = fopen('Files/Comments/'.$pageName.'.txt', 'ab');
+	
+	$userComment = str_replace("\r\n", "<br>", $comments);
+		
+	fwrite($fp,"[".$userName."](".$userComment.")\n");
+	fclose($fp);
+}
+
+function retrieveUsersComments($userNameWithHisComment){
+	$userName ="";
+	$userComment = "";
+	$i = 1;
+	for ( ;$i < strlen($userNameWithHisComment); $i++){
+		$tmpChar = substr( $userNameWithHisComment, $i, 1 ); // get current char
+		if($tmpChar == ']'){ // end name
+			break; // we do not need to search the rest of the current string
+		}
+		else 
+			$userName .=$tmpChar; // to make full user name from char pices
+	}
+	
+	$i+= 2;
+	for ( ;$i < strlen($userNameWithHisComment); $i++){
+		$tmpChar = substr( $userNameWithHisComment, $i, 1 ); // get current char
+		if($tmpChar == ')'){ // end name
+			break; // we do not need to search the rest of the current string
+		}
+		else 
+			$userComment .=$tmpChar; // to make full user name from char pices
+	}
+	
+	return array($userName,$userComment);
+}
+
+function addUserRate($userName,$userRate,$pageName){
+	
+}
+
+
+?>
+
+<?php
+	if(isset($_POST["submit"])){
+	
+	}
+?>
+
+
 <html class="theBackGround">
 <head>
 
