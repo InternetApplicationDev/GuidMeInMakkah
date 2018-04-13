@@ -15,7 +15,7 @@
 <body class="centerPage">
   <div class="navbar">
     <ul class="navmenu">
-      <li><a href="index.html"><img src="images/logo-small.png"/></a></li>
+      <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
       <li><a href="listPage.php">Cafe</a></li>
       <li><a href="listPage.php">Restaurants</a></li>
       <li><a href="listPage.php">Cafe & Restaurants</a></li>
