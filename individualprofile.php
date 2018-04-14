@@ -177,8 +177,8 @@ function addUserRate($userName,$userRate,$pageName){
       <li><a href="listPage.php">Cafe</a></li>
       <li><a href="listPage.php">Restaurants</a></li>
       <li><a href="listPage.php">Cafe & Restaurants</a></li>
-      <li class="navmenu-right"><a href="#signUp">Sign Up</a></li>
-      <li class="navmenu-right"><a href="profile.php">Login</a></li>
+  <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
+      <li class="navmenu-right"><a href="Signin.html">Login</a></li>
     </ul>
   </div>
   <div class ="header">
