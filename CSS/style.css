@@ -309,6 +309,16 @@ hr {
       padding-right:300px;
 
     }
+    .register1{
+      font-family: 'Amaranth', sans-serif;
+      font-variant: normal;
+      font-size: 20px;
+      color:  #C0C0C0;
+      float:left;
+      margin-left:300px;
+      padding-bottom:30px;
+      padding-right:300px;
+    }
     .reserv2{
       font-family: 'Amaranth', sans-serif;
       font-variant: normal;
@@ -327,6 +337,11 @@ hr {
     .reservSubmit{
       font-family: 'Amaranth', sans-serif;
       margin-left: 65%;
+      margin-bottom: 10%;
+    }
+    .regesterSubmit{
+      font-family: 'Amaranth', sans-serif;
+      margin-left:350px;
       margin-bottom: 10%;
     }
     .roundTextArea{
