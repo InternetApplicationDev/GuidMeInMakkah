@@ -639,7 +639,7 @@ label {
 }
 
 label::before {
-  content: '★';
+  content: "\2605";
   color: #c0c0c0;
   font-size: 30px;
   line-height: 30px;
