@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 13, 2018 at 09:28 AM
+-- Generation Time: Apr 14, 2018 at 10:24 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -32,11 +32,23 @@ CREATE TABLE `cafe` (
   `cafe_info` varchar(100) NOT NULL,
   `cafe_address` varchar(100) NOT NULL,
   `phone` int(11) NOT NULL,
-  `start_date` time NOT NULL,
-  `close_date` int(11) NOT NULL,
+  `start_date` date NOT NULL,
+  `close_date` date NOT NULL,
   `rate` int(11) NOT NULL,
-  `profile_pic` longblob NOT NULL
+  `profile_pic` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `cafe`
+--
+
+INSERT INTO `cafe` (`cafe_id`, `cafe_name`, `cafe_info`, `cafe_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`) VALUES
+(1, 'Caffe Bene', 'caffeBenecaffeBenecaffeBene', 'caffeBene adress', 0, '2018-04-14', '0000-00-00', 3, 'caffeBene.png'),
+(2, 'Costa Coffee', 'costa coffee', 'costa coffeeadreess', 653, '2018-04-18', '0000-00-00', 3, 'costa coffee.png'),
+(3, 'Dunkin Donuts', 'dunkin donutsdunkin donutsdunkin donuts', 'dunkin donuts adress', 54356, '2018-04-04', '2018-04-03', 4, 'dunkin donuts.png'),
+(4, 'Mado', 'mado', 'mado adress', 65346834, '2018-04-17', '2018-04-04', 3, 'mado.png'),
+(5, 'pappa roti', 'pappa rotipappa roti', 'pappa roti address', 65363684, '2018-04-11', '2018-04-17', 3, 'pappa roti.png'),
+(6, 'Starbucks', 'starbucksstarbucks', 'starbucks address', 35136, '2018-04-10', '2018-04-16', 4, 'starbucks.png');
 
 -- --------------------------------------------------------
 
@@ -50,11 +62,19 @@ CREATE TABLE `cafeandrest` (
   `cafeAndRest_info` varchar(100) NOT NULL,
   `cafeAndRest_address` varchar(100) NOT NULL,
   `phone` int(11) NOT NULL,
-  `start_date` time NOT NULL,
-  `close_date` time NOT NULL,
+  `start_date` date NOT NULL,
+  `close_date` date NOT NULL,
   `rate` int(10) NOT NULL,
-  `profile_pic` longblob NOT NULL
+  `profile_pic` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `cafeandrest`
+--
+
+INSERT INTO `cafeandrest` (`cafeAndRest_id`, `cafeAndRest_name`, `cafeAndRest_info`, `cafeAndRest_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`) VALUES
+(1, 'Raffles Creamery', 'Raffles Creamery ', '', 0, '0000-00-00', '0000-00-00', 0, 'Raffles Creamery.png'),
+(2, 'Zamzam cafe', '', '', 0, '0000-00-00', '0000-00-00', 0, 'Zamzam cafe.png');
 
 -- --------------------------------------------------------
 
@@ -173,12 +193,12 @@ ALTER TABLE `restaurants`
 -- AUTO_INCREMENT for table `cafe`
 --
 ALTER TABLE `cafe`
-  MODIFY `cafe_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `cafe_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `cafeandrest`
 --
 ALTER TABLE `cafeandrest`
-  MODIFY `cafeAndRest_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `cafeAndRest_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `cafeandrestpics`
 --
