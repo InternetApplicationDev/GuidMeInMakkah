@@ -41,7 +41,17 @@ function RarrowOnclick() {
 	
 }
 
+function checkTA(){
+	// chack user comment from text area
+	if(document.getElementById("TAtest").value.trim().length < 1){
+		alert("please enter something");
+	}else{
+		document.getElementById("commentsForm").submit();
+	}
+}
+
 function numOfRating(){
+	// get user rate number
 	var num = document.querySelector('.stars input:checked').value;
 	document.getElementById("starValue").value = num;
 }

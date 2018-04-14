@@ -134,11 +134,27 @@ function addUserRate($userName,$userRate,$pageName){
 ?>
 
 <?php
-	if(isset($_POST["submit"])){
-	
+	if(isset($_POST["getStarValue"])){
+		$comments = $_POST["CommentTA"];
+		$userName ="hdi";
+		$pageName ="page name";
+		$userRate = $_POST["getStarValue"];
+		searchUserNameInIndexFile($userName,$pageName);
+		addUserNameComment($userName,$comments,$pageName);
+		addUserRate($userName,$userRate,$pageName);
 	}
 ?>
-<script>
+
+
+<html class="theBackGround">
+<head>
+
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  
+  <script type = "text/javascript" src = "JS/javaScript.js"></script>
+  <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <script>
 	  function Slider(){
 		$(".imagesSliders #1").show("fade",400);
 		$(".imagesSliders #1").delay(5500).hide("slide",{direction:'left'},400);
@@ -158,15 +174,6 @@ function addUserRate($userName,$userRate,$pageName){
 		}, 6500);
 	  }
   </script>
-
-<html class="theBackGround">
-<head>
-
-  <link rel="stylesheet" type="text/css" href="CSS/style.css">
-  
-  <script type = "text/javascript" src = "JS/javaScript.js"></script>
-  <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
   
 </head>
 <body class="centerPage" onload="Slider()">
@@ -288,67 +295,67 @@ echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.p
 	
 	<br><br><br><br></br>
   </div>
-  
+
+   
 <div class="containerComments">
 	<!--comments sections-->
-  <div class="content">
-    <div class="Comment">
-      <h1>Comment</h1>
-      <!--
-      if(has been log in)
-      can commant
-      else
-      <center><hr><p style="font-size: 25px; color: red;">YOU MUST LOGIN FIRST TO COMMANTS</p><hr></center>
-    -->
-    <form action="individualprofile.php" method="post" >
-      <table>
-        <tr>
-          <td> <img src="images/pesonal icon.jpg" class="imgUserInCommetn"/> </td>
-          <td><table style="margin-left:-20%">
-            <tr><td class="userNameInComment">user name</td></tr>
-            <tr><td><textarea id="TAtest" name="CommentTA" rows="4" cols="50"  placeholder="write your comments"></textarea></td></tr>
-            <tr><td >Your rating:<div class="stars" onclick="numOfRating()">
-			<input type="radio" id="star5" name="star" value="5" >
-			<label for="star5"></label>
-			<input type="radio" id="star4" name="star" value="4">
-			<label for="star4"></label>
-			<input type="radio" id="star3" name="star" value="3" >
-			<label for="star3"></label>
-			<input type="radio" id="star2" name="star" value="2" >
-			<label for="star2"></label>
-			<input type="radio" id="star1" name="star" value="1">
-			<label for="star1"></label>
-		   </div></td>
-          </tr>
-        </table></td>
-        <td><input type="submit" value="Submit" name="submit"></td>
-		<td><input id="starValue" name="getStarValue" type="hidden" value="0"></td>
-      </tr>
-    </table>
-  </form>
+	<div class="content">
+		<div class="Comment">
+		<h1>Comment</h1>
+		<!--
+		if(has been log in)
+		can commant
+		else
+		<center><hr><p style="font-size: 25px; color: red;">YOU MUST LOGIN FIRST TO COMMANTS</p><hr></center>
+		-->
+		<form id="commentsForm" action="individualprofile.php#commentsForm" method="post" >
+			<table>
+				<tr>
+				<td> <img src="images/pesonal icon.jpg" class="imgUserInCommetn"/> </td>
+				<td><table style="margin-left:-20%">
+				<tr><td class="userNameInComment">user name</td></tr>
+				<tr><td><textarea id="TAtest" name="CommentTA" rows="4" cols="50"  placeholder="write your comments"></textarea></td></tr>
+				<tr><td >Your rating:<div class="stars" onclick="numOfRating()">
+				<input type="radio" id="star5" name="star" value="5" >
+				<label for="star5"></label>
+				<input type="radio" id="star4" name="star" value="4">
+				<label for="star4"></label>
+				<input type="radio" id="star3" name="star" value="3" >
+				<label for="star3"></label>
+				<input type="radio" id="star2" name="star" value="2" >
+				<label for="star2"></label>
+				<input type="radio" id="star1" name="star" value="1">
+				<label for="star1"></label>
+				</div></td>
+				</tr>
+				</table></td>
+				<td><input type="button" value="Submit" onclick="checkTA()"></td>
+				<td><input id="starValue" name="getStarValue" type="hidden" value="0"></td>
+				</tr>
+			</table>
+		</form>
+		<hr><hr>
+		<?php
+		// how many comments of this page from file and prinit
+		$data = file ('Files/Comments/page name.txt'); 
+		$n = count ($data);
 
-  <hr>
-  <hr>
-  <?php
-  // how many comments of this page from file and prinit
-  $data = file ('Files/Comments/page.txt'); 
-  $n = count ($data);
-  
-  for ( $j=0; $j < $n; $j++){
-	$getUseANDCom = retrieveUsersComments($data[$j]);
-    ?>
-    <div class="commentsUserBox" >
+		for ( $j=0; $j < $n; $j++){
+		$getUseANDCom = retrieveUsersComments($data[$j]);
+		?>
+		<div class="commentsUserBox" >
 		<p class="userNameInComment"><?php echo $getUseANDCom[0]; ?></p>
 		<img src="images/pesonal icon.jpg" />
 		<div><p class="userCommentInComment"><?php echo $getUseANDCom[1]; ?></p></div>
+		</div>
+		<?php
+		echo '<br><hr>';
+		} // for end
+		?>
+
+		</div>
+		
 	</div>
-    <?php
-    echo '<br><hr>';
-  } // for end
-  ?>
-  
-</div>
-</div>
 </div>
 
  
