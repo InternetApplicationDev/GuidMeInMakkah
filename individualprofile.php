@@ -232,7 +232,7 @@ function addUserRate($userName,$userRate,$pageName){
   <table class="tableButtonReservation">
 	<tr>
 	<th>&nbsp &nbsp  <font color="white">150</font> <font color="yellow">RS</font></th>
-	<th> <button class="buttonReservation">Reservation</button> </th>
+	<th> <button class="buttonReservation" onclick="location.href='Registration.html'">Reservation</button> </th>
 	</tr>
   </table>
   <br>
