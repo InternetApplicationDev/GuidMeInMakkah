@@ -51,7 +51,7 @@
 
           echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" title="Cafe" /> </a>';
           echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" title="Restaurant" /></a>';
-          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" title="CafeAndRestaurant" /></a>';
+          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" title="Cafe And Restaurant" /></a>';
           ?>
 
         </div>
