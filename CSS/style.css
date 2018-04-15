@@ -513,9 +513,9 @@ hr {
 	.imagesSliders{
 		overflow:hidden;
 		width:38%;
-		height:200px;
+		height:280px;
 		margin-top:-14%;
-		margin-left:63%;
+	  margin-left:63%;
 		border-style: solid;
 	}
 	.imagesSliders img{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 15, 2018 at 12:22 PM
+-- Generation Time: Apr 15, 2018 at 03:21 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.1.12
 
@@ -134,8 +134,8 @@ CREATE TABLE `restaurantpics` (
 --
 
 INSERT INTO `restaurantpics` (`restaurant_id`, `restaurantPic_id`, `restaurantPic`) VALUES
-(1, 1, 'images/resturantPics/albaikmenu.jpg'),
-(1, 2, 'images/resturantPics/Menu_0.jpg');
+(1, 3, 'images/resturantPics/dominosPizaa.png'),
+(1, 7, 'images/resturantPics/hardees.png');
 
 -- --------------------------------------------------------
 
@@ -161,7 +161,7 @@ CREATE TABLE `restaurants` (
 --
 
 INSERT INTO `restaurants` (`restaurant_id`, `restaurant_name`, `restaurants_info`, `restaurants_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`, `menu`) VALUES
-(1, 'Al-Baik', 'Al-BaikAl-BaikAl-BaikAl-Baik', 'images/address/albaik.png', 54136, '2018-04-11', '2018-04-11', 5, 'images/resturantPics/albaik.png', 'images/resturantPics/Menu_2.jpg'),
+(1, 'Al-Baik', 'Al-BaikAl-BaikAl-BaikAl-Baik', 'images/address/albaik.png', 54136, '2018-04-11', '2018-04-11', 3, 'images/resturantPics/albaik.png', 'images/resturantPics/Menu_2.jpg'),
 (2, 'Burger King', 'burgerKingburgerKingburgerKing', 'burgerKing adress', 312352, '2018-04-02', '2018-04-10', 0, 'images/resturantPics/burgerKing.png', ''),
 (3, 'Dominos Pizaa', 'dominosPizaadominosPizaadominosPizaa', 'dominosPizaa adress', 625362, '2018-04-10', '2018-04-25', 5, 'images/resturantPics/dominosPizaa.png', ''),
 (4, 'Hardee\'s', 'hardee\'shardee\'shardee\'s', 'hardee\'s adress', 3513, '2018-04-05', '2018-04-11', 3, 'images/resturantPics/hardees.png', ''),
@@ -250,7 +250,7 @@ ALTER TABLE `cafepics`
 -- AUTO_INCREMENT for table `restaurantpics`
 --
 ALTER TABLE `restaurantpics`
-  MODIFY `restaurantPic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `restaurantPic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `restaurants`
