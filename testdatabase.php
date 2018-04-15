@@ -25,7 +25,11 @@ print_r($r);
 for ($i = 0; $i < count($r); $i++) {
 
 print"
+<<<<<<< HEAD
+<p> {$r[$i][o]}</p>
+=======
 
+>>>>>>> bf476772ebc36b336fd39884d2ba7729f2527a4d
 <p> {$r[$i][1]}</p>
 <p> {$r[$i][2]}</p>
 <img src=\"{$r[$i][3]}\" alt=\"Avatar\">
