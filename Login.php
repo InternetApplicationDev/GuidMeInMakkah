@@ -54,11 +54,7 @@ if (isset($_POST['email'])) {
       <div>
 
         <div class= "register1"> E-mail : <span style="color: red;"> *</span><br/>
-<<<<<<< HEAD:Signin.html
-          <input type="text" id="email" name="email"  placeholder="example@xxxxx.com" class="roundTextArea"/>
-=======
-          <input type="text" id="email" name="email" class="roundTextArea"/>
->>>>>>> bb04b2456bf42183e2ba8b82da26f30bcf4a9d93:Login.php
+          <input type="text" id="Email" name="Email" placeholder="example@xxxxx.com" class="roundTextArea"/>
         </div>
         <br/>
         <div class= "register1"> Password :<span style="color: red;"> *</span><br/>
