@@ -100,7 +100,7 @@
 /************************************************** Header and footer **************************************************/
 .header {
   text-align: right;
-  font-size: 50px;
+  font-size: 45px;
   padding: 60px;
   height: 10%;
   width: 80%;
@@ -309,6 +309,16 @@ hr {
       padding-right:300px;
 
     }
+    .register1{
+      font-family: 'Amaranth', sans-serif;
+      font-variant: normal;
+      font-size: 20px;
+      color:  #C0C0C0;
+      float:left;
+      margin-left:300px;
+      padding-bottom:30px;
+      padding-right:300px;
+    }
     .reserv2{
       font-family: 'Amaranth', sans-serif;
       font-variant: normal;
@@ -327,6 +337,11 @@ hr {
     .reservSubmit{
       font-family: 'Amaranth', sans-serif;
       margin-left: 65%;
+      margin-bottom: 10%;
+    }
+    .regesterSubmit{
+      font-family: 'Amaranth', sans-serif;
+      margin-left:350px;
       margin-bottom: 10%;
     }
     .roundTextArea{
@@ -585,7 +600,7 @@ hr {
     }
 	  
 	  .imgUserInCommetn{
-		  height:25%;
+		  height:40%;
 		  width:41%;
 	  }
 	  
@@ -639,7 +654,7 @@ label {
 }
 
 label::before {
-  content: '★';
+  content: "\2605";
   color: #c0c0c0;
   font-size: 30px;
   line-height: 30px;
