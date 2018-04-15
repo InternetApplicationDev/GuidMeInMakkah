@@ -69,6 +69,7 @@ function validateForm() {
 		})
 		return false;
 	}
+
 	// check complete required 'last name '
 	if (isEmpty(document.getElementById('l_name').value.trim())) {
 		swal({
@@ -78,6 +79,17 @@ function validateForm() {
 		})
 		return false;
 	}
+	
+	// check complete required 'password '
+	if (isEmpty(document.getElementById('password').value.trim())) {
+		swal({
+			type: 'error',
+			title: 'Oops...',
+			text: 'password is required!',
+		})
+		return false;
+	}
+
 	// check complete required 'E-mail'
 	if (isEmpty(document.getElementById('Email').value.trim())) {
 		swal({
@@ -98,15 +110,6 @@ function validateForm() {
 		return false;
 	}
 	
-	// check complete required 'password '
-	if (isEmpty(document.getElementById('password').value.trim())) {
-		swal({
-			type: 'error',
-			title: 'Oops...',
-			text: 'password is required!',
-		})
-		return false;
-	}
 
 	// check complete required 'Date'
 	if (isEmpty(document.getElementById('data_6').value.trim())) {
