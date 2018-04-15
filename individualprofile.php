@@ -285,22 +285,8 @@ $r = $bar->individualRestaurant(1);
 		<h1 id="addr">Address</h1>
 		<div class="addressMap">
 		<ul>
-		
-		
-		<?php
-          
-		  
-		  $idForTable=1;
-		  $idForchoosen=1;
-		  
-		  $dbc = @mysqli_connect ('localhost', 'root', '12345678');
-		  @mysqli_select_db ($dbc,'db');
-		  $query = "SELECT address FROM '$idForTable' WHERE id='$idForchoosen' ";
-		  
-		  
-					echo"<li class="addressMap_1"><image  src="images/adress/".$row['address']."/> </li>";
-				//height="45px" weight="45px"
-          ?>
+
+
 			<li class="addressMap_1"><image  src="images/map_icon.png" height="45px" weight="45px"/> </li>
 			<li><h4>Makkah</h4></li>
 		</ul>
