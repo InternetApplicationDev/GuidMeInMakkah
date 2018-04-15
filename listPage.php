@@ -13,11 +13,17 @@
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <li><a href="listPage.php">Cafe</a></li>
-      <li><a href="listPage.php">Restaurants</a></li>
-      <li><a href="listPage.php">Cafe & Restaurants</a></li>
+      <?php 
+          $idCoffee=1;
+          $idReturant=2;
+          $idBoth=3;
+      echo '<li><a href="listPage.php?id='.$idCoffee.'"> Cafe</a></li>'; 
+      echo '<li><a href="listPage.php?id='.$idReturant.'"> RESTAURANT</a></li>';
+      echo '<li><a href="listPage.php?id='.$idBoth.'">BOTH</a></li>';
+
+      ?>
      <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
-      <li class="navmenu-right"><a href="Login.php">Login</a></li>
+      <li class="navmenu-right"><a href="Signin.html">Login</a></li>
     </ul>
   </div>
   <div class ="header">
@@ -42,90 +48,74 @@ echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.p
   <hr>
   <form method="POST">
     <div class="container">
-	<!--SENSTIVE AREA DDDDONT TOUCH IT !!! -->
+  <!--SENSTIVE AREA DDDDONT TOUCH IT !!! -->
       <?php
-		  $idCoffee=1;
+
+      include 'DB.php';
+      $bar = new connection;
+      
+         $idCoffee=1;
           $idReturant=2;
           $idBoth=3;
-	  
-	  
-	  
-	  
-	   $count ;
-	  if ($_GET[id]==1)
+    
+    
+     $count ;
+    if ($_GET[id]==2)
 {
-	//LATER WE WILL TAKE THE NUMBER OF THE COFFEE'S STORD IN DATABSE WITH SELECT AND PUT THE NO IN COUNR VARIBLE BUT THIS IS INITIALLY
-	//SELECT TO TAKE THE NO OF COFFEE'S
-		$count = 7;
-		 $dbc = @mysqli_connect ('localhost', 'root', '12345678');
-	 @mysqli_select_db ($dbc,'db');
-
-	  for ($i = 0; $i <= $count; $i++) {
-
-		$query = "SELECT profile_pic FROM cafe WHERE cafe_id='$i' ";
-		if ($r = mysqli_query ($dbc, $query)) {
-		while ($row = mysqli_fetch_array ($r)) {
-
-			echo " <div class=\"box\">
-        <img src='images/coffeePic/".$row['profile_pic']."' alt=\"Avatar\" class=\"img\">
-        <div class=\"overlay\">";
-		
-		   echo '<a href="individualprofile.php?id='.$idCoffee.'" type=\"button\" value=\"Input Button\" class=\"text\" >Click </a>';
-       /* <a href=\"individualprofile.php?id='1'\"  type=\"button\" value=\"Input Button\" class=\"text\"> Click </a>*/
-       echo" </div>
-        </div>";}
-	  }}
+  //LATER WE WILL TAKE THE NUMBER OF THE COFFEE'S STORD IN DATABSE WITH SELECT AND PUT THE NO IN COUNR VARIBLE BUT THIS IS INITIALLY
+  //SELECT TO TAKE THE NO OF COFFEE'S
 
 
-
-
-}
-else if ($_GET[id]==2){ //if the user click to the restaurant
-
-	 $count = 7;
-	 $dbc = @mysqli_connect ('localhost', 'root', '12345678');
-	 @mysqli_select_db ($dbc,'db');
-
-	  for ($i = 0; $i <= $count; $i++) {
-
-		$query = "SELECT profile_pic FROM restaurants WHERE restaurant_id='$i' ";
-		if ($r = mysqli_query ($dbc, $query)) {
-		while ($row = mysqli_fetch_array ($r)) {
-
-			echo " <div class=\"box\">
-        <img src='images/resturantPics/".$row['profile_pic']."' alt=\"Avatar\" class=\"img\">
+  $r = $bar->retreve_restrants();
+for ($i = 0; $i < count($r); $i++) {
+     print"<div class=\"box\">
+        <img src=\"{$r[$i][1]}\" alt=\"Avatar\" class=\"img\">
         <div class=\"overlay\">
-        <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> Click </a>
+        <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> {$r[$i][0]} </a>
         </div>
-        </div>";}
-	  }}
-
+        </div>";  
+}
 
 
 
 }
+
+else if ($_GET[id]==1){ //if the user click to the restaurant
+
+   
+  $r = $bar->retreve_caffes();
+for ($i = 0; $i < count($r); $i++) {
+
+      print"<div class=\"box\">
+        <img src=\"{$r[$i][1]}\" alt=\"Avatar\" class=\"img\">
+        <div class=\"overlay\">
+        <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> {$r[$i][0]} </a>
+        </div>
+        </div>";
+   
+   
+}
+
+}
+
 else{
-	 $count = 7;
-	  $dbc = @mysqli_connect ('localhost', 'root', '12345678');
-	 @mysqli_select_db ($dbc,'db');
 
-	  for ($i = 0; $i <= $count; $i++) {
+  $r = $bar-> retreve_both();
+for ($i = 0; $i < count($r); $i++) {
 
-		$query = "SELECT profile_pic FROM cafeandrest WHERE cafeAndRest_id='$i' ";
-		if ($r = mysqli_query ($dbc, $query)) {
-		while ($row = mysqli_fetch_array ($r)) {
-
-			echo " <div class=\"box\">
-        <img src='images/coffeeAndReturantPic/".$row['profile_pic']."' alt=\"Avatar\" class=\"img\">
+      print"<div class=\"box\">
+        <img src=\"{$r[$i][1]}\" alt=\"Avatar\" class=\"img\">
         <div class=\"overlay\">
-        <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> Click </a>
+        <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> {$r[$i][0]} </a>
         </div>
-        </div>";}
-	  }}
+        </div>";
+   
 }
 
 
-        ?>
+}
+
+   ?>
 
 
 
