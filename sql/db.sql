@@ -2,8 +2,8 @@
 -- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Apr 15, 2018 at 03:21 PM
+-- Host: localhost:3306
+-- Generation Time: Apr 15, 2018 at 07:41 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.1.12
 
@@ -168,6 +168,20 @@ INSERT INTO `restaurants` (`restaurant_id`, `restaurant_name`, `restaurants_info
 (6, 'Kudo', 'kudokudo', 'kudo adress', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
 (7, 'Subway', 'subwaysubwaysubway', 'subway adress', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', '');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `User`
+--
+
+CREATE TABLE `User` (
+  `ID` int(100) NOT NULL,
+  `First_name` varchar(100) NOT NULL,
+  `Last_name` varchar(100) NOT NULL,
+  `E-mail` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Indexes for dumped tables
 --
@@ -219,6 +233,13 @@ ALTER TABLE `restaurants`
   ADD PRIMARY KEY (`restaurant_id`);
 
 --
+-- Indexes for table `User`
+--
+ALTER TABLE `User`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `E-mail` (`E-mail`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -257,6 +278,12 @@ ALTER TABLE `restaurantpics`
 --
 ALTER TABLE `restaurants`
   MODIFY `restaurant_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `User`
+--
+ALTER TABLE `User`
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
