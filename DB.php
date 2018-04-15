@@ -54,7 +54,7 @@ if (@mysqli_select_db ($dbc,'db')) {
 
 if($_POST['submit'] == 'Submit'){
 
-$query = "INSERT INTO Users (ID , First_name, Last_name, E-mail, Password) 
+$query = "INSERT INTO User (ID , First_name, Last_name, E-mail, Password) 
 
 VALUES (0, '{$_POST['Name']}', '{$_POST['l_name']}','{$_POST['Email']}', '{$_POST['password']}')";	
 
