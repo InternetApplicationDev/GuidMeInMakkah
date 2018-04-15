@@ -21,13 +21,12 @@ $bar = new connection;
 $r = $bar->individualRestaurant(1);
 print_r($r);
 
-
+/*
 for ($i = 0; $i < count($r); $i++) {
 
-print"
-<<<<<<< HEAD
+print
 <p> {$r[$i][o]}</p>
-=======
+
 
 >>>>>>> bf476772ebc36b336fd39884d2ba7729f2527a4d
 <p> {$r[$i][1]}</p>
@@ -40,7 +39,7 @@ print"
 <img src=\"{$r[$i][8]}\" alt=\"Avatar\">
 <img src=\"{$r[$i][9]}\" alt=\"Avatar\">";
 
-
+*/
 } ?>
 
 
