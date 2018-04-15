@@ -74,7 +74,7 @@ function validateForm() {
 		swal({
 			type: 'error',
 			title: 'Oops...',
-			text: 'password is required!',
+			text: 'Last Name is required!',
 		})
 		return false;
 	}
@@ -83,7 +83,7 @@ function validateForm() {
 		swal({
 			type: 'error',
 			title: 'Oops...',
-			text: 'password is required!',
+			text: 'Email is required!',
 		})
 		return false;
 	}
