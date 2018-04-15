@@ -24,7 +24,8 @@ print_r($r);
 
 for ($i = 0; $i < count($r); $i++) {
 
-print"<p> {$r[$i][o]}</p>
+print"
+
 <p> {$r[$i][1]}</p>
 <p> {$r[$i][2]}</p>
 <p> {$r[$i][3]}</p>
@@ -39,19 +40,15 @@ print"<p> {$r[$i][o]}</p>
 } ?>
 
 
-	 <div >
-		<table>
-			<tr>
-			  <td><image  src="images/Menu_1.jpg" id="Menus_food" height="580" width="400"/> </td>
-			  <td><image  src="images/Larrow.png" title= "previous"  class="Larrow" onclick="LarrowOnclick()" height="70px" weight="70px"/> </td>
-			  <td><image  src="images/Rarrow.png" title= "next"  class="Rarrow" onclick="RarrowOnclick()" height="70px" weight="70px"/> </td>
-			</tr>
-		</table>
-	</div>
+<!--
+<?php 
+
+	  print"<image  src=\"{$r[0][9]}\" id=\"Menus_food\" height=\"580\" width=\"400\"/> ";
+
+?>
 
 
-
-	<br><br><br><br></br>
+	<br><br><br><br></br> -->
 
 </body>
 </html>

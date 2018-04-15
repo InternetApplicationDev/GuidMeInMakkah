@@ -301,6 +301,8 @@ $r = $bar->individualRestaurant(1);
 	<br><br>
     <h1 id="menu">Menu</h1>
 
+    <!--
+
 	 <div >
 		<table>
 			<tr>
@@ -311,10 +313,21 @@ $r = $bar->individualRestaurant(1);
 		</table>
 	</div>
 
-
-
 	
 <br><br><br><br></br>	
+--> 
+
+
+<?php 
+
+
+$bar = new connection;
+
+$r = $bar->individualRestaurant(1);
+
+	  print"<image  src=\"{$r[0][9]}\" id=\"Menus_food\" height=\"580\" width=\"400\"/> ";
+
+?>
 
    
 <div class="containerComments">
