@@ -87,6 +87,7 @@ else if ($_GET[id]==1){ //if the user click to the restaurant
 for ($i = 0; $i < count($r); $i++) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		$query = "SELECT profile_pic FROM restaurants WHERE restaurant_id='$i' ";
 		if ($r = mysqli_query ($dbc, $query)) {
@@ -102,12 +103,14 @@ for ($i = 0; $i < count($r); $i++) {
         <div class=\"overlay\">
         <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> {$r[$i][0]} </a>
 
-=======
+
       print"<div class=\"box\">
         <img src=\"{$r[$i][1]}\" alt=\"Avatar\" class=\"img\">
         <div class=\"overlay\">
         <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> {$r[$i][0]} </a>
->>>>>>> bf476772ebc36b336fd39884d2ba7729f2527a4d
+        <img src=\"{$r[$i][1]}\" alt=\"Avatar\" class=\"img\">
+        <div class=\"overlay\">
+        <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> {$r[$i][0]} </a>
         </div>
         </div>";
    
