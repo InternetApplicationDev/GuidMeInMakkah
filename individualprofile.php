@@ -215,8 +215,9 @@ echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.p
   <hr>
   </br>
   <div class="fix_layout_center"> <!-- div name -->
-	  <div class="emptyBlackBackground"> 
-			
+
+
+	  <div class="emptyBlackBackground"> 		
 	  </div>
 	  <div class="imageIntro">
 		<img src="images/cafe-intro-backfound.jpg"  alt="image"/>
@@ -225,19 +226,41 @@ echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.p
    <!--<p id="textSliderImg">Wellcome To </br> ____ </br></p>-->
 <?php 
 
- include 'DB.php';
+include 'DB.php';
 $bar = new connection;
 $r = $bar->individualRestaurant(1);
      print " <p id=\"textSliderImg\">Wellcome To </br> ____ </br>
-     {$r[0][1]} </p>";
+     {$r[0][1]} </p>  </div>";
 
-		 ?>
+	if($r[0][7] == 1 ){
 
+	print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/1.png\" alt=\"image\"/>"; 
 
-	  </div>
+	}	
+	else if($r[0][7] == 2){
 
-	<img class="starsBlackBackground" id="star_0" src="images/stars rate/5.png" alt="image"/> 
-	 
+    print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/2.png\" alt=\"image\"/>"; 
+
+	} else if ($r[0][7] == 3){
+
+    print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/3.png\" alt=\"image\"/>"; 
+
+	} else if ($r[0][7] == 4){
+
+    print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/4.png\" alt=\"image\"/>"; 
+
+	} else if ($r[0][7] == 5){
+
+    print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/5.png\" alt=\"image\"/>"; 
+
+	} else {
+    print "<img class=\"starsBlackBackground\" id=\"star_0\" alt=\"image\"/>"; 
+
+	}
+ 
+?>
+
+</div> 
   </div> <!-- close div name-->
   
   
@@ -264,42 +287,49 @@ $r = $bar->individualRestaurant(1);
   </div> <!-- close sub bar -->
   
   
-  <div id="desci"></div> <!-- discription  STILL OPEN -->
+  <div id="desci"></div> <!-- discription  -->
   <h1>Description</h1>
   <?php 
- print "<p class=\"description\"> {$r[0][2]} </p>"; ?>
+ print "<p class=\"description\"> {$r[0][2]} </p>";
+  ?>
  
+<!--
+ <div class="imagesSliders"> 
 
- <div class="imagesSliders"> <!-- image slider -->
 		<img id="1" src="images/cafe-intro-backfound.jpg" border="0" alt="image"/>
 		<img id="2" src="images/Cafe-and-Restaurant-Background.jpg" border="0" alt="image"/>
 		<img id="3" src="images/Cafe-Background.jpg" border="0" alt="image"/> 
-    </div>	<!-- image slider -->
+    </div>	-->
+
+     <div class="imagesSliders"> 
+ <?php
+$bar = new connection;
+$r = $bar->restaurantPics(1);
+    
+for ($i = 0; $i < count($r); $i++) {
+    // print"<img src=\"{$r[$i][0]}\" alt=\"Avatar\" >"; 
+    print" <img id=\"1\" src=\"{$r[$i][0]}\" border=\"0\" alt=\"image\"/>"; 
+}
+    ?>
+    </div>
+
+
 
     	<img  src="images/unhreat.png" title= "favorite"  onclick="changeImageOnclick()" id="imgClickAndChange" class="image_heart"/>
    
    <div class="contenerOfAddress"> <!-- ADDERSS -->
+       <h1 id="addr">Address</h1>
 
+			<?php
+$bar = new connection;
 
+$r = $bar->individualRestaurant(1);
 
-		<h1 id="addr">Address</h1>
-		<div class="addressMap">
-		<ul>
+	  print"<image  src=\"{$r[0][3]}\"/> ";
 
-
-			<li class="addressMap_1"><image  src="images/map_icon.png" height="45px" weight="45px"/> </li>
-			<li><h4>Makkah</h4></li>
-		</ul>
-		
-		</div>
-		
-		<div class="imgAdrress">
-			<img  src="images/map_1.jpg" />
-		</div>
-		
+			?>	
 	</div>
 
-	
 	<br><br>
     <h1 id="menu">Menu</h1>
 
@@ -322,11 +352,8 @@ $r = $bar->individualRestaurant(1);
 
 <?php 
 
-
 $bar = new connection;
-
 $r = $bar->individualRestaurant(1);
-
 	  print"<image  src=\"{$r[0][9]}\" id=\"Menus_food\" height=\"580\" width=\"400\"/> ";
 
 ?>
@@ -394,7 +421,26 @@ $r = $bar->individualRestaurant(1);
 </div>
 
  
-<div class="footer">Footer</div>
+<div class="footer" id="theFooter">
+      <div class="footbar">
+        <ul class="footmenu">
+          <li><a href="#" onclick="showDevFunction()">Developers</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contactUs.html">Contact us</a></li>
+          <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
+        </ul>
+        <div id="developersNames">
+          <ul class="devNames">
+            <li>Ebtsam Alkhuzai &ensp; </li>
+            <li>Esraa Samkari </li>
+            <li>Joanna Assaeedi </li>
+            <li>Joud Alajlan </li>
+            <li>Rozan Alghamdi </li>
+            <li>Wafaa Alshaikhi </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>

@@ -17,40 +17,17 @@
 include 'DB.php';
 
 $bar = new connection;
-
-$r = $bar->individualRestaurant(1);
+$r = $bar->restaurantPics(1);
 print_r($r);
 
-/*
+
 for ($i = 0; $i < count($r); $i++) {
-
-print
-<p> {$r[$i][o]}</p>
-
-
->>>>>>> bf476772ebc36b336fd39884d2ba7729f2527a4d
-<p> {$r[$i][1]}</p>
-<p> {$r[$i][2]}</p>
-<img src=\"{$r[$i][3]}\" alt=\"Avatar\">
-<p> {$r[$i][4]}</p>
-<p> {$r[$i][5]}</p>
-<p> {$r[$i][6]}</p>
-<p> {$r[$i][7]}</p>
-<img src=\"{$r[$i][8]}\" alt=\"Avatar\">
-<img src=\"{$r[$i][9]}\" alt=\"Avatar\">";
-
-*/
-} ?>
-
-
-<?php 
-
-	  print"<image  src=\"{$r[0][9]}\" id=\"Menus_food\" height=\"580\" width=\"400\"/> ";
+    // print"<img src=\"{$r[$i][0]}\" alt=\"Avatar\" >"; 
+    print" <img id=\"1\" src=\"{$r[$i][0]}\" border=\"0\" alt=\"image\"/>"; 
+}
 
 ?>
 
-
-	<br><br><br><br></br> 
 
 </body>
 </html>

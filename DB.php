@@ -7,7 +7,7 @@ function connect()
  ini_set ('display_errors', 1);
 error_reporting (E_ALL & ~E_NOTICE); 
 
-if ($dbc = mysqli_connect ('localhost', 'root', '12345678'))  // connect
+if ($dbc = mysqli_connect ('localhost', 'root', 'root'))  // connect
 {		
 print '<p>Successfully connected to MySQL.</p>';
 
@@ -16,7 +16,7 @@ print '<p>Successfully connected to MySQL.</p>';
 }}
 
 function address($id ){
-$dbc = mysqli_connect ('localhost', 'root', '12345678');//conn
+$dbc = mysqli_connect ('localhost', 'root', 'root');//conn
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -162,7 +162,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 function individualRestaurant($id){
 
 
-$dbc = mysqli_connect ('localhost', 'root', '12345678');
+$dbc = mysqli_connect ('localhost', 'root', 'root');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -178,7 +178,7 @@ while ($row = mysqli_fetch_array ($r)) {
 
 }//end of if 
 return $arry;
-}
+} 
 
 else { // Query didn't run.	
 die ('<p>Could not retrieve the data because: <b>' . mysqli_error($dbc) . "</b>. The query was $query.</p>");} 
@@ -195,9 +195,7 @@ function restaurantPics($id){
 
 
 $dbc = mysqli_connect ('localhost', 'root', 'root');
-
 if (@mysqli_select_db ($dbc,'db')) {
-
 $query = "SELECT restaurantPic FROM restaurantpics WHERE restaurant_id = $id";
 if ($r = mysqli_query ($dbc, $query)) {
 	
