@@ -285,22 +285,8 @@ $r = $bar->individualRestaurant(1);
 		<h1 id="addr">Address</h1>
 		<div class="addressMap">
 		<ul>
-		
-		
-		<?php
-          
-		  
-		  $idForTable=1;
-		  $idForchoosen=1;
-		  
-		  $dbc = @mysqli_connect ('localhost', 'root', '12345678');
-		  @mysqli_select_db ($dbc,'db');
-		  $query = "SELECT address FROM '$idForTable' WHERE id='$idForchoosen' ";
-		  
-		  
-					echo"<li class="addressMap_1"><image  src="images/adress/".$row['address']."/> </li>";
-				//height="45px" weight="45px"
-          ?>
+
+
 			<li class="addressMap_1"><image  src="images/map_icon.png" height="45px" weight="45px"/> </li>
 			<li><h4>Makkah</h4></li>
 		</ul>
@@ -317,6 +303,8 @@ $r = $bar->individualRestaurant(1);
 	<br><br>
     <h1 id="menu">Menu</h1>
 
+    <!--
+
 	 <div >
 		<table>
 			<tr>
@@ -327,10 +315,21 @@ $r = $bar->individualRestaurant(1);
 		</table>
 	</div>
 
-
-
 	
 <br><br><br><br></br>	
+--> 
+
+
+<?php 
+
+
+$bar = new connection;
+
+$r = $bar->individualRestaurant(1);
+
+	  print"<image  src=\"{$r[0][9]}\" id=\"Menus_food\" height=\"580\" width=\"400\"/> ";
+
+?>
 
    
 <div class="containerComments">
