@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-
 function searchUserNameInIndexFile($userName,$pageName){
 	$data = file ('Files/filesCommentIndex.txt');
 	$fp = fopen('Files/filesCommentIndex.txt', "r");

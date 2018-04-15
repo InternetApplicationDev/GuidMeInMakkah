@@ -44,7 +44,13 @@ echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.p
     <div class="container">
 	<!--SENSTIVE AREA DDDDONT TOUCH IT !!! -->
       <?php
-
+		  $idCoffee=1;
+          $idReturant=2;
+          $idBoth=3;
+	  
+	  
+	  
+	  
 	   $count ;
 	  if ($_GET[id]==1)
 {
@@ -62,9 +68,11 @@ echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.p
 
 			echo " <div class=\"box\">
         <img src='images/coffeePic/".$row['profile_pic']."' alt=\"Avatar\" class=\"img\">
-        <div class=\"overlay\">
-        <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> Click </a>
-        </div>
+        <div class=\"overlay\">";
+		
+		   echo '<a href="individualprofile.php?id='.$idCoffee.'" type=\"button\" value=\"Input Button\" class=\"text\" >Click </a>';
+       /* <a href=\"individualprofile.php?id='1'\"  type=\"button\" value=\"Input Button\" class=\"text\"> Click </a>*/
+       echo" </div>
         </div>";}
 	  }}
 
