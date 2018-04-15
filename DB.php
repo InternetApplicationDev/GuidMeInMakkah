@@ -45,10 +45,27 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 } //end
 
 
+//insert new user func
+function InsertNewUser(){
 
+$dbc = mysqli_connect ('localhost', 'root', '');//conn
 
+if (@mysqli_select_db ($dbc,'db')) {
 
+if($_POST['submit'] == 'Submit'){
 
+$query = "INSERT INTO Users (ID , First_name, Last_name, E-mail, Password) 
+
+VALUES (0, '{$_POST['Name']}', '{$_POST['l_name']}','{$_POST['Email']}', '{$_POST['password']}')";	
+
+if (@mysqli_query ($dbc, $query)) {		
+print '<p>The User has been added.</p>';	
+}  else {		
+print "<p>Could not add the user because: <b>" . mysqli_error($dbc) . "</b>. The query was $query.</p>"; 	
+    }
+   }
+ }
+} //end
 
 
 function retreve_restrants(){
