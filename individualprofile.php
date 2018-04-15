@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+
+
 <?php
+
 function searchUserNameInIndexFile($userName,$pageName){
 	$data = file ('Files/filesCommentIndex.txt'); 
 	$fp = fopen('Files/filesCommentIndex.txt', "r");  
@@ -148,7 +151,7 @@ function addUserRate($userName,$userRate,$pageName){
 <html class="theBackGround">
 <head>
 
-  <link rel="stylesheet" type="text/css" href="CSS/style.css">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
   
   <script type = "text/javascript" src = "JS/javaScript.js"></script>
   <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -186,79 +189,99 @@ function addUserRate($userName,$userRate,$pageName){
   <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
       <li class="navmenu-right"><a href="Signin.html">Login</a></li>
     </ul>
-  </div>
-  <div class ="header">
-    <?php
-		if ($_GET[id]==1){
-			echo'COFFEE LIST ';
-			echo'<div class="logo"> <img class="img" src="images/icons/coffee-cup-black.png" alt="LOGO" > </div>';
-		}
-		else if ($_GET[id]==2){ //if the user click to the resturant
-		//change the pic to restaurant black
-			echo'RESTAURANTS LIST ';
-			echo'<div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>';
-		}
-		else{//if the user click to the both
-			echo'RESTAURANTS AND COFFEE LIST ';
-			//change the pic to both black
-			echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.png" alt="LOGO" > </div>';
-		}
-    ?>
-  </div>
+  </div> <!-- navbar -->
 
+  <div class ="header"> <!-- div header -->
+
+    <?php
+	  if ($_GET[id]==1){
+echo'COFFEE LIST ';
+echo'<div class="logo"> <img class="img" src="images/icons/coffee-cup-black.png" alt="LOGO" > </div>';
+}
+else if ($_GET[id]==2){ //if the user click to the resturant
+//change the pic to restaurant black
+	echo'RESTAURANTS LIST ';
+	echo'<div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>';
+}
+else{//if the user click to the both
+echo'RESTAURANTS AND COFFEE LIST ';
+//change the pic to both black
+echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.png" alt="LOGO" > </div>';
+}
+    ?>
+   
+  </div> <!-- header --> 
 
   <hr>
   </br>
-  <div class="fix_layout_center">
-	  <div class="emptyBlackBackground">
+  <div class="fix_layout_center"> <!-- div name -->
+	  <div class="emptyBlackBackground"> 
 			
 	  </div>
 	  <div class="imageIntro">
 		<img src="images/cafe-intro-backfound.jpg"  alt="image"/>
 	  </div>
 	  <div class="textBlackBackground">
-		<p id="textSliderImg">Wellcome To </br> ____ </br> Coffee shop name</p>
+   <!--<p id="textSliderImg">Wellcome To </br> ____ </br></p>-->
+<?php 
+
+ include 'DB.php';
+$bar = new connection;
+$r = $bar->individualRestaurant(1);
+     print " <p id=\"textSliderImg\">Wellcome To </br> ____ </br>
+     {$r[0][1]} </p>";
+
+		 ?>
+
+
 	  </div>
-	  <img class="starsBlackBackground" id="star_0" src="images/stars rate/2.png" alt="image"/>
+
+	<img class="starsBlackBackground" id="star_0" src="images/stars rate/5.png" alt="image"/> 
 	 
-  </div>
+  </div> <!-- close div name-->
   
   
   </br>
   <p class="pathThisPageAsText"> home  > list > coffee shope name </p>
  <hr><hr>
- <div class="contenerTheRestOfcontint">
+
+ <div class="contenerTheRestOfcontint"> <!-- content STILL OPEN -->
+
   <table class="tableButtonReservation">
 	<tr>
 	<th>&nbsp &nbsp  <font color="white">150</font> <font color="yellow">RS</font></th>
-	<th> <button class="buttonReservation" onclick="location.href='Registration.html'">Reservation</button> </th>
+	<th> <button class="buttonReservation">Reservation</button> </th>
 	</tr>
   </table>
   <br>
-  <div class="subBar">
+  <div class="subBar"> <!-- subbar -->
     <ul class="navmenu">
       <li><a href="#desci">Description </a></li>
 	  <li><a href="#addr"> Address </a></li>
       <li><a href="#menu"> Menu </a></li>
       <li><a href="#comm"> Comment </a></li>
     </ul>
-  </div>
+  </div> <!-- close sub bar -->
   
   
-  <div id="desci"></div>
+  <div id="desci"></div> <!-- discription  STILL OPEN -->
   <h1>Description</h1>
-  <textarea class="description" rows="8" cols="50">
-	At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
-   </textarea>
-	<div class="imagesSliders">
+  <?php 
+ print "<p class=\"description\"> {$r[0][2]} </p>"; ?>
+ 
+
+ <div class="imagesSliders"> <!-- image slider -->
 		<img id="1" src="images/cafe-intro-backfound.jpg" border="0" alt="image"/>
 		<img id="2" src="images/Cafe-and-Restaurant-Background.jpg" border="0" alt="image"/>
-		<img id="3" src="images/Cafe-Background.jpg" border="0" alt="image"/>
-    </div>
-	
-	<img  src="images/unhreat.png" title= "favorite"  onclick="changeImageOnclick()" id="imgClickAndChange" class="image_heart"/>
+		<img id="3" src="images/Cafe-Background.jpg" border="0" alt="image"/> 
+    </div>	<!-- image slider -->
+
+    	<img  src="images/unhreat.png" title= "favorite"  onclick="changeImageOnclick()" id="imgClickAndChange" class="image_heart"/>
    
-   <div class="contenerOfAddress">
+   <div class="contenerOfAddress"> <!-- ADDERSS -->
+
+
+
 		<h1 id="addr">Address</h1>
 		<div class="addressMap">
 		<ul>
@@ -289,11 +312,12 @@ function addUserRate($userName,$userRate,$pageName){
 		</div>
 		
 	</div>
-	
+
 	
 	<br><br>
     <h1 id="menu">Menu</h1>
-	<div >
+
+	 <div >
 		<table>
 			<tr>
 			  <td><image  src="images/Menu_1.jpg" id="Menus_food" height="580" width="400"/> </td>
@@ -302,14 +326,11 @@ function addUserRate($userName,$userRate,$pageName){
 			</tr>
 		</table>
 	</div>
+
+
+
 	
-	<br><br><br><br><br>
-	
-	
-	
-	
-	<br><br><br><br></br>
-  </div>
+<br><br><br><br></br>	
 
    
 <div class="containerComments">
