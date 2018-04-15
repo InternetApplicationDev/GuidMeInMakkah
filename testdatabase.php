@@ -24,7 +24,8 @@ print_r($r);
 
 for ($i = 0; $i < count($r); $i++) {
 
-print"<p> {$r[$i][o]}</p>
+print"
+<p> {$r[$i][o]}</p>
 <p> {$r[$i][1]}</p>
 <p> {$r[$i][2]}</p>
 <p> {$r[$i][3]}</p>
