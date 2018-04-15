@@ -86,7 +86,28 @@ else if ($_GET[id]==1){ //if the user click to the restaurant
   $r = $bar->retreve_caffes();
 for ($i = 0; $i < count($r); $i++) {
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+		$query = "SELECT profile_pic FROM restaurants WHERE restaurant_id='$i' ";
+		if ($r = mysqli_query ($dbc, $query)) {
+		while ($row = mysqli_fetch_array ($r)) {
+
+			echo " <div class=\"box\">
+        <img src='images/resturantPics/".$row['profile_pic']."' alt=\"Avatar\" class=\"img\"  <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> </a>>
+        <div class=\"overlay\">";
+       
+
+      print "<div class=\"box\">
+        <img src=\"{$r[$i][1]}\" alt=\"Avatar\" class=\"img\">
+        <div class=\"overlay\">
+        <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> {$r[$i][0]} </a>
+
+
       print"<div class=\"box\">
+        <img src=\"{$r[$i][1]}\" alt=\"Avatar\" class=\"img\">
+        <div class=\"overlay\">
+        <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> {$r[$i][0]} </a>
         <img src=\"{$r[$i][1]}\" alt=\"Avatar\" class=\"img\">
         <div class=\"overlay\">
         <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> {$r[$i][0]} </a>
