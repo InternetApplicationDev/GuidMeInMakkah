@@ -60,7 +60,7 @@ function numOfRating(){
 ///////////////////////////////////////////////////	RESERVATION FORM ///////////////////////////////////////////////////
 
 function validateForm() {
-	// check complete required 'Name'
+	// check complete required 'Name '
 	if (isEmpty(document.getElementById('Name').value.trim())) {
 		swal({
 			type: 'error',
@@ -98,7 +98,7 @@ function validateForm() {
 		return false;
 	}
 	
-	// check complete required 'password'
+	// check complete required 'password '
 	if (isEmpty(document.getElementById('password').value.trim())) {
 		swal({
 			type: 'error',
