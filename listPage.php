@@ -93,9 +93,9 @@ else if ($_GET[id]==2){ //if the user click to the restaurant
 		while ($row = mysqli_fetch_array ($r)) {
 
 			echo " <div class=\"box\">
-        <img src='images/resturantPics/".$row['profile_pic']."' alt=\"Avatar\" class=\"img\">
+        <img src='images/resturantPics/".$row['profile_pic']."' alt=\"Avatar\" class=\"img\"  <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> </a>>
         <div class=\"overlay\">
-        <a href=\"individualprofile.php\"  type=\"button\" value=\"Input Button\" class=\"text\"> Click </a>
+       
         </div>
         </div>";}
 	  }}
