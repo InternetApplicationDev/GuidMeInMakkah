@@ -17,7 +17,7 @@
       <li><a href="listPage.php">Restaurants</a></li>
       <li><a href="listPage.php">Cafe & Restaurants</a></li>
      <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
-      <li class="navmenu-right"><a href="Signin.html">Login</a></li>
+      <li class="navmenu-right"><a href="Login.php">Login</a></li>
     </ul>
   </div>
   <div class ="header">

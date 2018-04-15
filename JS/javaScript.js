@@ -15,12 +15,12 @@ var heart ="unheart";
 
 function changeImageOnclick() {
 	// add to database as favor page
-	if (heart == "unheart") 
+	if (heart == "unheart")
 	{
 		document.getElementById("imgClickAndChange").src = "images/hreat.png";
 		heart="heart";
 	}
-	else 
+	else
 	{
 		document.getElementById("imgClickAndChange").src = "images/unhreat.png";
 		heart="unheart";
@@ -29,8 +29,8 @@ function changeImageOnclick() {
 
 function LarrowOnclick() {
 	// chack alt to change img to previos img
-	 // check if it is first img or not
-	 document.getElementById("Menus_food").src = "images/Menu_0.jpg";
+	// check if it is first img or not
+	document.getElementById("Menus_food").src = "images/Menu_0.jpg";
 }
 
 
@@ -38,7 +38,7 @@ function RarrowOnclick() {
 	// chack alt to change img to next img
 	// check if it is last img or not
 	document.getElementById("Menus_food").src = "images/Menu_2.jpg";
-	
+
 }
 
 function checkTA(){
@@ -132,6 +132,26 @@ function showDevFunction() {
 	}
 }
 
+/////////////////////////////////////////////////// log in ///////////////////////////////////////////////////
+function loginAlert(loginState){
+	if(loginState == 1){
+		swal({
+			type: 'success',
+			title: 'You Have Been Logged In sccessfully',
+			showConfirmButton: false,
+			timer: 1500,
+		});
+		alert(loginState);
+	}
+	else{
+		swal({
+			type: 'error',
+			title: 'Oops...',
+			text: 'Incorrect email or password',
+		});
+		alert(loginState);
+	}
+}
 /////////////////////////////////////////////////// footer siteMap ///////////////////////////////////////////////////
 function showSiteMap(){
 	swal({

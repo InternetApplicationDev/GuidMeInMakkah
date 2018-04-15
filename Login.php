@@ -1,14 +1,33 @@
+<?php
+$loginState;
+if (isset($_POST['email'])) {
+  $email = $_POST['email'];
+  $pass = $_POST['password'];
+  $conn = mysqli_connect("localhost","root","12345678");
+  mysqli_select_db($conn,"testingtesting");
+  if (mysqli_num_rows(mysqli_query($conn,"SELECT * From admin_login where admin_name = '$email' AND admin_password ='$pass'"))) {
+    $result = mysqli_query($conn,"SELECT * From admin_login where admin_name = '$email' AND admin_password ='$pass'");
+    while ($row = mysqli_fetch_array($result)) {
+      // setcookie("theuser",$row['admin_id'],time()+60*60*24*30);
+    }
+    $loginState = 1;
+  }else {
+    $loginState = 0;
+  }
+  mysqli_close($conn);
+}
+?>
 <!DOCTYPE html>
 <html class="theBackGround">
 <head>
-  <title>SigninForm</title>
+  <title>Log in</title>
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script type="text/javascript" src= "JS/javaScript.js"></script>
   <!-- Sweet Alert  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
   <!-- pace preloader -->
- <script src="JS/pace.js"></script>
+  <script src="JS/pace.js"></script>
 </head>
 <body class="centerPage">
   <div class="navbar">
@@ -17,37 +36,36 @@
       <li><a href="#Coffe">Cafe</a></li>
       <li><a href="#Restaurants">Restaurants</a></li>
       <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
-       <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
-      <li class="navmenu-right"><a href="Signin.html">Login</a></li>
+      <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
+      <li class="navmenu-right"><a href="Login.php">Login</a></li>
     </ul>
   </div>
 
   <div class ="header">
-    Sign In
+    Log In
 
     <div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>
   </div>
   <hr>
 
-  <form method="post" action="Signin.html" onSubmit="return validateForm();">
+  <form method="post" id="LoginForm" onSubmit="return validateForm();">
     <div class="container">
 
-     <div>
+      <div>
 
         <div class= "register1"> E-mail : <span style="color: red;"> *</span><br/>
-          <input type="text" id="email" name="email"  value="example@xxxxx.com" class="roundTextArea"/>
+          <input type="text" id="email" name="email" class="roundTextArea"/>
         </div>
         <br/>
         <div class= "register1"> Password :<span style="color: red;"> *</span><br/>
-          <input type="text" id="password" name="password"class="roundTextArea"/>
+          <input type="password" id="password" name="password"class="roundTextArea"/>
         </div>
 
-         <br/>
-        <div class= "regesterSubmit"><input name="skip_Submit" value="Submit" type="submit" class="submitbutton"/>
-          <!-- <input name="form" value="Form to Email" type="submit" /> -->
+        <br/>
+        <div class= "regesterSubmit"><input name="skip_Submit" value="Submit" type="submit" class="submitbutton" onclick="loginAlert(<?php echo $loginState;?>)"/>
         </div>
-       </div>
       </div>
+    </div>
   </form>
   <div class="footer" id="theFooter">
     <div class="footbar">
