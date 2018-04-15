@@ -28,7 +28,7 @@ print"
 
 <p> {$r[$i][1]}</p>
 <p> {$r[$i][2]}</p>
-<p> {$r[$i][3]}</p>
+<img src=\"{$r[$i][3]}\" alt=\"Avatar\">
 <p> {$r[$i][4]}</p>
 <p> {$r[$i][5]}</p>
 <p> {$r[$i][6]}</p>
@@ -40,7 +40,6 @@ print"
 } ?>
 
 
-<!--
 <?php 
 
 	  print"<image  src=\"{$r[0][9]}\" id=\"Menus_food\" height=\"580\" width=\"400\"/> ";
@@ -48,7 +47,7 @@ print"
 ?>
 
 
-	<br><br><br><br></br> -->
+	<br><br><br><br></br> 
 
 </body>
 </html>
