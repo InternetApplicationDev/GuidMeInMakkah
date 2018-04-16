@@ -7,7 +7,7 @@ function connect()
  ini_set ('display_errors', 1);
 error_reporting (E_ALL & ~E_NOTICE); 
 
-if ($dbc = mysqli_connect ('localhost', 'root', ''))  // connect
+if ($dbc = mysqli_connect ('localhost', 'root', '12345678'))  // connect
 {		
 print '<p>Successfully connected to MySQL.</p>';
 
@@ -16,7 +16,7 @@ print '<p>Successfully connected to MySQL.</p>';
 }}
 
 function address($id ){
-$dbc = mysqli_connect ('localhost', 'root', '');//conn
+$dbc = mysqli_connect ('localhost', 'root', '12345678');//conn
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -69,11 +69,7 @@ print "<p>Could not add the user because: <b>" . mysqli_error($dbc) . "</b>. The
 
 
 function retreve_restrants(){
-<<<<<<< HEAD
-$dbc = mysqli_connect ('localhost', 'root', '');
-=======
 $dbc = mysqli_connect ('localhost', 'root', '12345678');
->>>>>>> 42b5bffef3b60ebb0a2b2b647857abd6be784b50
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -103,11 +99,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 
 
 function retreve_caffes(){
-<<<<<<< HEAD
-$dbc = mysqli_connect ('localhost', 'root', '');
-=======
 $dbc = mysqli_connect ('localhost', 'root', '12345678');
->>>>>>> 42b5bffef3b60ebb0a2b2b647857abd6be784b50
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -138,11 +130,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 
 
 function retreve_both(){
-<<<<<<< HEAD
-$dbc = mysqli_connect ('localhost', 'root', '');
-=======
 $dbc = mysqli_connect ('localhost', 'root', '12345678');
->>>>>>> 42b5bffef3b60ebb0a2b2b647857abd6be784b50
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -174,7 +162,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 function individualRestaurant($className,$id){
 
 
-$dbc = mysqli_connect ('localhost', 'root', '');
+$dbc = mysqli_connect ('localhost', 'root', '12345678');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -214,10 +202,6 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 
 function restaurantPics($className,$id){
 
-<<<<<<< HEAD
-$dbc = mysqli_connect ('localhost', 'root', '');
-=======
->>>>>>> 42b5bffef3b60ebb0a2b2b647857abd6be784b50
 
 $dbc = mysqli_connect ('localhost', 'root', '12345678');
 if (@mysqli_select_db ($dbc,'db')) {
