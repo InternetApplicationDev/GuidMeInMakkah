@@ -46,15 +46,11 @@ while($getPicture = mysqli_fetch_array($getPictureSql)){
     </ul>
   </div>
   <div class="card">
-<<<<<<< HEAD
     <img src="<?php echo $picturePath; ?>" alt="profile picture" style="width:100%">
     <h1>Name</h1>
-=======
-    <img src="images/pesonal icon.jpg" alt="profile picture" style="width:100%">
     <?php
     print"<h1>{$_POST['Name']} {$_POST['l_name']} </h1>";
     ?>
->>>>>>> 960de038ae1348ef6f514b7c59156e2915284771
     <p>Bio</p>
     <p><button>Contact</button></p>
   </div>
