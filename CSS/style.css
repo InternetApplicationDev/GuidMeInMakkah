@@ -258,13 +258,20 @@ hr {
       font-variant: normal;
       font-size: 50;
       float:left;
-      margin-left:400px;
+      margin-left:450px;
       margin-top:6px;
       padding-bottom: 50px;
       padding-right: 23px;
       padding-top: 20px;
     }
 
+	.contactLable {
+      font-family: 'Amaranth', sans-serif;
+      font-variant: normal;
+      font-size: 30;
+      font-weight: bold;
+      padding-bottom: 20px;
+	}
 
     .contactUs li{
       list-style: none;
@@ -274,16 +281,29 @@ hr {
       padding-bottom:20px;
       color: black;
     }
-
-
-    .pic {
-      width: 50ps;
-      height: 50px;
-      margin-left: 50px;
-      margin-bottom: 10px;
-
+	 .contactSubmit{
+      font-family: 'Amaranth', sans-serif;
+      margin-left: 23%;
+      margin-bottom: 20%;
     }
-
+	 .submitbutton2{
+      border-radius: 18px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 5px;
+      color: #D38A8A;
+      border: 1px solid black;
+	  width: 100px;
+	  height:30px;
+	  margin-top: 6px;
+    }
+    .pic {
+      width: 30ps;
+      height: 30px;
+      margin-left: 30px;
+      margin-bottom: 5px;
+    }
+	
+	
     /*************  RESERVATION  *****************/
 
     .reserve{
@@ -349,12 +369,13 @@ hr {
       border-radius: 10px;
       border: 5px solid transparent;
     }
-    .submitbutton{
+   .submitbutton{
       border-radius: 18px;
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
       color: #D38A8A;
       border: 1px solid black;
+	  position: relative;
     }
     /********** ABOUT *********/
     .about {
