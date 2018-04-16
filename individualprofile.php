@@ -10,9 +10,9 @@ if(isset($_GET['Logout'])){
 <?php
 
 function searchUserNameInIndexFile($userName,$pageName){
-	$data = file ('Files/filesCommentIndex.txt'); 
-	$fp = fopen('Files/filesCommentIndex.txt', "r");  
-	
+	$data = file ('Files/filesCommentIndex.txt');
+	$fp = fopen('Files/filesCommentIndex.txt', "r");
+
 	$n = count ($data);
 	$result=0; // 0-> no found user and page name
 				// 1-> found user name
@@ -21,7 +21,7 @@ function searchUserNameInIndexFile($userName,$pageName){
 	$tmpName=""; // find match between user name and useres names in file
 	$tmpPage=""; // find match between page name and pages names in file
 	$tmpLengthOfFoundName; // to calculat the position of page names
-	
+
 	// search user name from file, if it found change var result to 1
 	for ($i = 0; $i < $n; $i++) { // search line by line
 		for ($coun = 1; $coun < strlen($data[$i]); $coun++){ // search char by char in the current line
@@ -30,28 +30,28 @@ function searchUserNameInIndexFile($userName,$pageName){
 				$tmpLengthOfFoundName = strlen(substr( $data[$i],0,++$coun)); // sum the len of current user name
 				break; // we do not need to search the rest of the current string
 			}
-			else 
+			else
 				$tmpName .=$tmpChar; // to make full user name from char pices
-			
+
 		}
-		
+
 		if($tmpName == $userName){ // found user name from file
 			$tmpFilePointer+=$tmpLengthOfFoundName; // calculat the postion of page name for this user
 			$result=1; // found user name
 			break;
 		}
-		
+
 		$tmpFilePointer=$tmpFilePointer+strlen($data[$i]); // calculat the postion by adding len of previous line
 		$tmpName=""; // to make another user name from file
-	} 
-	
-	// if found user name than go search for page name 
+	}
+
+	// if found user name than go search for page name
 	 //else return result value 0 to add user name and page name to file
 	if ($result==1){
 		// change current position
 		fseek($fp,$tmpFilePointer);
 		$pagesNames = fgets($fp);
-		
+
 		for ($i = 1; $i < strlen($pagesNames); $i++){
 			$tmpChar = substr( $pagesNames, $i, 1 ); // get current char
 			$tmpFilePointer++;
@@ -64,14 +64,14 @@ function searchUserNameInIndexFile($userName,$pageName){
 			}else if($tmpChar == ','){
 				$tmpPage ="";
 				continue;
-			}else 
+			}else
 				$tmpPage .=$tmpChar; // to make full page name from char pices
 		} // end for
 	}
-	
-	
+
+
 	fclose($fp);
-	
+
 	if($result==1){ // found just user name without page name,so add page name to this user
 		// copy the rest of file content
 		$fp = fopen("Files/filesCommentIndex.txt", "r");
@@ -81,7 +81,7 @@ function searchUserNameInIndexFile($userName,$pageName){
 			$tmpReminderOfFileString .= fgets($fp);
 		}
 		fclose($fp);
-		
+
 		// add new page name and appand the copy rest after this page name
 		$fp = fopen('Files/filesCommentIndex.txt', 'rw+');
 		fseek($fp,$tmpFilePointer);
@@ -96,14 +96,14 @@ function searchUserNameInIndexFile($userName,$pageName){
 		return $result;
 	}
 
-return $result;	
+return $result;
 }
 
 function addUserNameComment($userName,$comments,$pageName){
 	$fp = fopen('Files/Comments/'.$pageName.'.txt', 'ab');
-	
+
 	$userComment = str_replace("\r\n", "<br>", $comments);
-		
+
 	fwrite($fp,"[".$userName."](".$userComment.")\n");
 	fclose($fp);
 }
@@ -117,25 +117,25 @@ function retrieveUsersComments($userNameWithHisComment){
 		if($tmpChar == ']'){ // end name
 			break; // we do not need to search the rest of the current string
 		}
-		else 
+		else
 			$userName .=$tmpChar; // to make full user name from char pices
 	}
-	
+
 	$i+= 2;
 	for ( ;$i < strlen($userNameWithHisComment); $i++){
 		$tmpChar = substr( $userNameWithHisComment, $i, 1 ); // get current char
 		if($tmpChar == ')'){ // end name
 			break; // we do not need to search the rest of the current string
 		}
-		else 
+		else
 			$userComment .=$tmpChar; // to make full user name from char pices
 	}
-	
+
 	return array($userName,$userComment);
 }
 
 function addUserRate($userName,$userRate,$pageName){
-	
+
 }
 
 
@@ -162,15 +162,15 @@ function addUserRate($userName,$userRate,$pageName){
 	  function Slider(){
 		$(".imagesSliders #0").show("fade",400);
 		$(".imagesSliders #0").delay(5500).hide("slide",{direction:'left'},400);
-		
+
 		var sc = $(".imagesSliders img").size();
 		--sc;
 		var count = 1;
-		 
+
 		setInterval(function (){
 			$(".imagesSliders #"+count).show("slide",{direction:'right'},400);
 			$(".imagesSliders #"+count).delay(5500).hide("slide",{direction:'left'},400);
-	  
+
 			if(count == sc){
 				count = 0;
 			}else{
@@ -195,7 +195,7 @@ function addUserRate($userName,$userRate,$pageName){
 				<li class="navmenu-right"><a href="?Logout">Logout</a></li>
 			<?php }else{ ?>
 				<li class="navmenu-right"><a href="Login.php">Login</a></li>
-				<li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
+				<li class="navmenu-right"><a href="Registration.php">Sign Up</a></li>
 			<?php } ?>
 		</ul>
 	</div> <!-- navbar -->
@@ -217,18 +217,18 @@ function addUserRate($userName,$userRate,$pageName){
 		echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.png" alt="LOGO" > </div>';
 }
     ?>
-   
-  </div> <!-- header --> 
+
+  </div> <!-- header -->
 
   <hr><br>
-  
+
 	<div class="fix_layout_center"> <!-- div name -->
 	<div class="emptyBlackBackground"></div>
 	<div class="imageIntro">
 		<img src="images/cafe-intro-backfound.jpg"  alt="image"/>
 	</div>
 	<div class="textBlackBackground">
-	   <?php 
+	   <?php
 
 	include 'DB.php';
 	$bar = new connection;
@@ -237,39 +237,39 @@ function addUserRate($userName,$userRate,$pageName){
 		 {$_GET[className]} </p>  </div>";
 
 		if ($r[0][7] == 0 ){
-		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/0.png\" alt=\"image\"/>"; 
-		}	
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/0.png\" alt=\"image\"/>";
+		}
 		else if($r[0][7] == 1 ){
 
-		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/1.png\" alt=\"image\"/>"; 
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/1.png\" alt=\"image\"/>";
 
-		}	
+		}
 		else if($r[0][7] == 2){
 
-		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/2.png\" alt=\"image\"/>"; 
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/2.png\" alt=\"image\"/>";
 
 		} else if ($r[0][7] == 3){
 
-		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/3.png\" alt=\"image\"/>"; 
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/3.png\" alt=\"image\"/>";
 
 		} else if ($r[0][7] == 4){
 
-		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/4.png\" alt=\"image\"/>"; 
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/4.png\" alt=\"image\"/>";
 
 		} else if ($r[0][7] == 5){
 
-		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/5.png\" alt=\"image\"/>"; 
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/5.png\" alt=\"image\"/>";
 
 		} else {
-		print "<img class=\"starsBlackBackground\" id=\"star_0\" alt=\"image\"/>"; 
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" alt=\"image\"/>";
 
 		}
-	 
+
 	?>
-	</div> 
-	
+	</div>
+
 </div> <!-- close div name-->
-   
+
   <br><hr><hr>
 
 	<div class="contenerTheRestOfcontint"> <!-- content STILL OPEN -->
@@ -280,7 +280,7 @@ function addUserRate($userName,$userRate,$pageName){
 			<th> <button class="buttonReservation" onclick="window.location = 'reservationForm.html'">Reservation</button> </th>
 			</tr>
 		</table>
-		 
+
 		<br>
 
 	<div class="subBar"> <!-- subbar -->
@@ -291,29 +291,29 @@ function addUserRate($userName,$userRate,$pageName){
       <li><a href="#comm"> Comment </a></li>
     </ul>
   </div> <!-- close sub bar -->
-  
-  
+
+
   <div id="desci"> <!-- discription  -->
 	  <h1>Description</h1>
-	  <?php 
+	  <?php
 	 print "<p class=\"description\"> {$r[0][2]} </p>";
 	  ?>
  </div>
- 
- 
 
-    <div class="imagesSliders"> 
+
+
+    <div class="imagesSliders">
 		<?php
 			$bar = new connection;
 			$r = $bar->restaurantPics($_GET[className],$_GET[id]);
 
 			for ($i = 0; $i < count($r); $i++) {
-				print" <img id=\"{$i}\" src=\"{$r[$i][0]}\" border=\"0\" alt=\"image\"/>"; 
+				print" <img id=\"{$i}\" src=\"{$r[$i][0]}\" border=\"0\" alt=\"image\"/>";
 			}
 		?>
     </div>
 	<img  src="images/unhreat.png" title= "favorite"  onclick="changeImageOnclick()" id="imgClickAndChange" class="image_heart"/>
-   
+
     <div class="contenerOfAddress"> <!-- ADDERSS -->
        <h1 id="addr">Address</h1>
 			<?php
@@ -323,12 +323,12 @@ function addUserRate($userName,$userRate,$pageName){
 
 				print"<a href='https://www.google.com/maps/@21.4406911,39.8099034,15z'><image  src=\"{$r[0][3]}\"/></a> ";
 
-			?>	
+			?>
 	</div>
 
 	<br><br>
     <h1 id="menu">Menu</h1>
-	<?php 
+	<?php
 
 $bar = new connection;
 $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
@@ -336,11 +336,11 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 
 ?>
 	<br><br><br><br><br><br><br><br><hr><br><br><br>
-   
+
 <div class="containerComments" id="comm">
 	<!--comments sections-->
 	<div class="content">
-		
+
 		 <h1>Comment</h1>
       <!--
       if(has been log in)
@@ -375,11 +375,11 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
     </table>
   </form>
   <br> <br> <br><hr><hr><br> <br>
-			
+
 		<div class="Comment">
 		<?php
 		// how many comments of this page from file and prinit
-		$data = file ('Files/Comments/page name.txt'); 
+		$data = file ('Files/Comments/page name.txt');
 		$n = count ($data);
 
 		for ( $j=0; $j < $n; $j++){
@@ -396,11 +396,11 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 		?>
 
 		</div>
-		
+
 	</div>
 </div>
 
- 
+
 <div class="footer" id="theFooter">
       <div class="footbar">
         <ul class="footmenu">

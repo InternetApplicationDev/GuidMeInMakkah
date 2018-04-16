@@ -30,7 +30,7 @@ if(isset($_GET['Logout'])){
         <li class="navmenu-right"><a href="?Logout">Logout</a></li>
       <?php }else{ ?>
         <li class="navmenu-right"><a href="Login.php">Login</a></li>
-        <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
+        <li class="navmenu-right"><a href="Registration.php">Sign Up</a></li>
       <?php } ?>
     </ul>
   </div>
