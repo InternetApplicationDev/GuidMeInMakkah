@@ -33,7 +33,7 @@ class connection {
       } //end
       //insert new user func
       function InsertNewUser(){
-        $dbc = mysqli_connect ('localhost', 'root', '12345678');//conn
+        $dbc = mysqli_connect ('localhost', 'root', '1234');//conn
         if (@mysqli_select_db ($dbc,'db')) {
           if($_POST['submit'] == 'Submit'){
             $query = "INSERT INTO User (ID , First_name, Last_name, E-mail, Password)
@@ -47,7 +47,7 @@ class connection {
         }
       } //end
       function retreve_restrants(){
-        $dbc = mysqli_connect ('localhost', 'root', '12345678');
+        $dbc = mysqli_connect ('localhost', 'root', '1234');
         if (@mysqli_select_db ($dbc,'db')) {
           $query = "SELECT restaurant_name, profile_pic FROM restaurants";
           if ($r = mysqli_query ($dbc, $query)) {
@@ -68,7 +68,7 @@ class connection {
           }
         }//end of fun
         function retreve_caffes(){
-          $dbc = mysqli_connect ('localhost', 'root', '12345678');
+          $dbc = mysqli_connect ('localhost', 'root', '1234');
           if (@mysqli_select_db ($dbc,'db')) {
             $query = "SELECT cafe_name, profile_pic FROM cafe";
             if ($r = mysqli_query ($dbc, $query)) {
@@ -89,7 +89,7 @@ class connection {
             }
           }//end of fun
           function retreve_both(){
-            $dbc = mysqli_connect ('localhost', 'root', '12345678');
+            $dbc = mysqli_connect ('localhost', 'root', '1234');
             if (@mysqli_select_db ($dbc,'db')) {
               $query = "SELECT cafeAndRest_name, profile_pic FROM cafeandrest";
               if ($r = mysqli_query ($dbc, $query)) {
@@ -110,7 +110,7 @@ class connection {
               }
             }
             function individualRestaurant($className,$id){
-              $dbc = mysqli_connect ('localhost', 'root', '12345678');
+              $dbc = mysqli_connect ('localhost', 'root', '1234');
               if (@mysqli_select_db ($dbc,'db')) {
                 if($id == 1)
                 $query = "SELECT * FROM cafe WHERE cafe_name = \"{$className}\"";
@@ -139,7 +139,7 @@ class connection {
                 }
               }//end of fun
               function restaurantPics($className,$id){
-                $dbc = mysqli_connect ('localhost', 'root', '12345678');
+                $dbc = mysqli_connect ('localhost', 'root', '1234');
                 if (@mysqli_select_db ($dbc,'db')) {
 
                   if($id == 1)
