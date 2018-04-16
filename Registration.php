@@ -72,7 +72,7 @@ if(isset($_GET['Logout'])){
           <input type="password" id="cpassword" name="cpassword" class="roundTextArea"/>
         </div>
         <br/>
-        <div class= "regesterSubmit"><input name="skip_Submit" value="Submit" type="submit" class="submitbutton"/>
+        <div class= "regesterSubmit"><input name="Submit" value="Submit" type="submit" class="submitbutton"/>
 
 
 

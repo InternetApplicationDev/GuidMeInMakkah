@@ -29,6 +29,32 @@ while($getPicture = mysqli_fetch_array($getPictureSql)){
   <!-- pace preloader -->
   <script src="JS/pace.js"></script>
 </head>
+<?php
+ini_set('display_errors',1);
+error_reporting(E_ALL&~E_NOTICE);
+if (isset($_POST['Submit'])){
+  if($dbc=@mysqli_connect('localhost','root','root')){
+    if(!@mysqli_select_db($dbc,'db')){
+      die('<p> Could not select the database because:<b>'.mysqli_error($dbc).'</b></p>');
+    }
+  }
+  else {
+      die('<p> Could not connect to mysql because:<b>'.mysqli_error($dbc).'</b></p>');
+  }
+
+  //Define the query
+  $insert = "INSERT INTO `User` (`ID`, `First_name`, `Last_name`, `E-mail`, `Password`)
+   VALUES ('0','{$_POST['Name']}', '{$_POST['l_name']}', '{$_POST['Email']}', '{$_POST['password']}')";
+   //execute INSERT
+   if(@mysqli_query($dbc,$insert)){
+     print'<p> the user has been added . </p>';
+   }
+   else {
+    print"<p> Could not add the entry because:<b>'.mysqli_error($dbc).'</b>. The query was $insert .</p>";
+   }
+   mysqli_close($dbc);
+}
+?>
 <body class="centerPage">
   <div class="navbar">
     <ul class="navmenu">
