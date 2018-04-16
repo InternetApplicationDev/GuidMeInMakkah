@@ -65,16 +65,16 @@ if(isset($_GET['Logout'])){
         </div>
         <br/>
         <div class= "register1"> Password :<span style="color: red;"> *</span><br/>
-          <input type="text" id="password" name="password"class="roundTextArea"/>
+          <input type="password" id="password" name="password"class="roundTextArea"/>
         </div>
         <br/>
         <div class= "register1"> Confirm Password :<span style="color: red;"> </span> <br/>
-          <input type="text" id="cpassword" name="cpassword" class="roundTextArea"/>
+          <input type="password" id="cpassword" name="cpassword" class="roundTextArea"/>
         </div>
         <br/>
         <div class= "regesterSubmit"><input name="skip_Submit" value="Submit" type="submit" class="submitbutton"/>
 
-           <input name="form" value="Form to Email" type="submit" />
+
 
 
 
