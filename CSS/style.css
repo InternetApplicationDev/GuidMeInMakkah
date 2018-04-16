@@ -181,10 +181,21 @@
   position: relative;
   width: 260px;
   height: 350px;
-  margin: auto;
-  padding: 0.3%;
+  padding: 0.4%;
   margin-top:10px;
 
+
+}
+
+.container {
+
+  width:90%;
+   display: -webkit-flex; 
+   -webkit-flex-wrap: wrap;
+  display: flex;   
+  flex-wrap: wrap; 
+  border: #000;
+  margin: auto;
 }
 .img {
   display: block;
@@ -207,13 +218,7 @@
   opacity: 0.5;
 }
 /************************************************** other listpage styling **************************************************/
-.container {
-  width:90%;
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  border: #000;
-}
+
 hr {
   width:80%;
   margin: auto;
