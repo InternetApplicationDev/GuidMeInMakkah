@@ -41,7 +41,7 @@ if(isset($_GET['Logout'])){
   </div>
   <hr>
 
-  <form method="post" action="Registration.html" onSubmit="return validateForm();">
+  <form method="post" action="profile.php" onSubmit="return validateForm();">
     <div class="container">
 
       <div>
