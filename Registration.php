@@ -44,15 +44,9 @@ if(isset($_GET['Logout'])){
   <form method="post" action="Registration.html" onSubmit="return validateForm();">
     <div class="container">
 
-<<<<<<< HEAD:Registration.php
       <div>
-=======
      <div>
 
-<<<<<<< HEAD:Registration.php
->>>>>>> 2878b85f57ddeeba815a89e69c15f917735fd8e9:Registration.html
-=======
->>>>>>> 2878b85f57ddeeba815a89e69c15f917735fd8e9:Registration.html
         <!-- name -->
         <div class= "register1"> First Name : <span style="color: red;"> </span><br/>
           <input type="text" id="Name" name="Name" class="roundTextArea"/>
@@ -77,9 +71,9 @@ if(isset($_GET['Logout'])){
         <br/>
         <div class= "regesterSubmit"><input name="skip_Submit" value="Submit" type="submit" class="submitbutton"/>
 
-           <input name="form" value="Form to Email" type="submit" /> 
+           <input name="form" value="Form to Email" type="submit" />
 
-    
+
 
         </div>
       </div>

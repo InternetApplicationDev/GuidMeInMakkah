@@ -228,7 +228,6 @@ if(isset($_POST["getStarValue"])){
 		<div class="textBlackBackground">
 			<?php
 
-<<<<<<< HEAD
 			include 'DB.php';
 			$bar = new connection;
 			$r = $bar->individualRestaurant(1);
@@ -236,7 +235,6 @@ if(isset($_POST["getStarValue"])){
 			{$_GET[className]} </p>  </div>";
 
 			if($r[0][7] == 1 ){
-=======
 	include 'DB.php';
 	$bar = new connection;
 	$r = $bar->individualRestaurant($_GET[className],$_GET[id]);
@@ -244,10 +242,9 @@ if(isset($_POST["getStarValue"])){
 		 {$_GET[className]} </p>  </div>";
 
 		if ($r[0][7] == 0 ){
-		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/0.png\" alt=\"image\"/>"; 
-		}	
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/0.png\" alt=\"image\"/>";
+		}
 		else if($r[0][7] == 1 ){
->>>>>>> 2878b85f57ddeeba815a89e69c15f917735fd8e9
 
 				print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/1.png\" alt=\"image\"/>";
 
@@ -316,12 +313,9 @@ if(isset($_POST["getStarValue"])){
 			$r = $bar->restaurantPics($_GET[className],$_GET[id]);
 
 			for ($i = 0; $i < count($r); $i++) {
-<<<<<<< HEAD
 				// print"<img src=\"{$r[$i][0]}\" alt=\"Avatar\" >";
 				print" <img id=\"{$i}\" src=\"{$r[$i][0]}\" border=\"0\" alt=\"image\"/>";
-=======
-				print" <img id=\"{$i}\" src=\"{$r[$i][0]}\" border=\"0\" alt=\"image\"/>"; 
->>>>>>> 2878b85f57ddeeba815a89e69c15f917735fd8e9
+				print" <img id=\"{$i}\" src=\"{$r[$i][0]}\" border=\"0\" alt=\"image\"/>";
 			}
 			?>
 		</div>
@@ -332,11 +326,8 @@ if(isset($_POST["getStarValue"])){
 			<?php
 			$bar = new connection;
 
-<<<<<<< HEAD
 			$r = $bar->individualRestaurant(1);
-=======
 				$r = $bar->individualRestaurant($_GET[className],$_GET[id]);
->>>>>>> 2878b85f57ddeeba815a89e69c15f917735fd8e9
 
 			print"<a href='https://www.google.com/maps/@21.4406911,39.8099034,15z'><image  src=\"{$r[0][3]}\"/></a> ";
 
@@ -347,7 +338,6 @@ if(isset($_POST["getStarValue"])){
 		<h1 id="menu">Menu</h1>
 		<?php
 
-<<<<<<< HEAD
 		$bar = new connection;
 		$r = $bar->individualRestaurant(1);
 		print"<image  src=\"{$r[0][9]}\" id=\"Menus_food\" height=\"580\" width=\"400\"/> ";
@@ -393,11 +383,10 @@ if(isset($_POST["getStarValue"])){
 			</table>
 		</form>
 		<br> <br> <br><hr><hr><br> <br>
-=======
+
 $bar = new connection;
 $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 	  print"<image  src=\"{$r[0][9]}\" id=\"Menus_food\" height=\"580\" width=\"400\"/> ";
->>>>>>> 2878b85f57ddeeba815a89e69c15f917735fd8e9
 
 		<div class="Comment">
 			<?php
