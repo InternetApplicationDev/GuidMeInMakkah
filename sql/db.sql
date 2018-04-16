@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Apr 15, 2018 at 07:41 PM
--- Server version: 5.6.38
--- PHP Version: 7.1.12
+-- Host: localhost
+-- Generation Time: Apr 16, 2018 at 03:43 PM
+-- Server version: 5.7.17-log
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -85,7 +85,8 @@ INSERT INTO `cafeandrest` (`cafeAndRest_id`, `cafeAndRest_name`, `cafeAndRest_in
 CREATE TABLE `cafeandrestpics` (
   `cafeAndRest_id` int(10) UNSIGNED NOT NULL,
   `cafeAndRestPic_id` int(10) UNSIGNED NOT NULL,
-  `cafeAndRestPic` longblob NOT NULL
+  `cafeAndRestPic` longblob NOT NULL,
+  `cofeAndResName` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -97,7 +98,8 @@ CREATE TABLE `cafeandrestpics` (
 CREATE TABLE `cafepics` (
   `cafe_id` int(10) UNSIGNED NOT NULL,
   `cafePic_id` int(10) UNSIGNED NOT NULL,
-  `cafePics` longblob NOT NULL
+  `cafePics` longblob NOT NULL,
+  `cofeName` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -126,16 +128,17 @@ CREATE TABLE `reservation` (
 CREATE TABLE `restaurantpics` (
   `restaurant_id` int(10) UNSIGNED NOT NULL,
   `restaurantPic_id` int(10) UNSIGNED NOT NULL,
-  `restaurantPic` varchar(100) NOT NULL
+  `restaurantPic` varchar(100) NOT NULL,
+  `restauran_name` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `restaurantpics`
 --
 
-INSERT INTO `restaurantpics` (`restaurant_id`, `restaurantPic_id`, `restaurantPic`) VALUES
-(1, 3, 'images/resturantPics/dominosPizaa.png'),
-(1, 7, 'images/resturantPics/hardees.png');
+INSERT INTO `restaurantpics` (`restaurant_id`, `restaurantPic_id`, `restaurantPic`, `restauran_name`) VALUES
+(1, 3, 'images/resturantPics/dominosPizaa.png', 'Dominos Pizaa'),
+(1, 7, 'images/resturantPics/hardees.png', 'Hardee\'s');
 
 -- --------------------------------------------------------
 
@@ -167,20 +170,6 @@ INSERT INTO `restaurants` (`restaurant_id`, `restaurant_name`, `restaurants_info
 (4, 'Hardee\'s', 'hardee\'shardee\'shardee\'s', 'hardee\'s adress', 3513, '2018-04-05', '2018-04-11', 3, 'images/resturantPics/hardees.png', ''),
 (6, 'Kudo', 'kudokudo', 'kudo adress', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
 (7, 'Subway', 'subwaysubwaysubway', 'subway adress', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `User`
---
-
-CREATE TABLE `User` (
-  `ID` int(100) NOT NULL,
-  `First_name` varchar(100) NOT NULL,
-  `Last_name` varchar(100) NOT NULL,
-  `E-mail` varchar(100) NOT NULL,
-  `Password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -233,13 +222,6 @@ ALTER TABLE `restaurants`
   ADD PRIMARY KEY (`restaurant_id`);
 
 --
--- Indexes for table `User`
---
-ALTER TABLE `User`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `E-mail` (`E-mail`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -248,43 +230,31 @@ ALTER TABLE `User`
 --
 ALTER TABLE `cafe`
   MODIFY `cafe_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT for table `cafeandrest`
 --
 ALTER TABLE `cafeandrest`
   MODIFY `cafeAndRest_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `cafeandrestpics`
 --
 ALTER TABLE `cafeandrestpics`
   MODIFY `cafeAndRestPic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `cafepics`
 --
 ALTER TABLE `cafepics`
   MODIFY `cafePic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `restaurantpics`
 --
 ALTER TABLE `restaurantpics`
   MODIFY `restaurantPic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
   MODIFY `restaurant_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `User`
---
-ALTER TABLE `User`
-  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT;
-
 --
 -- Constraints for dumped tables
 --

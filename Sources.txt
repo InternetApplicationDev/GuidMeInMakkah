@@ -11,3 +11,5 @@ fix Developers names collapse: https://stackoverflow.com/questions/3453422/why-d
 Dialog --> Sweet Alert2 : https://sweetalert2.github.io/
 
 Page pre-loader --> PACE: http://github.hubspot.com/pace/docs/welcome/ 
+
+Php sweet alert --> https://github.com/t4t5/sweetalert/issues/441
