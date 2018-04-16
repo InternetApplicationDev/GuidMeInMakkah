@@ -49,6 +49,9 @@ if(isset($_GET['Logout'])){
 =======
      <div>
 
+<<<<<<< HEAD:Registration.php
+>>>>>>> 2878b85f57ddeeba815a89e69c15f917735fd8e9:Registration.html
+=======
 >>>>>>> 2878b85f57ddeeba815a89e69c15f917735fd8e9:Registration.html
         <!-- name -->
         <div class= "register1"> First Name : <span style="color: red;"> </span><br/>
