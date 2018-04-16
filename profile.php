@@ -37,7 +37,9 @@ if(isset($_GET['Logout'])){
   </div>
   <div class="card">
     <img src="images/pesonal icon.jpg" alt="profile picture" style="width:100%">
-    <h1>Name</h1>
+    <?php
+    print"<h1>{$_POST['Name']} {$_POST['l_name']} </h1>";
+    ?>
     <p>Bio</p>
     <p><button>Contact</button></p>
   </div>
