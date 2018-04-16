@@ -178,9 +178,9 @@ function addUserRate($userName,$userRate,$pageName){
 	<div class="navbar">
 	<ul class="navmenu">
 	  <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-	  <li><a href="listPage.php">Cafe</a></li>
-	  <li><a href="listPage.php">Restaurants</a></li>
-	  <li><a href="listPage.php">Cafe & Restaurants</a></li>
+	  <li><a href="listPage.php?id=1">Cafe</a></li>
+	  <li><a href="listPage.php?id=2">Restaurants</a></li>
+	  <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
 	<li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
 	  <li class="navmenu-right"><a href="Signin.html">Login</a></li>
 	</ul>
@@ -220,7 +220,7 @@ function addUserRate($userName,$userRate,$pageName){
 	$bar = new connection;
 	$r = $bar->individualRestaurant(1);
 		 print " <p id=\"textSliderImg\">Wellcome To </br> ____ </br>
-		 {$r[0][1]} </p>  </div>";
+		 {$_GET[className]} </p>  </div>";
 
 		if($r[0][7] == 1 ){
 

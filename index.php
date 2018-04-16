@@ -15,9 +15,9 @@
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <li><a href="listPage.php">Cafe</a></li>
-      <li><a href="listPage.php">Restaurants</a></li>
-      <li><a href="listPage.php">Cafe & Restaurants</a></li>
+      <li><a href="listPage.php?id=1">Cafe</a></li>
+      <li><a href="listPage.php?id=2">Restaurants</a></li>
+      <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
        <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
       <li class="navmenu-right"><a href="Login.php">Login</a></li>
     </ul>
