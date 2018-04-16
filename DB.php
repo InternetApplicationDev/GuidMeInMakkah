@@ -7,7 +7,7 @@ function connect()
  ini_set ('display_errors', 1);
 error_reporting (E_ALL & ~E_NOTICE); 
 
-if ($dbc = mysqli_connect ('localhost', 'root', '12345678'))  // connect
+if ($dbc = mysqli_connect ('localhost', 'root', ''))  // connect
 {		
 print '<p>Successfully connected to MySQL.</p>';
 
@@ -16,7 +16,7 @@ print '<p>Successfully connected to MySQL.</p>';
 }}
 
 function address($id ){
-$dbc = mysqli_connect ('localhost', 'root', '12345678');//conn
+$dbc = mysqli_connect ('localhost', 'root', '');//conn
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -52,7 +52,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 
 
 function retreve_restrants(){
-$dbc = mysqli_connect ('localhost', 'root', 'root');
+$dbc = mysqli_connect ('localhost', 'root', '');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -82,7 +82,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 
 
 function retreve_caffes(){
-$dbc = mysqli_connect ('localhost', 'root', 'root');
+$dbc = mysqli_connect ('localhost', 'root', '');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -113,7 +113,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 
 
 function retreve_both(){
-$dbc = mysqli_connect ('localhost', 'root', 'root');
+$dbc = mysqli_connect ('localhost', 'root', '');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -145,7 +145,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 function individualRestaurant($id){
 
 
-$dbc = mysqli_connect ('localhost', 'root', '12345678');
+$dbc = mysqli_connect ('localhost', 'root', '');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -177,7 +177,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 function restaurantPics($id){
 
 
-$dbc = mysqli_connect ('localhost', 'root', 'root');
+$dbc = mysqli_connect ('localhost', 'root', '');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
