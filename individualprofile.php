@@ -260,7 +260,7 @@ function addUserRate($userName,$userRate,$pageName){
 		<table class="tableButtonReservation">
 			<tr>
 			<th>&nbsp &nbsp 150 RS</th>
-			<th> <button class="buttonReservation" onclick="">Reservation</button> </th>
+			<th> <button class="buttonReservation" onclick="window.location = 'reservationForm.html'">Reservation</button> </th>
 			</tr>
 		</table>
 		 
