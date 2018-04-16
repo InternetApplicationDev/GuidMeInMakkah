@@ -65,7 +65,7 @@ function validateForm() {
 		swal({
 			type: 'error',
 			title: 'Oops...',
-			text: 'Name is required!',
+			text: 'Please fill all the fields!',
 		})
 		return false;
 	}
@@ -75,17 +75,17 @@ function validateForm() {
 		swal({
 			type: 'error',
 			title: 'Oops...',
-			text: 'Last Name is required!',
+			text: 'Please fill all the fields!',
 		})
 		return false;
 	}
-	
+
 	// check complete required 'password '
 	if (isEmpty(document.getElementById('password').value.trim())) {
 		swal({
 			type: 'error',
 			title: 'Oops...',
-			text: 'password is required!',
+			text: 'Please fill all the fields!',
 		})
 		return false;
 	}
@@ -95,7 +95,7 @@ function validateForm() {
 		swal({
 			type: 'error',
 			title: 'Oops...',
-			text: 'Email is required!',
+			text: 'Please fill all the fields!',
 		})
 		return false;
 	}
@@ -109,14 +109,14 @@ function validateForm() {
 		})
 		return false;
 	}
-	
+
 
 	// check complete required 'Date'
 	if (isEmpty(document.getElementById('data_6').value.trim())) {
 		swal({
 			type: 'error',
 			title: 'Oops...',
-			text: 'Date is required!',
+			text: 'Please fill all the fields!',
 		})
 		return false;
 	}
@@ -125,7 +125,7 @@ function validateForm() {
 		swal({
 			type: 'error',
 			title: 'Oops...',
-			text: 'Time is required!',
+			text: 'Please fill all the fields!',
 		})
 		return false;
 	}
@@ -134,7 +134,7 @@ function validateForm() {
 		swal({
 			type: 'error',
 			title: 'Oops...',
-			text: 'Occasion is required!',
+			text: 'Please fill all the fields!',
 		})
 		return false;
 	}
