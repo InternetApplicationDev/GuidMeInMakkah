@@ -8,11 +8,38 @@ if (isset($_POST['email'])) {
   if (mysqli_num_rows(mysqli_query($conn,"SELECT * From admin_login where admin_name = '$email' AND admin_password ='$pass'"))) {
     $result = mysqli_query($conn,"SELECT * From admin_login where admin_name = '$email' AND admin_password ='$pass'");
     while ($row = mysqli_fetch_array($result)) {
-      // setcookie("theuser",$row['admin_id'],time()+60*60*24*30);
+      setcookie("theuser",$row['admin_id'],time()+60*60*24*30);
+      echo '
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
+      <script>
+      $( document ).ready(function() {
+        swal({
+          title: \'You Have Been Logged In sccessfully\',
+          type: \'success\',
+          showConfirmButton: false,
+          timer: 1500,
+        }, function(isConfirm) {
+          document.location.href="/Login.php"
+        });
+      });
+      </script>';
     }
-    $loginState = 1;
   }else {
-    $loginState = 0;
+    echo '
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
+    <script>
+    $( document ).ready(function() {
+      swal({
+        title: \'Oops..\',
+        text: \'Not logged!\',
+        type: \'error\',
+      }, function(isConfirm) {
+        document.location.href="/Login.php"
+      });
+    });
+    </script>';
   }
   mysqli_close($conn);
 }
@@ -62,7 +89,7 @@ if (isset($_POST['email'])) {
         </div>
 
         <br/>
-        <div class= "regesterSubmit"><input name="skip_Submit" value="Submit" type="submit" class="submitbutton" onclick="loginAlert(<?php echo $loginState;?>)"/>
+        <div class= "regesterSubmit"><input name="skip_Submit" value="Submit" type="submit" class="submitbutton"/>
         </div>
       </div>
     </div>
