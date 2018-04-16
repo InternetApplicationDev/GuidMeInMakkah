@@ -1,6 +1,6 @@
 <?php
 if(isset($_GET['Logout'])){
-  setcookie("theuser","",time()-60*60*24*30,'/');
+  setcookie("theuser","", time() - 1,'/');
   header('Location: index.php');
   exit;
 }
@@ -8,11 +8,8 @@ if(isset($_GET['Logout'])){
 <!DOCTYPE html>
 <html class="theBackGround">
 <head>
-  <title>Profile</title>
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
-  <script type = "text/javascript" src = "JS/javaScript.js"></script>
-  <!-- Add icon library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src= "JS/javaScript.js"></script>
   <!-- Sweet Alert  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
@@ -23,9 +20,9 @@ if(isset($_GET['Logout'])){
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <li><a href="listPage.php">Cafe</a></li>
-      <li><a href="listPage.php">Restaurants</a></li>
-      <li><a href="listPage.php">Cafe & Restaurants</a></li>
+      <li><a href="#Coffe">Cafe</a></li>
+      <li><a href="#Restaurants">Restaurants</a></li>
+      <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
       <?php if ($_COOKIE['theuser']){ ?>
         <li class="navmenu-right"><a href="profile.php">Profile</a></li>
         <li class="navmenu-right"><a href="?Logout">Logout</a></li>
@@ -35,44 +32,21 @@ if(isset($_GET['Logout'])){
       <?php } ?>
     </ul>
   </div>
-  <div class="card">
-    <img src="images/pesonal icon.jpg" alt="profile picture" style="width:100%">
-    <h1>Name</h1>
-    <p>Bio</p>
-    <a href="#"><i class="fa fa-dribbble"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <p><button>Contact</button></p>
+  <div class ="header">
+    TABLE RESERVATION
+    <div class="logo">  </div>
   </div>
-  <div class="Favorite">
-    <img src="images/add.png"/>
-    <img src="images/add.png"/>
-    <img src="images/add.png"/>
-    <img src="images/add.png"/>
-    <img src="images/add.png"/>
-  </div>
+  <hr>
+
+
+  <!-- here is your content -->
   <div class="container">
-    <div class="profileComments">
-      <?php echo $_COOKIE['theuser']; ?>
-      <h1>Comment</h1>
-      <?php
-      for ($i = 1; $i <= 5; $i++){
-        echo '<h4>'.$i.'-</h4>';
-        ?>
-        <table style="margin-left:2%">
-          <tr>
-            <td> <img src="images/pesonal icon.jpg" height="35%" width="35%" /> </td>
-            <td><table style="margin-left:-100%">
-              <tr><td style="font-size: 20px;color: gray;">user name</td> </tr>
-              <tr><td>user comments</td> </tr>
-            </table></td>
-          </tr>
-        </table>
-        <?php
-        echo '<hr>';
-      }
-      ?>
+    <div class="contactUs">
+      <ul class="contactMenu">
+        <li><a href="#"></a> <img class="pic" src="images/twitter.png" alt="LOGO" ></br> @GuideMeNMakkah </li></br>
+        <li><a href="#"></a> <img class="pic" src="images/facebook.png" alt="LOGO" ></br> @GuideMeNMakkah</li></br>
+        <li><a href="#"></a> <img class="pic" src="images/gmail.png" alt="LOGO" ></br>GuideNM@gmail.com</li>
+      </ul>
     </div>
   </div>
   <div class="footer" id="theFooter">

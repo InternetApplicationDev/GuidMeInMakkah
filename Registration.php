@@ -1,3 +1,10 @@
+<?php
+if(isset($_GET['Logout'])){
+  setcookie("theuser","",time()-60*60*24*30,'/');
+  header('Location: index.php');
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html class="theBackGround">
 <head>
@@ -8,7 +15,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
   <!-- pace preloader -->
- <script src="JS/pace.js"></script>
+  <script src="JS/pace.js"></script>
 </head>
 <body class="centerPage">
   <div class="navbar">
@@ -17,8 +24,13 @@
       <li><a href="#Coffe">Cafe</a></li>
       <li><a href="#Restaurants">Restaurants</a></li>
       <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
-      <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
-      <li class="navmenu-right"><a href="Login.php">Login</a></li>
+      <?php if ($_COOKIE['theuser']){ ?>
+        <li class="navmenu-right"><a href="profile.php">Profile</a></li>
+        <li class="navmenu-right"><a href="?Logout">Logout</a></li>
+      <?php }else{ ?>
+        <li class="navmenu-right"><a href="Login.php">Login</a></li>
+        <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
+      <?php } ?>
     </ul>
   </div>
 
@@ -32,17 +44,19 @@
   <form method="post" action="Registration.html" onSubmit="return validateForm();">
     <div class="container">
 
+      <div>
      <div>
+
         <!-- name -->
-        <div class= "register1"> First Name : <span style="color: red;"> *</span><br/>
+        <div class= "register1"> First Name : <span style="color: red;"> </span><br/>
           <input type="text" id="Name" name="Name" class="roundTextArea"/>
         </div>
-         <br/>
+        <br/>
         <!-- last name  -->
         <div class= "register1">Last Name : <span style="color: red;"> *</span> <br/>
           <input type="text" id="l_name" name="l_name" class="roundTextArea"/>
         </div>
-         <br/>
+        <br/>
         <div class= "register1">E-mail : <span style="color: red;"> *</span><br/>
           <input type="text" id="Email" name="Email"  placeholder="example@xxxxx.com" class="roundTextArea"/>
         </div>
@@ -51,22 +65,26 @@
           <input type="text" id="password" name="password"class="roundTextArea"/>
         </div>
         <br/>
-        <div class= "register1"> Confirm Password :<span style="color: red;"> *</span> <br/>
-          <input type="text" id="cpassword" name="cpassword"class="roundTextArea"/>
+        <div class= "register1"> Confirm Password :<span style="color: red;"> </span> <br/>
+          <input type="text" id="cpassword" name="cpassword" class="roundTextArea"/>
         </div>
-         <br/>
+        <br/>
         <div class= "regesterSubmit"><input name="skip_Submit" value="Submit" type="submit" class="submitbutton"/>
-          <!-- <input name="form" value="Form to Email" type="submit" /> -->
+
+           <input name="form" value="Form to Email" type="submit" />
+
+
+
         </div>
-       </div>
       </div>
+    </div>
   </form>
   <div class="footer" id="theFooter">
     <div class="footbar">
       <ul class="footmenu">
         <li><a href="#" onclick="showDevFunction()">Developers</a></li>
-        <li><a href="about.html">About us</a></li>
-        <li><a href="contactUs.html">Contact us</a></li>
+        <li><a href="about.php">About us</a></li>
+        <li><a href="contactUs.php">Contact us</a></li>
         <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
       </ul>
       <div id="developersNames">

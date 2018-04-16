@@ -1,3 +1,10 @@
+<?php
+if(isset($_GET['Logout'])){
+  setcookie("theuser","", time() - 1,'/');
+  header('Location: index.php');
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +25,13 @@
       <li><a href="listPage.php?id=1">Cafe</a></li>
       <li><a href="listPage.php?id=2">Restaurants</a></li>
       <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
-       <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
-      <li class="navmenu-right"><a href="Login.php">Login</a></li>
+      <?php if ($_COOKIE['theuser']){ ?>
+        <li class="navmenu-right"><a href="profile.php">Profile</a></li>
+        <li class="navmenu-right"><a href="?Logout">Logout</a></li>
+      <?php }else{ ?>
+        <li class="navmenu-right"><a href="Login.php">Login</a></li>
+        <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
+      <?php } ?>
     </ul>
   </div>
   <div id="wrapper">
