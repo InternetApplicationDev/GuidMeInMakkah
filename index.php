@@ -15,9 +15,9 @@
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <li><a href="listPage.php">Cafe</a></li>
-      <li><a href="listPage.php">Restaurants</a></li>
-      <li><a href="listPage.php">Cafe & Restaurants</a></li>
+      <li><a href="listPage.php?id=1">Cafe</a></li>
+      <li><a href="listPage.php?id=2">Restaurants</a></li>
+      <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
        <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
       <li class="navmenu-right"><a href="Login.php">Login</a></li>
     </ul>
@@ -36,9 +36,9 @@
           $idReturant=2;
           $idBoth=3;
 
-          echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" title="Cafe" /></a>';
+          echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" title="Cafe"/></a>';
           echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" title="Restaurant" /></a>';
-          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" title="CafeAndRestaurant" /></a>';
+          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" title="Cafe And Restaurant" /></a>';
           ?>
         </div>
       </div>
@@ -49,7 +49,7 @@
           $idReturant=2;
           $idBoth=3;
 
-          echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" title="Cafe" /> </a>';
+          echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" title="Cafe"/> </a>';
           echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" title="Restaurant" /></a>';
           echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" title="Cafe And Restaurant" /></a>';
           ?>
@@ -65,7 +65,7 @@
 
           echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" title="Cafe" /></a>';
           echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" title="Restaurant" /></a>';
-          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" title="CafeAndRestaurant" /></a>';
+          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" title="Cafe And Restaurant" /></a>';
           ?>
 
         </div>

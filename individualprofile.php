@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <?php
 
 function searchUserNameInIndexFile($userName,$pageName){
@@ -134,7 +132,6 @@ function addUserRate($userName,$userRate,$pageName){
 
 
 ?>
-
 <?php
 	if(isset($_POST["getStarValue"])){
 		$comments = $_POST["CommentTA"];
@@ -146,116 +143,134 @@ function addUserRate($userName,$userRate,$pageName){
 		addUserRate($userName,$userRate,$pageName);
 	}
 ?>
-
-
 <html class="theBackGround">
 <head>
-
-<link rel="stylesheet" type="text/css" href="CSS/style.css">
-  
-  <script type = "text/javascript" src = "JS/javaScript.js"></script>
-  <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-  <script>
+	<title> <?php echo $_GET[className] ?> </title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<script type = "text/javascript" src = "JS/javaScript.js"></script>
+	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	<script>
 	  function Slider(){
-		$(".imagesSliders #1").show("fade",400);
-		$(".imagesSliders #1").delay(5500).hide("slide",{direction:'left'},400);
+		$(".imagesSliders #0").show("fade",400);
+		$(".imagesSliders #0").delay(5500).hide("slide",{direction:'left'},400);
 		
 		var sc = $(".imagesSliders img").size();
-		var count = 2;
+		--sc;
+		var count = 1;
 		 
 		setInterval(function (){
 			$(".imagesSliders #"+count).show("slide",{direction:'right'},400);
 			$(".imagesSliders #"+count).delay(5500).hide("slide",{direction:'left'},400);
 	  
 			if(count == sc){
-				count = 1;
+				count = 0;
 			}else{
 				count = count+1 ;
 			}
 		}, 6500);
 	  }
-  </script>
-  
+	</script>
+
 </head>
 <body class="centerPage" onload="Slider()">
 
-  <div class="navbar">
-    <ul class="navmenu">
-      <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <li><a href="listPage.php">Cafe</a></li>
-      <li><a href="listPage.php">Restaurants</a></li>
-      <li><a href="listPage.php">Cafe & Restaurants</a></li>
-  <li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
-      <li class="navmenu-right"><a href="Signin.html">Login</a></li>
-    </ul>
-  </div> <!-- navbar -->
-
-  <div class ="header"> <!-- div header -->
+	<div class="navbar">
+	<ul class="navmenu">
+	  <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
+	  <li><a href="listPage.php?id=1">Cafe</a></li>
+	  <li><a href="listPage.php?id=2">Restaurants</a></li>
+	  <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
+	<li class="navmenu-right"><a href="Registration.html">Sign Up</a></li>
+	  <li class="navmenu-right"><a href="Signin.html">Login</a></li>
+	</ul>
+	</div> <!-- navbar -->
+	<div class ="header"> <!-- div header -->
 
     <?php
-	  if ($_GET[id]==1){
-echo'COFFEE LIST ';
-echo'<div class="logo"> <img class="img" src="images/icons/coffee-cup-black.png" alt="LOGO" > </div>';
-}
-else if ($_GET[id]==2){ //if the user click to the resturant
-//change the pic to restaurant black
-	echo'RESTAURANTS LIST ';
-	echo'<div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>';
-}
-else{//if the user click to the both
-echo'RESTAURANTS AND COFFEE LIST ';
-//change the pic to both black
-echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.png" alt="LOGO" > </div>';
+	if ($_GET[id]==1){
+		echo'COFFEE LIST ';
+		echo'<div class="logo"> <img class="img" src="images/icons/coffee-cup-black.png" alt="LOGO" > </div>';
+	}
+	else if ($_GET[id]==2){ //if the user click to the resturant
+		//change the pic to restaurant black
+		echo'RESTAURANTS LIST ';
+		echo'<div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>';
+	}
+	else{//if the user click to the both
+		echo'RESTAURANTS AND COFFEE LIST ';
+		//change the pic to both black
+		echo'<div class="logo"> <img class="img" src="images/icons/trayAndCoffee-black.png" alt="LOGO" > </div>';
 }
     ?>
    
   </div> <!-- header --> 
 
-  <hr>
-  </br>
-  <div class="fix_layout_center"> <!-- div name -->
-	  <div class="emptyBlackBackground"> 
-			
-	  </div>
-	  <div class="imageIntro">
+  <hr><br>
+  
+	<div class="fix_layout_center"> <!-- div name -->
+	<div class="emptyBlackBackground"></div>
+	<div class="imageIntro">
 		<img src="images/cafe-intro-backfound.jpg"  alt="image"/>
-	  </div>
-	  <div class="textBlackBackground">
-   <!--<p id="textSliderImg">Wellcome To </br> ____ </br></p>-->
-<?php 
+	</div>
+	<div class="textBlackBackground">
+	   <?php 
 
- include 'DB.php';
-$bar = new connection;
-$r = $bar->individualRestaurant(1);
-     print " <p id=\"textSliderImg\">Wellcome To </br> ____ </br>
-     {$r[0][1]} </p>";
+	include 'DB.php';
+	$bar = new connection;
+	$r = $bar->individualRestaurant($_GET[className],$_GET[id]);
+		 print " <p id=\"textSliderImg\">Wellcome To </br> ____ </br>
+		 {$_GET[className]} </p>  </div>";
 
-		 ?>
+		if ($r[0][7] == 0 ){
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/0.png\" alt=\"image\"/>"; 
+		}	
+		else if($r[0][7] == 1 ){
 
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/1.png\" alt=\"image\"/>"; 
 
-	  </div>
+		}	
+		else if($r[0][7] == 2){
 
-	<img class="starsBlackBackground" id="star_0" src="images/stars rate/5.png" alt="image"/> 
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/2.png\" alt=\"image\"/>"; 
+
+		} else if ($r[0][7] == 3){
+
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/3.png\" alt=\"image\"/>"; 
+
+		} else if ($r[0][7] == 4){
+
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/4.png\" alt=\"image\"/>"; 
+
+		} else if ($r[0][7] == 5){
+
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" src=\"images/stars rate/5.png\" alt=\"image\"/>"; 
+
+		} else {
+		print "<img class=\"starsBlackBackground\" id=\"star_0\" alt=\"image\"/>"; 
+
+		}
 	 
-  </div> <!-- close div name-->
-  
-  
-  </br>
-  <p class="pathThisPageAsText"> home  > list > coffee shope name </p>
- <hr><hr>
+	?>
+	</div> 
+	
+</div> <!-- close div name-->
+   
+  <br><hr><hr>
 
- <div class="contenerTheRestOfcontint"> <!-- content STILL OPEN -->
+	<div class="contenerTheRestOfcontint"> <!-- content STILL OPEN -->
 
-  <table class="tableButtonReservation">
-	<tr>
-	<th>&nbsp &nbsp  <font color="white">150</font> <font color="yellow">RS</font></th>
-	<th> <button class="buttonReservation">Reservation</button> </th>
-	</tr>
-  </table>
-  <br>
-  <div class="subBar"> <!-- subbar -->
-    <ul class="navmenu">
+		<table class="tableButtonReservation">
+			<tr>
+			<th>&nbsp &nbsp 150 RS</th>
+			<th> <button class="buttonReservation" onclick="window.location = 'reservationForm.html'">Reservation</button> </th>
+			</tr>
+		</table>
+		 
+		<br>
+
+	<div class="subBar"> <!-- subbar -->
+    <ul class="navSubBar">
       <li><a href="#desci">Description </a></li>
 	  <li><a href="#addr"> Address </a></li>
       <li><a href="#menu"> Menu </a></li>
@@ -264,112 +279,90 @@ $r = $bar->individualRestaurant(1);
   </div> <!-- close sub bar -->
   
   
-  <div id="desci"></div> <!-- discription  STILL OPEN -->
-  <h1>Description</h1>
-  <?php 
- print "<p class=\"description\"> {$r[0][2]} </p>"; ?>
+  <div id="desci"> <!-- discription  -->
+	  <h1>Description</h1>
+	  <?php 
+	 print "<p class=\"description\"> {$r[0][2]} </p>";
+	  ?>
+ </div>
+ 
  
 
- <div class="imagesSliders"> <!-- image slider -->
-		<img id="1" src="images/cafe-intro-backfound.jpg" border="0" alt="image"/>
-		<img id="2" src="images/Cafe-and-Restaurant-Background.jpg" border="0" alt="image"/>
-		<img id="3" src="images/Cafe-Background.jpg" border="0" alt="image"/> 
-    </div>	<!-- image slider -->
+    <div class="imagesSliders"> 
+		<?php
+			$bar = new connection;
+			$r = $bar->restaurantPics($_GET[className],$_GET[id]);
 
-    	<img  src="images/unhreat.png" title= "favorite"  onclick="changeImageOnclick()" id="imgClickAndChange" class="image_heart"/>
+			for ($i = 0; $i < count($r); $i++) {
+				print" <img id=\"{$i}\" src=\"{$r[$i][0]}\" border=\"0\" alt=\"image\"/>"; 
+			}
+		?>
+    </div>
+	<img  src="images/unhreat.png" title= "favorite"  onclick="changeImageOnclick()" id="imgClickAndChange" class="image_heart"/>
    
-   <div class="contenerOfAddress"> <!-- ADDERSS -->
+    <div class="contenerOfAddress"> <!-- ADDERSS -->
+       <h1 id="addr">Address</h1>
+			<?php
+				$bar = new connection;
 
+				$r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 
+				print"<a href='https://www.google.com/maps/@21.4406911,39.8099034,15z'><image  src=\"{$r[0][3]}\"/></a> ";
 
-		<h1 id="addr">Address</h1>
-		<div class="addressMap">
-		<ul>
-
-
-			<li class="addressMap_1"><image  src="images/map_icon.png" height="45px" weight="45px"/> </li>
-			<li><h4>Makkah</h4></li>
-		</ul>
-		
-		</div>
-		
-		<div class="imgAdrress">
-			<img  src="images/map_1.jpg" />
-		</div>
-		
+			?>	
 	</div>
 
-	
 	<br><br>
     <h1 id="menu">Menu</h1>
-
-    <!--
-
-	 <div >
-		<table>
-			<tr>
-			  <td><image  src="images/Menu_1.jpg" id="Menus_food" height="580" width="400"/> </td>
-			  <td><image  src="images/Larrow.png" title= "previous"  class="Larrow" onclick="LarrowOnclick()" height="70px" weight="70px"/> </td>
-			  <td><image  src="images/Rarrow.png" title= "next"  class="Rarrow" onclick="RarrowOnclick()" height="70px" weight="70px"/> </td>
-			</tr>
-		</table>
-	</div>
-
-	
-<br><br><br><br></br>	
---> 
-
-
-<?php 
-
+	<?php 
 
 $bar = new connection;
-
-$r = $bar->individualRestaurant(1);
-
+$r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 	  print"<image  src=\"{$r[0][9]}\" id=\"Menus_food\" height=\"580\" width=\"400\"/> ";
 
 ?>
-
+	<br><br><br><br><br><br><br><br><hr><br><br><br>
    
-<div class="containerComments">
+<div class="containerComments" id="comm">
 	<!--comments sections-->
 	<div class="content">
+		
+		 <h1>Comment</h1>
+      <!--
+      if(has been log in)
+      can commant
+      else
+      <center><hr><p style="font-size: 25px; color: red;">YOU MUST LOGIN FIRST TO COMMANTS</p><hr></center>
+    -->
+    <form action="individualprofile.php" method="post" >
+      <table>
+        <tr>
+          <td> <img src="images/pesonal icon.jpg" class="imgUserInCommetn"/> </td>
+          <td><table style="margin-left:-20%">
+            <tr><td class="userNameInComment">user name</td></tr>
+            <tr><td><textarea id="TAtest" name="CommentTA" rows="4" cols="50"  placeholder="write your comments"></textarea></td></tr>
+            <tr><td >Your rating:<div class="stars" onclick="numOfRating()">
+			<input type="radio" id="star5" name="star" value="5" >
+			<label for="star5"></label>
+			<input type="radio" id="star4" name="star" value="4">
+			<label for="star4"></label>
+			<input type="radio" id="star3" name="star" value="3" >
+			<label for="star3"></label>
+			<input type="radio" id="star2" name="star" value="2" >
+			<label for="star2"></label>
+			<input type="radio" id="star1" name="star" value="1">
+			<label for="star1"></label>
+		   </div></td>
+          </tr>
+        </table></td>
+        <td><input type="submit" value="Submit" name="submit"></td>
+		<td><input id="starValue" name="getStarValue" type="hidden" value="0"></td>
+      </tr>
+    </table>
+  </form>
+  <br> <br> <br><hr><hr><br> <br>
+			
 		<div class="Comment">
-		<h1>Comment</h1>
-		<!--
-		if(has been log in)
-		can commant
-		else
-		<center><hr><p style="font-size: 25px; color: red;">YOU MUST LOGIN FIRST TO COMMANTS</p><hr></center>
-		-->
-		<form id="commentsForm" action="individualprofile.php#commentsForm" method="post" >
-			<table>
-				<tr>
-				<td> <img src="images/pesonal icon.jpg" class="imgUserInCommetn"/> </td>
-				<td><table style="margin-left:-20%">
-				<tr><td class="userNameInComment">user name</td></tr>
-				<tr><td><textarea id="TAtest" name="CommentTA" rows="4" cols="50"  placeholder="write your comments"></textarea></td></tr>
-				<tr><td >Your rating:<div class="stars" onclick="numOfRating()">
-				<input type="radio" id="star5" name="star" value="5" >
-				<label for="star5"></label>
-				<input type="radio" id="star4" name="star" value="4">
-				<label for="star4"></label>
-				<input type="radio" id="star3" name="star" value="3" >
-				<label for="star3"></label>
-				<input type="radio" id="star2" name="star" value="2" >
-				<label for="star2"></label>
-				<input type="radio" id="star1" name="star" value="1">
-				<label for="star1"></label>
-				</div></td>
-				</tr>
-				</table></td>
-				<td><input type="button" value="Submit" onclick="checkTA()"></td>
-				<td><input id="starValue" name="getStarValue" type="hidden" value="0"></td>
-				</tr>
-			</table>
-		</form>
-		<hr><hr>
 		<?php
 		// how many comments of this page from file and prinit
 		$data = file ('Files/Comments/page name.txt'); 
@@ -394,8 +387,27 @@ $r = $bar->individualRestaurant(1);
 </div>
 
  
-<div class="footer">Footer</div>
+<div class="footer" id="theFooter">
+      <div class="footbar">
+        <ul class="footmenu">
+          <li><a href="#" onclick="showDevFunction()">Developers</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contactUs.html">Contact us</a></li>
+          <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
+        </ul>
+        <div id="developersNames">
+          <ul class="devNames">
+            <li>Ebtsam Alkhuzai &ensp; </li>
+            <li>Esraa Samkari </li>
+            <li>Joanna Assaeedi </li>
+            <li>Joud Alajlan </li>
+            <li>Rozan Alghamdi </li>
+            <li>Wafaa Alshaikhi </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
 </body>
-</html>
 
+</html>
