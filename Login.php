@@ -1,18 +1,18 @@
 <?php
 if(isset($_GET['Logout'])){
-  setcookie("theuser",$row['admin_id'],time()-60*60*24*30,'/');
+  setcookie("theuser","",time()-60*60*24*30,'/');
   header('Location: index.php');
   exit;
 }
 if (isset($_POST['Email'])) {
   $email = $_POST['Email'];
   $pass = $_POST['password'];
-  $conn = mysqli_connect("localhost","root","12345678");
-  mysqli_select_db($conn,"testingtesting");
-  if (mysqli_num_rows(mysqli_query($conn,"SELECT * From admin_login where admin_name = '$email' AND admin_password ='$pass'"))) {
-    $result = mysqli_query($conn,"SELECT * From admin_login where admin_name = '$email' AND admin_password ='$pass'");
+  $dbc = mysqli_connect("localhost","root","12345678");
+  mysqli_select_db($dbc,"db");
+  if (mysqli_num_rows(mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'"))) {
+    $result = mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'");
     while ($row = mysqli_fetch_array($result)) {
-      setcookie("theuser",$row['admin_id'],time()+60*60*24*30,'/');
+      setcookie("theuser",$row['user_id'],time()+60*60*24*30,'/');
       echo '
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
@@ -45,7 +45,7 @@ if (isset($_POST['Email'])) {
     });
     </script>';
   }
-  mysqli_close($conn);
+  mysqli_close($dbc);
 }
 ?>
 <!DOCTYPE html>

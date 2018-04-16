@@ -39,10 +39,6 @@ if(isset($_GET['Logout'])){
     <img src="images/pesonal icon.jpg" alt="profile picture" style="width:100%">
     <h1>Name</h1>
     <p>Bio</p>
-    <a href="#"><i class="fa fa-dribbble"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <a href="#"><i class="fa fa-facebook"></i></a>
     <p><button>Contact</button></p>
   </div>
   <div class="Favorite">
@@ -54,7 +50,6 @@ if(isset($_GET['Logout'])){
   </div>
   <div class="container">
     <div class="profileComments">
-      <?php echo $_COOKIE['theuser']; ?>
       <h1>Comment</h1>
       <?php
       for ($i = 1; $i <= 5; $i++){

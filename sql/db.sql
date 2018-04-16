@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 16, 2018 at 03:43 PM
+-- Generation Time: Apr 16, 2018 at 10:31 PM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -171,6 +171,28 @@ INSERT INTO `restaurants` (`restaurant_id`, `restaurant_name`, `restaurants_info
 (6, 'Kudo', 'kudokudo', 'kudo adress', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
 (7, 'Subway', 'subwaysubwaysubway', 'subway adress', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', '');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `user_id` int(5) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `user_name` varchar(225) NOT NULL,
+  `user_picture` varchar(225) NOT NULL,
+  `user_bio` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_name`, `user_picture`, `user_bio`) VALUES
+(1, 'admin', 'admin', 'admin', '', '');
+
 --
 -- Indexes for dumped tables
 --
@@ -222,6 +244,12 @@ ALTER TABLE `restaurants`
   ADD PRIMARY KEY (`restaurant_id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -255,6 +283,11 @@ ALTER TABLE `restaurantpics`
 --
 ALTER TABLE `restaurants`
   MODIFY `restaurant_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
