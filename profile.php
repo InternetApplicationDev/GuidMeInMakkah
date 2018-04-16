@@ -47,7 +47,7 @@ if (isset($_POST['Submit'])){
    VALUES ('0','{$_POST['Name']}', '{$_POST['l_name']}', '{$_POST['Email']}', '{$_POST['password']}')";
    //execute INSERT
    if(@mysqli_query($dbc,$insert)){
-     print'<p> the user has been added . </p>';
+     print'';
    }
    else {
     print"<p> Could not add the entry because:<b>'.mysqli_error($dbc).'</b>. The query was $insert .</p>";
