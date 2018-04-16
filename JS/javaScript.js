@@ -60,8 +60,8 @@ function numOfRating(){
 ///////////////////////////////////////////////////	RESERVATION FORM ///////////////////////////////////////////////////
 
 function validateForm() {
-	// check complete required 'Name'
-	if (isEmpty(document.getElementById('data_3').value.trim())) {
+	// check complete required 'Name '
+	if (isEmpty(document.getElementById('Name').value.trim())) {
 		swal({
 			type: 'error',
 			title: 'Oops...',
@@ -69,8 +69,39 @@ function validateForm() {
 		})
 		return false;
 	}
+
+	// check complete required 'last name '
+	if (isEmpty(document.getElementById('l_name').value.trim())) {
+		swal({
+			type: 'error',
+			title: 'Oops...',
+			text: 'Last Name is required!',
+		})
+		return false;
+	}
+	
+	// check complete required 'password '
+	if (isEmpty(document.getElementById('password').value.trim())) {
+		swal({
+			type: 'error',
+			title: 'Oops...',
+			text: 'password is required!',
+		})
+		return false;
+	}
+
+	// check complete required 'E-mail'
+	if (isEmpty(document.getElementById('Email').value.trim())) {
+		swal({
+			type: 'error',
+			title: 'Oops...',
+			text: 'Email is required!',
+		})
+		return false;
+	}
+
 	// Validate email
-	if (!validateEmail(document.getElementById('data_5').value.trim())) {
+	if (!validateEmail(document.getElementById('Email').value.trim())) {
 		swal({
 			type: 'error',
 			title: 'Oops...',
@@ -78,6 +109,8 @@ function validateForm() {
 		})
 		return false;
 	}
+	
+
 	// check complete required 'Date'
 	if (isEmpty(document.getElementById('data_6').value.trim())) {
 		swal({
@@ -113,9 +146,9 @@ function validateForm() {
 // check empty
 function isEmpty(str) { return (str.length === 0 || !str.trim()); }
 // Validate email
-function validateEmail(email) {
+function validateEmail(Email) {
 	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
-	return isEmpty(email) || re.test(email);
+	return isEmpty(Email) || re.test(Email);
 }
 
 

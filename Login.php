@@ -81,7 +81,7 @@ if (isset($_POST['email'])) {
       <div>
 
         <div class= "register1"> E-mail : <span style="color: red;"> *</span><br/>
-          <input type="text" id="email" name="email" class="roundTextArea"/>
+          <input type="text" id="Email" name="Email" placeholder="example@xxxxx.com" class="roundTextArea"/>
         </div>
         <br/>
         <div class= "register1"> Password :<span style="color: red;"> *</span><br/>
