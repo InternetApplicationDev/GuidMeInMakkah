@@ -42,11 +42,21 @@ if(isset($_GET['Logout'])){
   <!-- here is your content -->
   <div class="container">
     <div class="contactUs">
-      <ul class="contactMenu">
-        <li><a href="#"></a> <img class="pic" src="images/twitter.png" alt="LOGO" ></br> @GuideMeNMakkah </li></br>
-        <li><a href="#"></a> <img class="pic" src="images/facebook.png" alt="LOGO" ></br> @GuideMeNMakkah</li></br>
-        <li><a href="#"></a> <img class="pic" src="images/gmail.png" alt="LOGO" ></br>GuideNM@gmail.com</li>
-      </ul>
+	<div class="contactLable"> Name:<br/><input type="text" name = "name" id= "data_3" placeholder="Enter your name" class="roundTextArea"/></div>
+    <div class="contactLable"> Email:<br/><input type="text" id="data_5" name="email"  placeholder="example@xxxxx.com" class="roundTextArea"/></div>
+        <div>
+		<select name="feedback" id="data_3" size="1" class="roundTextArea">
+		<option>Help</option>
+		<option>Suggestion</option>
+		<option>Complaint</option>
+		<option>Idea</option>
+		</select></div></br>
+        <textarea name="suggestion" placeholder="Write Here" class="roundTextArea" ></textarea><br/><br/>
+        
+		<div class= "contactSubmit">
+		<input name="skip_Submit" value="Submit" type="submit" class="submitbutton"/>
+		<input type = "reset" value = "Cancel" class="submitbutton"/>
+		</div>
     </div>
   </div>
   <div class="footer" id="theFooter">
