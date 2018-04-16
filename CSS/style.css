@@ -153,23 +153,47 @@
   background: #eee;
 }
 /************************************************** text **************************************************/
-.text {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  border:none;
-  color: black;
-  text-align: center;
-  font-size: 200%;
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
 
-}
 .listPageh1 {
   padding-top: 10px;
   margin-left :160px;
 }
+
+/*
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #ffffff;
+}
+.box:hover .overlay {
+  opacity: 0.5;
+}*/
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); 
+  color: #f1f1f1; 
+}
+.box:hover .overlay {
+  opacity: 1;
+}
+
 /************************************************** list boxes **************************************************/
 .logo {
   width: 100px;
@@ -202,21 +226,7 @@
   width:100%;
   height: 100%;
 }
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #ffffff;
-}
-.box:hover .overlay {
-  opacity: 0.5;
-}
+
 /************************************************** other listpage styling **************************************************/
 
 hr {
