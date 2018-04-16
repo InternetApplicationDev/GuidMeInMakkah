@@ -145,7 +145,7 @@ function addUserRate($userName,$userRate,$pageName){
 ?>
 <html class="theBackGround">
 <head>
-
+	<title> <?php echo $_GET[className] ?> </title>
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
 	<script type = "text/javascript" src = "JS/javaScript.js"></script>
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -260,7 +260,7 @@ function addUserRate($userName,$userRate,$pageName){
 		<table class="tableButtonReservation">
 			<tr>
 			<th>&nbsp &nbsp 150 RS</th>
-			<th> <button class="buttonReservation">Reservation</button> </th>
+			<th> <button class="buttonReservation" onclick="">Reservation</button> </th>
 			</tr>
 		</table>
 		 
@@ -321,7 +321,7 @@ $r = $bar->individualRestaurant(1);
 ?>
 	<br><br><br><br><br><br><br><br><hr><br><br><br>
    
-<div class="containerComments">
+<div class="containerComments" id="comm">
 	<!--comments sections-->
 	<div class="content">
 		
