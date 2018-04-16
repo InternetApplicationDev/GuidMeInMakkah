@@ -7,8 +7,13 @@ function connect()
  ini_set ('display_errors', 1);
 error_reporting (E_ALL & ~E_NOTICE);
 
+<<<<<<< HEAD
 if ($dbc = mysqli_connect ('localhost', 'root', ''))  // connect
 {
+=======
+if ($dbc = mysqli_connect ('localhost', 'root', '12345678'))  // connect
+{		
+>>>>>>> e1993020842f1dd70511c4f83e54bf09e987ab72
 print '<p>Successfully connected to MySQL.</p>';
 
 
@@ -16,7 +21,7 @@ print '<p>Successfully connected to MySQL.</p>';
 }}
 
 function address($id ){
-$dbc = mysqli_connect ('localhost', 'root', '');//conn
+$dbc = mysqli_connect ('localhost', 'root', '12345678');//conn
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -69,11 +74,15 @@ print "<p>Could not add the user because: <b>" . mysqli_error($dbc) . "</b>. The
 
 
 function retreve_restrants(){
+<<<<<<< HEAD
 
 $dbc = mysqli_connect ('localhost', 'root', '');
 
 $dbc = mysqli_connect ('localhost', 'root', '12345678');
 
+=======
+$dbc = mysqli_connect ('localhost', 'root', '12345678');
+>>>>>>> e1993020842f1dd70511c4f83e54bf09e987ab72
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -103,11 +112,15 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 
 
 function retreve_caffes(){
+<<<<<<< HEAD
 
 $dbc = mysqli_connect ('localhost', 'root', '');
 
 $dbc = mysqli_connect ('localhost', 'root', '12345678');
 
+=======
+$dbc = mysqli_connect ('localhost', 'root', '12345678');
+>>>>>>> e1993020842f1dd70511c4f83e54bf09e987ab72
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -138,11 +151,15 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 
 
 function retreve_both(){
+<<<<<<< HEAD
 
 $dbc = mysqli_connect ('localhost', 'root', '');
 
 $dbc = mysqli_connect ('localhost', 'root', '12345678');
 
+=======
+$dbc = mysqli_connect ('localhost', 'root', '12345678');
+>>>>>>> e1993020842f1dd70511c4f83e54bf09e987ab72
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -174,7 +191,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 function individualRestaurant($className,$id){
 
 
-$dbc = mysqli_connect ('localhost', 'root', '');
+$dbc = mysqli_connect ('localhost', 'root', '12345678');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -214,10 +231,13 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 
 function restaurantPics($className,$id){
 
+<<<<<<< HEAD
 
 $dbc = mysqli_connect ('localhost', 'root', '');
 
 
+=======
+>>>>>>> e1993020842f1dd70511c4f83e54bf09e987ab72
 
 $dbc = mysqli_connect ('localhost', 'root', '12345678');
 if (@mysqli_select_db ($dbc,'db')) {
