@@ -8,6 +8,9 @@ if(isset($_GET['Logout'])){
 <!DOCTYPE html>
 <html class="theBackGround">
 <head>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+  <!-- customized CSS and JS -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script type="text/javascript" src= "JS/javaScript.js"></script>
   <!-- Sweet Alert  -->
@@ -52,7 +55,7 @@ if(isset($_GET['Logout'])){
 		<option>Idea</option>
 		</select></div></br>
         <textarea name="suggestion" placeholder="Write Here" class="roundTextArea" ></textarea><br/><br/>
-        
+
 		<div class= "contactSubmit">
 		<input name="skip_Submit" value="Submit" type="submit" class="submitbutton"/>
 		<input type = "reset" value = "Cancel" class="submitbutton"/>

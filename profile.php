@@ -4,11 +4,21 @@ if(isset($_GET['Logout'])){
   header('Location: index.php');
   exit;
 }
+$theuser = $_COOKIE['theuser'];
+$dbc = mysqli_connect("localhost","root","12345678");
+mysqli_select_db($dbc,"db");
+$getPictureSql = mysqli_query($dbc,"SELECT user_picture From user where user_id = $theuser");
+while($getPicture = mysqli_fetch_array($getPictureSql)){
+  $picturePath = $getPicture['user_picture'];
+}
 ?>
 <!DOCTYPE html>
 <html class="theBackGround">
 <head>
   <title>Profile</title>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+  <!-- customized CSS and JS -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script type = "text/javascript" src = "JS/javaScript.js"></script>
   <!-- Add icon library -->
@@ -36,7 +46,7 @@ if(isset($_GET['Logout'])){
     </ul>
   </div>
   <div class="card">
-    <img src="images/pesonal icon.jpg" alt="profile picture" style="width:100%">
+    <img src="<?php echo $picturePath; ?>" alt="profile picture" style="width:100%">
     <h1>Name</h1>
     <p>Bio</p>
     <p><button>Contact</button></p>

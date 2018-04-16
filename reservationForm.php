@@ -9,6 +9,9 @@ if(isset($_GET['Logout'])){
 <html class="theBackGround">
 <head>
   <title>reservationForm</title>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+  <!-- customized CSS and JS -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script type="text/javascript" src= "JS/javaScript.js"></script>
   <!-- Sweet Alert  -->

@@ -47,7 +47,7 @@ class connection {
         }
       } //end
       function retreve_restrants(){
-        $dbc = mysqli_connect ('localhost', 'root', '1234');
+        $dbc = mysqli_connect ('localhost', 'root', '12345678');
         if (@mysqli_select_db ($dbc,'db')) {
           $query = "SELECT restaurant_name, profile_pic FROM restaurants";
           if ($r = mysqli_query ($dbc, $query)) {
@@ -68,7 +68,7 @@ class connection {
           }
         }//end of fun
         function retreve_caffes(){
-          $dbc = mysqli_connect ('localhost', 'root', '1234');
+          $dbc = mysqli_connect ('localhost', 'root', '12345678');
           if (@mysqli_select_db ($dbc,'db')) {
             $query = "SELECT cafe_name, profile_pic FROM cafe";
             if ($r = mysqli_query ($dbc, $query)) {
@@ -89,7 +89,7 @@ class connection {
             }
           }//end of fun
           function retreve_both(){
-            $dbc = mysqli_connect ('localhost', 'root', '1234');
+            $dbc = mysqli_connect ('localhost', 'root', '12345678');
             if (@mysqli_select_db ($dbc,'db')) {
               $query = "SELECT cafeAndRest_name, profile_pic FROM cafeandrest";
               if ($r = mysqli_query ($dbc, $query)) {

@@ -154,6 +154,9 @@ function addUserRate($userName,$userRate,$pageName){
 <html class="theBackGround">
 <head>
 	<title> <?php echo $_GET[className] ?> </title>
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+	<!-- customized CSS and JS -->
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
 	<script type = "text/javascript" src = "JS/javaScript.js"></script>
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
