@@ -159,14 +159,23 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
  }
 
 
-function individualRestaurant($id){
+function individualRestaurant($className,$id){
 
 
 $dbc = mysqli_connect ('localhost', 'root', '12345678');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
-$query = "SELECT * FROM restaurants WHERE restaurant_id = $id";
+
+	if($id == 1)
+		$query = "SELECT * FROM cafe WHERE cafe_name = \"{$className}\"";
+	else if($id == 3)
+		$query = "SELECT * FROM cafeandrest WHERE cafeAndRest_name = \"{$className}\"";
+	else if($id == 2)
+		$query = "SELECT * FROM restaurants WHERE restaurant_name = \"{$className}\"";
+	
+	
+	
 if ($r = mysqli_query ($dbc, $query)) {
 	
 
@@ -191,12 +200,19 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
  }//end of fun
 
 
-function restaurantPics($id){
+function restaurantPics($className,$id){
 
 
 $dbc = mysqli_connect ('localhost', 'root', '12345678');
 if (@mysqli_select_db ($dbc,'db')) {
-$query = "SELECT restaurantPic FROM restaurantpics WHERE restaurant_id = $id";
+	
+	if($id == 1)
+		$query = "SELECT cafepics.cafePics FROM cafe  INNER JOIN cafepics ON cafe.cafe_name = cafepics.cofeName WHERE cafe_name = \"{$className}\"";
+	else if($id == 3)
+		$query = "SELECT cafeandrestpics.cafeAndRestPic FROM cafeandrest  INNER JOIN cafeandrestpics ON cafeandrest.cafeAndRest_name = cafeandrestpics.cofeAndResName WHERE cafeAndRest_name = \"{$className}\"";
+	else if($id == 2)
+		$query = "SELECT restaurantpics.restaurantPic FROM restaurants  INNER JOIN restaurantpics ON restaurants.restaurant_name = restaurantpics.restauran_name WHERE restaurant_name = \"{$className}\"";
+
 if ($r = mysqli_query ($dbc, $query)) {
 	
 
