@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 16, 2018 at 10:31 PM
+-- Generation Time: Apr 17, 2018 at 12:22 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -191,7 +191,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_name`, `user_picture`, `user_bio`) VALUES
-(1, 'admin', 'admin', 'admin', '', '');
+(1, 'admin', 'admin', 'admin', 'Users/Photos/admin.png', '');
 
 --
 -- Indexes for dumped tables
