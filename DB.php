@@ -7,7 +7,7 @@ function connect()
  ini_set ('display_errors', 1);
 error_reporting (E_ALL & ~E_NOTICE); 
 
-if ($dbc = mysqli_connect ('localhost', 'root', 'root'))  // connect
+if ($dbc = mysqli_connect ('localhost', 'root', '12345678'))  // connect
 {		
 print '<p>Successfully connected to MySQL.</p>';
 
@@ -16,7 +16,7 @@ print '<p>Successfully connected to MySQL.</p>';
 }}
 
 function address($id ){
-$dbc = mysqli_connect ('localhost', 'root', 'root');//conn
+$dbc = mysqli_connect ('localhost', 'root', '12345678');//conn
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -48,7 +48,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 //insert new user func
 function InsertNewUser(){
 
-$dbc = mysqli_connect ('localhost', 'root', '');//conn
+$dbc = mysqli_connect ('localhost', 'root', '12345678');//conn
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -69,7 +69,7 @@ print "<p>Could not add the user because: <b>" . mysqli_error($dbc) . "</b>. The
 
 
 function retreve_restrants(){
-$dbc = mysqli_connect ('localhost', 'root', 'root');
+$dbc = mysqli_connect ('localhost', 'root', '12345678');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -99,7 +99,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 
 
 function retreve_caffes(){
-$dbc = mysqli_connect ('localhost', 'root', 'root');
+$dbc = mysqli_connect ('localhost', 'root', '12345678');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -130,7 +130,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 
 
 function retreve_both(){
-$dbc = mysqli_connect ('localhost', 'root', 'root');
+$dbc = mysqli_connect ('localhost', 'root', '12345678');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -162,7 +162,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 function individualRestaurant($id){
 
 
-$dbc = mysqli_connect ('localhost', 'root', 'root');
+$dbc = mysqli_connect ('localhost', 'root', '12345678');
 
 if (@mysqli_select_db ($dbc,'db')) {
 
@@ -194,7 +194,7 @@ die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b
 function restaurantPics($id){
 
 
-$dbc = mysqli_connect ('localhost', 'root', 'root');
+$dbc = mysqli_connect ('localhost', 'root', '12345678');
 if (@mysqli_select_db ($dbc,'db')) {
 $query = "SELECT restaurantPic FROM restaurantpics WHERE restaurant_id = $id";
 if ($r = mysqli_query ($dbc, $query)) {
