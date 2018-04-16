@@ -369,6 +369,13 @@ hr {
       border-radius: 10px;
       border: 5px solid transparent;
     }
+    .roundTextArea2{
+      width:100%;
+      height: 60px;
+      border-radius: 10px;
+      border: 5px solid transparent;
+	  resize: none;
+    }
    .submitbutton{
       border-radius: 18px;
       -moz-border-radius: 5px;
