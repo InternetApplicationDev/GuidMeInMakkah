@@ -7,10 +7,12 @@ if(isset($_GET['Logout'])){
 $theuser = $_COOKIE['theuser'];
 $dbc = mysqli_connect("localhost","root","12345678");
 mysqli_select_db($dbc,"db");
-$result = mysqli_query($dbc,"SELECT user_picture,user_email,user_name,user_bio From user where user_id = $theuser");
+$result = mysqli_query($dbc,"SELECT user_picture,user_email,user_first_name,user_last_name,user_bio From user where user_id = $theuser");
 while($row = mysqli_fetch_array($result)){
   $picturePath = $row['user_picture'];
-  $userName = $row['user_name'];
+  $userName = $row['user_first_name'];
+  $userName .= ' ';
+  $userName .= $row['user_last_name'];
   $userBio = $row['user_bio'];
   $userEmail = $row['user_email'];
 }
@@ -23,6 +25,7 @@ while($row = mysqli_fetch_array($result)){
   <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
   <!-- customized CSS and JS -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <script type="text/javascript">var userEmail = "<?= $userEmail ?>";</script>
   <script type = "text/javascript" src = "JS/javaScript.js"></script>
   <!-- Add icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -63,7 +66,7 @@ while($row = mysqli_fetch_array($result)){
         </symbol>
       </defs>
     </svg>
-    <a href="?email" class="contact-button">
+    <a href="#" class="contact-button" onclick="displayEmail()">
       Contact
       <svg class="icon icon-paperplane"><use xlink:href="#icon-paperplane"></use></svg>
       <span><?php echo $userEmail; ?></span>

@@ -87,22 +87,22 @@ if (isset($_POST['Email'])) {
   </div>
   <hr>
 
-  <form method="post" id="LoginForm" action="Login.php" onSubmit="return validateForm();">
+  <form method="post" id="LoginForm" onSubmit="return validateForm();">
     <div class="container">
 
       <div>
 
         <div class= "register1"> E-mail : <span style="color: red;"> *</span><br/>
-          <input type="text" id="Email" name="Email"  class="roundTextArea"/>
+          <input type="text" id="loginEmail" name="Email"  class="roundTextArea"/>
         </div>
         <br/>
         <div class= "register1"> Password :<span style="color: red;"> *</span><br/>
-          <input type="password" id="password" name="password" class="roundTextArea"/>
+          <input type="password" id="loginPassword" name="password" class="roundTextArea"/>
         </div>
 
         <br/>
         <div class= "regesterSubmit">
-          <input name="Log in" value="Log in" type="submit" class="submitbutton"/>
+          <input name="Log in" value="Log in" type="submit" class="submitbutton" id="LoginButton"/>
         </div>
       </div>
     </div>

@@ -280,7 +280,7 @@ function addUserRate($userName,$userRate,$pageName){
 		<table class="tableButtonReservation">
 			<tr>
 			<th>&nbsp &nbsp 150 RS</th>
-			<th> <button class="buttonReservation" onclick="window.location = 'reservationForm.html'">Reservation</button> </th>
+			<th> <button class="buttonReservation" onclick="window.location = 'reservationForm.php'">Reservation</button> </th>
 			</tr>
 		</table>
 
@@ -351,7 +351,7 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
       else
       <center><hr><p style="font-size: 25px; color: red;">YOU MUST LOGIN FIRST TO COMMANTS</p><hr></center>
     -->
-	<?php 
+	<?php
     echo "<form action=\"individualprofile.php?id={$_GET[id]} & className={$_GET[className]}\" method=\"post\" >";
 	?>
       <table>
@@ -385,7 +385,7 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 		<?php
 		// how many comments of this page from file and prinit
 		$path ="Users/Files/Comments/".$_GET[className].".txt";
-		
+
 			if (is_readable($path)){
 				$data = file ($path);
 			$n = count ($data);

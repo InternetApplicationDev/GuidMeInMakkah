@@ -10,7 +10,6 @@ $(document).ready(function(){
 	});
 });
 
-
 var heart ="unheart";
 
 function changeImageOnclick() {
@@ -150,8 +149,15 @@ function validateEmail(Email) {
 	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
 	return isEmpty(Email) || re.test(Email);
 }
-
-
+/////////////////////////////////////////////////// Profile ///////////////////////////////////////////////////
+function displayEmail(){
+	// var Email = email;
+	swal({
+		title: 'This User Email: '+userEmail,
+		animation: false,
+		customClass: 'animated tada'
+	})
+}
 /////////////////////////////////////////////////// footer Developers ///////////////////////////////////////////////////
 function showDevFunction() {
 	var x = document.getElementById("developersNames");
@@ -165,26 +171,6 @@ function showDevFunction() {
 	}
 }
 
-/////////////////////////////////////////////////// log in ///////////////////////////////////////////////////
-function loginAlert(loginState){
-	if(loginState == 1){
-		swal({
-			type: 'success',
-			title: 'You Have Been Logged In sccessfully',
-			showConfirmButton: false,
-			timer: 1500,
-		});
-		alert(loginState);
-	}
-	else{
-		swal({
-			type: 'error',
-			title: 'Oops...',
-			text: 'Incorrect email or password',
-		});
-		alert(loginState);
-	}
-}
 /////////////////////////////////////////////////// footer siteMap ///////////////////////////////////////////////////
 function showSiteMap(){
 	swal({
