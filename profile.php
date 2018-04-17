@@ -7,9 +7,12 @@ if(isset($_GET['Logout'])){
 $theuser = $_COOKIE['theuser'];
 $dbc = mysqli_connect("localhost","root","12345678");
 mysqli_select_db($dbc,"db");
-$getPictureSql = mysqli_query($dbc,"SELECT user_picture From user where user_id = $theuser");
-while($getPicture = mysqli_fetch_array($getPictureSql)){
-  $picturePath = $getPicture['user_picture'];
+$result = mysqli_query($dbc,"SELECT user_picture,user_email,user_name,user_bio From user where user_id = $theuser");
+while($row = mysqli_fetch_array($result)){
+  $picturePath = $row['user_picture'];
+  $userName = $row['user_name'];
+  $userBio = $row['user_bio'];
+  $userEmail = $row['user_email'];
 }
 ?>
 <!DOCTYPE html>
@@ -28,33 +31,9 @@ while($getPicture = mysqli_fetch_array($getPictureSql)){
   <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
   <!-- pace preloader -->
   <script src="JS/pace.js"></script>
+  <!-- contact button -->
+  <link rel='stylesheet prefetch' href='css/pqbdwk.css'>
 </head>
-<?php
-ini_set('display_errors',1);
-error_reporting(E_ALL&~E_NOTICE);
-if (isset($_POST['Submit'])){
-  if($dbc=@mysqli_connect('localhost','root','root')){
-    if(!@mysqli_select_db($dbc,'db')){
-      die('<p> Could not select the database because:<b>'.mysqli_error($dbc).'</b></p>');
-    }
-  }
-  else {
-      die('<p> Could not connect to mysql because:<b>'.mysqli_error($dbc).'</b></p>');
-  }
-
-  //Define the query
-  $insert = "INSERT INTO `User` (`ID`, `First_name`, `Last_name`, `E-mail`, `Password`)
-   VALUES ('0','{$_POST['Name']}', '{$_POST['l_name']}', '{$_POST['Email']}', '{$_POST['password']}')";
-   //execute INSERT
-   if(@mysqli_query($dbc,$insert)){
-     print'';
-   }
-   else {
-    print"<p> Could not add the entry because:<b>'.mysqli_error($dbc).'</b>. The query was $insert .</p>";
-   }
-   mysqli_close($dbc);
-}
-?>
 <body class="centerPage">
   <div class="navbar">
     <ul class="navmenu">
@@ -73,12 +52,22 @@ if (isset($_POST['Submit'])){
   </div>
   <div class="card">
     <img src="<?php echo $picturePath; ?>" alt="profile picture" style="width:100%">
-    <h1>Name</h1>
-    <?php
-    print"<h1>{$_POST['Name']} {$_POST['l_name']} </h1>";
-    ?>
-    <p>Bio</p>
-    <p><button>Contact</button></p>
+    <h1><?php echo $userName; ?></h1>
+    <p><?php echo $userBio; ?></p>
+    <br />
+    <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <symbol id="icon-paperplane" viewBox="0 0 1024 1024">
+          <title>paperplane</title>
+          <path class="path1" d="M1009.376 5.12c-5.312-3.424-11.36-5.12-17.376-5.12-6.176 0-12.384 1.76-17.76 5.376l-960 640c-9.888 6.56-15.328 18.112-14.048 29.952 1.216 11.808 8.896 22.016 19.936 26.368l250.368 100.192 117.728 206.016c5.632 9.888 16.096 16 27.424 16.128 0.128 0 0.224 0 0.352 0 11.232 0 21.664-5.952 27.424-15.552l66.464-110.816 310.24 124.064c3.808 1.536 7.808 2.272 11.872 2.272 5.44 0 10.816-1.376 15.68-4.128 8.448-4.736 14.24-13.056 15.872-22.624l160-960c2.080-12.576-3.488-25.184-14.176-32.128zM100.352 664.864l741.6-494.432-539.2 577.184c-2.848-1.696-5.376-3.936-8.512-5.184l-193.888-77.568zM326.048 770.112c-0.064-0.128-0.16-0.192-0.224-0.32l606.176-648.8-516.768 805.184-89.184-156.064zM806.944 947.488l-273.312-109.312c-6.496-2.56-13.248-3.424-19.936-3.808l420.864-652.416-127.616 765.536z"></path>
+        </symbol>
+      </defs>
+    </svg>
+    <a href="?email" class="contact-button">
+      Contact
+      <svg class="icon icon-paperplane"><use xlink:href="#icon-paperplane"></use></svg>
+      <span><?php echo $userEmail; ?></span>
+    </a>
   </div>
   <div class="Favorite">
     <img src="images/add.png"/>

@@ -23,7 +23,7 @@
   background-position: center;
   background-size: 100%;
 }
-.icon{
+.indexicon{
   margin-left: 35%;
 }
 .slide .boxes {
@@ -31,6 +31,7 @@
 }
 .slide .boxes img{
   padding: 3%;
+  z-index: 999;
 }
 .iconName {
   position: absolute;
@@ -161,19 +162,19 @@
 
 /*
 .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #ffffff;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+height: 100%;
+width: 100%;
+opacity: 0;
+transition: .5s ease;
+background-color: #ffffff;
 }
 .box:hover .overlay {
-  opacity: 0.5;
+opacity: 0.5;
 }*/
 
 .overlay {
@@ -187,8 +188,8 @@
   opacity: 0;
   transition: .5s ease;
   background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5); 
-  color: #f1f1f1; 
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
 }
 .box:hover .overlay {
   opacity: 1;
@@ -214,10 +215,10 @@
 .container {
 
   width:90%;
-   display: -webkit-flex; 
-   -webkit-flex-wrap: wrap;
-  display: flex;   
-  flex-wrap: wrap; 
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
   border: #000;
   margin: auto;
 }
@@ -236,7 +237,8 @@ hr {
 /************************************************** profile card **************************************************/
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  max-width: 400px;
+  height: 400px;
   margin: 3% 0% 0% 4%;
   text-align: center;
   float: left;
@@ -264,517 +266,614 @@ hr {
 .card button:hover, a:hover {
   opacity: 0.7;
 }
+/************************************************** profile card - contact button **************************************************/
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700);
 
-
-    /******** Contact Us ********/
-
-    .contactUs {
-      font-family: 'Amaranth', sans-serif;
-      font-variant: normal;
-      font-size: 50;
-      float:left;
-      margin-left:450px;
-      margin-top:6px;
-      padding-bottom: 50px;
-      padding-right: 23px;
-      padding-top: 20px;
-    }
-
-	.contactLable {
-      font-family: 'Amaranth', sans-serif;
-      font-variant: normal;
-      font-size: 30;
-      font-weight: bold;
-      padding-bottom: 20px;
-	}
-
-    .contactUs li{
-      list-style: none;
-      float: left;
-      font-family: 'Amaranth', sans-serif;
-      font-size: 15px;
-      padding-bottom:20px;
-      color: black;
-    }
-	 .contactSubmit{
-      font-family: 'Amaranth', sans-serif;
-      margin-left: 23%;
-      margin-bottom: 20%;
-    }
-	 .submitbutton2{
-      border-radius: 18px;
-      -moz-border-radius: 10px;
-      -webkit-border-radius: 5px;
-      color: #D38A8A;
-      border: 1px solid black;
-	  width: 100px;
-	  height:30px;
-	  margin-top: 6px;
-    }
-    .pic {
-      width: 30ps;
-      height: 30px;
-      margin-left: 30px;
-      margin-bottom: 5px;
-    }
-
-
-    /*************  RESERVATION  *****************/
-
-    .reserve{
-      font-family: 'Amaranth', sans-serif;
-      font-variant: normal;
-      font-size: 50px;
-      font-weight: bold;
-      color: #D38A8A;
-      float:left;
-      margin-left:450px;
-      margin-top:20px;
-      padding-bottom:20px;
-    }
-
-    .reserv1{
-      font-family: 'Amaranth', sans-serif;
-      font-variant: normal;
-      font-size: 20px;
-      color:	#C0C0C0;
-      float:left;
-      margin-left:300px;
-      padding-bottom:30px;
-      padding-right:300px;
-
-    }
-    .register1{
-      font-family: 'Amaranth', sans-serif;
-      font-variant: normal;
-      font-size: 20px;
-      color:  #C0C0C0;
-      float:left;
-      margin-left:300px;
-      padding-bottom:30px;
-      padding-right:300px;
-    }
-    .reserv2{
-      font-family: 'Amaranth', sans-serif;
-      font-variant: normal;
-      font-size: 30;
-      font-weight: bold;
-      margin-left:300px;
-      padding-bottom:20px;
-
-    }
-    .reserv3 {
-      font-family: 'Amaranth', sans-serif;
-      float:left;
-      margin-left:100px;
-      padding-bottom:20px;
-    }
-    .reservSubmit{
-      font-family: 'Amaranth', sans-serif;
-      margin-left: 65%;
-      margin-bottom: 10%;
-    }
-    .regesterSubmit{
-      font-family: 'Amaranth', sans-serif;
-      margin-left:350px;
-      margin-bottom: 10%;
-    }
-    .roundTextArea{
-      width: 100%;
-      border-radius: 10px;
-      border: 5px solid transparent;
-    }
-    .roundTextArea2{
-      width:100%;
-      height: 60px;
-      border-radius: 10px;
-      border: 5px solid transparent;
-	  resize: none;
-    }
-   .submitbutton{
-      border-radius: 18px;
-      -moz-border-radius: 5px;
-      -webkit-border-radius: 5px;
-      color: #D38A8A;
-      border: 1px solid black;
-	  position: relative;
-    }
-    /********** ABOUT *********/
-    .about {
-      background-color: rgb(175, 94, 95, 0.6);
-      margin-left: 1in;
-      margin-right: 1in;
-      margin-top: 1in;
-      margin-bottom: 1in;
-      padding-right:30px;
-      padding-bottom: 20px;
-    }
-
-    p.about1 {
-      color: rgb(120, 120, 120);
-      opacity: 1.0;
-      font-family: Amaranth, sans-serif;
-      font-variant: normal;
-      font-size: 23px;
-      font-weight: bold;
-      text-decoration: underline;
-      margin-left: 1in;
-      margin-bottom: 7px;
-      padding-right:30px;
-      padding-top:10px;
-    }
-
-
-    p.about2 {
-      color: hsl(0, 0%, 94%);
-      font-family: Amaranth, sans-serif;
-      font-variant: normal;
-      font-size: 23px;
-      margin-left: 1in;
-    }
-
-    p.about3 {
-      color:rgb(120, 120, 120);
-      font-family: Amaranth, sans-serif;
-      font-variant: normal;
-      font-weight: bold;
-      text-decoration: underline;
-      font-size: 23px;
-      margin-left: 1in;}
-
-      p.about4 {
-        color: hsl(0, 0%, 94%);
-        font-family: Amaranth, sans-serif;
-        font-variant: normal;
-        font-size: 23px;
-        margin-left: 1in;
-        margin-bottom: 20px;
-      }
-	/****************************************header of individual profile*********************************/
-
-	 .fix_layout_center {
-		 width:890px;
-		 height:250px;
-		 margin-left:10%;
-
-	 }
-
-	 .emptyBlackBackground{
-		 width:100%;
-		 height:100%;
-		 background-color: #000;
-		 position:relative;
-	 }
-
-	 .textBlackBackground{
-		 width:100%;
-		 height:100%;
-		 background-color: rgba(0, 0, 0, 0.4);
-		 position:relative;
-		 margin:-31.0% auto;
-
-	 }
-
-	.textBlackBackground #textSliderImg{
-	   color: #ffffff;
-	   font-family: "Times New Roman", Times, serif;
-	   font-style: oblique;
-	   font-size: 27px;
-	   padding-top:7%;
-	   text-align: center;
-	 }
-
-	 .starsBlackBackground {
-		 position:relative;
-		 padding-top:15%;
-		 padding-left:40.5%;
-		 width:19%;
-		 height:60%;
-	 }
-
-	 .pathThisPageAsText {
-		margin-left:10%;
-		color: gray;
-		font-size: 16px;
-	 }
-
-	/*******************************************The Rest Of contint*********************************************/
-
-	.contenerTheRestOfcontint{
-		width:890px;
-	    height:100%;
-		margin-left:10%;
-
-	}
-
-
-	.description{
-		border:0px;
-		resize: none;
-	}
-
-
-
-/**********menu***********/
-.Rarrow:active{
-  transform: scale(1.3);
-}
-.Rarrow{
- position:absolute;
- margin-top:-15%;
-}
-.Larrow:active{
-  transform: scale(1.3);
-}
-.Larrow{
- position:absolute;
- margin-top:-21%;
+*:before, *:after {
+  box-sizing: 100px;
 }
 
-/**********address***********/
-.addressMap li{
-	float: left;
-	list-style-type: none;
-	padding-left:30px;
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
 }
-.addressMap_1{
-	margin-left:-8%;
+
+.icon-paperplane {
+  font-size: 1em;
+  color: white;
+  margin-left: 1px;
+  margin-top: 5px;
 }
-.addressMapul ul{
+
+.contact-button {
+  position: relative;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 20px 45px 20px 40px;
+  transition: 0.3s ease-in-out;
+}
+.contact-button span {
+  text-transform: none;
+  position: absolute;
+  color: #EE283E;
+  top: 20px;
+  left: 30px;
+  opacity: 0;
+  transition: all 0s ease 0s;
+}
+.contact-button:hover {
+  transition: 0.3s ease-in-out;
+  border: 2px solid white;
+  border-radius: 30px;
+  background-color: white;
+}
+.contact-button:hover > span {
+  opacity: 1;
+  transition: all 0.25s ease-in-out 0.1s;
+}
+.contact-button:hover:before {
+  transition: 0.3s ease-in-out;
+  background-color: #EE283E;
+}
+.contact-button:before, .contact-button:after {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: -12px;
+  width: 90px;
+  height: 25px;
+}
+.contact-button:before {
+  border: 2px solid #EE283E;
+  background-color: #1F3944;
+  -webkit-transform: skew(-25deg);
+  transform: skew(-25deg);
+  transition: 0.3s ease-in-out;
+}
+.contact-button:after {
+  content: "Email";
+  font-size: 0.45em;
+  top: -7px;
+  left: -5px;
+  color: white;
+}
+
+.inspiration {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #47829c;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+}
+
+/******** Contact Us ********/
+
+.contactUs {
+  font-family: 'Amaranth', sans-serif;
+  font-variant: normal;
+  font-size: 50;
+  float:left;
+  margin-left:450px;
+  margin-top:6px;
+  padding-bottom: 50px;
+  padding-right: 23px;
+  padding-top: 20px;
+}
+
+.contactLable {
+  font-family: 'Amaranth', sans-serif;
+  font-variant: normal;
+  font-size: 30;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.contactUs li{
+  list-style: none;
+  float: left;
+  font-family: 'Amaranth', sans-serif;
+  font-size: 15px;
+  padding-bottom:20px;
+  color: black;
+}
+.contactSubmit{
+  font-family: 'Amaranth', sans-serif;
+  margin-left: 23%;
+  margin-bottom: 20%;
+}
+.submitbutton2{
+  border-radius: 18px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 5px;
+  color: #D38A8A;
+  border: 1px solid black;
+  width: 100px;
+  height:30px;
+  margin-top: 6px;
+}
+.pic {
+  width: 30ps;
+  height: 30px;
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+
+/*************  RESERVATION  *****************/
+
+.reserve{
+  font-family: 'Amaranth', sans-serif;
+  font-variant: normal;
+  font-size: 50px;
+  font-weight: bold;
+  color: #D38A8A;
+  float:left;
+  margin-left:450px;
+  margin-top:20px;
+  padding-bottom:20px;
+}
+
+.reserv1{
+  font-family: 'Amaranth', sans-serif;
+  font-variant: normal;
+  font-size: 20px;
+  color:	#C0C0C0;
+  float:left;
+  margin-left:300px;
+  padding-bottom:30px;
+  padding-right:300px;
+
+}
+.register1{
+  font-family: 'Amaranth', sans-serif;
+  font-variant: normal;
+  font-size: 20px;
+  color:  #C0C0C0;
+  float:left;
+  margin-left:300px;
+  padding-bottom:30px;
+  padding-right:300px;
+}
+.reserv2{
+  font-family: 'Amaranth', sans-serif;
+  font-variant: normal;
+  font-size: 30;
+  font-weight: bold;
+  margin-left:300px;
+  padding-bottom:20px;
+
+}
+.reserv3 {
+  font-family: 'Amaranth', sans-serif;
+  float:left;
+  margin-left:100px;
+  padding-bottom:20px;
+}
+.reservSubmit{
+  font-family: 'Amaranth', sans-serif;
+  margin-left: 65%;
+  margin-bottom: 10%;
+}
+.regesterSubmit{
+  font-family: 'Amaranth', sans-serif;
+  margin-left:350px;
+  margin-bottom: 10%;
+}
+.roundTextArea{
+  width: 100%;
+  border-radius: 10px;
+  border: 5px solid transparent;
+}
+.roundTextArea2{
+  width:100%;
+  height: 60px;
+  border-radius: 10px;
+  border: 5px solid transparent;
+  resize: none;
+}
+.submitbutton{
+  border-radius: 18px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color: #D38A8A;
+  border: 1px solid black;
+  position: relative;
+}
+/********** ABOUT *********/
+.about {
+  background-color: rgb(175, 94, 95, 0.6);
+  margin-left: 1in;
+  margin-right: 1in;
+  margin-top: 1in;
+  margin-bottom: 1in;
+  padding-right:30px;
+  padding-bottom: 20px;
+}
+
+p.about1 {
+  color: rgb(120, 120, 120);
+  opacity: 1.0;
+  font-family: Amaranth, sans-serif;
+  font-variant: normal;
+  font-size: 23px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-left: 1in;
+  margin-bottom: 7px;
+  padding-right:30px;
+  padding-top:10px;
+}
+
+
+p.about2 {
+  color: hsl(0, 0%, 94%);
+  font-family: Amaranth, sans-serif;
+  font-variant: normal;
+  font-size: 23px;
+  margin-left: 1in;
+}
+
+p.about3 {
+  color:rgb(120, 120, 120);
+  font-family: Amaranth, sans-serif;
+  font-variant: normal;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 23px;
+  margin-left: 1in;}
+
+  p.about4 {
+    color: hsl(0, 0%, 94%);
+    font-family: Amaranth, sans-serif;
+    font-variant: normal;
+    font-size: 23px;
+    margin-left: 1in;
+    margin-bottom: 20px;
+  }
+  /****************************************header of individual profile*********************************/
+
+  .fix_layout_center {
+    width:890px;
+    height:250px;
+    margin-left:10%;
+
+  }
+
+  .emptyBlackBackground{
+    width:100%;
+    height:100%;
+    background-color: #000;
+    position:relative;
+  }
+
+  .textBlackBackground{
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position:relative;
+    margin:-31.0% auto;
+
+  }
+
+  .textBlackBackground #textSliderImg{
+    color: #ffffff;
+    font-family: "Times New Roman", Times, serif;
+    font-style: oblique;
+    font-size: 27px;
+    padding-top:7%;
+    text-align: center;
+  }
+
+  .starsBlackBackground {
+    position:relative;
+    padding-top:15%;
+    padding-left:40.5%;
+    width:19%;
+    height:60%;
+  }
+
+  .pathThisPageAsText {
+    margin-left:10%;
+    color: gray;
+    font-size: 16px;
+  }
+
+  /*******************************************The Rest Of contint*********************************************/
+
+  .contenerTheRestOfcontint{
+    width:890px;
+    height:100%;
+    margin-left:10%;
+
+  }
+
+
+  .description{
+    border:0px;
+    resize: none;
+  }
+
+
+
+  /**********menu***********/
+  .Rarrow:active{
+    transform: scale(1.3);
+  }
+  .Rarrow{
+    position:absolute;
+    margin-top:-15%;
+  }
+  .Larrow:active{
+    transform: scale(1.3);
+  }
+  .Larrow{
+    position:absolute;
+    margin-top:-21%;
+  }
+
+  /**********address***********/
+  .addressMap li{
+    float: left;
+    list-style-type: none;
+    padding-left:30px;
+  }
+  .addressMap_1{
+    margin-left:-8%;
+  }
+  .addressMapul ul{
     list-style-type: none;
     margin:0;
     padding: 0;
     overflow: hidden;
-}
+  }
 
-.addressMap {
-	margin-top:-2%;
-}
-.imgAdrress{
-	height:250px;
-	width:300px;
-}
-.imgAdrress img{
-	height:100%;
-	width:100%;
-	margin-left:0%;
-	margin-top:-5%;
-	border: 1px solid black;
-}
-/*******comments*****/
-
-
-	  .imgUserInCommetn{
-		  height:40%;
-		  width:41%;
-	  }
-
-	  .commentsUserBox{
-		  height:50%;
-		  width:50%;
-	  }
-
-	  .commentsUserBox img{
-		  height:20%;
-		  width:20%;
-	  }
-
-	  .userNameInComment{
-		  font-size: 20px;
-		  color: gray;
-	  }
-
-	  .userCommentInComment{
-		  font-size: 12px;
-		  margin-top:-15%;
-		  margin-left:23%;
-		  margin-bottom:10%;
-		  position:relative;
-	  }
+  .addressMap {
+    margin-top:-2%;
+  }
+  .imgAdrress{
+    height:250px;
+    width:300px;
+  }
+  .imgAdrress img{
+    height:100%;
+    width:100%;
+    margin-left:0%;
+    margin-top:-5%;
+    border: 1px solid black;
+  }
+  /*******comments*****/
 
 
-label {
-  width: 30px;
-  height: 30px;
-  padding: 5px;
-  color: transparent;
-}
+  .imgUserInCommetn{
+    height:40%;
+    width:41%;
+  }
 
-label::before {
-  content: "\2605";
-  color: #c0c0c0;
-  font-size: 30px;
-  line-height: 30px;
-  margin-right: -100%;
-}
+  .commentsUserBox{
+    height:50%;
+    width:50%;
+  }
 
-label:hover::before,
-label:hover ~ label::before,
-.stars input:checked ~ label::before {
-  color: #ffa500;
-}
+  .commentsUserBox img{
+    height:20%;
+    width:20%;
+  }
 
-/************************** deign israa page ******************/
-.stars {
-	position: absolute;
-	margin-top:-2.7%;
-	margin-left:13%;
-	height: 30px;
-	width: 200px;
-	padding: 10px;
-	border-radius: 15px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: row-reverse;
-}
+  .userNameInComment{
+    font-size: 20px;
+    color: gray;
+  }
 
-.stars input{
-  position: absolute;
-  left: -99999px;
-}
+  .userCommentInComment{
+    font-size: 12px;
+    margin-top:-15%;
+    margin-left:23%;
+    margin-bottom:10%;
+    position:relative;
+  }
 
-.userImgIconComment {
-	height:90px;
-	width:80px;
-}
 
-.userWriteComment #TAtest{
-	 position: absolute;
-	 resize: none;
-	margin-top:-7.2%;
-	margin-left:7%;
-}
+  label {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    color: transparent;
+  }
 
-.userRateHint{
-	position: absolute;
-	margin-top:-1.5%;
-	margin-left:7%;
-}
+  label::before {
+    content: "\2605";
+    color: #c0c0c0;
+    font-size: 30px;
+    line-height: 30px;
+    margin-right: -100%;
+  }
 
-.buttonOfSubmitComm input[type=button]{
-	position: absolute;
-	width:90px;
-	height:30px;
-	margin-top:-4.4%;
-	margin-left:40%;
-}
+  label:hover::before,
+  label:hover ~ label::before,
+  .stars input:checked ~ label::before {
+    color: #ffa500;
+  }
 
-.containerComments {
-	display: flex;
-	flex-wrap: wrap;
+  /************************** deign israa page ******************/
+  .stars {
+    position: absolute;
+    margin-top:-2.7%;
+    margin-left:13%;
+    height: 30px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
 
-	width:890px;
-	height:100%;
-}
+  .stars input{
+    position: absolute;
+    left: -99999px;
+  }
 
-.imageIntro{
-	 width:890px;
-	 height:250px;
-	 margin:-28.1% auto;
-	 position:relative;
-	 overflow:hidden;
- }
+  .userImgIconComment {
+    height:90px;
+    width:80px;
+  }
 
-.imageIntro img{
-	 width:100%;
-	 height: auto;
-}
+  .userWriteComment #TAtest{
+    position: absolute;
+    resize: none;
+    margin-top:-7.2%;
+    margin-left:7%;
+  }
 
-.tableButtonReservation{
-		width:270px;
-		height:40px;
-		position:absolute;
-		margin-left:46.7%;
-		margin-top:1.4%;
-}
+  .userRateHint{
+    position: absolute;
+    margin-top:-1.5%;
+    margin-left:7%;
+  }
 
-.buttonReservation{
-		height:25px;
-		font-weight: bold;
-}
+  .buttonOfSubmitComm input[type=button]{
+    position: absolute;
+    width:90px;
+    height:30px;
+    margin-top:-4.4%;
+    margin-left:40%;
+  }
 
-.buttonReservation:active{
-		background-color: #D38A8A;
-		color:black;
-}
+  .containerComments {
+    display: flex;
+    flex-wrap: wrap;
 
-.subBar{
-		width:500px;
-		height:50px;
-		margin-top:-1.5%;
-	}
+    width:890px;
+    height:100%;
+  }
 
-.navSubBar li, .footmenu li{
-  list-style: none;
-  float:left;
-  font-family: 'Amaranth', sans-serif;
-}
-.navSubBar li.navSubBar-right {
-  float: right;
-  color: #D38A8A;
-}
-.navSubBar li a{
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  padding: 10px;
-  text-transform: uppercase;
-  color: inherit;
-}
-.navSubBar li a:hover{
-  text-decoration: underline;
-}
-#desci{
-	margin-top:10%;
-}
+  .imageIntro{
+    width:890px;
+    height:250px;
+    margin:-28.1% auto;
+    position:relative;
+    overflow:hidden;
+  }
 
-.imagesSliders{
-	overflow:hidden;
-	width:38%;
-	height:280px;
-	margin-top:-9.0%;
+  .imageIntro img{
+    width:100%;
+    height: auto;
+  }
+
+  .tableButtonReservation{
+    width:270px;
+    height:40px;
+    position:absolute;
+    margin-left:46.7%;
+    margin-top:1.4%;
+  }
+
+  .buttonReservation{
+    height:25px;
+    font-weight: bold;
+  }
+
+  .buttonReservation:active{
+    background-color: #D38A8A;
+    color:black;
+  }
+
+  .subBar{
+    width:500px;
+    height:50px;
+    margin-top:-1.5%;
+  }
+
+  .navSubBar li, .footmenu li{
+    list-style: none;
+    float:left;
+    font-family: 'Amaranth', sans-serif;
+  }
+  .navSubBar li.navSubBar-right {
+    float: right;
+    color: #D38A8A;
+  }
+  .navSubBar li a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    color: inherit;
+  }
+  .navSubBar li a:hover{
+    text-decoration: underline;
+  }
+  #desci{
+    margin-top:10%;
+  }
+
+  .imagesSliders{
+    overflow:hidden;
+    width:38%;
+    height:280px;
+    margin-top:-9.0%;
     margin-left:61.9%;
-	border-style: solid;
-}
-.imagesSliders img{
-	display:none;
-	width:100%;
-	height:100%;
-}
-.image_heart:hover{
-  opacity:0.9;
-}
-.image_heart:active{
-  transform: scale(1.3);
-}
-.image_heart{
-  position: absolute;
-  margin-top:-4%;
-  margin-left:43.7%;
-  height:6%;
-  width:4%;
-}
+    border-style: solid;
+  }
+  .imagesSliders img{
+    display:none;
+    width:100%;
+    height:100%;
+  }
+  .image_heart:hover{
+    opacity:0.9;
+  }
+  .image_heart:active{
+    transform: scale(1.3);
+  }
+  .image_heart{
+    position: absolute;
+    margin-top:-4%;
+    margin-left:43.7%;
+    height:6%;
+    width:4%;
+  }
 
-.contenerOfAddress{
-	margin-left:0%;
-	margin-top:-15%;
-}
+  .contenerOfAddress{
+    margin-left:0%;
+    margin-top:-15%;
+  }
 
-.contenerOfAddress img{
-	width:40%;
-}
+  .contenerOfAddress img{
+    width:40%;
+  }
 
 
-/************************************/
-.Favorite{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 70%;
-  border: 1px solid black;
-  float: right;
-  margin-top: 5%;
-  margin-right: 4%;
-}
-.Favorite img{
-  padding-left: 4%;
-}
+  /************************************/
+  .Favorite{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 70%;
+    border: 1px solid black;
+    float: right;
+    margin-top: 5%;
+    margin-right: 4%;
+  }
+  .Favorite img{
+    padding-left: 4%;
+  }

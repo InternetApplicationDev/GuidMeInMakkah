@@ -73,11 +73,6 @@ if(isset($_GET['Logout'])){
         </div>
         <br/>
         <div class= "regesterSubmit"><input name="Submit" value="Submit" type="submit" class="submitbutton"/>
-
-
-
-
-
         </div>
       </div>
     </div>

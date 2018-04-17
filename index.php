@@ -36,7 +36,7 @@ if(isset($_GET['Logout'])){
   </div>
   <div id="wrapper">
     <div class="section" id="sectionOne">
-      <div class="icon">
+      <div class="indexicon">
         <img id="mainLogo" src="images/logo.png" />
       </div>
     </div>
