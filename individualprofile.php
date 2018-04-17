@@ -144,7 +144,7 @@ function addUserRate($userName,$userRate,$pageName){
 	if(isset($_POST["getStarValue"])){
 		$comments = $_POST["CommentTA"];
 		$userName ="hdi";
-		$pageName ="page name";
+		$pageName =$_GET[className];
 		$userRate = $_POST["getStarValue"];
 		searchUserNameInIndexFile($userName,$pageName);
 		addUserNameComment($userName,$comments,$pageName);
@@ -351,7 +351,9 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
       else
       <center><hr><p style="font-size: 25px; color: red;">YOU MUST LOGIN FIRST TO COMMANTS</p><hr></center>
     -->
-    <form action="individualprofile.php" method="post" >
+	<?php 
+    echo "<form action=\"individualprofile.php?id={$_GET[id]} & className={$_GET[className]}\" method=\"post\" >";
+	?>
       <table>
         <tr>
           <td> <img src="images/pesonal icon.jpg" class="imgUserInCommetn"/> </td>
