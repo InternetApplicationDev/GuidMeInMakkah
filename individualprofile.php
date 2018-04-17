@@ -10,8 +10,8 @@ if(isset($_GET['Logout'])){
 <?php
 
 function searchUserNameInIndexFile($userName,$pageName){
-	$data = file ('Files/filesCommentIndex.txt');
-	$fp = fopen('Files/filesCommentIndex.txt', "r");
+	$data = file ("Users/Files/filesCommentIndex.txt");
+	$fp = fopen("Users/Files/filesCommentIndex.txt", "r");
 
 	$n = count ($data);
 	$result=0; // 0-> no found user and page name
@@ -74,7 +74,7 @@ function searchUserNameInIndexFile($userName,$pageName){
 
 	if($result==1){ // found just user name without page name,so add page name to this user
 		// copy the rest of file content
-		$fp = fopen("Files/filesCommentIndex.txt", "r");
+		$fp = fopen("Users/Files/filesCommentIndex.txt", "r");
 		fseek($fp,$tmpFilePointer);
 		$tmpReminderOfFileString="";
 		while (!feof($fp)){
@@ -83,14 +83,14 @@ function searchUserNameInIndexFile($userName,$pageName){
 		fclose($fp);
 
 		// add new page name and appand the copy rest after this page name
-		$fp = fopen('Files/filesCommentIndex.txt', 'rw+');
+		$fp = fopen("Users/Files/filesCommentIndex.txt", 'rw+');
 		fseek($fp,$tmpFilePointer);
 		fwrite($fp,",".$pageName.$tmpReminderOfFileString,500);
 		fclose($fp);
 		return $result;
 	}
 	else if($result==0){ // nothing found, so add both user and page name
-		$fp = fopen('Files/filesCommentIndex.txt', 'ab');
+		$fp = fopen("Users/Files/filesCommentIndex.txt", 'ab');
 		fwrite($fp,"[".$userName."](".$pageName.")\n");
 		fclose($fp);
 		return $result;
@@ -100,7 +100,7 @@ return $result;
 }
 
 function addUserNameComment($userName,$comments,$pageName){
-	$fp = fopen('Files/Comments/'.$pageName.'.txt', 'ab');
+	$fp = fopen("Users/Files/Comments/".$pageName.".txt", 'ab');
 
 	$userComment = str_replace("\r\n", "<br>", $comments);
 
@@ -382,20 +382,24 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 		<div class="Comment">
 		<?php
 		// how many comments of this page from file and prinit
-		$data = file ('Files/Comments/page name.txt');
-		$n = count ($data);
+		$path ="Users/Files/Comments/".$_GET[className].".txt";
+		
+			if (is_readable($path)){
+				$data = file ($path);
+			$n = count ($data);
 
-		for ( $j=0; $j < $n; $j++){
-		$getUseANDCom = retrieveUsersComments($data[$j]);
-		?>
-		<div class="commentsUserBox" >
-		<p class="userNameInComment"><?php echo $getUseANDCom[0]; ?></p>
-		<img src="images/pesonal icon.jpg" />
-		<div><p class="userCommentInComment"><?php echo $getUseANDCom[1]; ?></p></div>
-		</div>
-		<?php
-		echo '<br><hr>';
-		} // for end
+			for ( $j=0; $j < $n; $j++){
+			$getUseANDCom = retrieveUsersComments($data[$j]);
+			?>
+			<div class="commentsUserBox" >
+			<p class="userNameInComment"><?php echo $getUseANDCom[0]; ?></p>
+			<img src="images/pesonal icon.jpg" />
+			<div><p class="userCommentInComment"><?php echo $getUseANDCom[1]; ?></p></div>
+			</div>
+			<?php
+			echo '<br><hr>';
+			} // for end
+		}
 		?>
 
 		</div>

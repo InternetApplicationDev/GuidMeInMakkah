@@ -33,7 +33,7 @@ class connection {
       } //end
       //insert new user func
       function InsertNewUser(){
-        $dbc = mysqli_connect ('localhost', 'root', '1234');//conn
+        $dbc = mysqli_connect ('localhost', 'root', '12345678');//conn
         if (@mysqli_select_db ($dbc,'db')) {
           if($_POST['submit'] == 'Submit'){
             $query = "INSERT INTO User (ID , First_name, Last_name, E-mail, Password)
@@ -110,7 +110,7 @@ class connection {
               }
             }
             function individualRestaurant($className,$id){
-              $dbc = mysqli_connect ('localhost', 'root', '1234');
+              $dbc = mysqli_connect ('localhost', 'root', '12345678');
               if (@mysqli_select_db ($dbc,'db')) {
                 if($id == 1)
                 $query = "SELECT * FROM cafe WHERE cafe_name = \"{$className}\"";
@@ -139,7 +139,7 @@ class connection {
                 }
               }//end of fun
               function restaurantPics($className,$id){
-                $dbc = mysqli_connect ('localhost', 'root', '1234');
+                $dbc = mysqli_connect ('localhost', 'root', '12345678');
                 if (@mysqli_select_db ($dbc,'db')) {
 
                   if($id == 1)
