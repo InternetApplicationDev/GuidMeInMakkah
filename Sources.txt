@@ -15,3 +15,5 @@ Page pre-loader --> PACE: http://github.hubspot.com/pace/docs/welcome/
 Php sweet alert --> https://github.com/t4t5/sweetalert/issues/441
 
 profile --> contact button: https://codepen.io/ajerez/pen/XmbQXQ
+
+pass php variables to external js --> https://stackoverflow.com/questions/2928827/access-php-var-from-external-javascript-file?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa

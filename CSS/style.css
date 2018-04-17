@@ -310,7 +310,7 @@ hr {
 .contact-button span {
   text-transform: none;
   position: absolute;
-  color: #EE283E;
+  color: #D38A8A;
   top: 20px;
   left: 30px;
   opacity: 0;
@@ -332,7 +332,7 @@ hr {
 }
 .contact-button:hover:before {
   transition: 0.3s ease-in-out;
-  background-color: #EE283E;
+  background-color: #D38A8A;
 }
 .contact-button:before, .contact-button:after {
   content: "";
@@ -343,7 +343,7 @@ hr {
   height: 25px;
 }
 .contact-button:before {
-  border: 2px solid #EE283E;
+  border: 2px solid #D38A8A;
   background-color: #1F3944;
   -webkit-transform: skew(-25deg);
   transform: skew(-25deg);
@@ -871,8 +871,6 @@ p.about3 {
   .contenerOfAddress img{
     width:40%;
   }
-
-
   /************************************/
   .Favorite{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
