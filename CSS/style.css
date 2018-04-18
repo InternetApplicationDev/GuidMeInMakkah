@@ -256,8 +256,8 @@ hr {
 }
 .uploadIcon{
   position: absolute;
-  left: 50px;
-  top: 70px;
+  left: 25px;
+  top: 100px;
 }
 .card button {
   border: none;

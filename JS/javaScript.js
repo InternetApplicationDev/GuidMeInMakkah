@@ -149,15 +149,6 @@ function validateEmail(Email) {
 	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
 	return isEmpty(Email) || re.test(Email);
 }
-/////////////////////////////////////////////////// Profile ///////////////////////////////////////////////////
-function displayEmail(){
-	// var Email = email;
-	swal({
-		title: 'This User Email: '+userEmail,
-		animation: false,
-		customClass: 'animated tada'
-	})
-}
 /////////////////////////////////////////////////// footer Developers ///////////////////////////////////////////////////
 function showDevFunction() {
 	var x = document.getElementById("developersNames");

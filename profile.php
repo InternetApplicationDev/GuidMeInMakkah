@@ -108,6 +108,41 @@ if (isset($_GET['Delete'])) {
         printMessage();
       }
     }
+    if (move_uploaded_file ($_FILES['pic']['tmp_name'], "Users/Photos/{$_FILES['pic']['name']}")) {
+      $imageName = "Users/Photos/{$_FILES['pic']['name']}";
+      $updateUserInformation = mysqli_query($dbc,"UPDATE user SET user_picture = '$imageName' where user_id = $theuser");
+      echo '
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
+      <script>
+      $( document ).ready(function() {
+        swal({
+          title: \'Your image have been uploaded\',
+          type: \'success\',
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(function(){
+          window.location.href = \'profile.php\';
+        });
+      });
+      </script>';
+    }else {
+      print '<p>Your file could not be uploaded because: <b>';
+      switch ($_FILES['pic']['error']){
+        case 1:
+        print 'The file exceeds the upload_max_filesize setting in php.ini';
+        break;
+        case 2:
+        print 'The file exceeds the MAX_FILE_SIZE setting in the HTML form';
+        break;
+        case 3:
+        print 'The file was only partially uploaded';
+        break;
+        case 4:
+        print 'No file was uploaded';
+        break;
+      }
+    }
   }
   mysqli_close($dbc);
   ?>
@@ -281,7 +316,9 @@ if (isset($_GET['Delete'])) {
       <div class="Editcard">
         <div class="uplaodImage">
           <img src="<?php echo $picturePath; ?>" alt="profile picture" style="width:100%;  opacity: 0.2;">
-          <img src="images/Upload-128.png" class="uploadIcon"/>
+          <form method="post" enctype="multipart/form-data">
+            <input type="file" id="uploadImage" name="pic" accept="image/*" class="uploadIcon">
+          </form>
         </div>
         <form method="post" action="profile.php">
           <p>First Name: <input type="text" id="firstName" name="newfirstName" class="roundTextAreaEditProfile"/></p>
