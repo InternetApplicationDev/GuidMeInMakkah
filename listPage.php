@@ -23,15 +23,9 @@ if(isset($_GET['Logout'])){
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <?php
-      $idCoffee=1;
-      $idReturant=2;
-      $idBoth=3;
-      echo '<li><a href="listPage.php?id='.$idCoffee.'"> Cafe</a></li>';
-      echo '<li><a href="listPage.php?id='.$idReturant.'"> RESTAURANT</a></li>';
-      echo '<li><a href="listPage.php?id='.$idBoth.'">Cafe & Restaurants</a></li>';
-
-      ?>
+      <li><a href="listPage.php?id=1">Cafe</a></li>
+      <li><a href="listPage.php?id=2">Restaurants</a></li>
+      <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
       <?php if ($_COOKIE['theuser']){ ?>
         <li class="navmenu-right"><a href="profile.php">Profile</a></li>
         <li class="navmenu-right"><a href="?Logout">Logout</a></li>

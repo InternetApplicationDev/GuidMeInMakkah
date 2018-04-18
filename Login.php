@@ -40,7 +40,7 @@ if (isset($_POST['Email'])) {
         text: \'Email or Password is incorrect\',
         type: \'error\',
       }, function(isConfirm) {
-        document.location.href="/login.html"
+          window.location.href = \'login.php\';
       });
     });
     </script>';
@@ -67,9 +67,9 @@ if (isset($_POST['Email'])) {
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <li><a href="#Coffe">Cafe</a></li>
-      <li><a href="#Restaurants">Restaurants</a></li>
-      <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
+      <li><a href="listPage.php?id=1">Cafe</a></li>
+      <li><a href="listPage.php?id=2">Restaurants</a></li>
+      <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
       <?php if ($_COOKIE['theuser']){ ?>
         <li class="navmenu-right"><a href="profile.php">Profile</a></li>
         <li class="navmenu-right"><a href="?Logout">Logout</a></li>
