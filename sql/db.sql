@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 17, 2018 at 07:22 PM
+-- Generation Time: Apr 18, 2018 at 05:08 PM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -184,16 +184,19 @@ CREATE TABLE `user` (
   `user_first_name` varchar(225) NOT NULL DEFAULT 'NAME',
   `user_last_name` varchar(225) NOT NULL,
   `user_picture` varchar(225) NOT NULL DEFAULT 'Users/Photos/pesonal icon.jpg',
-  `user_bio` varchar(225) NOT NULL
+  `user_bio` varchar(225) NOT NULL,
+  `user_twitter` varchar(225) NOT NULL,
+  `user_facebook` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_first_name`, `user_last_name`, `user_picture`, `user_bio`) VALUES
-(1, 'admin', 'admin', 'admin', '', 'Users/Photos/admin.png', ''),
-(2, 'Joanna.a.s.1996@Gmail.com', '12345678', 'Joanna', 'Assaeedi', 'Users/Photos/pesonal icon.jpg', '');
+INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_first_name`, `user_last_name`, `user_picture`, `user_bio`, `user_twitter`, `user_facebook`) VALUES
+(1, 'admin', 'admin', 'admin', '', 'Users/Photos/admin.png', '', '', ''),
+(2, 'Joanna.a.s.1996@Gmail.com', '12345678', 'Joanna', 'Assaeedi', 'Users/Photos/pesonal icon.jpg', '', 'Joanna_A_S', 'Joanna.A.S.107'),
+(3, 'israaSamkari@hotmail.com', '12345678', 'israa', 'samkari', 'Users/Photos/pesonal icon.jpg', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -290,7 +293,7 @@ ALTER TABLE `restaurants`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 --
 -- Constraints for dumped tables
 --
