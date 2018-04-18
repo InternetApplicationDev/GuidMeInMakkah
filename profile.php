@@ -108,26 +108,26 @@ if (isset($_GET['Delete'])) {
         printMessage();
       }
     }
-    if (move_uploaded_file ($_FILES['pic']['tmp_name'], "Users/Photos/{$_FILES['pic']['name']}")) {
-      $imageName = "Users/Photos/{$_FILES['pic']['name']}";
-      $updateUserInformation = mysqli_query($dbc,"UPDATE user SET user_picture = '$imageName' where user_id = $theuser");
-      echo '
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
-      <script>
-      $( document ).ready(function() {
-        swal({
-          title: \'Your image have been uploaded\',
-          type: \'success\',
-          showConfirmButton: false,
-          timer: 1500,
-        }).then(function(){
-          window.location.href = \'profile.php\';
+      if (move_uploaded_file ($_FILES['pic']['tmp_name'], "Users/Photos/{$_FILES['pic']['name']}")) {
+        $imageName = "Users/Photos/{$_FILES['pic']['name']}";
+        $updateUserInformation = mysqli_query($dbc,"UPDATE user SET user_picture = '$imageName' where user_id = $theuser");
+        echo '
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
+        <script>
+        $( document ).ready(function() {
+          swal({
+            title: \'Your image have been uploaded\',
+            type: \'success\',
+            showConfirmButton: false,
+            timer: 1500,
+          }).then(function(){
+            window.location.href = \'profile.php\';
+          });
         });
-      });
-      </script>';
+        </script>';
+      }
     }
-  }
   mysqli_close($dbc);
   ?>
   <?php
@@ -301,108 +301,109 @@ if (isset($_GET['Delete'])) {
         <div class="uplaodImage">
           <img src="<?php echo $picturePath; ?>" alt="profile picture" style="width:100%;  opacity: 0.2;">
           <form method="post" enctype="multipart/form-data">
-            <input type="file" id="uploadImage" name="pic" accept="image/*" class="uploadIcon">
-          </form>
-        </div>
-        <form method="post" action="profile.php">
-          <p>First Name: <input type="text" id="firstName" name="newfirstName" class="roundTextAreaEditProfile"/></p>
-          <p>Last Name: <input type="text" id="lastName" name="newlastname" class="roundTextAreaEditProfile"/></p>
-          <p>Twitter: &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input type="text" id="Twitter" name="newTwitter" class="roundTextAreaEditProfile"/></p>
-          <p>Facebook: &nbsp;&nbsp;<input type="text" id="Facebook" name="newFacebook" class="roundTextAreaEditProfile"/></p>
-          <p>Bio: <br /><textarea name="newBio" placeholder="Tell us about you" class="roundTextAreaEditProfile" ></textarea></p>
-          <div class='set green'>
-            <button type="submit" formmethod="post" name="Discard" class='sdbtn sec ico'>Discard</button>
-            <button type="submit" formmethod="post" name="Save" class='sdbtn pri ico'>Save</button>
+            <img src="images/Upload-128.png" class="uploadIcon"/>
+            <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+            <input type="file" name="pic" accept="image/*">
           </div>
-        </form>
-        <br />
-      </div>
-    <?php  }else{ ?>
-      <div class="card">
-        <img src="<?php echo $picturePath; ?>" alt="profile picture" style="width:100%">
-        <h1><?php echo $userName; ?></h1>
-        <p><?php echo $userBio; ?></p>
-        <br />
-        <div class="social-btns">
-          <?php if ($userTwitter) { ?>
-            <a class="btn twitter" href="https://twitter.com/<?php echo $userTwitter;?>">
-              <i class="fa fa-twitter"></i>
-            </a>
+          <form method="post" action="profile.php">
+            <p>First Name: <input type="text" id="firstName" name="newfirstName" class="roundTextAreaEditProfile"/></p>
+            <p>Last Name: <input type="text" id="lastName" name="newlastname" class="roundTextAreaEditProfile"/></p>
+            <p>Twitter: &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input type="text" id="Twitter" name="newTwitter" class="roundTextAreaEditProfile"/></p>
+            <p>Facebook: &nbsp;&nbsp;<input type="text" id="Facebook" name="newFacebook" class="roundTextAreaEditProfile"/></p>
+            <p>Bio: <br /><textarea name="newBio" placeholder="Tell us about you" class="roundTextAreaEditProfile" ></textarea></p>
+            <div class='set green'>
+              <button type="submit" formmethod="post" name="Discard" class='sdbtn sec ico'>Discard</button>
+              <button type="submit" formmethod="post" name="Save" class='sdbtn pri ico'>Save</button>
+            </div>
+          </form>
+          <br />
+        </div>
+      <?php  }else{ ?>
+        <div class="card">
+          <img src="<?php echo $picturePath; ?>" alt="profile picture" style="width:100%">
+          <h1><?php echo $userName; ?></h1>
+          <p><?php echo $userBio; ?></p>
+          <br />
+          <div class="social-btns">
+            <?php if ($userTwitter) { ?>
+              <a class="btn twitter" href="https://twitter.com/<?php echo $userTwitter;?>">
+                <i class="fa fa-twitter"></i>
+              </a>
+            <?php } ?>
+            <?php if ($userFacebook) { ?>
+              <a class="btn facebook" href="https://www.facebook.com/<?php echo $userFacebook;?>">
+                <i class="fa fa-facebook"></i>
+              </a>
+            <?php } ?>
           <?php } ?>
-          <?php if ($userFacebook) { ?>
-            <a class="btn facebook" href="https://www.facebook.com/<?php echo $userFacebook;?>">
-              <i class="fa fa-facebook"></i>
-            </a>
-          <?php } ?>
-        <?php } ?>
+        </div>
       </div>
-    </div>
-    <div class="Favorite">
-      <img src="images/add.png"/>
-      <img src="images/add.png"/>
-      <img src="images/add.png"/>
-      <img src="images/add.png"/>
-      <img src="images/add.png"/>
-    </div>
-    <div class="container">
-      <div class="profileComments">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 548.157 548.157" style="enable-background:new 0 0 548.157 548.157;" xml:space="preserve"><g transform="matrix(0.0676446, 0, 0, 0.0676446, 255.539, 255.539)"><link xmlns="" type="text/css" id="dark-mode" rel="stylesheet" class="active-path"/><style xmlns="" type="text/css" id="dark-mode-custom-style" class="active-path"/><g>
-        <path d="M545.027,112.765c-3.046-6.471-7.57-11.657-13.565-15.555c-5.996-3.9-12.614-5.852-19.846-5.852H292.351   c-11.04,0-20.175,4.184-27.408,12.56L9.13,396.279c-4.758,5.328-7.661,11.56-8.708,18.698c-1.049,7.139-0.144,13.941,2.712,20.417   c3.044,6.468,7.564,11.652,13.561,15.553c5.997,3.898,12.612,5.853,19.845,5.853h219.268c11.042,0,20.177-4.179,27.41-12.56   l255.813-292.363c4.75-5.33,7.655-11.561,8.699-18.699C548.788,126.039,547.877,119.238,545.027,112.765z M255.811,420.254H36.54   l95.93-109.632h219.27L255.811,420.254z" data-original="#000000" class="active-path" fill="#000000"/>
-      </g></g> </svg> -->
+      <div class="Favorite">
+        <img src="images/add.png"/>
+        <img src="images/add.png"/>
+        <img src="images/add.png"/>
+        <img src="images/add.png"/>
+        <img src="images/add.png"/>
+      </div>
+      <div class="container">
+        <div class="profileComments">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 548.157 548.157" style="enable-background:new 0 0 548.157 548.157;" xml:space="preserve"><g transform="matrix(0.0676446, 0, 0, 0.0676446, 255.539, 255.539)"><link xmlns="" type="text/css" id="dark-mode" rel="stylesheet" class="active-path"/><style xmlns="" type="text/css" id="dark-mode-custom-style" class="active-path"/><g>
+          <path d="M545.027,112.765c-3.046-6.471-7.57-11.657-13.565-15.555c-5.996-3.9-12.614-5.852-19.846-5.852H292.351   c-11.04,0-20.175,4.184-27.408,12.56L9.13,396.279c-4.758,5.328-7.661,11.56-8.708,18.698c-1.049,7.139-0.144,13.941,2.712,20.417   c3.044,6.468,7.564,11.652,13.561,15.553c5.997,3.898,12.612,5.853,19.845,5.853h219.268c11.042,0,20.177-4.179,27.41-12.56   l255.813-292.363c4.75-5.33,7.655-11.561,8.699-18.699C548.788,126.039,547.877,119.238,545.027,112.765z M255.811,420.254H36.54   l95.93-109.632h219.27L255.811,420.254z" data-original="#000000" class="active-path" fill="#000000"/>
+        </g></g> </svg> -->
 
-      <div class="content">
+        <div class="content">
 
-        <h1>Comment</h1>
+          <h1>Comment</h1>
 
-        <div class="containerComments" >
-          <?php
-          $getCommentPage = searchUserNameInIndexFile($userName);
-          if(is_array($getCommentPage)){
-            for ( $pages=0; $pages < sizeof($getCommentPage); $pages++){
-              $comments = retrieveAllComment($userName,$getCommentPage[$pages]);
-              for ( $i=0; $i < sizeof($comments); $i++){
-                ?>
-                <div class="commentsUserBox" >
-                  <p class="userNameInComment"><?php echo $userName; ?></p>
-                  <img src="images/pesonal icon.jpg" />
-                  <div><p class="userCommentInComment"><?php echo $comments[$i]; ?></p></div>
-                </div>
-                <?php
-                echo '<br><hr>';
+          <div class="containerComments" >
+            <?php
+            $getCommentPage = searchUserNameInIndexFile($userName);
+            if(is_array($getCommentPage)){
+              for ( $pages=0; $pages < sizeof($getCommentPage); $pages++){
+                $comments = retrieveAllComment($userName,$getCommentPage[$pages]);
+                for ( $i=0; $i < sizeof($comments); $i++){
+                  ?>
+                  <div class="commentsUserBox" >
+                    <p class="userNameInComment"><?php echo $userName; ?></p>
+                    <img src="images/pesonal icon.jpg" />
+                    <div><p class="userCommentInComment"><?php echo $comments[$i]; ?></p></div>
+                  </div>
+                  <?php
+                  echo '<br><hr>';
+                }
               }
+            }else{
+              echo "you do not have any comment <br> <br>";
             }
-          }else{
-            echo "you do not have any comment <br> <br>";
-          }
-          ?>
+            ?>
 
 
+
+          </div>
 
         </div>
 
       </div>
-
     </div>
-  </div>
-  <div class="footer" id="theFooter">
-    <div class="footbar">
-      <ul class="footmenu">
-        <li><a href="#" onclick="showDevFunction()">Developers</a></li>
-        <li><a href="about.php">About us</a></li>
-        <li><a href="contactUs.php">Contact us</a></li>
-        <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
-      </ul>
-      <div id="developersNames">
-        <ul class="devNames">
-          <li>Ebtsam Alkhuzai</li>
-          <li>Esraa Samkari</li>
-          <li>Joanna Assaeedi</li>
-          <li>Joud Alajlan</li>
-          <li>Rozan Alghamdi</li>
-          <li>Wafaa Alshaikhi</li>
+    <div class="footer" id="theFooter">
+      <div class="footbar">
+        <ul class="footmenu">
+          <li><a href="#" onclick="showDevFunction()">Developers</a></li>
+          <li><a href="about.php">About us</a></li>
+          <li><a href="contactUs.php">Contact us</a></li>
+          <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
         </ul>
+        <div id="developersNames">
+          <ul class="devNames">
+            <li>Ebtsam Alkhuzai</li>
+            <li>Esraa Samkari</li>
+            <li>Joanna Assaeedi</li>
+            <li>Joud Alajlan</li>
+            <li>Rozan Alghamdi</li>
+            <li>Wafaa Alshaikhi</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</body>
-</html>
+  </body>
+  </html>
