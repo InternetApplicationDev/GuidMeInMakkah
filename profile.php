@@ -50,133 +50,192 @@ if (isset($_GET['Delete'])) {
     });
     </script>';
   }
+  // discard changes
+  if(isset($_POST['Discard'])){
+    header('Location: profile.php');
+  }
+  // Save changes to database
+  function printMessage(){
+    echo '
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
+    <script>
+    $( document ).ready(function() {
+      swal({
+        title: \'Your information have been updated!\',
+        type: \'success\',
+        showConfirmButton: false,
+        timer: 1500,
+      }).then(function(){
+        window.location.href = \'profile.php\';
+      });
+    });
+    </script>';
+  }
+  if(isset($_POST['Save'])){
+    if($_POST['newfirstName'] !== ""){
+      $newFirstName = $_POST['newfirstName'];
+      $updateUserInformation = mysqli_query($dbc,"UPDATE user SET user_first_name = '$newFirstName' where user_id = $theuser");
+      if (mysqli_affected_rows($dbc) == 1) {
+        printMessage();
+      }
+    }
+    if($_POST['newlastname'] !== ""){
+      $newLastName = $_POST['newlastname'];
+      $updateUserInformation = mysqli_query($dbc,"UPDATE user SET user_last_name = '$newLastName' where user_id = $theuser");
+      if (mysqli_affected_rows($dbc) == 1) {
+        printMessage();
+      }
+    }
+    if($_POST['newTwitter'] !== ""){
+      $newTwitter = $_POST['newTwitter'];
+      $updateUserInformation = mysqli_query($dbc,"UPDATE user SET user_twitter = '$newTwitter' where user_id = $theuser");
+      if (mysqli_affected_rows($dbc) == 1) {
+        printMessage();
+      }
+    }
+    if($_POST['newFacebook'] !== ""){
+      $newFacebook = $_POST['newFacebook'];
+      $updateUserInformation = mysqli_query($dbc,"UPDATE user SET user_facebook = '$newFacebook' where user_id = $theuser");
+      if (mysqli_affected_rows($dbc) == 1) {
+        printMessage();
+      }
+    }
+    if($_POST['newBio'] !== ""){
+      $newBio = $_POST['newBio'];
+      $updateUserInformation = mysqli_query($dbc,"UPDATE user SET user_bio = '$newBio' where user_id = $theuser");
+      if (mysqli_affected_rows($dbc) == 1) {
+        printMessage();
+      }
+    }
+  }
   mysqli_close($dbc);
   ?>
   <?php
-function searchUserNameInIndexFile($userName){
-	$data = file ('Users/Files/filesCommentIndex.txt');
-	$fp = fopen('Users/Files/filesCommentIndex.txt', "r");
+  function searchUserNameInIndexFile($userName){
+    $data = file ('Users/Files/filesCommentIndex.txt');
+    $fp = fopen('Users/Files/filesCommentIndex.txt', "r");
 
-	$n = count ($data);
-	$result = 0;
-	$tmpFilePointer=0; // depend on this value it will chane seek pointer
-	$tmpName=""; // find match between user name and useres names in file
-	$tmpPage=""; // find match between page name and pages names in file
-	$tmpLengthOfFoundName; // to calculat the position of page names
+    $n = count ($data);
+    $result = 0;
+    $tmpFilePointer=0; // depend on this value it will chane seek pointer
+    $tmpName=""; // find match between user name and useres names in file
+    $tmpPage=""; // find match between page name and pages names in file
+    $tmpLengthOfFoundName; // to calculat the position of page names
 
-	$pagenameAsArr=array();
+    $pagenameAsArr=array();
 
-	// search user name from file, if it found change var result to 1
-	for ($i = 0; $i < $n; $i++) { // search line by line
-		for ($coun = 1; $coun < strlen($data[$i]); $coun++){ // search char by char in the current line
-			$tmpChar = substr( $data[$i], $coun, 1 ); // get current char
-			if($tmpChar == ']'){ // end name
-				$tmpLengthOfFoundName = strlen(substr( $data[$i],0,++$coun)); // sum the len of current user name
-				break; // we do not need to search the rest of the current string
-			}
-			else
-				$tmpName .=$tmpChar; // to make full user name from char pices
+    // search user name from file, if it found change var result to 1
+    for ($i = 0; $i < $n; $i++) { // search line by line
+      for ($coun = 1; $coun < strlen($data[$i]); $coun++){ // search char by char in the current line
+        $tmpChar = substr( $data[$i], $coun, 1 ); // get current char
+        if($tmpChar == ']'){ // end name
+          $tmpLengthOfFoundName = strlen(substr( $data[$i],0,++$coun)); // sum the len of current user name
+          break; // we do not need to search the rest of the current string
+        }
+        else
+        $tmpName .=$tmpChar; // to make full user name from char pices
 
-		}
-
-
-		if($tmpName == $userName){ // found user name from file
-			$tmpFilePointer+=$tmpLengthOfFoundName; // calculat the postion of page name for this user
-			$result=1; // found user name
-			break;
-		}
-
-		$tmpFilePointer=$tmpFilePointer+strlen($data[$i]); // calculat the postion by adding len of previous line
-		$tmpName=""; // to make another user name from file
-	}
+      }
 
 
-	// if found user name than go search for page name
-	 //else return result value 0 to add user name and page name to file
-	if ($result==1){
-		// change current position
-		fseek($fp,$tmpFilePointer);
-		$pagesNames = fgets($fp);
+      if($tmpName == $userName){ // found user name from file
+        $tmpFilePointer+=$tmpLengthOfFoundName; // calculat the postion of page name for this user
+        $result=1; // found user name
+        break;
+      }
 
-		for ($i = 1; $i < strlen($pagesNames); $i++){
-			$tmpChar = substr( $pagesNames, $i, 1 ); // get current char
-			$tmpFilePointer++;
-			if($tmpChar == ')' && strlen($tmpPage)<2){ // end name
-				break; // end of pages name
-			}else if($tmpChar == ')' && strlen($tmpPage)>2){
-				$result=2;
-				array_push($pagenameAsArr,$tmpPage);
-				break;
-			}else if($tmpChar == ','){
-				$result=2;
-				array_push($pagenameAsArr,$tmpPage);
-				$tmpPage ="";
-				continue;
-			}else{
-				$tmpPage .=$tmpChar; // to make full page name from char pices
-			}
-		} // end for
-	}
+      $tmpFilePointer=$tmpFilePointer+strlen($data[$i]); // calculat the postion by adding len of previous line
+      $tmpName=""; // to make another user name from file
+    }
 
-	fclose($fp);
 
-	if($result==2)
-	{
-		return $pagenameAsArr;
-	}else{
-		return $result;
-	}
+    // if found user name than go search for page name
+    //else return result value 0 to add user name and page name to file
+    if ($result==1){
+      // change current position
+      fseek($fp,$tmpFilePointer);
+      $pagesNames = fgets($fp);
 
-}
+      for ($i = 1; $i < strlen($pagesNames); $i++){
+        $tmpChar = substr( $pagesNames, $i, 1 ); // get current char
+        $tmpFilePointer++;
+        if($tmpChar == ')' && strlen($tmpPage)<2){ // end name
+          break; // end of pages name
+        }else if($tmpChar == ')' && strlen($tmpPage)>2){
+          $result=2;
+          array_push($pagenameAsArr,$tmpPage);
+          break;
+        }else if($tmpChar == ','){
+          $result=2;
+          array_push($pagenameAsArr,$tmpPage);
+          $tmpPage ="";
+          continue;
+        }else{
+          $tmpPage .=$tmpChar; // to make full page name from char pices
+        }
+      } // end for
+    }
 
-function retrieveUsersComments($userNameWithHisComment,$user_name){
-	$userName ="";
-	$userComment = "";
-	$i = 1;
-	for ( ;$i < strlen($userNameWithHisComment); $i++){
-		$tmpChar = substr( $userNameWithHisComment, $i, 1 ); // get current char
-		if($tmpChar == ']'){ // end name
-			break; // we do not need to search the rest of the current string
-		}
-		else
-			$userName .=$tmpChar; // to make full user name from char pices
-	}
+    fclose($fp);
 
-	if($user_name != $userName){
-		return array("","");
-	}
+    if($result==2)
+    {
+      return $pagenameAsArr;
+    }else{
+      return $result;
+    }
 
-	$i+= 2;
-	for ( ;$i < strlen($userNameWithHisComment); $i++){
-		$tmpChar = substr( $userNameWithHisComment, $i, 1 ); // get current char
-		if($tmpChar == ')'){ // end name
-			break; // we do not need to search the rest of the current string
-		}
-		else
-			$userComment .=$tmpChar; // to make full user name from char pices
-	}
+  }
 
-	return array($userName,$userComment);
-}
+  function retrieveUsersComments($userNameWithHisComment,$user_name){
+    $userName ="";
+    $userComment = "";
+    $i = 1;
+    for ( ;$i < strlen($userNameWithHisComment); $i++){
+      $tmpChar = substr( $userNameWithHisComment, $i, 1 ); // get current char
+      if($tmpChar == ']'){ // end name
+        break; // we do not need to search the rest of the current string
+      }
+      else
+      $userName .=$tmpChar; // to make full user name from char pices
+    }
 
-function retrieveAllComment($userName,$pageName){
-	$arrOfCommInThisPage=array();
-	$path ="Users/Files/Comments/".$pageName.".txt";
-	$data = file ($path);
-	$n = count ($data);
+    if($user_name != $userName){
+      return array("","");
+    }
 
-	$tempUserName;
-	for ( $i=0; $i < $n; $i++){
-		$getUseANDCom = retrieveUsersComments($data[$i],$userName);
-		if($userName == $getUseANDCom[0]){
-			array_push($arrOfCommInThisPage,$getUseANDCom[1]);
-		}
-	}
+    $i+= 2;
+    for ( ;$i < strlen($userNameWithHisComment); $i++){
+      $tmpChar = substr( $userNameWithHisComment, $i, 1 ); // get current char
+      if($tmpChar == ')'){ // end name
+        break; // we do not need to search the rest of the current string
+      }
+      else
+      $userComment .=$tmpChar; // to make full user name from char pices
+    }
 
-	return $arrOfCommInThisPage;
-}
+    return array($userName,$userComment);
+  }
 
-?>
+  function retrieveAllComment($userName,$pageName){
+    $arrOfCommInThisPage=array();
+    $path ="Users/Files/Comments/".$pageName.".txt";
+    $data = file ($path);
+    $n = count ($data);
+
+    $tempUserName;
+    for ( $i=0; $i < $n; $i++){
+      $getUseANDCom = retrieveUsersComments($data[$i],$userName);
+      if($userName == $getUseANDCom[0]){
+        array_push($arrOfCommInThisPage,$getUseANDCom[1]);
+      }
+    }
+
+    return $arrOfCommInThisPage;
+  }
+
+  ?>
   <!DOCTYPE html>
   <html class="theBackGround">
   <head>
@@ -224,15 +283,17 @@ function retrieveAllComment($userName,$pageName){
           <img src="<?php echo $picturePath; ?>" alt="profile picture" style="width:100%;  opacity: 0.2;">
           <img src="images/Upload-128.png" class="uploadIcon"/>
         </div>
-        <p>First Name: <input type="text" id="firstName" name="firstName" class="roundTextAreaEditProfile"/></p>
-        <p>Last Name: <input type="text" id="lastName" name="lastname" class="roundTextAreaEditProfile"/></p>
-        <p>Twitter: &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input type="text" id="Twitter" name="Twitter" class="roundTextAreaEditProfile"/></p>
-        <p>Facebook: &nbsp;&nbsp;<input type="text" id="Facebook" name="Facebook" class="roundTextAreaEditProfile"/></p>
-        <p>Bio: <br /><textarea name="Bio" placeholder="Tell us about you" class="roundTextAreaEditProfile" ></textarea></p>
-        <div class='set green'>
-          <a class='sdbtn sec ico'>Discard</a>
-          <a class='sdbtn pri ico'>Save</a>
-        </div>
+        <form method="post" action="profile.php">
+          <p>First Name: <input type="text" id="firstName" name="newfirstName" class="roundTextAreaEditProfile"/></p>
+          <p>Last Name: <input type="text" id="lastName" name="newlastname" class="roundTextAreaEditProfile"/></p>
+          <p>Twitter: &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input type="text" id="Twitter" name="newTwitter" class="roundTextAreaEditProfile"/></p>
+          <p>Facebook: &nbsp;&nbsp;<input type="text" id="Facebook" name="newFacebook" class="roundTextAreaEditProfile"/></p>
+          <p>Bio: <br /><textarea name="newBio" placeholder="Tell us about you" class="roundTextAreaEditProfile" ></textarea></p>
+          <div class='set green'>
+            <button type="submit" formmethod="post" name="Discard" class='sdbtn sec ico'>Discard</button>
+            <button type="submit" formmethod="post" name="Save" class='sdbtn pri ico'>Save</button>
+          </div>
+        </form>
         <br />
       </div>
     <?php  }else{ ?>
@@ -268,39 +329,39 @@ function retrieveAllComment($userName,$pageName){
         <path d="M545.027,112.765c-3.046-6.471-7.57-11.657-13.565-15.555c-5.996-3.9-12.614-5.852-19.846-5.852H292.351   c-11.04,0-20.175,4.184-27.408,12.56L9.13,396.279c-4.758,5.328-7.661,11.56-8.708,18.698c-1.049,7.139-0.144,13.941,2.712,20.417   c3.044,6.468,7.564,11.652,13.561,15.553c5.997,3.898,12.612,5.853,19.845,5.853h219.268c11.042,0,20.177-4.179,27.41-12.56   l255.813-292.363c4.75-5.33,7.655-11.561,8.699-18.699C548.788,126.039,547.877,119.238,545.027,112.765z M255.811,420.254H36.54   l95.93-109.632h219.27L255.811,420.254z" data-original="#000000" class="active-path" fill="#000000"/>
       </g></g> </svg> -->
 
-	 <div class="content">
+      <div class="content">
 
-		 <h1>Comment</h1>
+        <h1>Comment</h1>
 
-		<div class="containerComments" >
-		<?php
-			$getCommentPage = searchUserNameInIndexFile($userName);
-			if(is_array($getCommentPage)){
-				for ( $pages=0; $pages < sizeof($getCommentPage); $pages++){
-					$comments = retrieveAllComment($userName,$getCommentPage[$pages]);
-					for ( $i=0; $i < sizeof($comments); $i++){
-					?>
-						<div class="commentsUserBox" >
-							<p class="userNameInComment"><?php echo $userName; ?></p>
-							<img src="images/pesonal icon.jpg" />
-							<div><p class="userCommentInComment"><?php echo $comments[$i]; ?></p></div>
-						</div>
-						<?php
-						echo '<br><hr>';
-					}
-				}
-			}else{
-				echo "you do not have any comment <br> <br>";
-			}
-			?>
+        <div class="containerComments" >
+          <?php
+          $getCommentPage = searchUserNameInIndexFile($userName);
+          if(is_array($getCommentPage)){
+            for ( $pages=0; $pages < sizeof($getCommentPage); $pages++){
+              $comments = retrieveAllComment($userName,$getCommentPage[$pages]);
+              for ( $i=0; $i < sizeof($comments); $i++){
+                ?>
+                <div class="commentsUserBox" >
+                  <p class="userNameInComment"><?php echo $userName; ?></p>
+                  <img src="images/pesonal icon.jpg" />
+                  <div><p class="userCommentInComment"><?php echo $comments[$i]; ?></p></div>
+                </div>
+                <?php
+                echo '<br><hr>';
+              }
+            }
+          }else{
+            echo "you do not have any comment <br> <br>";
+          }
+          ?>
 
 
 
-		</div>
+        </div>
 
-	</div>
+      </div>
 
-	</div>
+    </div>
   </div>
   <div class="footer" id="theFooter">
     <div class="footbar">

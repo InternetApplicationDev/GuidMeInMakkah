@@ -14,6 +14,7 @@ if (isset($_POST['firstName'])) {
   $insertNewUser = "INSERT INTO user (user_email,user_password,user_first_name,user_last_name)
   VALUES ('$email','$pass','$firstName','$lastName')";
   @mysqli_query ($dbc, $insertNewUser);
+  // the select is to get the user id, to store it in the cookie
   if (mysqli_num_rows(mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'"))) {
     $result = mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'");
     while ($row = mysqli_fetch_array($result)) {
