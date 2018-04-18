@@ -8,7 +8,7 @@ if(isset($_GET['Logout'])){
 <!DOCTYPE html>
 <html class="theBackGround">
 <head>
-  <title>reservationForm</title>
+  <title>reservation Form</title>
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
   <!-- customized CSS and JS -->

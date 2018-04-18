@@ -57,7 +57,7 @@ mysqli_close($dbc);
 <!DOCTYPE html>
 <html class="theBackGround">
 <head>
-  <title>RegistrationForm</title>
+  <title>Sign Up</title>
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
   <!-- customized CSS and JS -->
