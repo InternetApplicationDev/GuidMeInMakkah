@@ -7,7 +7,7 @@ if(isset($_GET['Logout'])){
 }
 // display user information
 $theuser = $_COOKIE['theuser'];
-$dbc = mysqli_connect("localhost","root","12345678");
+$dbc = mysqli_connect("localhost","root","root");
 mysqli_select_db($dbc,"db");
 $userInformation = mysqli_query($dbc,"SELECT user_picture,user_first_name,user_last_name,user_bio,user_twitter,user_facebook From user where user_id = $theuser");
 while($row = mysqli_fetch_array($userInformation)){

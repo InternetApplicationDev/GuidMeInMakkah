@@ -9,7 +9,7 @@ if (isset($_POST['firstName'])) {
   $lastName = $_POST['lastname'];
   $email = $_POST['Email'];
   $pass = $_POST['password'];
-  $dbc = mysqli_connect("localhost","root","12345678");
+  $dbc = mysqli_connect("localhost","root","root");
   mysqli_select_db($dbc,"db");
   $insertNewUser = "INSERT INTO user (user_email,user_password,user_first_name,user_last_name)
   VALUES ('$email','$pass','$firstName','$lastName')";
