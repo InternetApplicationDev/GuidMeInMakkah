@@ -126,22 +126,6 @@ if (isset($_GET['Delete'])) {
         });
       });
       </script>';
-    }else {
-      print '<p>Your file could not be uploaded because: <b>';
-      switch ($_FILES['pic']['error']){
-        case 1:
-        print 'The file exceeds the upload_max_filesize setting in php.ini';
-        break;
-        case 2:
-        print 'The file exceeds the MAX_FILE_SIZE setting in the HTML form';
-        break;
-        case 3:
-        print 'The file was only partially uploaded';
-        break;
-        case 4:
-        print 'No file was uploaded';
-        break;
-      }
     }
   }
   mysqli_close($dbc);
