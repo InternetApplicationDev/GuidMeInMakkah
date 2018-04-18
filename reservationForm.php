@@ -9,6 +9,9 @@ if(isset($_GET['Logout'])){
 <html class="theBackGround">
 <head>
   <title>reservationForm</title>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+  <!-- customized CSS and JS -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script type="text/javascript" src= "JS/javaScript.js"></script>
   <!-- Sweet Alert  -->
@@ -21,9 +24,9 @@ if(isset($_GET['Logout'])){
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <li><a href="#Coffe">Cafe</a></li>
-      <li><a href="#Restaurants">Restaurants</a></li>
-      <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
+      <li><a href="listPage.php?id=1">Cafe</a></li>
+      <li><a href="listPage.php?id=2">Restaurants</a></li>
+      <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
       <?php if ($_COOKIE['theuser']){ ?>
         <li class="navmenu-right"><a href="profile.php">Profile</a></li>
         <li class="navmenu-right"><a href="?Logout">Logout</a></li>

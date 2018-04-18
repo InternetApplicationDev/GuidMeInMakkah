@@ -8,6 +8,9 @@ if(isset($_GET['Logout'])){
 <!DOCTYPE html>
 <html class="theBackGround">
 <head>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+  <!-- customized CSS and JS -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script type="text/javascript" src= "JS/javaScript.js"></script>
   <!-- Sweet Alert  -->
@@ -20,9 +23,9 @@ if(isset($_GET['Logout'])){
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <li><a href="#Coffe">Cafe</a></li>
-      <li><a href="#Restaurants">Restaurants</a></li>
-      <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
+      <li><a href="listPage.php?id=1">Cafe</a></li>
+      <li><a href="listPage.php?id=2">Restaurants</a></li>
+      <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
       <?php if ($_COOKIE['theuser']){ ?>
         <li class="navmenu-right"><a href="profile.php">Profile</a></li>
         <li class="navmenu-right"><a href="?Logout">Logout</a></li>
@@ -52,7 +55,7 @@ if(isset($_GET['Logout'])){
 		<option>Idea</option>
 		</select></div></br>
         <textarea name="suggestion" placeholder="Write Here" class="roundTextArea" ></textarea><br/><br/>
-        
+
 		<div class= "contactSubmit">
 		<input name="skip_Submit" value="Submit" type="submit" class="submitbutton"/>
 		<input type = "reset" value = "Cancel" class="submitbutton"/>

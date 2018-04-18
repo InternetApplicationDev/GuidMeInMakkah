@@ -40,7 +40,7 @@ if (isset($_POST['Email'])) {
         text: \'Email or Password is incorrect\',
         type: \'error\',
       }, function(isConfirm) {
-        document.location.href="/login.html"
+          window.location.href = \'login.php\';
       });
     });
     </script>';
@@ -52,6 +52,9 @@ if (isset($_POST['Email'])) {
 <html class="theBackGround">
 <head>
   <title>Log in</title>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+  <!-- customized CSS and JS -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script type="text/javascript" src= "JS/javaScript.js"></script>
   <!-- Sweet Alert  -->
@@ -64,9 +67,9 @@ if (isset($_POST['Email'])) {
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <li><a href="#Coffe">Cafe</a></li>
-      <li><a href="#Restaurants">Restaurants</a></li>
-      <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
+      <li><a href="listPage.php?id=1">Cafe</a></li>
+      <li><a href="listPage.php?id=2">Restaurants</a></li>
+      <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
       <?php if ($_COOKIE['theuser']){ ?>
         <li class="navmenu-right"><a href="profile.php">Profile</a></li>
         <li class="navmenu-right"><a href="?Logout">Logout</a></li>
@@ -84,22 +87,22 @@ if (isset($_POST['Email'])) {
   </div>
   <hr>
 
-  <form method="post" id="LoginForm" action="Login.php" onSubmit="return validateForm();">
+  <form method="post" id="LoginForm" onSubmit="return validateForm();">
     <div class="container">
 
       <div>
 
         <div class= "register1"> E-mail : <span style="color: red;"> *</span><br/>
-          <input type="text" id="Email" name="Email"  class="roundTextArea"/>
+          <input type="text" id="loginEmail" name="Email"  class="roundTextArea"/>
         </div>
         <br/>
         <div class= "register1"> Password :<span style="color: red;"> *</span><br/>
-          <input type="password" id="password" name="password" class="roundTextArea"/>
+          <input type="password" id="loginPassword" name="password" class="roundTextArea"/>
         </div>
 
         <br/>
         <div class= "regesterSubmit">
-          <input name="Log in" value="Log in" type="submit" class="submitbutton"/>
+          <input name="Log in" value="Log in" type="submit" class="submitbutton" id="LoginButton"/>
         </div>
       </div>
     </div>

@@ -9,21 +9,24 @@ if(isset($_GET['Logout'])){
 <html class="theBackGround">
 <head>
   <title>About </title>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+  <!-- customized CSS and JS -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script type="text/javascript" src= "JS/javaScript.js"></script>
   <!-- Sweet Alert  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
   <!-- pace preloader -->
- <script src="JS/pace.js"></script>
+  <script src="JS/pace.js"></script>
 </head>
 <body class="centerPage">
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <li><a href="#Coffe">Cafe</a></li>
-      <li><a href="#Restaurants">Restaurants</a></li>
-      <li><a href="#Cafe_and_Restaurants">Cafe & Restaurants</a></li>
+      <li><a href="listPage.php?id=1">Cafe</a></li>
+      <li><a href="listPage.php?id=2">Restaurants</a></li>
+      <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
       <?php if ($_COOKIE['theuser']){ ?>
         <li class="navmenu-right"><a href="profile.php">Profile</a></li>
         <li class="navmenu-right"><a href="?Logout">Logout</a></li>
@@ -34,7 +37,7 @@ if(isset($_GET['Logout'])){
     </ul>
   </div>
   <div class ="header">
-     ABOUT US
+    ABOUT US
     <div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>
 
   </div>
