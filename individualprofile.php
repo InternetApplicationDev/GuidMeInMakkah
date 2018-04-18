@@ -138,6 +138,9 @@ function addUserRate($userName,$userRate,$pageName){
 
 }
 
+function addUserFavor($userName,$userRate,$pageName){
+
+}
 
 ?>
 <?php
@@ -345,40 +348,43 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 	<div class="content">
 
 		 <h1>Comment</h1>
-      <!--
-      if(has been log in)
-      can commant
-      else
-      <center><hr><p style="font-size: 25px; color: red;">YOU MUST LOGIN FIRST TO COMMANTS</p><hr></center>
-    -->
-	<?php
-    echo "<form action=\"individualprofile.php?id={$_GET[id]} & className={$_GET[className]}\" method=\"post\" >";
-	?>
-      <table>
-        <tr>
-          <td> <img src="images/pesonal icon.jpg" class="imgUserInCommetn"/> </td>
-          <td><table style="margin-left:-20%">
-            <tr><td class="userNameInComment">user name</td></tr>
-            <tr><td><textarea id="TAtest" name="CommentTA" rows="4" cols="50"  placeholder="write your comments"></textarea></td></tr>
-            <tr><td >Your rating:<div class="stars" onclick="numOfRating()">
-			<input type="radio" id="star5" name="star" value="5" >
-			<label for="star5"></label>
-			<input type="radio" id="star4" name="star" value="4">
-			<label for="star4"></label>
-			<input type="radio" id="star3" name="star" value="3" >
-			<label for="star3"></label>
-			<input type="radio" id="star2" name="star" value="2" >
-			<label for="star2"></label>
-			<input type="radio" id="star1" name="star" value="1">
-			<label for="star1"></label>
-		   </div></td>
-          </tr>
-        </table></td>
-        <td><input type="submit" value="Submit" name="submit"></td>
-		<td><input id="starValue" name="getStarValue" type="hidden" value="0"></td>
-      </tr>
-    </table>
-  </form>
+		 
+		<!-- if your long in -->
+		<?php if ($_COOKIE['theuser']){ ?>
+			<?php
+				echo "<form action=\"individualprofile.php?id={$_GET[id]} & className={$_GET[className]}\" method=\"post\" >";
+				?>
+				  <table>
+					<tr>
+					  <td> <img src="images/pesonal icon.jpg" class="imgUserInCommetn"/> </td>
+					  <td><table style="margin-left:-20%">
+						<tr><td class="userNameInComment">user name</td></tr>
+						<tr><td><textarea id="TAtest" name="CommentTA" rows="4" cols="50"  placeholder="write your comments"></textarea></td></tr>
+						<tr><td >Your rating:<div class="stars" onclick="numOfRating()">
+						<input type="radio" id="star5" name="star" value="5" >
+						<label for="star5"></label>
+						<input type="radio" id="star4" name="star" value="4">
+						<label for="star4"></label>
+						<input type="radio" id="star3" name="star" value="3" >
+						<label for="star3"></label>
+						<input type="radio" id="star2" name="star" value="2" >
+						<label for="star2"></label>
+						<input type="radio" id="star1" name="star" value="1">
+						<label for="star1"></label>
+					   </div></td>
+					  </tr>
+					</table></td>
+					<td><input type="submit" value="Submit" name="submit"></td>
+					<td><input id="starValue" name="getStarValue" type="hidden" value="0"></td>
+				  </tr>
+				</table>
+			  </form>
+		<?php }else{ ?>
+			<center><p style="font-size: 25px; color: red;">YOU MUST LOGIN FIRST TO ADD COMMANTS</p></center>
+		<?php } ?>
+    
+	
+  
   <br> <br> <br><hr><hr><br> <br>
 
 		<div class="Comment">

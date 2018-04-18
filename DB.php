@@ -139,7 +139,7 @@ class connection {
                 }
               }//end of fun
               function restaurantPics($className,$id){
-                $dbc = mysqli_connect ('localhost', 'root', '1234');
+                $dbc = mysqli_connect ('localhost', 'root', 'root');
                 if (@mysqli_select_db ($dbc,'db')) {
 
                   if($id == 1)
