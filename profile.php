@@ -334,7 +334,7 @@ if (isset($_GET['Delete'])) {
             <?php } ?>
             <form action="profile.php?Edit" method="get">
               <div class='set yellow'>
-                <button type="submit" name="Edit" class='sdbtn pri ico'>Edit</button>
+                <button type="submit" name="Edit" class='yebtn pri ico'>Edit</button>
               </div>
             </form>
             <form action="profile.php?Delete" method="get">

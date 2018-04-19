@@ -299,7 +299,7 @@ hr {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 400px;
-  height: 420px;
+  min-height: 500px;
   margin: 3% 0% 0% 4%;
   text-align: center;
   float: left;
@@ -307,7 +307,7 @@ hr {
 .Editcard{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 400px;
-  height: 600px;
+  min-height: 600px;
   margin: 3% 0% 0% 4%;
   text-align: center;
   float: left;
@@ -357,22 +357,30 @@ hr {
   box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, 0.1), inset 0 -10px 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
+.yebtn{
+  border:none;
+  display: inline-block;
+  margin: 20px 5px;
+  font: 700 12px/1 'Open Sans', sans-serif;
+  border-radius: 5px;
+  box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, 0.1), inset 0 -10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
 .sdbtn.sec {
   color: #777;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
   background: #fff;
 }
-
 .sdbtn.sec:hover {
   background: #f5f5f5;
 }
 
-.sdbtn.pri {
+.sdbtn.pri,.yebtn.pri{
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 
-.set.yellow .sdbtn.pri {
+.set.yellow .yebtn.pri{
   background: #fdd835;
 }
 
@@ -384,11 +392,7 @@ hr {
   background: #d33;
 }
 
-.set.black .sdbtn.pri {
-  background: #555;
-}
-
-.set.yellow .sdbtn.pri:hover {
+.set.yellow .yebtn.pri:hover {
   background: #ffeb3b;
 }
 
@@ -400,24 +404,23 @@ hr {
   background: #c22;
 }
 
-.set.black .sdbtn.pri:hover {
-  background: #444;
-}
-
 .sdbtn.sec.ico,
-.sdbtn.pri.ico {
+.sdbtn.pri.ico,
+.yebtn.pri.ico {
   position: relative;
   padding-left: 40px;
   text-align: left;
 }
 
 .sdbtn.sec.ico:before,
-.sdbtn.pri.ico:before {
+.sdbtn.pri.ico:before,
+.yebtn.pri.ico:before {
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   width: 30px;
+  height: 10px;
   padding: 10px 0 12px;
   font-family: fontawesome;
   text-align: center;
@@ -425,27 +428,15 @@ hr {
   background: rgba(0, 0, 0, 0.15);
 }
 
-.sdbtn.sec.ico:before {
+.sdbtn.sec.ico:before,.yebtn.sec.ico:before {
   background: rgba(0, 0, 0, 0.08);
-}
-
-.set.yellow .sdbtn.sec.ico:before {
-  content: "";
 }
 
 .set.green .sdbtn.sec.ico:before {
   content: "";
 }
 
-.set.red .sdbtn.sec.ico:before {
-  content: "";
-}
-
-.set.black .sdbtn.sec.ico:before {
-  content: "";
-}
-
-.set.yellow .sdbtn.pri.ico:before {
+.set.yellow .yebtn.pri.ico:before {
   content: "";
 }
 
@@ -455,10 +446,6 @@ hr {
 
 .set.red .sdbtn.pri.ico:before {
   content: "";
-}
-
-.set.black .sdbtn.pri.ico:before {
-  content: "";
 }
 
 /************************************************** profile card - Social buttons **************************************************/
