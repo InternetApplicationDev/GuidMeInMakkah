@@ -7,7 +7,7 @@ if(isset($_GET['Logout'])){
 if (isset($_POST['Email'])) {
   $email = $_POST['Email'];
   $pass = $_POST['password'];
-  $dbc = mysqli_connect("localhost","root","root");
+  $dbc = mysqli_connect("localhost","root","12345678");
   mysqli_select_db($dbc,"db");
   if (mysqli_num_rows(mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'"))) {
     $result = mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'");
@@ -63,7 +63,9 @@ if (isset($_POST['Email'])) {
   <!-- pace preloader -->
   <script src="JS/pace.js"></script>
 </head>
-<body class="centerPage">
+
+<body class="content">
+  <!--
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
@@ -79,34 +81,28 @@ if (isset($_POST['Email'])) {
       <?php } ?>
     </ul>
   </div>
+-->
+ <a class ="signLogo" href ="index.php"><img src="images/logo-small-black.png"/></a>
+  <h2 class = "welcomeText"> Welcome To Guide Me In Makkah </h2>
+   <h3 class = "welcomeText"> Sign in </h3>
 
-  <div class ="header">
-    Log In
-
-    <div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>
-  </div>
-  <hr>
 
   <form method="post" id="LoginForm" onSubmit="return validateForm();">
-    <div class="container">
 
-      <div>
 
-        <div class= "register1"> E-mail : <span style="color: red;"> *</span><br/>
-          <input type="text" id="loginEmail" name="Email"  class="roundTextArea"/>
-        </div>
-        <br/>
-        <div class= "register1"> Password :<span style="color: red;"> *</span><br/>
-          <input type="password" id="loginPassword" name="password" class="roundTextArea"/>
-        </div>
+    
+           <input type="text" id="Email" name="Email"  placeholder="example@xxxxx.com" />
+   
+          <input  type="password" id="password" name="password" placeholder="password"  />
+  
+          <input name="submit" value="Log In" type="submit" />
+          
+     
 
-        <br/>
-        <div class= "regesterSubmit">
-          <input name="Log in" value="Log in" type="submit" class="submitbutton" id="LoginButton"/>
-        </div>
-      </div>
-    </div>
+          <h3 class = "welcomeText"> Creat New Account <a href="Registration.php">Sign Up</a></h3>
   </form>
+
+<!--
   <div class="footer" id="theFooter">
     <div class="footbar">
       <ul class="footmenu">
@@ -126,6 +122,6 @@ if (isset($_POST['Email'])) {
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
 </body>
 </html>
