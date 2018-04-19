@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 18, 2018 at 05:08 PM
--- Server version: 5.7.17-log
+-- Generation Time: Apr 19, 2018 at 05:41 AM
+-- Server version: 5.7.15-log
 -- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -100,6 +100,19 @@ CREATE TABLE `cafepics` (
   `cafePic_id` int(10) UNSIGNED NOT NULL,
   `cafePics` longblob NOT NULL,
   `cofeName` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `feedbackNo` int(5) UNSIGNED NOT NULL,
+  `Name` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `description` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -229,6 +242,12 @@ ALTER TABLE `cafepics`
   ADD KEY `cafe_id` (`cafe_id`);
 
 --
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`feedbackNo`);
+
+--
 -- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
@@ -279,6 +298,11 @@ ALTER TABLE `cafeandrestpics`
 --
 ALTER TABLE `cafepics`
   MODIFY `cafePic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `feedbackNo` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `restaurantpics`
 --
