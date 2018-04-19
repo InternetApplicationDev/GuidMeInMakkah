@@ -149,24 +149,41 @@ function validateEmail(Email) {
 	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
 	return isEmpty(Email) || re.test(Email);
 }
-/////////////////////////////////////////////////// footer Developers ///////////////////////////////////////////////////
-function showDevFunction() {
-	var x = document.getElementById("developersNames");
-	var footer = document.getElementById("theFooter");
-	if(x.style.display=="block"){
-		x.style.display="none";
-		footer.style.height = "75px";
-	} else {
-		x.style.display="block";
-		footer.style.height = "180px";
-	}
-}
-
-/////////////////////////////////////////////////// footer siteMap ///////////////////////////////////////////////////
-function showSiteMap(){
+/////////////////////////////////////////////////// Delete Profile ///////////////////////////////////////////////////
+function ConfirmDelete(){
 	swal({
-		// text : "<img src= './images/GuideMeInMakkah_small.png'>",
-		imageUrl: './images/GuideMeInMakkah_small.png',
-		showConfirmButton: false,
+		title: 'Are you sure?',
+		text: "You won\'t be able to revert this!",
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes, delete it!'
+	}).then((result) => {
+		if (result.value) {
+			 window.location.href = 'profile.php?Delete';
+		}else{
+			window.location.href = 'profile.php';
+		}
 	});
-}
+	}
+	/////////////////////////////////////////////////// footer Developers ///////////////////////////////////////////////////
+	function showDevFunction() {
+		var x = document.getElementById("developersNames");
+		var footer = document.getElementById("theFooter");
+		if(x.style.display=="block"){
+			x.style.display="none";
+			footer.style.height = "75px";
+		} else {
+			x.style.display="block";
+			footer.style.height = "180px";
+		}
+	}
+
+	/////////////////////////////////////////////////// footer siteMap ///////////////////////////////////////////////////
+	function showSiteMap(){
+		swal({
+			imageUrl: './images/GuideMeInMakkah_small.png',
+			showConfirmButton: false,
+		});
+	}
