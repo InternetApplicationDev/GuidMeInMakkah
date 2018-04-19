@@ -289,7 +289,7 @@ if (isset($_GET['Delete'])) {
           <li class="navmenu-right"><a href="?Logout">Logout</a></li>
         <?php }else{ ?>
           <li class="navmenu-right"><a href="Login.php">Login</a></li>
-          <li class="navmenu-right"><a href="Registration.php">Sign Up</a></li>
+          <li class="navmenu-right"><a href="Signup.php">Sign Up</a></li>
         <?php } ?>
       </ul>
     </div>

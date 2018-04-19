@@ -7,7 +7,7 @@ if(isset($_GET['Logout'])){
 if (isset($_POST['Email'])) {
   $email = $_POST['Email'];
   $pass = $_POST['password'];
-  $dbc = mysqli_connect("localhost","root","12345678");
+  $dbc = mysqli_connect("localhost","root","root");
   mysqli_select_db($dbc,"db");
   if (mysqli_num_rows(mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'"))) {
     $result = mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'");
@@ -40,7 +40,7 @@ if (isset($_POST['Email'])) {
         text: \'Email or Password is incorrect\',
         type: \'error\',
       }, function(isConfirm) {
-          window.location.href = \'login.php\';
+        window.location.href = \'login.php\';
       });
     });
     </script>';
@@ -67,61 +67,57 @@ if (isset($_POST['Email'])) {
 <body class="content">
   <!--
   <div class="navbar">
-    <ul class="navmenu">
-      <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-      <li><a href="listPage.php?id=1">Cafe</a></li>
-      <li><a href="listPage.php?id=2">Restaurants</a></li>
-      <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
-      <?php if ($_COOKIE['theuser']){ ?>
-        <li class="navmenu-right"><a href="profile.php">Profile</a></li>
-        <li class="navmenu-right"><a href="?Logout">Logout</a></li>
-      <?php }else{ ?>
-        <li class="navmenu-right"><a href="Login.php">Login</a></li>
-        <li class="navmenu-right"><a href="Registration.php">Sign Up</a></li>
-      <?php } ?>
-    </ul>
-  </div>
+  <ul class="navmenu">
+  <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
+  <li><a href="listPage.php?id=1">Cafe</a></li>
+  <li><a href="listPage.php?id=2">Restaurants</a></li>
+  <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
+  <?php if ($_COOKIE['theuser']){ ?>
+  <li class="navmenu-right"><a href="profile.php">Profile</a></li>
+  <li class="navmenu-right"><a href="?Logout">Logout</a></li>
+<?php }else{ ?>
+<li class="navmenu-right"><a href="Login.php">Login</a></li>
+<li class="navmenu-right"><a href="Registration.php">Sign Up</a></li>
+<?php } ?>
+</ul>
+</div>
 -->
- <a class ="signLogo" href ="index.php"><img src="images/logo-small-black.png"/></a>
-  <h2 class = "welcomeText"> Welcome To Guide Me In Makkah </h2>
-   <h3 class = "welcomeText"> Sign in </h3>
+<a class ="signLogo" href ="index.php"><img src="images/logo-small-black.png"/></a>
+<h2 class = "welcomeText"> Welcome To Guide Me In Makkah </h2>
+<h3 class = "welcomeText"> Sign in </h3>
 
 
-  <form method="post" id="LoginForm" onSubmit="return validateForm();">
+<form method="post" id="LoginForm" onSubmit="return validateForm();">
 
+  <input type="text" id="Email" name="Email"  placeholder="example@xxxxx.com" />
 
-    
-           <input type="text" id="Email" name="Email"  placeholder="example@xxxxx.com" />
-   
-          <input  type="password" id="password" name="password" placeholder="password"  />
-  
-          <input name="submit" value="Log In" type="submit" />
-          
-     
+  <input  type="password" id="password" name="password" placeholder="password"  />
 
-          <h3 class = "welcomeText"> Creat New Account <a href="Registration.php">Sign Up</a></h3>
-  </form>
+  <input name="submit" value="Log In" type="submit" />
+
+  <h3 class = "welcomeText"> Creat New Account <a href="Registration.php">Sign Up</a></h3>
+</form>
 
 <!--
-  <div class="footer" id="theFooter">
-    <div class="footbar">
-      <ul class="footmenu">
-        <li><a href="#" onclick="showDevFunction()">Developers</a></li>
-        <li><a href="about.php">About us</a></li>
-        <li><a href="contactUs.php">Contact us</a></li>
-        <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
-      </ul>
-      <div id="developersNames">
-        <ul class="devNames">
-          <li>Ebtsam Alkhuzai</li>
-          <li>Esraa Samkari</li>
-          <li>Joanna Assaeedi</li>
-          <li>Joud Alajlan</li>
-          <li>Rozan Alghamdi</li>
-          <li>Wafaa Alshaikhi</li>
-        </ul>
-      </div>
-    </div>
-  </div> -->
+<div class="footer" id="theFooter">
+<div class="footbar">
+<ul class="footmenu">
+<li><a href="#" onclick="showDevFunction()">Developers</a></li>
+<li><a href="about.php">About us</a></li>
+<li><a href="contactUs.php">Contact us</a></li>
+<li><a href="#" onclick="showSiteMap()">siteMap</a></li>
+</ul>
+<div id="developersNames">
+<ul class="devNames">
+<li>Ebtsam Alkhuzai</li>
+<li>Esraa Samkari</li>
+<li>Joanna Assaeedi</li>
+<li>Joud Alajlan</li>
+<li>Rozan Alghamdi</li>
+<li>Wafaa Alshaikhi</li>
+</ul>
+</div>
+</div>
+</div> -->
 </body>
 </html>

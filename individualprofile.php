@@ -201,7 +201,7 @@ function addUserFavor($userName,$userRate,$pageName){
 				<li class="navmenu-right"><a href="?Logout">Logout</a></li>
 			<?php }else{ ?>
 				<li class="navmenu-right"><a href="Login.php">Login</a></li>
-				<li class="navmenu-right"><a href="Registration.php">Sign Up</a></li>
+				<li class="navmenu-right"><a href="Signup.php">Sign Up</a></li>
 			<?php } ?>
 		</ul>
 	</div> <!-- navbar -->
@@ -419,8 +419,8 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
       <div class="footbar">
         <ul class="footmenu">
           <li><a href="#" onclick="showDevFunction()">Developers</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="contactUs.html">Contact us</a></li>
+          <li><a href="about.php">About us</a></li>
+          <li><a href="contactUs.php">Contact us</a></li>
           <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
         </ul>
         <div id="developersNames">
