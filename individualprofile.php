@@ -282,7 +282,6 @@ function addUserFavor($userName,$userRate,$pageName){
 
 		<table class="tableButtonReservation">
 			<tr>
-			<th>&nbsp &nbsp 150 RS</th>
 			<th> <button class="buttonReservation" onclick="window.location = 'reservationForm.php'">Reservation</button> </th>
 			</tr>
 		</table>
@@ -348,7 +347,7 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 	<div class="content">
 
 		 <h1>Comment</h1>
-		 
+
 		<!-- if your long in -->
 		<?php if ($_COOKIE['theuser']){ ?>
 			<?php
@@ -382,9 +381,9 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 		<?php }else{ ?>
 			<center><p style="font-size: 25px; color: red;">YOU MUST LOGIN FIRST TO ADD COMMANTS</p></center>
 		<?php } ?>
-    
-	
-  
+
+
+
   <br> <br> <br><hr><hr><br> <br>
 
 		<div class="Comment">

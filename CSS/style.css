@@ -208,8 +208,7 @@ opacity: 0.5;
   height: 350px;
   padding: 0.4%;
   margin-top:10px;
-
-
+  margin-bottom: 20px;
 }
 
 .container {
@@ -281,7 +280,8 @@ hr {
 .card button:hover, a:hover {
   opacity: 0.7;
 }
-/************************************************** save and discared **************************************************/
+/************************************************** Edit, Delete, save and discared **************************************************/
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
 
 .sdbtn {
@@ -295,7 +295,6 @@ hr {
   box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, 0.1), inset 0 -10px 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-
 .sdbtn.sec {
   color: #777;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -311,12 +310,36 @@ hr {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 
+.set.yellow .sdbtn.pri {
+  background: #fdd835;
+}
+
 .set.green .sdbtn.pri {
   background: #6b6;
 }
 
+.set.red .sdbtn.pri {
+  background: #d33;
+}
+
+.set.black .sdbtn.pri {
+  background: #555;
+}
+
+.set.yellow .sdbtn.pri:hover {
+  background: #ffeb3b;
+}
+
 .set.green .sdbtn.pri:hover {
   background: #5a5;
+}
+
+.set.red .sdbtn.pri:hover {
+  background: #c22;
+}
+
+.set.black .sdbtn.pri:hover {
+  background: #444;
 }
 
 .sdbtn.sec.ico,
@@ -336,7 +359,7 @@ hr {
   padding: 10px 0 12px;
   font-family: fontawesome;
   text-align: center;
-  border-radius: 5px 0 0 5px;
+  border-radius: 3px 0 0 3px;
   background: rgba(0, 0, 0, 0.15);
 }
 
@@ -344,13 +367,36 @@ hr {
   background: rgba(0, 0, 0, 0.08);
 }
 
+.set.yellow .sdbtn.sec.ico:before {
+  content: "";
+}
+
 .set.green .sdbtn.sec.ico:before {
   content: "";
 }
 
+.set.red .sdbtn.sec.ico:before {
+  content: "";
+}
+
+.set.black .sdbtn.sec.ico:before {
+  content: "";
+}
+
+.set.yellow .sdbtn.pri.ico:before {
+  content: "";
+}
 
 .set.green .sdbtn.pri.ico:before {
   content: "";
+}
+
+.set.red .sdbtn.pri.ico:before {
+  content: "";
+}
+
+.set.black .sdbtn.pri.ico:before {
+  content: "";
 }
 
 /************************************************** profile card - Social buttons **************************************************/

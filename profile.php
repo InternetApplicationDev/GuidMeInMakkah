@@ -36,8 +36,8 @@ if (isset($_GET['Delete'])) {
       confirmButtonText: \'Yes, delete it!\'
     }).then((result) => {
       if (result.value) {';
-        $deleteAccount = mysqli_query($dbc,"DELETE FROM user where user_id = $theuser LIMIT 1");
-        setcookie("theuser","",time()-60*60*24*30,'/');
+         $deleteAccount = mysqli_query($dbc,"DELETE FROM user where user_id = $theuser LIMIT 1");
+         setcookie("theuser","",time()-60*60*24*30,'/');
         echo 'swal({
           title: \'Your account has been deleted\',
           type: \'success\',
@@ -46,6 +46,8 @@ if (isset($_GET['Delete'])) {
         }).then(function(){
           window.location.href = \'index.php\';
         });
+      }else{
+        window.location.href = \'profile.php\';
       }})
     });
     </script>';
@@ -108,26 +110,26 @@ if (isset($_GET['Delete'])) {
         printMessage();
       }
     }
-      if (move_uploaded_file ($_FILES['pic']['tmp_name'], "Users/Photos/{$_FILES['pic']['name']}")) {
-        $imageName = "Users/Photos/{$_FILES['pic']['name']}";
-        $updateUserInformation = mysqli_query($dbc,"UPDATE user SET user_picture = '$imageName' where user_id = $theuser");
-        echo '
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
-        <script>
-        $( document ).ready(function() {
-          swal({
-            title: \'Your image have been uploaded\',
-            type: \'success\',
-            showConfirmButton: false,
-            timer: 1500,
-          }).then(function(){
-            window.location.href = \'profile.php\';
-          });
+    if (move_uploaded_file ($_FILES['pic']['tmp_name'], "Users/Photos/{$_FILES['pic']['name']}")) {
+      $imageName = "Users/Photos/{$_FILES['pic']['name']}";
+      $updateUserInformation = mysqli_query($dbc,"UPDATE user SET user_picture = '$imageName' where user_id = $theuser");
+      echo '
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
+      <script>
+      $( document ).ready(function() {
+        swal({
+          title: \'Your image have been uploaded\',
+          type: \'success\',
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(function(){
+          window.location.href = \'profile.php\';
         });
-        </script>';
-      }
+      });
+      </script>';
     }
+  }
   mysqli_close($dbc);
   ?>
   <?php
@@ -285,11 +287,6 @@ if (isset($_GET['Delete'])) {
         <?php if ($_COOKIE['theuser']){ ?>
           <li class="navmenu-right"><a href="profile.php">Profile</a></li>
           <li class="navmenu-right"><a href="?Logout">Logout</a></li>
-          <?php if(isset($_GET['Edit'])) {?>
-            <li class="navmenu-right"><a href="?Delete">Delete</a></li>
-          <?php } else { ?>
-            <li class="navmenu-right"><a href="?Edit">Edit</a></li>
-          <?php } ?>
         <?php }else{ ?>
           <li class="navmenu-right"><a href="Login.php">Login</a></li>
           <li class="navmenu-right"><a href="Registration.php">Sign Up</a></li>
@@ -335,6 +332,17 @@ if (isset($_GET['Delete'])) {
                 <i class="fa fa-facebook"></i>
               </a>
             <?php } ?>
+            <form action="profile.php?Edit" method="get">
+              <div class='set yellow'>
+                <button type="submit" name="Edit" class='sdbtn pri ico'>Edit</button>
+              </div>
+            </form>
+            <form action="profile.php?Delete" method="get">
+              <div class='set red'>
+                <button type="submit" name="Delete" class='sdbtn pri ico'>Delete</button>
+              </div>
+            </form>
+
           <?php } ?>
         </div>
       </div>
