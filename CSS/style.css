@@ -153,6 +153,68 @@
   border-width: 0 1px;
   background: #eee;
 }
+.welcomeText{
+
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.content{
+  margin-top:3%;
+  width: 30%;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: 90%;
+  padding: 2%;
+  background: #eee;
+    border-radius: 8px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.signLogo{
+margin-left: 35%;
+
+}
+.centerPage{
+  width: 85%;
+  margin: 5%;
+  padding: 0 0 0 4%;
+  border: 1px solid black;
+  border-width: 0 1px;
+  background:#eee;
+}
 /************************************************** text **************************************************/
 
 .listPageh1 {
@@ -505,16 +567,7 @@ hr {
   padding-right:300px;
 
 }
-.register1{
-  font-family: 'Amaranth', sans-serif;
-  font-variant: normal;
-  font-size: 20px;
-  color:  #C0C0C0;
-  float:left;
-  margin-left:300px;
-  padding-bottom:30px;
-  padding-right:300px;
-}
+
 .reserv2{
   font-family: 'Amaranth', sans-serif;
   font-variant: normal;
@@ -535,16 +588,7 @@ hr {
   margin-left: 65%;
   margin-bottom: 10%;
 }
-.regesterSubmit{
-  font-family: 'Amaranth', sans-serif;
-  margin-left:350px;
-  margin-bottom: 10%;
-}
-.roundTextArea{
-  width: 100%;
-  border-radius: 10px;
-  border: 5px solid transparent;
-}
+
 .roundTextArea2{
   width:100%;
   height: 60px;
@@ -555,14 +599,6 @@ hr {
 .roundTextAreaEditProfile{
   border-radius: 10px;
   border: 5px solid transparent;
-}
-.submitbutton{
-  border-radius: 18px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  color: #D38A8A;
-  border: 1px solid black;
-  position: relative;
 }
 /********** ABOUT *********/
 .about {
