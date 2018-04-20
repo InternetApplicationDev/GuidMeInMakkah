@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 20, 2018 at 01:36 PM
+-- Generation Time: Apr 20, 2018 at 04:46 PM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -196,7 +196,7 @@ CREATE TABLE `user` (
   `user_password` varchar(255) NOT NULL,
   `user_first_name` varchar(225) NOT NULL DEFAULT 'NAME',
   `user_last_name` varchar(225) NOT NULL,
-  `user_picture` varchar(225) NOT NULL DEFAULT 'Users/Photos/pesonal icon.jpg',
+  `user_picture` varchar(225) NOT NULL DEFAULT 'Users/Photos/pesonal.jpg',
   `user_bio` varchar(225) NOT NULL,
   `user_twitter` varchar(225) NOT NULL,
   `user_facebook` varchar(225) NOT NULL
@@ -208,8 +208,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_first_name`, `user_last_name`, `user_picture`, `user_bio`, `user_twitter`, `user_facebook`) VALUES
 (1, 'admin', 'admin', 'admin', '', 'Users/Photos/admin.png', '', '', ''),
-(2, 'Joanna.a.s.1996@Gmail.com', '12345678', 'Joanna', 'Assaeedi', 'Users/Photos/pesonal icon.jpg', '', 'Joanna_A_S', 'Joanna.A.S.107'),
-(3, 'israaSamkari@hotmail.com', '12345678', 'israa', 'samkari', 'Users/Photos/1420867127172.jpg', '', '', '');
+(2, 'Joanna.a.s.1996@Gmail.com', '12345678', 'Joanna', 'Assaeedi', 'Users/Photos/pesonal.jpg', '', 'Joanna_A_S', 'Joanna.A.S.107'),
+(3, 'israaSamkari@hotmail.com', '12345678', 'israa', 'samkari', 'Users/Photos/1420867127172.jpg', '', '', ''),
+(58, 'test@gmail.com', '12345678', 'test', 'test', 'Users/Photos/pesonal.jpg', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -342,12 +343,12 @@ ALTER TABLE `restaurants`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 --
 -- AUTO_INCREMENT for table `userfav`
 --
 ALTER TABLE `userfav`
-  MODIFY `fav_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `fav_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- Constraints for dumped tables
 --
