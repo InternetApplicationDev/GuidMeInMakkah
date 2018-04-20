@@ -254,8 +254,6 @@ function retrieveAllComment($userName,$pageName){
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script type="text/javascript">var userEmail = "<?= $userEmail ?>";</script>
   <script type = "text/javascript" src = "JS/javaScript.js"></script>
-  <!-- Add icon library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Sweet Alert  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
@@ -319,17 +317,10 @@ function retrieveAllComment($userName,$pageName){
               <i class="fa fa-facebook"></i>
             </a>
           <?php } ?>
-          <form action="profile.php?Edit" method="get">
-            <div class='set yellow'>
-              <button type="submit" name="Edit" class='yebtn pri ico'>Edit</button>
-            </div>
-          </form>
-          <!-- <form action="profile.php?Delete" method="get"> -->
-            <div class='set red'>
-              <button type="submit" name="Delete" class='sdbtn pri ico' onclick="return ConfirmDelete();">Delete</button>
-            </div>
-          </form>
-
+          <div class='set yellowRed'>
+              <button name="Edit" class='sdbtn pri ico' onclick="window.location.href = 'profile.php?Edit';">Edit</button>
+              <button name="Delete" class='sdbtn sec ico re' onclick="return ConfirmDelete();">Delete</button>
+          </div>
         <?php } ?>
       </div>
     </div>

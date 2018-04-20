@@ -169,7 +169,7 @@
   border-radius: 8px;
 }
 
-#LoginForm input[type=text],#SignupForm input[type=text],select{
+#LoginForm input[type=text],#SignupForm input[type=text]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -298,11 +298,12 @@ hr {
 /************************************************** profile card **************************************************/
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  min-height: 500px;
+  max-width: 250px;
+  height: auto;
   margin: 3% 0% 0% 4%;
   text-align: center;
   float: left;
+  word-wrap: break-word;
 }
 .Editcard{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -320,67 +321,41 @@ hr {
   left: 25px;
   top: 100px;
 }
-.card button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-.card a:link{
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
-
-.card button:hover, a:hover {
-  opacity: 0.7;
-}
 /************************************************** Edit, Delete, save and discared **************************************************/
-@charset "UTF-8";
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
 
 .sdbtn {
   border:none;
   display: inline-block;
   min-width: 50px;
-  margin: -5px 5px;
+  margin: 5px 5px;
   padding: 10px 15px 12px;
   font: 700 12px/1 'Open Sans', sans-serif;
-  border-radius: 5px;
+  border-radius: 3px;
   box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, 0.1), inset 0 -10px 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-.yebtn{
-  border:none;
-  display: inline-block;
-  margin: 20px 5px;
-  font: 700 12px/1 'Open Sans', sans-serif;
-  border-radius: 5px;
-  box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, 0.1), inset 0 -10px 20px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
+
 .sdbtn.sec {
   color: #777;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
   background: #fff;
 }
+
 .sdbtn.sec:hover {
   background: #f5f5f5;
 }
 
-.sdbtn.pri,.yebtn.pri{
+.sdbtn.pri {
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
-
-.set.yellow .yebtn.pri{
+.sdbtn.sec.re{
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+.set.yellowRed .sdbtn.pri {
   background: #fdd835;
 }
 
@@ -388,11 +363,11 @@ hr {
   background: #6b6;
 }
 
-.set.red .sdbtn.pri {
+.set.yellowRed .sdbtn.sec {
   background: #d33;
 }
 
-.set.yellow .yebtn.pri:hover {
+.set.yellowRed .sdbtn.pri:hover {
   background: #ffeb3b;
 }
 
@@ -400,27 +375,24 @@ hr {
   background: #5a5;
 }
 
-.set.red .sdbtn.pri:hover {
+.set.yellowRed .sdbtn.sec:hover {
   background: #c22;
 }
 
 .sdbtn.sec.ico,
-.sdbtn.pri.ico,
-.yebtn.pri.ico {
+.sdbtn.pri.ico {
   position: relative;
   padding-left: 40px;
   text-align: left;
 }
 
 .sdbtn.sec.ico:before,
-.sdbtn.pri.ico:before,
-.yebtn.pri.ico:before {
+.sdbtn.pri.ico:before {
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   width: 30px;
-  height: 10px;
   padding: 10px 0 12px;
   font-family: fontawesome;
   text-align: center;
@@ -428,7 +400,7 @@ hr {
   background: rgba(0, 0, 0, 0.15);
 }
 
-.sdbtn.sec.ico:before,.yebtn.sec.ico:before {
+.sdbtn.sec.ico:before {
   background: rgba(0, 0, 0, 0.08);
 }
 
@@ -436,7 +408,7 @@ hr {
   content: "";
 }
 
-.set.yellow .yebtn.pri.ico:before {
+.set.yellowRed .sdbtn.pri.ico:before {
   content: "";
 }
 
@@ -444,10 +416,9 @@ hr {
   content: "";
 }
 
-.set.red .sdbtn.pri.ico:before {
+.set.yellowRed .sdbtn.sec.ico:before {
   content: "";
 }
-
 /************************************************** profile card - Social buttons **************************************************/
 @import '//codepen.io/chrisdothtml/pen/ojLzJK.css';
 .social-btns .btn,
@@ -621,7 +592,11 @@ hr {
   margin-left: 65%;
   margin-bottom: 10%;
 }
-
+.roundTextArea{
+  width: 100%;
+  border-radius: 10px;
+  border: 5px solid transparent;
+}
 .roundTextArea2{
   width:100%;
   height: 60px;

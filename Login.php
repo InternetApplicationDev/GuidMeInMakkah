@@ -95,7 +95,7 @@ if (isset($_POST['Email'])) {
 
   <input name="submit" value="Log In" type="submit" />
 
-  <h3 class = "welcomeText"> Creat New Account <a href="Registration.php">Sign Up</a></h3>
+  <h3 class = "welcomeText"> Creat New Account <a href="Signup.php">Sign Up</a></h3>
 </form>
 
 <!--
