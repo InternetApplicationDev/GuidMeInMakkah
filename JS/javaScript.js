@@ -9,6 +9,7 @@ $(document).ready(function(){
 		}
 	});
 });
+<<<<<<< HEAD
 ///////////////////////////////////////////////Contact US//////////////////////////////////////////////
 $('button').click(function() {
   $(this).toggleClass('clicked');
@@ -32,6 +33,9 @@ function changeImageOnclick() {
 		heart="unheart";
 	}
 }
+=======
+
+>>>>>>> 23872bf746deb08ab4b2b944a2ea83ecc90ff69c
 
 function LarrowOnclick() {
 	// chack alt to change img to previos img

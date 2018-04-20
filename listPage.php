@@ -163,7 +163,7 @@ if(isset($_GET['Logout'])){
 
     </div>
   </form>
-  <div class="footer" id="theFooter">
+  <div style="top:1020px; position: absolute;" class="footer" id="theFooter">
     <div class="footbar">
       <ul class="footmenu">
         <li><a href="#" onclick="showDevFunction()">Developers</a></li>

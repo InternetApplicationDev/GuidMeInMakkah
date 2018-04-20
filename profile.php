@@ -7,7 +7,9 @@ if(isset($_GET['Logout'])){
 }
 // display user information
 $theuser = $_COOKIE['theuser'];
+
 $dbc = mysqli_connect("localhost","root","root");
+
 mysqli_select_db($dbc,"db");
 $userInformation = mysqli_query($dbc,"SELECT user_picture,user_first_name,user_last_name,user_bio,user_twitter,user_facebook From user where user_id = $theuser");
 while($row = mysqli_fetch_array($userInformation)){
@@ -335,7 +337,9 @@ function retrieveAllComment($userName,$pageName){
       <div class="profileComments">
       <div class="Profilecontent">
 
-        <h1>Comment</h1>
+
+
+        <h1 style="margin-top:30%;">Comment</h1>
 
         <div class="containerComments" >
           <?php
