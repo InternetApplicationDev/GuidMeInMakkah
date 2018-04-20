@@ -146,9 +146,9 @@ function addUserFavor($userName,$userRate,$pageName){
 <?php
 	if(isset($_POST["getStarValue"])){
 		$comments = $_POST["CommentTA"];
-		$userName ="hdi";
-		$pageName =$_GET[className];
 		$userRate = $_POST["getStarValue"];
+		$userName =$_COOKIE['theuser'];
+		$pageName =$_GET[className];
 		searchUserNameInIndexFile($userName,$pageName);
 		addUserNameComment($userName,$comments,$pageName);
 		addUserRate($userName,$userRate,$pageName);
@@ -355,9 +355,10 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 				?>
 				  <table>
 					<tr>
-					  <td> <img src="images/pesonal icon.jpg" class="imgUserInCommetn"/> </td>
+					  <?php $r = $bar->retrieveUsername($_COOKIE['theuser']); ?>
+					  <td> <img src=<?php echo "{$r[1]}"; ?> class="imgUserInCommetn"/> </td>
 					  <td><table style="margin-left:-20%">
-						<tr><td class="userNameInComment">user name</td></tr>
+						<tr><td class="userNameInComment"><?php echo $r[0]; ?></td></tr>
 						<tr><td><textarea id="TAtest" name="CommentTA" rows="4" cols="50"  placeholder="write your comments"></textarea></td></tr>
 						<tr><td >Your rating:<div class="stars" onclick="numOfRating()">
 						<input type="radio" id="star5" name="star" value="5" >
@@ -379,7 +380,7 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 				</table>
 			  </form>
 		<?php }else{ ?>
-			<center><p style="font-size: 25px; color: red;">YOU MUST LOGIN FIRST TO ADD COMMANTS</p></center>
+			<center><p style="font-size: 20px; color: red;">YOU MUST LOGIN FIRST TO ADD COMMANTS</p></center>
 		<?php } ?>
 
 
@@ -397,10 +398,12 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 
 			for ( $j=0; $j < $n; $j++){
 			$getUseANDCom = retrieveUsersComments($data[$j]);
+			// select user name from DB by id
+			$r = $bar->retrieveUsername($getUseANDCom[0]);
 			?>
 			<div class="commentsUserBox" >
-			<p class="userNameInComment"><?php echo $getUseANDCom[0]; ?></p>
-			<img src="images/pesonal icon.jpg" />
+			<p class="userNameInComment"><?php echo $r[0]; ?></p>
+			<img src=<?php echo "{$r[1]}"; ?> />
 			<div><p class="userCommentInComment"><?php echo $getUseANDCom[1]; ?></p></div>
 			</div>
 			<?php

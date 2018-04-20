@@ -343,15 +343,15 @@ function retrieveAllComment($userName,$pageName){
 
         <div class="containerComments" >
           <?php
-          $getCommentPage = searchUserNameInIndexFile($userName);
+          $getCommentPage = searchUserNameInIndexFile($_COOKIE['theuser']);
           if(is_array($getCommentPage)){
             for ( $pages=0; $pages < sizeof($getCommentPage); $pages++){
-              $comments = retrieveAllComment($userName,$getCommentPage[$pages]);
+              $comments = retrieveAllComment($_COOKIE['theuser'],$getCommentPage[$pages]);
               for ( $i=0; $i < sizeof($comments); $i++){
                 ?>
                 <div class="commentsUserBox" >
                   <p class="userNameInComment"><?php echo $userName; ?></p>
-                  <img src="images/pesonal icon.jpg" />
+                  <img src=<?php echo "{$picturePath}"; ?> />
                   <div><p class="userCommentInComment"><?php echo $comments[$i]; ?></p></div>
                 </div>
                 <?php

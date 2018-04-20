@@ -139,31 +139,50 @@ class connection {
                 }
               }//end of fun
               function restaurantPics($className,$id){
-                $dbc = mysqli_connect ('localhost', 'root', 'root');
-                if (@mysqli_select_db ($dbc,'db')) {
+					$dbc = mysqli_connect ('localhost', 'root', 'root');
+					if (@mysqli_select_db ($dbc,'db')) {
 
-                  if($id == 1)
-                  $query = "SELECT cafepics.cafePics FROM cafe  INNER JOIN cafepics ON cafe.cafe_name = cafepics.cofeName WHERE cafe_name = \"{$className}\"";
-                  else if($id == 3)
-                  $query = "SELECT cafeandrestpics.cafeAndRestPic FROM cafeandrest  INNER JOIN cafeandrestpics ON cafeandrest.cafeAndRest_name = cafeandrestpics.cofeAndResName WHERE cafeAndRest_name = \"{$className}\"";
-                  else if($id == 2)
-                  $query = "SELECT restaurantpics.restaurantPic FROM restaurants  INNER JOIN restaurantpics ON restaurants.restaurant_name = restaurantpics.restauran_name WHERE restaurant_name = \"{$className}\"";
-                  if ($r = mysqli_query ($dbc, $query)) {
+					  if($id == 1)
+					  $query = "SELECT cafepics.cafePics FROM cafe  INNER JOIN cafepics ON cafe.cafe_name = cafepics.cofeName WHERE cafe_name = \"{$className}\"";
+					  else if($id == 3)
+					  $query = "SELECT cafeandrestpics.cafeAndRestPic FROM cafeandrest  INNER JOIN cafeandrestpics ON cafeandrest.cafeAndRest_name = cafeandrestpics.cofeAndResName WHERE cafeAndRest_name = \"{$className}\"";
+					  else if($id == 2)
+					  $query = "SELECT restaurantpics.restaurantPic FROM restaurants  INNER JOIN restaurantpics ON restaurants.restaurant_name = restaurantpics.restauran_name WHERE restaurant_name = \"{$className}\"";
+					  if ($r = mysqli_query ($dbc, $query)) {
 
-                    $arry = array();
-                    $x=0;
-                    while ($row = mysqli_fetch_array ($r)) {
-                      $arry[$x]=$row;
-                      $x++;
-                    }//end of if
-                    return $arry;
-                  }
-                  else { // Query didn't run.
-                    die ('<p>Could not retrieve the data because: <b>' . mysqli_error($dbc) . "</b>. The query was $query.</p>");}
-                  }
-                  else {
-                    die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b></p>');
-                  }
-                }//end of fun
-              }//end of class
-              ?>
+						$arry = array();
+						$x=0;
+						while ($row = mysqli_fetch_array ($r)) {
+						  $arry[$x]=$row;
+						  $x++;
+						}//end of if
+						return $arry;
+					  }
+					  else { // Query didn't run.
+						die ('<p>Could not retrieve the data because: <b>' . mysqli_error($dbc) . "</b>. The query was $query.</p>");}
+					  }
+					  else {
+						die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b></p>');
+					  }
+					}//end of fun
+				function retrieveUsername($userId){
+					$dbc = mysqli_connect ('localhost', 'root', 'root');
+					if (@mysqli_select_db ($dbc,'db')) {
+						$query = "SELECT user_first_name, user_last_name,user_picture FROM user WHERE user_id = \"{$userId}\"";
+						$userInformation = mysqli_query($dbc,$query);
+						$userName="";
+						$userPic="";
+						while($row = mysqli_fetch_array($userInformation)){
+						  $userName = $row['user_first_name'];
+						  $userName .= ' ';
+						  $userName .= $row['user_last_name'];
+						  $userPic = $row['user_picture'];
+						}
+						return array($userName,$userPic);
+					}
+					else {
+						die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b></p>');
+					  }
+				}//end of fun
+}//end of class
+?>
