@@ -134,10 +134,6 @@ function retrieveUsersComments($userNameWithHisComment){
 	return array($userName,$userComment);
 }
 
-function addUserRate($userName,$userRate,$pageName){
-	
-}
-
 function addUserFavor($userNum,$pageName){
 	$dbc = mysqli_connect ('localhost', 'root', 'root');
 	if (@mysqli_select_db ($dbc,'db')) {
@@ -179,6 +175,12 @@ function deleteUserFavor($userNum,$pageName){
 		addUserNameComment($userName,$comments,$pageName);
 		addUserRate($userName,$userRate,$pageName);
 	}
+
+	if($_GET[favo] == "unheart"){
+		 deleteUserFavor($_COOKIE['theuser'],$_GET[className]); 
+	}else if($_GET[favo] == "heart"){
+		 addUserFavor($_COOKIE['theuser'],$_GET[className]);
+	}
 ?>
 <html class="theBackGround">
 <head>
@@ -190,27 +192,20 @@ function deleteUserFavor($userNum,$pageName){
 	<script type = "text/javascript" src = "JS/javaScript.js"></script>
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-	<script type="text/javascript">
-	
+	<script >
 		var heart ="unheart";
 		function changeImageOnclick() {
 			// add to database as favor page
 			<?php if ($_COOKIE['theuser']){ ?>
 				if (heart == "unheart")
 				{
-					document.getElementById("imgClickAndChange").src = "images/hreat.png";
-					heart="heart";
-					<?php 
-					  addUserFavor($_COOKIE['theuser'],$_GET[className]); 
-					?>
+					window.location.href = "individualprofile.php?id=<?php echo $_GET[id] ?> & className=<?php echo $_GET[className] ?> & favo=heart";
+					//document.getElementById("imgClickAndChange").src = "images/hreat.png";
+					//heart="heart";
 				}
 				else
 				{
-					document.getElementById("imgClickAndChange").src = "images/unhreat.png";
-					heart="unheart";
-					<?php 
-					   deleteUserFavor($_COOKIE['theuser'],$_GET[className]); 
-					?>
+					window.location.href = "individualprofile.php?id=<?php echo $_GET[id] ?> & className=<?php echo $_GET[className] ?> & favo=unheart";
 				}
 			<?php } else { ?>
 				alert("you must log in first");
