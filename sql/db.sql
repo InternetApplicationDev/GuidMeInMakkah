@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Apr 20, 2018 at 01:06 PM
--- Server version: 5.6.38
--- PHP Version: 7.1.12
+-- Host: localhost
+-- Generation Time: Apr 20, 2018 at 04:46 PM
+-- Server version: 5.7.17-log
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -196,7 +196,7 @@ CREATE TABLE `user` (
   `user_password` varchar(255) NOT NULL,
   `user_first_name` varchar(225) NOT NULL DEFAULT 'NAME',
   `user_last_name` varchar(225) NOT NULL,
-  `user_picture` varchar(225) NOT NULL DEFAULT 'Users/Photos/pesonal icon.jpg',
+  `user_picture` varchar(225) NOT NULL DEFAULT 'Users/Photos/pesonal.jpg',
   `user_bio` varchar(225) NOT NULL,
   `user_twitter` varchar(225) NOT NULL,
   `user_facebook` varchar(225) NOT NULL
@@ -208,8 +208,28 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_first_name`, `user_last_name`, `user_picture`, `user_bio`, `user_twitter`, `user_facebook`) VALUES
 (1, 'admin', 'admin', 'admin', '', 'Users/Photos/admin.png', '', '', ''),
-(2, 'Joanna.a.s.1996@Gmail.com', '12345678', 'Joanna', 'Assaeedi', 'Users/Photos/pesonal icon.jpg', '', 'Joanna_A_S', 'Joanna.A.S.107'),
-(3, 'israaSamkari@hotmail.com', '12345678', 'israa', 'samkari', 'Users/Photos/pesonal icon.jpg', '', '', '');
+(2, 'Joanna.a.s.1996@Gmail.com', '12345678', 'Joanna', 'Assaeedi', 'Users/Photos/pesonal.jpg', '', 'Joanna_A_S', 'Joanna.A.S.107'),
+(3, 'israaSamkari@hotmail.com', '12345678', 'israa', 'samkari', 'Users/Photos/1420867127172.jpg', '', '', ''),
+(58, 'test@gmail.com', '12345678', 'test', 'test', 'Users/Photos/pesonal.jpg', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userfav`
+--
+
+CREATE TABLE `userfav` (
+  `user_id` int(5) NOT NULL,
+  `fav_id` int(10) NOT NULL,
+  `fav_name` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `userfav`
+--
+
+INSERT INTO `userfav` (`user_id`, `fav_id`, `fav_name`) VALUES
+(1, 28, 'Burger King');
 
 --
 -- Indexes for dumped tables
@@ -275,6 +295,12 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `user_email` (`user_email`);
 
 --
+-- Indexes for table `userfav`
+--
+ALTER TABLE `userfav`
+  ADD PRIMARY KEY (`fav_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -283,49 +309,46 @@ ALTER TABLE `user`
 --
 ALTER TABLE `cafe`
   MODIFY `cafe_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT for table `cafeandrest`
 --
 ALTER TABLE `cafeandrest`
   MODIFY `cafeAndRest_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `cafeandrestpics`
 --
 ALTER TABLE `cafeandrestpics`
   MODIFY `cafeAndRestPic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `cafepics`
 --
 ALTER TABLE `cafepics`
   MODIFY `cafePic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `feedbackNo` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `restaurantpics`
 --
 ALTER TABLE `restaurantpics`
   MODIFY `restaurantPic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
   MODIFY `restaurant_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
-
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+--
+-- AUTO_INCREMENT for table `userfav`
+--
+ALTER TABLE `userfav`
+  MODIFY `fav_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- Constraints for dumped tables
 --

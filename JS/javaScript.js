@@ -9,7 +9,7 @@ $(document).ready(function(){
 		}
 	});
 });
-
+////////////////////////////////////////////individual profile ////////////////////////////////////////
 var heart ="unheart";
 
 function changeImageOnclick() {

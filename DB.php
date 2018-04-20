@@ -184,5 +184,7 @@ class connection {
 						die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b></p>');
 					  }
 				}//end of fun
+
+				
 }//end of class
 ?>
