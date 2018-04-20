@@ -9,14 +9,6 @@ $(document).ready(function(){
 		}
 	});
 });
-<<<<<<< HEAD
-///////////////////////////////////////////////Contact US//////////////////////////////////////////////
-$('button').click(function() {
-  $(this).toggleClass('clicked');
-  $('button p').text(function(i, text) {
-    return text === "Sent!" ? "Send" : "Sent!";
-  });
-});
 ////////////////////////////////////////////individual profile ////////////////////////////////////////
 var heart ="unheart";
 
@@ -33,9 +25,6 @@ function changeImageOnclick() {
 		heart="unheart";
 	}
 }
-=======
-
->>>>>>> 23872bf746deb08ab4b2b944a2ea83ecc90ff69c
 
 function LarrowOnclick() {
 	// chack alt to change img to previos img
