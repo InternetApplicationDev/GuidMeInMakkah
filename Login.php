@@ -4,12 +4,14 @@ if(isset($_GET['Logout'])){
   header('Location: index.php');
   exit;
 }
-$email = $_POST['Email'];
-$pass = $_POST['password'];
-$dbc = mysqli_connect("localhost","root","root");
-mysqli_select_db($dbc,"db");
-if(!empty($email) || !empty($pass)) {
-if (isset($_POST['Email'])) {
+
+
+if (isset($_POST['submit'])) {
+  $email = $_POST['Email'];
+  $pass = $_POST['password'];
+  $dbc = mysqli_connect("localhost","root","root");
+  if(!empty($email) || !empty($pass)) {
+  mysqli_select_db($dbc,"db");
   if (mysqli_num_rows(mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'"))) {
     $result = mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'");
     while ($row = mysqli_fetch_array($result)) {
@@ -46,7 +48,7 @@ if (isset($_POST['Email'])) {
     });
     </script>';
   }
-}
+
 }else{
   echo '
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -64,8 +66,9 @@ if (isset($_POST['Email'])) {
   </script>';
 
 }
-  mysqli_close($dbc);
 
+  mysqli_close($dbc);
+}
 ?>
 <!DOCTYPE html>
 <html class="theBackGround">
