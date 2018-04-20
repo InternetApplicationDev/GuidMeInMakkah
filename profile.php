@@ -304,7 +304,7 @@ function retrieveAllComment($userName,$pageName){
       </div>
     <?php  }else{ ?>
       <div class="card">
-        <img src="<?php echo $picturePath; ?>" alt="profile picture" style="width:100%">
+        <img src="<?php echo $picturePath; ?>" alt="profile picture" class="userImage">
         <h1><?php echo $userName; ?></h1>
         <p><?php echo $userBio; ?></p>
         <br />
@@ -336,11 +336,7 @@ function retrieveAllComment($userName,$pageName){
     <div class="container">
       <div class="profileComments">
       <div class="Profilecontent">
-
-
-
         <h1 style="margin-top:30%;">Comment</h1>
-
         <div class="containerComments" >
           <?php
           $getCommentPage = searchUserNameInIndexFile($_COOKIE['theuser']);

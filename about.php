@@ -6,7 +6,7 @@ if(isset($_GET['Logout'])){
 }
 ?>
 <!DOCTYPE html>
-<html class="theBackGround">
+<html>
 <head>
   <title>About US</title>
   <!-- Font -->
@@ -20,7 +20,6 @@ if(isset($_GET['Logout'])){
   <!-- pace preloader -->
   <script src="JS/pace.js"></script>
 </head>
-<body class="centerPage">
   <div class="navbar">
     <ul class="navmenu">
       <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
@@ -36,24 +35,21 @@ if(isset($_GET['Logout'])){
       <?php } ?>
     </ul>
   </div>
-  <div class ="header">
-    ABOUT US
-    <div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>
-
-  </div>
+    
   <hr>
-
-  <div class="container">
-    <div class= "about">
-      <p class= "about1">About Us:<p>
-        <p class= "about2">As an online platform, our aim is to help you discover restaurants and guide you to trending places in Makkah</p>
-        <p class= "about3">Connect to Your Chosen Restaurant</p>
-        <p class= "about4"><b style="font-style: italic;">		GuideMe in Makkah</b> enables you to make an online booking at your chosen restaurant and in many cases to take advantage of unique promotions.
+<img src="images/bac.png" width="100%" height="20%">
+<div class="container" style="margin: 0 0 0 0; width:100%;">
+    <div class="contentAboutUs">
+        <p class="title ">Connect to Your Chosen Restaurant</p>
+        <p style="font-size:30px;"><b style="font-style: italic;">		GuideMe in Makkah</b> enables you to make an online booking at your chosen restaurant and in many cases to take advantage of unique promotions.
           GuideMe in Makkah enables you to make an online booking at your chosen restaurant and in many cases to take advantage of unique promotions.
           Our user-friendly website lists the best places to dine.
           We want to make the booking process hassle free, so we send you a confirmation E-mail with your reservation.
-          Alternatively, you can call the restaurant directly via the number provided on the restaurant page.
+          Alternatively, you can call the restaurant directly via the number provided  on the restaurant page.</p>
         </div>
+
+<img style=" margin: 0 20px 0 0 " src="images/aboutus.png" width="20%" height="450px"  >
+
       </div>
 
       <div class="footer" id="theFooter">
