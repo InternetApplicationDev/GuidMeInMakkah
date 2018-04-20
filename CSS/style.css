@@ -168,6 +168,28 @@
   background: #eee;
   border-radius: 8px;
 }
+
+.contentAboutUs{
+  margin-top:0.5%;
+  width: 65%;
+ /* margin-left: auto;
+  margin-right:auto;*/
+  margin-right: 5%;
+  margin-bottom: 20%;
+  padding: 2%;
+  background: #eee;
+  border-radius: 8px;
+}
+
+
+.title {
+  font-size: 30px;
+   font-weight: bold;
+   font-family: Tahoma, Geneva, sans-serif  ;
+} 
+
+
+
 .Profilecontent{
   margin-top:3%;
   width: 30%;
@@ -625,57 +647,8 @@ hr {
   border-radius: 10px;
   border: 5px solid transparent;
 }
-/********** ABOUT *********/
-.about {
-  background-color: rgb(175, 94, 95, 0.6);
-  margin-left: 1in;
-  margin-right: 1in;
-  margin-top: 1in;
-  margin-bottom: 1in;
-  padding-right:30px;
-  padding-bottom: 20px;
-}
-
-p.about1 {
-  color: rgb(120, 120, 120);
-  opacity: 1.0;
-  font-family: Amaranth, sans-serif;
-  font-variant: normal;
-  font-size: 23px;
-  font-weight: bold;
-  text-decoration: underline;
-  margin-left: 1in;
-  margin-bottom: 7px;
-  padding-right:30px;
-  padding-top:10px;
-}
 
 
-p.about2 {
-  color: hsl(0, 0%, 94%);
-  font-family: Amaranth, sans-serif;
-  font-variant: normal;
-  font-size: 23px;
-  margin-left: 1in;
-}
-
-p.about3 {
-  color:rgb(120, 120, 120);
-  font-family: Amaranth, sans-serif;
-  font-variant: normal;
-  font-weight: bold;
-  text-decoration: underline;
-  font-size: 23px;
-  margin-left: 1in;}
-
-  p.about4 {
-    color: hsl(0, 0%, 94%);
-    font-family: Amaranth, sans-serif;
-    font-variant: normal;
-    font-size: 23px;
-    margin-left: 1in;
-    margin-bottom: 20px;
-  }
   /****************************************header of individual profile*********************************/
 
   .fix_layout_center {
