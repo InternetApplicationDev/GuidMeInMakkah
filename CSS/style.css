@@ -330,6 +330,11 @@ hr {
   left: 25px;
   top: 100px;
 }
+.userImage{
+  width:100%;
+  border-radius: 50%;
+  border: 1px solid black;
+}
 /************************************************** Edit, Delete, save and discared **************************************************/
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
