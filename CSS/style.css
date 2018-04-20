@@ -168,6 +168,15 @@
   background: #eee;
   border-radius: 8px;
 }
+.Profilecontent{
+  margin-top:3%;
+  width: 30%;
+  margin-right:auto;
+  margin-bottom: 90%;
+  padding: 2%;
+  background: #eee;
+  border-radius: 8px;
+}
 
 #LoginForm input[type=text],#SignupForm input[type=text]{
   width: 100%;
@@ -872,7 +881,6 @@ p.about3 {
   .containerComments {
     display: flex;
     flex-wrap: wrap;
-
     width:890px;
     height:100%;
   }
