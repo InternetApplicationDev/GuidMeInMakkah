@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 19, 2018 at 05:41 AM
--- Server version: 5.7.15-log
--- PHP Version: 5.6.30
+-- Host: localhost:8889
+-- Generation Time: Apr 20, 2018 at 01:06 PM
+-- Server version: 5.6.38
+-- PHP Version: 7.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -43,12 +43,12 @@ CREATE TABLE `cafe` (
 --
 
 INSERT INTO `cafe` (`cafe_id`, `cafe_name`, `cafe_info`, `cafe_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`) VALUES
-(1, 'Caffe Bene', 'caffeBenecaffeBenecaffeBene', 'caffeBene adress', 0, '2018-04-14', '0000-00-00', 3, 'images/coffeePic/caffeBene.png'),
-(2, 'Costa Coffee', 'costa coffee', 'costa coffeeadreess', 653, '2018-04-18', '0000-00-00', 3, 'images/coffeePic/costa_coffee.png'),
-(3, 'Dunkin Donuts', 'dunkin donutsdunkin donutsdunkin donuts', 'dunkin donuts adress', 54356, '2018-04-04', '2018-04-03', 4, 'images/coffeePic/dunkin_donuts.png'),
-(4, 'Mado', 'mado', 'mado adress', 65346834, '2018-04-17', '2018-04-04', 3, 'images/coffeePic/mado.png'),
-(5, 'pappa roti', 'pappa rotipappa roti', 'pappa roti address', 65363684, '2018-04-11', '2018-04-17', 3, 'images/coffeePic/pappa_roti.png'),
-(6, 'Starbucks', 'starbucksstarbucks', 'starbucks address', 35136, '2018-04-10', '2018-04-16', 4, 'images/coffeePic/starbucks.png');
+(1, 'Caffe Bene', 'caffeBenecaffeBenecaffeBene', 'images/address/Caffe_Bene.png', 0, '2018-04-14', '0000-00-00', 3, 'images/coffeePic/caffeBene.png'),
+(2, 'Costa Coffee', 'costa coffee', 'images/address/Costa_Coffee.png', 653, '2018-04-18', '0000-00-00', 3, 'images/coffeePic/costa_coffee.png'),
+(3, 'Dunkin Donuts', 'dunkin donutsdunkin donutsdunkin donuts', 'images/address/Dunkin_Donuts.png', 54356, '2018-04-04', '2018-04-03', 4, 'images/coffeePic/dunkin_donuts.png'),
+(4, 'Mado', 'mado', 'images/address/Mado.png', 65346834, '2018-04-17', '2018-04-04', 3, 'images/coffeePic/mado.png'),
+(5, 'pappa roti', 'pappa rotipappa roti', 'images/address/pappa_roti.png', 65363684, '2018-04-11', '2018-04-17', 3, 'images/coffeePic/pappa_roti.png'),
+(6, 'Starbucks', 'starbucksstarbucks', 'images/address/Starbucks.png', 35136, '2018-04-10', '2018-04-16', 4, 'images/coffeePic/starbucks.png');
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE `cafeandrest` (
 --
 
 INSERT INTO `cafeandrest` (`cafeAndRest_id`, `cafeAndRest_name`, `cafeAndRest_info`, `cafeAndRest_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`) VALUES
-(1, 'Raffles Creamery', 'Raffles Creamery ', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/RafflesـCreamery.png'),
+(1, 'Raffles Creamery', 'Raffles Creamery ', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/Raffles_Creamery.png'),
 (2, 'Zamzam cafe', '', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/Zamzam_cafe.png');
 
 -- --------------------------------------------------------
@@ -178,11 +178,11 @@ CREATE TABLE `restaurants` (
 
 INSERT INTO `restaurants` (`restaurant_id`, `restaurant_name`, `restaurants_info`, `restaurants_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`, `menu`) VALUES
 (1, 'Al-Baik', 'Al-BaikAl-BaikAl-BaikAl-Baik', 'images/address/albaik.png', 54136, '2018-04-11', '2018-04-11', 3, 'images/resturantPics/albaik.png', 'images/resturantPics/Menu_2.jpg'),
-(2, 'Burger King', 'burgerKingburgerKingburgerKing', 'burgerKing adress', 312352, '2018-04-02', '2018-04-10', 0, 'images/resturantPics/burgerKing.png', ''),
-(3, 'Dominos Pizaa', 'dominosPizaadominosPizaadominosPizaa', 'dominosPizaa adress', 625362, '2018-04-10', '2018-04-25', 5, 'images/resturantPics/dominosPizaa.png', ''),
-(4, 'Hardee\'s', 'hardee\'shardee\'shardee\'s', 'hardee\'s adress', 3513, '2018-04-05', '2018-04-11', 3, 'images/resturantPics/hardees.png', ''),
-(6, 'Kudo', 'kudokudo', 'kudo adress', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
-(7, 'Subway', 'subwaysubwaysubway', 'subway adress', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', '');
+(2, 'Burger King', 'burgerKingburgerKingburgerKing', 'images/address/Burger_King.png', 312352, '2018-04-02', '2018-04-10', 0, 'images/resturantPics/burgerKing.png', ''),
+(3, 'Dominos Pizaa', 'dominosPizaadominosPizaadominosPizaa', 'images/address/Dominos_Pizaa.png', 625362, '2018-04-10', '2018-04-25', 5, 'images/resturantPics/dominosPizaa.png', ''),
+(4, 'Hardee\'s', 'hardee\'shardee\'shardee\'s', 'images/address/Hardees.png', 3513, '2018-04-05', '2018-04-11', 3, 'images/resturantPics/hardees.png', ''),
+(6, 'Kudo', 'kudokudo', 'images/address/Kudo.png', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
+(7, 'Subway', 'subwaysubwaysubway', 'images/address/Subway.psd', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', '');
 
 -- --------------------------------------------------------
 
@@ -283,41 +283,49 @@ ALTER TABLE `user`
 --
 ALTER TABLE `cafe`
   MODIFY `cafe_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `cafeandrest`
 --
 ALTER TABLE `cafeandrest`
   MODIFY `cafeAndRest_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `cafeandrestpics`
 --
 ALTER TABLE `cafeandrestpics`
   MODIFY `cafeAndRestPic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `cafepics`
 --
 ALTER TABLE `cafepics`
   MODIFY `cafePic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `feedbackNo` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `restaurantpics`
 --
 ALTER TABLE `restaurantpics`
   MODIFY `restaurantPic_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
   MODIFY `restaurant_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+
 --
 -- Constraints for dumped tables
 --
