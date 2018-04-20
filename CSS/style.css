@@ -507,13 +507,16 @@ hr {
 .contactUs {
   font-family: 'Amaranth', sans-serif;
   font-variant: normal;
-  font-size: 50;
+  font-size: 20px;
   float:left;
-  margin-left:450px;
+  margin-left:390px;
   margin-top:6px;
-  padding-bottom: 50px;
+  padding-bottom: 140px;
   padding-right: 23px;
-  padding-top: 20px;
+  padding-top: 60px;
+}
+.contactUs button{
+  display: inline-block;
 }
 
 .contactLable {
