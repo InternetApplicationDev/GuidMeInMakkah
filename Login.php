@@ -4,12 +4,12 @@ if(isset($_GET['Logout'])){
   header('Location: index.php');
   exit;
 }
-if(empty($email) || empty($pass)) {
+$email = $_POST['Email'];
+$pass = $_POST['password'];
+$dbc = mysqli_connect("localhost","root","root");
+mysqli_select_db($dbc,"db");
+if(!empty($email) || !empty($pass)) {
 if (isset($_POST['Email'])) {
-  $email = $_POST['Email'];
-  $pass = $_POST['password'];
-  $dbc = mysqli_connect("localhost","root","root");
-  mysqli_select_db($dbc,"db");
   if (mysqli_num_rows(mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'"))) {
     $result = mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'");
     while ($row = mysqli_fetch_array($result)) {
