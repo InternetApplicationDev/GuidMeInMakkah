@@ -61,7 +61,7 @@ if (isset($_POST['Email'])) {
       document.location.href="/login.html"
     });
   });
-  </script>'
+  </script>';
 
 }
   mysqli_close($dbc);
