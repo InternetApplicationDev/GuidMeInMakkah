@@ -10,21 +10,6 @@ $(document).ready(function(){
 	});
 });
 
-var heart ="unheart";
-
-function changeImageOnclick() {
-	// add to database as favor page
-	if (heart == "unheart")
-	{
-		document.getElementById("imgClickAndChange").src = "images/hreat.png";
-		heart="heart";
-	}
-	else
-	{
-		document.getElementById("imgClickAndChange").src = "images/unhreat.png";
-		heart="unheart";
-	}
-}
 
 function LarrowOnclick() {
 	// chack alt to change img to previos img

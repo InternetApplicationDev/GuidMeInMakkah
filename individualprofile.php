@@ -135,11 +135,37 @@ function retrieveUsersComments($userNameWithHisComment){
 }
 
 function addUserRate($userName,$userRate,$pageName){
-
+	
 }
 
-function addUserFavor($userName,$userRate,$pageName){
-
+function addUserFavor($userNum,$pageName){
+	$dbc = mysqli_connect ('localhost', 'root', 'root');
+	if (@mysqli_select_db ($dbc,'db')) {
+			$sql = "INSERT INTO userfav (user_id,fav_name) VALUES ({$userNum},\"{$pageName}\")";
+		if ($dbc->query($sql) === TRUE) {
+			return;
+		}else{
+			die ('<p>Could not add user favorat name in the database because: <b>' . mysqli_error($dbc) . '</b></p>');
+		}
+	}
+	else {
+		die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b></p>');
+	}
+}
+						
+function deleteUserFavor($userNum,$pageName){
+	$dbc = mysqli_connect ('localhost', 'root', 'root');
+	if (@mysqli_select_db ($dbc,'db')) {
+			$sql = "DELETE FROM userfav WHERE user_id={$userNum} AND fav_name=\"{$pageName}\" ";
+		if ($dbc->query($sql) === TRUE) {
+			return;
+		}else{
+			die ('<p>Could not delete user favorat name in the database because: <b>' . mysqli_error($dbc) . '</b></p>');
+		}
+	}
+	else {
+		die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b></p>');
+	}
 }
 
 ?>
@@ -165,6 +191,31 @@ function addUserFavor($userName,$userRate,$pageName){
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 	<script>
+	
+		var heart ="unheart";
+		function changeImageOnclick() {
+			// add to database as favor page
+			<?php if ($_COOKIE['theuser']){ ?>
+				if (heart == "unheart")
+				{
+					document.getElementById("imgClickAndChange").src = "images/hreat.png";
+					heart="heart";
+					<?php 
+					  addUserFavor($_COOKIE['theuser'],$_GET[className]); 
+					?>
+				}
+				else
+				{
+					document.getElementById("imgClickAndChange").src = "images/unhreat.png";
+					heart="unheart";
+					<?php 
+					   deleteUserFavor($_COOKIE['theuser'],$_GET[className]); 
+					?>
+				}
+			<?php } else { ?>
+				alert("you must log in first");
+			<?php } ?>	
+		}
 	  function Slider(){
 		$(".imagesSliders #0").show("fade",400);
 		$(".imagesSliders #0").delay(5500).hide("slide",{direction:'left'},400);
