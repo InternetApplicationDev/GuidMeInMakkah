@@ -9,6 +9,7 @@ if (isset($_POST['Email'])) {
   $pass = $_POST['password'];
   $dbc = mysqli_connect("localhost","root","root");
   mysqli_select_db($dbc,"db");
+  if(empty($email) || empty($pass)) {
   if (mysqli_num_rows(mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'"))) {
     $result = mysqli_query($dbc,"SELECT * From user where user_email = '$email' AND user_password ='$pass'");
     while ($row = mysqli_fetch_array($result)) {
@@ -45,6 +46,23 @@ if (isset($_POST['Email'])) {
     });
     </script>';
   }
+}else{
+  echo '
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
+  <script>
+  $( document ).ready(function() {
+    swal({
+      title: \'Oops..\',
+      text: \'Please fill all the fields \',
+      type: \'error\',
+    }, function(isConfirm) {
+      document.location.href="/login.html"
+    });
+  });
+  </script>'
+  
+}
   mysqli_close($dbc);
 }
 ?>
