@@ -459,11 +459,11 @@ hr {
   transform: scale(1);
 }
 .social-btns {
-  height: 90px;
+  height: 70px;
   margin: auto;
   font-size: 0;
   text-align: center;
-  position: absolute;
+  position: relative;
   margin: -5px 35px;
 }
 .social-btns .btn {

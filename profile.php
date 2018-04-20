@@ -317,12 +317,12 @@ function retrieveAllComment($userName,$pageName){
               <i class="fa fa-facebook"></i>
             </a>
           <?php } ?>
-          <div class='set yellowRed'>
-              <button name="Edit" class='sdbtn pri ico' onclick="window.location.href = 'profile.php?Edit';">Edit</button>
-              <button name="Delete" class='sdbtn sec ico re' onclick="return ConfirmDelete();">Delete</button>
-          </div>
-        <?php } ?>
-      </div>
+        </div>
+        <div class='set yellowRed'>
+          <button name="Edit" class='sdbtn pri ico' onclick="window.location.href = 'profile.php?Edit';">Edit</button>
+          <button name="Delete" class='sdbtn sec ico re' onclick="return ConfirmDelete();">Delete</button>
+        </div>
+      <?php } ?>
     </div>
     <div class="Favorite">
       <img src="images/add.png"/>
