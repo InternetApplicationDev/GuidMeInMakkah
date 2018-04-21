@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <!DOCTYPE html>
-<html class="theBackGround">
+<html class="theBackGroundS">
 <head>
   <title>Log in</title>
   <!-- Font -->
