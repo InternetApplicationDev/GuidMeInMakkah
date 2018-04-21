@@ -252,6 +252,8 @@ function retrieveAllComment($userName,$pageName){
   <title><?php echo $userName; ?>'s Profile</title>
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+  <!-- JQUER -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <!-- customized CSS and JS -->
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script type="text/javascript">var userEmail = "<?= $userEmail ?>";</script>
@@ -335,57 +337,63 @@ function retrieveAllComment($userName,$pageName){
     </div>
     <div class="container">
       <div class="profileComments">
-      <div class="Profilecontent">
-        <h1 style="margin-top:30%;">Comment</h1>
-        <div class="containerComments" >
-          <?php
-          $getCommentPage = searchUserNameInIndexFile($_COOKIE['theuser']);
-          if(is_array($getCommentPage)){
-            for ( $pages=0; $pages < sizeof($getCommentPage); $pages++){
-              $comments = retrieveAllComment($_COOKIE['theuser'],$getCommentPage[$pages]);
-              for ( $i=0; $i < sizeof($comments); $i++){
-                ?>
-                <div class="commentsUserBox" >
-                  <p class="userNameInComment"><?php echo $userName; ?></p>
-                  <img src=<?php echo "{$picturePath}"; ?> />
-                  <div><p class="userCommentInComment"><?php echo $comments[$i]; ?></p></div>
-                </div>
-                <?php
-                echo '<br><hr>';
+        <div class="Profilecontent">
+          <h1 style="margin-top:30%;">Comment</h1>
+          <div class="containerComments" >
+            <?php
+            $getCommentPage = searchUserNameInIndexFile($_COOKIE['theuser']);
+            if(is_array($getCommentPage)){
+              for ( $pages=0; $pages < sizeof($getCommentPage); $pages++){
+                $comments = retrieveAllComment($_COOKIE['theuser'],$getCommentPage[$pages]);
+                for ( $i=0; $i < sizeof($comments); $i++){
+                  ?>
+                  <div class="commentsUserBox" >
+                    <p class="userNameInComment"><?php echo $userName; ?></p>
+                    <img src=<?php echo "{$picturePath}"; ?> />
+                    <div><p class="userCommentInComment"><?php echo $comments[$i]; ?></p></div>
+                  </div>
+                  <?php
+                  echo '<br><hr>';
+                }
               }
+            }else{
+              echo "you do not have any comment <br> <br>";
             }
-          }else{
-            echo "you do not have any comment <br> <br>";
-          }
-          ?>
+            ?>
 
 
+
+          </div>
 
         </div>
 
       </div>
-
     </div>
-  </div>
-  <div class="footer" id="theFooter">
-    <div class="footbar">
-      <ul class="footmenu">
-        <li><a href="#" onclick="showDevFunction()">Developers</a></li>
-        <li><a href="about.php">About us</a></li>
-        <li><a href="contactUs.php">Contact us</a></li>
-        <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
-      </ul>
-      <div id="developersNames">
-        <ul class="devNames">
-          <li>Ebtsam Alkhuzai</li>
-          <li>Esraa Samkari</li>
-          <li>Joanna Assaeedi</li>
-          <li>Joud Alajlan</li>
-          <li>Rozan Alghamdi</li>
-          <li>Wafaa Alshaikhi</li>
+    <div class="footer" id="theFooter">
+      <div class="footbar">
+        <ul class="footmenu">
+          <li><a href="#" onclick="showDevFunction()">Developers</a></li>
+          <li><a href="about.php">About us</a></li>
+          <li><a href="contactUs.php">Contact us</a></li>
+          <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
+          <li><a  href="#">
+            <img src='images/small_cookies.png' onmouseover="this.src='images/small_cookies_hover.png';" onmouseout="this.src='images/small_cookies.png';" />
+          </a></li>
         </ul>
+        <div id="developersNames">
+          <ul class="devNames">
+            <li>Ebtsam Alkhuzai</li>
+            <li>Esraa Samkari</li>
+            <li>Joanna Assaeedi</li>
+            <li>Joud Alajlan</li>
+            <li>Rozan Alghamdi</li>
+            <li>Wafaa Alshaikhi</li>
+          </ul>
+        </div>
+        <div id="cookie">
+          <li>This Website Use Cookies</li>
+        </div>
       </div>
     </div>
-  </div>
-</body>
-</html>
+  </body>
+  </html>
