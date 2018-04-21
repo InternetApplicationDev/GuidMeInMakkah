@@ -5,6 +5,40 @@ if(isset($_GET['Logout'])){
   exit;
 }
 ?>
+<?php
+session_start();
+$timeout = 60; // Number of seconds until it times out.
+// Check if the timeout field exists.
+if(isset($_SESSION['timeout'])) {
+  $duration = time() - $_SESSION['timeout'];
+  if($duration > $timeout) {
+    // Destroy the session and restart it.
+    session_destroy();
+    session_start();
+    echo '
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
+    <script>
+    $( document ).ready(function() {
+      swal({
+        title: \'Oh no...!\',
+        text: \'You have been away from your computer for too long...\',
+        // imageUrl: \'https://unsplash.it/400/200\',
+        // imageWidth: 400,
+        // imageHeight: 200,
+        // imageAlt: \'Custom imag\',
+        animation: false
+      }).then(function(){
+        window.location.href = \'index.php\';
+      });
+    });
+    </script>';
+  }
+}
+$_SESSION['timeout'] = time();
+
+
+?>
 <!DOCTYPE html>
 <html class="theBackGround">
 <head>
@@ -32,7 +66,7 @@ if(isset($_GET['Logout'])){
         <li class="navmenu-right"><a href="?Logout">Logout</a></li>
       <?php }else{ ?>
         <li class="navmenu-right"><a href="Login.php">Login</a></li>
-        <li class="navmenu-right"><a href="Signup.php">Sign Up</a></li>
+        <li class="navmenu-right"><a href="Registration.php">Sign Up</a></li>
       <?php } ?>
     </ul>
   </div>
@@ -41,7 +75,6 @@ if(isset($_GET['Logout'])){
     <div class="logo"> <img class="img" src="images/icons/tray_black.png" alt="LOGO" > </div>
   </div>
   <hr>
-
   <form method="post" action="reservationForm.html" onSubmit="return validateForm();">
     <div class="container">
       <div class= "reserv1"> </br>We would be glad to reserve a table for you at our restaurant!</div>
