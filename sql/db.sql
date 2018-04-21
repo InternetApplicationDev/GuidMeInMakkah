@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2018 at 12:09 AM
+-- Generation Time: Apr 21, 2018 at 12:30 AM
 -- Server version: 5.7.15-log
 -- PHP Version: 5.6.30
 
@@ -43,12 +43,12 @@ CREATE TABLE `cafe` (
 --
 
 INSERT INTO `cafe` (`cafe_id`, `cafe_name`, `cafe_info`, `cafe_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`) VALUES
-(1, 'Caffe Bene', 'caffeBenecaffeBenecaffeBene', 'caffeBene adress', 0, '2018-04-14', '0000-00-00', 3, 'images/coffeePic/caffeBene.png'),
-(2, 'Costa Coffee', 'costa coffee', 'costa coffeeadreess', 653, '2018-04-18', '0000-00-00', 3, 'images/coffeePic/costa_coffee.png'),
-(3, 'Dunkin Donuts', 'dunkin donutsdunkin donutsdunkin donuts', 'dunkin donuts adress', 54356, '2018-04-04', '2018-04-03', 4, 'images/coffeePic/dunkin_donuts.png'),
-(4, 'Mado', 'mado', 'mado adress', 65346834, '2018-04-17', '2018-04-04', 3, 'images/coffeePic/mado.png'),
-(5, 'pappa roti', 'pappa rotipappa roti', 'pappa roti address', 65363684, '2018-04-11', '2018-04-17', 3, 'images/coffeePic/pappa_roti.png'),
-(6, 'Starbucks', 'starbucksstarbucks', 'starbucks address', 35136, '2018-04-10', '2018-04-16', 4, 'images/coffeePic/starbucks.png');
+(1, 'Caffe Bene', 'caffeBenecaffeBenecaffeBene', 'images/address/Caffe_Bene.png', 0, '2018-04-14', '0000-00-00', 3, 'images/coffeePic/caffeBene.png'),
+(2, 'Costa Coffee', 'costa coffee', 'images/address/Costa_Coffee.png', 653, '2018-04-18', '0000-00-00', 3, 'images/coffeePic/costa_coffee.png'),
+(3, 'Dunkin Donuts', 'dunkin donutsdunkin donutsdunkin donuts', 'images/address/Dunkin_Donuts.png', 54356, '2018-04-04', '2018-04-03', 4, 'images/coffeePic/dunkin_donuts.png'),
+(4, 'Mado', 'mado', 'images/address/Mado.png', 65346834, '2018-04-17', '2018-04-04', 3, 'images/coffeePic/mado.png'),
+(5, 'pappa roti', 'pappa rotipappa roti', 'images/address/pappa_roti.png', 65363684, '2018-04-11', '2018-04-17', 3, 'images/coffeePic/pappa_roti.png'),
+(6, 'Starbucks', 'starbucksstarbucks', 'images/address/Starbucks.png', 35136, '2018-04-10', '2018-04-16', 4, 'images/coffeePic/starbucks.png');
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE `cafeandrest` (
 --
 
 INSERT INTO `cafeandrest` (`cafeAndRest_id`, `cafeAndRest_name`, `cafeAndRest_info`, `cafeAndRest_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`) VALUES
-(1, 'Raffles Creamery', 'Raffles Creamery ', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/RafflesـCreamery.png'),
+(1, 'Raffles Creamery', 'Raffles Creamery ', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/Raffles_Creamery.png'),
 (2, 'Zamzam cafe', '', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/Zamzam_cafe.png');
 
 -- --------------------------------------------------------
@@ -110,9 +110,9 @@ CREATE TABLE `cafepics` (
 
 CREATE TABLE `feedback` (
   `feedbackNo` int(5) UNSIGNED NOT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `email` varchar(80) DEFAULT NULL,
-  `type` varchar(50) NOT NULL,
+  `Name` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `type` varchar(40) NOT NULL,
   `description` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -179,11 +179,11 @@ CREATE TABLE `restaurants` (
 
 INSERT INTO `restaurants` (`restaurant_id`, `restaurant_name`, `restaurants_info`, `restaurants_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`, `menu`) VALUES
 (1, 'Al-Baik', 'Al-BaikAl-BaikAl-BaikAl-Baik', 'images/address/albaik.png', 54136, '2018-04-11', '2018-04-11', 3, 'images/resturantPics/albaik.png', 'images/resturantPics/Menu_2.jpg'),
-(2, 'Burger King', 'burgerKingburgerKingburgerKing', 'burgerKing adress', 312352, '2018-04-02', '2018-04-10', 0, 'images/resturantPics/burgerKing.png', ''),
-(3, 'Dominos Pizaa', 'dominosPizaadominosPizaadominosPizaa', 'dominosPizaa adress', 625362, '2018-04-10', '2018-04-25', 5, 'images/resturantPics/dominosPizaa.png', ''),
-(4, 'Hardee\'s', 'hardee\'shardee\'shardee\'s', 'hardee\'s adress', 3513, '2018-04-05', '2018-04-11', 3, 'images/resturantPics/hardees.png', ''),
-(6, 'Kudo', 'kudokudo', 'kudo adress', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
-(7, 'Subway', 'subwaysubwaysubway', 'subway adress', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', '');
+(2, 'Burger King', 'burgerKingburgerKingburgerKing', 'images/address/Burger_King.png', 312352, '2018-04-02', '2018-04-10', 0, 'images/resturantPics/burgerKing.png', ''),
+(3, 'Dominos Pizaa', 'dominosPizaadominosPizaadominosPizaa', 'images/address/Dominos_Pizaa.png', 625362, '2018-04-10', '2018-04-25', 5, 'images/resturantPics/dominosPizaa.png', ''),
+(4, 'Hardee\'s', 'hardee\'shardee\'shardee\'s', 'images/address/Hardees.png', 3513, '2018-04-05', '2018-04-11', 3, 'images/resturantPics/hardees.png', ''),
+(6, 'Kudo', 'kudokudo', 'images/address/Kudo.png', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
+(7, 'Subway', 'subwaysubwaysubway', 'images/address/Subway.psd', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', '');
 
 -- --------------------------------------------------------
 
@@ -197,7 +197,7 @@ CREATE TABLE `user` (
   `user_password` varchar(255) NOT NULL,
   `user_first_name` varchar(225) NOT NULL DEFAULT 'NAME',
   `user_last_name` varchar(225) NOT NULL,
-  `user_picture` varchar(225) NOT NULL DEFAULT 'Users/Photos/pesonal icon.jpg',
+  `user_picture` varchar(225) NOT NULL DEFAULT 'Users/Photos/pesonal.jpg',
   `user_bio` varchar(225) NOT NULL,
   `user_twitter` varchar(225) NOT NULL,
   `user_facebook` varchar(225) NOT NULL
@@ -209,8 +209,28 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_first_name`, `user_last_name`, `user_picture`, `user_bio`, `user_twitter`, `user_facebook`) VALUES
 (1, 'admin', 'admin', 'admin', '', 'Users/Photos/admin.png', '', '', ''),
-(2, 'Joanna.a.s.1996@Gmail.com', '12345678', 'Joanna', 'Assaeedi', 'Users/Photos/pesonal icon.jpg', '', 'Joanna_A_S', 'Joanna.A.S.107'),
-(3, 'israaSamkari@hotmail.com', '12345678', 'israa', 'samkari', 'Users/Photos/pesonal icon.jpg', '', '', '');
+(2, 'Joanna.a.s.1996@Gmail.com', '12345678', 'Joanna', 'Assaeedi', 'Users/Photos/pesonal.jpg', '', 'Joanna_A_S', 'Joanna.A.S.107'),
+(3, 'israaSamkari@hotmail.com', '12345678', 'israa', 'samkari', 'Users/Photos/1420867127172.jpg', '', '', ''),
+(58, 'test@gmail.com', '12345678', 'test', 'test', 'Users/Photos/pesonal.jpg', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userfav`
+--
+
+CREATE TABLE `userfav` (
+  `user_id` int(5) NOT NULL,
+  `fav_id` int(10) NOT NULL,
+  `fav_name` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `userfav`
+--
+
+INSERT INTO `userfav` (`user_id`, `fav_id`, `fav_name`) VALUES
+(1, 28, 'Burger King');
 
 --
 -- Indexes for dumped tables
@@ -276,6 +296,12 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `user_email` (`user_email`);
 
 --
+-- Indexes for table `userfav`
+--
+ALTER TABLE `userfav`
+  ADD PRIMARY KEY (`fav_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -318,7 +344,12 @@ ALTER TABLE `restaurants`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+--
+-- AUTO_INCREMENT for table `userfav`
+--
+ALTER TABLE `userfav`
+  MODIFY `fav_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- Constraints for dumped tables
 --
