@@ -6,7 +6,7 @@ if(isset($_GET['Logout'])){
 }
 ?>
 <!DOCTYPE html>
-<html class="theBackGround">
+<html class="theBackGroundS">
 <head>
   <title>Contact Us</title>
   <!-- Font -->
