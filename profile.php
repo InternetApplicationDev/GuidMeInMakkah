@@ -287,7 +287,6 @@ function retrieveAllComment($userName,$pageName){
       <div class="uplaodImage">
         <img src="<?php echo $picturePath; ?>" alt="profile picture" style="width:100%;  opacity: 0.2;">
         <form method="post" enctype="multipart/form-data">
-          <img src="images/Upload-128.png" class="uploadIcon"/>
           <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
           <input type="file" name="pic" accept="image/*">
         </div>
@@ -391,7 +390,9 @@ function retrieveAllComment($userName,$pageName){
           <li><a href="contactUs.php">Contact us</a></li>
           <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
           <li><a  href="#">
-            <img src='images/small_cookies.png' onmouseover="showCookies(this);" onmouseout="backCookies(this);" />
+            <div class="cookieImage">
+              <img src='images/small_cookies.png' onmouseover="showCookies(this);" onmouseout="backCookies(this);" />
+            </div>
           </a></li>
         </ul>
         <div id="developersNames">
