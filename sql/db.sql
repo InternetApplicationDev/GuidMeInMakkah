@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2018 at 12:37 AM
--- Server version: 5.7.15-log
+-- Generation Time: Apr 21, 2018 at 01:02 PM
+-- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -48,7 +48,9 @@ INSERT INTO `cafe` (`cafe_id`, `cafe_name`, `cafe_info`, `cafe_address`, `phone`
 (3, 'Dunkin Donuts', 'dunkin donutsdunkin donutsdunkin donuts', 'images/address/Dunkin_Donuts.png', 54356, '2018-04-04', '2018-04-03', 4, 'images/coffeePic/dunkin_donuts.png'),
 (4, 'Mado', 'mado', 'images/address/Mado.png', 65346834, '2018-04-17', '2018-04-04', 3, 'images/coffeePic/mado.png'),
 (5, 'pappa roti', 'pappa rotipappa roti', 'images/address/pappa_roti.png', 65363684, '2018-04-11', '2018-04-17', 3, 'images/coffeePic/pappa_roti.png'),
-(6, 'Starbucks', 'starbucksstarbucks', 'images/address/Starbucks.png', 35136, '2018-04-10', '2018-04-16', 4, 'images/coffeePic/starbucks.png');
+(6, 'Starbucks', 'starbucksstarbucks', 'images/address/Starbucks.png', 35136, '2018-04-10', '2018-04-16', 4, 'images/coffeePic/starbucks.png'),
+(7, 'coffeeStation', 'for women only', '', 573892759, '2018-04-14', '2018-04-30', 3, 'images/coffeePic/coffeeStation.png'),
+(8, 'tarwiga', 'for women only', '', 378902547, '2018-04-30', '2018-05-18', 4, 'images/coffeePic/tarwiga.png');
 
 -- --------------------------------------------------------
 
@@ -74,7 +76,13 @@ CREATE TABLE `cafeandrest` (
 
 INSERT INTO `cafeandrest` (`cafeAndRest_id`, `cafeAndRest_name`, `cafeAndRest_info`, `cafeAndRest_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`) VALUES
 (1, 'Raffles Creamery', 'Raffles Creamery ', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/Raffles_Creamery.png'),
-(2, 'Zamzam cafe', '', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/Zamzam_cafe.png');
+(2, 'Zamzam cafe', '', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/Zamzam_cafe.png'),
+(3, 'Feld D\'saji', '', '', 45189043, '2018-04-07', '2018-04-28', 3, 'images/coffeeAndReturantPic/_Feld D saji_ l.png'),
+(4, 'aldeerah', '', '', 537890436, '2018-04-05', '2018-04-24', 4, 'images/coffeeAndReturantPic/aldeerah.png'),
+(5, 'hayat', '', '', 456789034, '2018-04-08', '2018-04-22', 3, 'images/coffeeAndReturantPic/hayat.png'),
+(6, 'InterContinental Dar Al Tawhid', '', '', 547109341, '2018-04-10', '2018-04-23', 4, 'images/coffeeAndReturantPic/InterContinental Dar Al Tawhid.png'),
+(7, 'rout66', '', '', 432875015, '2018-04-05', '2018-04-24', 4, 'images/coffeeAndReturantPic/rout.png'),
+(8, 'tea launge', '', '', 432576890, '2018-04-06', '2018-04-26', 3, 'images/coffeeAndReturantPic/tea launge.png');
 
 -- --------------------------------------------------------
 
@@ -182,8 +190,10 @@ INSERT INTO `restaurants` (`restaurant_id`, `restaurant_name`, `restaurants_info
 (2, 'Burger King', 'burgerKingburgerKingburgerKing', 'images/address/Burger_King.png', 312352, '2018-04-02', '2018-04-10', 0, 'images/resturantPics/burgerKing.png', ''),
 (3, 'Dominos Pizaa', 'dominosPizaadominosPizaadominosPizaa', 'images/address/Dominos_Pizaa.png', 625362, '2018-04-10', '2018-04-25', 5, 'images/resturantPics/dominosPizaa.png', ''),
 (4, 'Hardee\'s', 'hardee\'shardee\'shardee\'s', 'images/address/Hardees.png', 3513, '2018-04-05', '2018-04-11', 3, 'images/resturantPics/hardees.png', ''),
-(6, 'Kudo', 'kudokudo', 'images/address/Kudo.png', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
-(7, 'Subway', 'subwaysubwaysubway', 'images/address/Subway.psd', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', '');
+(5, 'Kudo', 'kudokudo', 'images/address/Kudo.png', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
+(6, 'Subway', 'subwaysubwaysubway', 'images/address/Subway.psd', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', ''),
+(7, 'senees', '', '', 654126784, '2018-04-11', '2018-04-18', 4, 'images/resturantPics/senees.png', ''),
+(8, 'FiveGuies', '', '', 640126543, '2018-04-01', '2018-04-23', 4, 'images/resturantPics/FiveGuies.png', '');
 
 -- --------------------------------------------------------
 
@@ -231,7 +241,8 @@ CREATE TABLE `userfav` (
 --
 
 INSERT INTO `userfav` (`user_id`, `fav_id`, `fav_name`, `fav_img`) VALUES
-(1, 1, 'Kudo  ', 'images/resturantPics/kudo.png');
+(1, 1, 'Kudo  ', 'images/resturantPics/kudo.png'),
+(58, 3, 'Caffe Bene  ', 'images/coffeePic/caffeBene.png');
 
 --
 -- Indexes for dumped tables
@@ -310,12 +321,12 @@ ALTER TABLE `userfav`
 -- AUTO_INCREMENT for table `cafe`
 --
 ALTER TABLE `cafe`
-  MODIFY `cafe_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cafe_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `cafeandrest`
 --
 ALTER TABLE `cafeandrest`
-  MODIFY `cafeAndRest_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cafeAndRest_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `cafeandrestpics`
 --
@@ -340,7 +351,7 @@ ALTER TABLE `restaurantpics`
 -- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
-  MODIFY `restaurant_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `restaurant_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `user`
 --
@@ -350,7 +361,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `userfav`
 --
 ALTER TABLE `userfav`
-  MODIFY `fav_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `fav_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
