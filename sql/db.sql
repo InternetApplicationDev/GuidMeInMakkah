@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2018 at 12:30 AM
+-- Generation Time: Apr 21, 2018 at 12:37 AM
 -- Server version: 5.7.15-log
 -- PHP Version: 5.6.30
 
@@ -222,15 +222,16 @@ INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_first_name`,
 CREATE TABLE `userfav` (
   `user_id` int(5) NOT NULL,
   `fav_id` int(10) NOT NULL,
-  `fav_name` varchar(300) NOT NULL
+  `fav_name` varchar(300) NOT NULL,
+  `fav_img` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `userfav`
 --
 
-INSERT INTO `userfav` (`user_id`, `fav_id`, `fav_name`) VALUES
-(1, 28, 'Burger King');
+INSERT INTO `userfav` (`user_id`, `fav_id`, `fav_name`, `fav_img`) VALUES
+(1, 1, 'Kudo  ', 'images/resturantPics/kudo.png');
 
 --
 -- Indexes for dumped tables
@@ -349,7 +350,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `userfav`
 --
 ALTER TABLE `userfav`
-  MODIFY `fav_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `fav_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
