@@ -328,7 +328,6 @@ function retrieveAllComment($userName,$pageName){
       <?php } ?>
     </div>
     <div class="Favorite">
-		<div class="FavoriteImg">
 		<?php 
 			$dbc = mysqli_connect ('localhost', 'root', 'root');//conn
 		    if(@mysqli_select_db ($dbc,'db')) {
@@ -346,7 +345,6 @@ function retrieveAllComment($userName,$pageName){
 			}
 
 		?>
-		</div>
     </div>
     <div class="container">
       <div class="profileComments">
