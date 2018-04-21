@@ -164,24 +164,33 @@ if(isset($_GET['Logout'])){
     </div>
   </form>
   <div style="top:1020px; position: absolute;" class="footer" id="theFooter">
-    <div class="footbar">
-      <ul class="footmenu">
-        <li><a href="#" onclick="showDevFunction()">Developers</a></li>
-        <li><a href="about.php">About us</a></li>
-        <li><a href="contactUs.php">Contact us</a></li>
-        <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
-      </ul>
-      <div id="developersNames">
-        <ul class="devNames">
-          <li>Ebtsam Alkhuzai &ensp; </li>
-          <li>Esraa Samkari </li>
-          <li>Joanna Assaeedi </li>
-          <li>Joud Alajlan </li>
-          <li>Rozan Alghamdi </li>
-          <li>Wafaa Alshaikhi </li>
+    <div class="footer" id="theFooter">
+      <div class="footbar">
+        <ul class="footmenu">
+          <li><a href="#" onclick="showDevFunction()">Developers</a></li>
+          <li><a href="about.php">About us</a></li>
+          <li><a href="contactUs.php">Contact us</a></li>
+          <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
+          <li><a  href="#">
+            <img src='images/small_cookies.png' onmouseover="showCookies(this);" onmouseout="backCookies(this);" />
+          </a></li>
         </ul>
+        <div id="developersNames">
+          <ul class="devNames">
+            <li>Ebtsam Alkhuzai</li>
+            <li>Esraa Samkari</li>
+            <li>Joanna Assaeedi</li>
+            <li>Joud Alajlan</li>
+            <li>Rozan Alghamdi</li>
+            <li>Wafaa Alshaikhi</li>
+          </ul>
+        </div>
+        <div id="cookieDisplay">
+          <ul class="cookie">
+            <li>This Website Use Cookies</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</body>
-</html>
+  </body>
+  </html>

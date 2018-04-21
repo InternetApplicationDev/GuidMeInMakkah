@@ -139,6 +139,14 @@
   clear: both;
   display: none;
 }
+#cookieDisplay{
+  clear: both;
+  display: none;
+}
+.cookie {
+  padding-left: 1160px;
+  list-style-type: none;
+}
 /************************************************** Center Page **************************************************/
 .theBackGround{
   max-height: 100%;

@@ -85,6 +85,9 @@ if(isset($_GET['Logout'])){
           <li><a href="about.php">About us</a></li>
           <li><a href="contactUs.php">Contact us</a></li>
           <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
+          <li><a  href="#">
+            <img src='images/small_cookies.png' onmouseover="showCookies(this);" onmouseout="backCookies(this);" />
+          </a></li>
         </ul>
         <div id="developersNames">
           <ul class="devNames">
@@ -94,6 +97,11 @@ if(isset($_GET['Logout'])){
             <li>Joud Alajlan</li>
             <li>Rozan Alghamdi</li>
             <li>Wafaa Alshaikhi</li>
+          </ul>
+        </div>
+        <div id="cookieDisplay">
+          <ul class="cookie">
+            <li>This Website Use Cookies</li>
           </ul>
         </div>
       </div>

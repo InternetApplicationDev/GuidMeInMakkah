@@ -148,7 +148,7 @@ function addUserFavor($userNum,$pageName){
 			$result = mysqli_query($dbc,$query);
 			$value = mysqli_fetch_array($result);
 			$phatOfImg=$value['profile_pic'];
-			
+
 		}else{
 			$query = "SELECT profile_pic FROM cafeandrest WHERE cafeAndRest_name=\"{$pageName}\" ";
 			$result = mysqli_query($dbc,$query);
@@ -166,7 +166,7 @@ function addUserFavor($userNum,$pageName){
 		die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b></p>');
 	}
 }
-						
+
 function deleteUserFavor($userNum,$pageName){
 	$dbc = mysqli_connect ('localhost', 'root', 'root');
 	if (@mysqli_select_db ($dbc,'db')) {
@@ -211,10 +211,10 @@ function checkThisPageAsFavor($userNum,$pageName){
 	}
 
 	if($_GET[favo] == "unhreat"){
-		 deleteUserFavor($_COOKIE['theuser'],$_GET[className]); 
+		 deleteUserFavor($_COOKIE['theuser'],$_GET[className]);
 	}else if($_GET[favo] == "hreat"){
 		addUserFavor($_COOKIE['theuser'],$_GET[className]);
-		
+
 	}
 ?>
 <html class="theBackGround">
@@ -235,7 +235,7 @@ function checkThisPageAsFavor($userNum,$pageName){
 				if (<?php echo checkThisPageAsFavor($_COOKIE['theuser'],$_GET[className]); ?> == 1)
 				{
 					window.location.href = "individualprofile.php?id=<?php echo $_GET[id] ?> & className=<?php echo $_GET[className] ?> & favo=unhreat";
-				
+
 				}
 				else
 				{
@@ -243,7 +243,7 @@ function checkThisPageAsFavor($userNum,$pageName){
 				}
 			<?php } else { ?>
 				alert("you must log in first");
-			<?php } ?>	
+			<?php } ?>
 		}
 	  function Slider(){
 		$(".imagesSliders #0").show("fade",400);
@@ -397,7 +397,7 @@ function checkThisPageAsFavor($userNum,$pageName){
 			}
 		?>
     </div>
-	<?php 
+	<?php
 		$favorImg = "images/".$_GET[favoet].".png";
 		if($_COOKIE['theuser']){
 			// if user make this page as favorat img
@@ -510,26 +510,32 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 
 
 <div class="footer" id="theFooter">
-      <div class="footbar">
-        <ul class="footmenu">
-          <li><a href="#" onclick="showDevFunction()">Developers</a></li>
-          <li><a href="about.php">About us</a></li>
-          <li><a href="contactUs.php">Contact us</a></li>
-          <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
-        </ul>
-        <div id="developersNames">
-          <ul class="devNames">
-            <li>Ebtsam Alkhuzai &ensp; </li>
-            <li>Esraa Samkari </li>
-            <li>Joanna Assaeedi </li>
-            <li>Joud Alajlan </li>
-            <li>Rozan Alghamdi </li>
-            <li>Wafaa Alshaikhi </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
+	<div class="footbar">
+		<ul class="footmenu">
+			<li><a href="#" onclick="showDevFunction()">Developers</a></li>
+			<li><a href="about.php">About us</a></li>
+			<li><a href="contactUs.php">Contact us</a></li>
+			<li><a href="#" onclick="showSiteMap()">siteMap</a></li>
+			<li><a  href="#">
+				<img src='images/small_cookies.png' onmouseover="showCookies(this);" onmouseout="backCookies(this);" />
+			</a></li>
+		</ul>
+		<div id="developersNames">
+			<ul class="devNames">
+				<li>Ebtsam Alkhuzai</li>
+				<li>Esraa Samkari</li>
+				<li>Joanna Assaeedi</li>
+				<li>Joud Alajlan</li>
+				<li>Rozan Alghamdi</li>
+				<li>Wafaa Alshaikhi</li>
+			</ul>
+		</div>
+		<div id="cookieDisplay">
+			<ul class="cookie">
+				<li>This Website Use Cookies</li>
+			</ul>
+		</div>
+	</div>
+</div>
 </body>
-
 </html>

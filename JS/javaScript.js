@@ -187,3 +187,17 @@ function showSiteMap(){
 		showConfirmButton: false,
 	});
 }
+function showCookies(my_image){
+	var x = document.getElementById("cookieDisplay");
+	var footer = document.getElementById("theFooter");
+	my_image.src = "images/small_cookies_hover.png";
+	x.style.display="block";
+	footer.style.height = "90px";
+}
+function backCookies(my_image){
+	var x = document.getElementById("cookieDisplay");
+	var footer = document.getElementById("theFooter");
+	my_image.src = "images/small_cookies.png";
+		x.style.display="none";
+		footer.style.height = "75px";
+}
