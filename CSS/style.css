@@ -929,6 +929,8 @@ label:hover ~ label::before,
 }
 #desci{
   margin-top:10%;
+  width: 500px;
+  word-wrap: break-word;
 }
 
 .imagesSliders{
