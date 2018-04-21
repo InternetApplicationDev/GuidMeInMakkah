@@ -45,9 +45,9 @@ if(isset($_GET['Logout'])){
     <a style="margin-left:40%;" href ="index.php"><img src="images/logo-small-black.png"/></a>
     <h2 class = "welcomeText"> Welcome To Guide Me In Makkah </h2>
     <form id="contactUsForm">
-      <input type="text" name = "name" id= "data_3" placeholder="Enter your name"
+      <input type="text" name = "name" id= "Name" placeholder="Enter your name"
       class="roundTextArea"/>
-      <input type="text" id="data_5" name="email"  placeholder="example@xxxxx.com" class="roundTextArea"/>
+      <input type="text" id="Email" name="email"  placeholder="example@xxxxx.com" class="roundTextArea"/>
       <select name="feedback" id="data_3" size="1" class="roundTextArea">
         <option>Help</option>
         <option>Suggestion</option>
@@ -56,7 +56,7 @@ if(isset($_GET['Logout'])){
       </select>
       <textarea name="suggestion" placeholder="Write Here" class="roundTextArea" ></textarea><br/><br/>
       <div class="hanlebutton">
-        <button style="margin: 0 0 0 220px " id="send">
+        <button style="margin: 0 0 0 220px " id="send" name="submit" onclick="validateForm()">
           <p>Send</p>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
             <path id="paper-plane-icon" d="M462,54.955L355.371,437.187l-135.92-128.842L353.388,167l-179.53,124.074L50,260.973L462,54.955z
@@ -109,3 +109,35 @@ if(isset($_GET['Logout'])){
 </div>
 </body>
 </html>
+<?php // Address error handling.
+ini_set ('display_errors', 1);
+error_reporting (E_ALL & ~E_NOTICE);
+// Attempt to connect to MySQL and print out messages.
+
+if (isset($_POST['submit'])) {
+if ($dbc = @mysqli_connect ('localhost', 'root', 'root')) 
+{		
+print '<p>Successfully connected to MySQL.</p>';
+
+if (@mysqli_select_db ($dbc,'db')) {
+print '<p>The database has been selected.</p>';
+} 
+else {		
+die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b></p>');
+}		
+}
+
+
+$query = "INSERT INTO feedback VALUES (0, '{$_POST['name']}', '{$_POST['email']}','{$_POST['feedback']}','{$_POST['suggestion']}')";		
+
+// Execute the query.	
+if (@mysqli_query ($dbc, $query)) {		
+print '<p>The feedback entry has been added.</p>';	
+} 
+else {		
+print "<p>Could not add the entry because: <b>" . mysqli_error($dbc) . "</b>. The query was $query.</p>";	
+}	
+mysqli_close($dbc);
+}
+// Display the form.
+?>
