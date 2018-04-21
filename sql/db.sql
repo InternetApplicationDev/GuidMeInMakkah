@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2018 at 01:02 PM
+-- Generation Time: Apr 21, 2018 at 08:19 PM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -186,14 +186,14 @@ CREATE TABLE `restaurants` (
 --
 
 INSERT INTO `restaurants` (`restaurant_id`, `restaurant_name`, `restaurants_info`, `restaurants_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`, `menu`) VALUES
-(1, 'Al-Baik', 'Al-BaikAl-BaikAl-BaikAl-Baik', 'images/address/albaik.png', 54136, '2018-04-11', '2018-04-11', 3, 'images/resturantPics/albaik.png', 'images/resturantPics/Menu_2.jpg'),
-(2, 'Burger King', 'burgerKingburgerKingburgerKing', 'images/address/Burger_King.png', 312352, '2018-04-02', '2018-04-10', 0, 'images/resturantPics/burgerKing.png', ''),
-(3, 'Dominos Pizaa', 'dominosPizaadominosPizaadominosPizaa', 'images/address/Dominos_Pizaa.png', 625362, '2018-04-10', '2018-04-25', 5, 'images/resturantPics/dominosPizaa.png', ''),
-(4, 'Hardee\'s', 'hardee\'shardee\'shardee\'s', 'images/address/Hardees.png', 3513, '2018-04-05', '2018-04-11', 3, 'images/resturantPics/hardees.png', ''),
-(5, 'Kudo', 'kudokudo', 'images/address/Kudo.png', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
-(6, 'Subway', 'subwaysubwaysubway', 'images/address/Subway.psd', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', ''),
-(7, 'senees', '', '', 654126784, '2018-04-11', '2018-04-18', 4, 'images/resturantPics/senees.png', ''),
-(8, 'FiveGuies', '', '', 640126543, '2018-04-01', '2018-04-23', 4, 'images/resturantPics/FiveGuies.png', '');
+(1, 'Al-Baik', 'Al-Baik is a major fast food restaurant chain in Saudi Arabia that primarily sells broasted chicken ', 'images/address/albaik.png', 54136, '2018-04-11', '2018-04-11', 3, 'images/resturantPics/albaik.png', 'images/resturantPics/Menu_2.jpg'),
+(2, 'Burger King', 'Burger King is an American global chain of hamburger fast food restaurants.', 'images/address/Burger_King.png', 312352, '2018-04-02', '2018-04-10', 0, 'images/resturantPics/burgerKing.png', ''),
+(3, 'Dominos Pizaa', 'Domino\'s Pizza is an American pizza restaurant chain founded in 1960.', 'images/address/Dominos_Pizaa.png', 625362, '2018-04-10', '2018-04-25', 5, 'images/resturantPics/dominosPizaa.png', ''),
+(4, 'Hardee\'s', 'Hardee\'s  is an American-based fast-food restaurant chain operated by CKE Restaurants Holdings, Inc.', 'images/address/Hardees.png', 3513, '2018-04-05', '2018-04-11', 3, 'images/resturantPics/hardees.png', ''),
+(5, 'Kudo', 'Kudo is a large fast food chain in Saudi Arabia, established in 1988', 'images/address/Kudo.png', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
+(6, 'Subway', 'Subway is an American fast food restaurant franchise that primarily purveys submarine sandwiches (su', 'images/address/Subway.psd', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', ''),
+(7, 'senees', 'Senses restaurant is the Polish culinary window to the world', '', 654126784, '2018-04-11', '2018-04-18', 4, 'images/resturantPics/senees.png', ''),
+(8, 'FiveGuys', 'Five Guys is an American fast casual restaurant chain focused on hamburgers, hot dogs, and French fr', '', 640126543, '2018-04-01', '2018-04-23', 4, 'images/resturantPics/FiveGuies.png', '');
 
 -- --------------------------------------------------------
 
@@ -221,7 +221,7 @@ INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_first_name`,
 (1, 'admin', 'admin', 'admin', '', 'Users/Photos/admin.png', '', '', ''),
 (2, 'Joanna.a.s.1996@Gmail.com', '12345678', 'Joanna', 'Assaeedi', 'Users/Photos/pesonal.jpg', '', 'Joanna_A_S', 'Joanna.A.S.107'),
 (3, 'israaSamkari@hotmail.com', '12345678', 'israa', 'samkari', 'Users/Photos/1420867127172.jpg', '', '', ''),
-(58, 'test@gmail.com', '12345678', 'test', 'test', 'Users/Photos/pesonal.jpg', '', '', '');
+(58, 'test@gmail.com', '12345678', 'test', 'test', 'Users/Photos/38402-200.png', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -361,7 +361,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `userfav`
 --
 ALTER TABLE `userfav`
-  MODIFY `fav_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `fav_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
