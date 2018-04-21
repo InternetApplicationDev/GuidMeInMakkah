@@ -19,3 +19,7 @@ profile --> Social button: https://codepen.io/chrisdothtml/pen/azPYqq
 pass php variables to external js --> https://stackoverflow.com/questions/2928827/access-php-var-from-external-javascript-file?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
 profile buttons --> clean button:https://codepen.io/oknoblich/pen/jdsIA
+
+image slider --> https://www.youtube.com/watch?v=yikHrIMsccw
+
+star rate --> http://jsbin.com/wafijazami/edit?html,css,js,console,output
