@@ -87,23 +87,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body class="content">
-  <!--
-  <div class="navbar">
-  <ul class="navmenu">
-  <li><a href="index.php"><img src="images/logo-small.png"/></a></li>
-  <li><a href="listPage.php?id=1">Cafe</a></li>
-  <li><a href="listPage.php?id=2">Restaurants</a></li>
-  <li><a href="listPage.php?id=3">Cafe & Restaurants</a></li>
-  <?php if ($_COOKIE['theuser']){ ?>
-  <li class="navmenu-right"><a href="profile.php">Profile</a></li>
-  <li class="navmenu-right"><a href="?Logout">Logout</a></li>
-<?php }else{ ?>
-<li class="navmenu-right"><a href="Login.php">Login</a></li>
-<li class="navmenu-right"><a href="Registration.php">Sign Up</a></li>
-<?php } ?>
-</ul>
-</div>
--->
+
 <a class ="signLogo" href ="index.php"><img src="images/logo-small-black.png"/></a>
 <h2 class = "welcomeText"> Welcome To Guide Me In Makkah </h2>
 <h3 class = "welcomeText"> Sign in </h3>

@@ -48,7 +48,11 @@ if(isset($_GET['Logout'])){
       Alternatively, you can call the restaurant directly via the number provided  on the restaurant page.</p>
     </div>
 
+<<<<<<< HEAD
     <img style=" margin: 0 20px 0 0;padding-bottom: 50%;" src="images/aboutus.png" width="20%" height="450px"  >
+=======
+<img style=" margin: 0 20px 0 0;" src="images/aboutus.png" width="20%" height="450px"  >
+>>>>>>> 28c4afab7bda68eeda0ae100c20f07aced733d86
 
   </div>
 
