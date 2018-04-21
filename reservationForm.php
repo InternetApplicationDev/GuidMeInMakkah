@@ -7,7 +7,7 @@ if(isset($_GET['Logout'])){
 ?>
 <?php
 session_start();
-$timeout = 60; // Number of seconds until it times out.
+$timeout = 15*60; // Number of seconds until it times out.
 // Check if the timeout field exists.
 if(isset($_SESSION['timeout'])) {
   $duration = time() - $_SESSION['timeout'];

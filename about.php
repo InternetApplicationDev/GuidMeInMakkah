@@ -35,10 +35,10 @@ if(isset($_GET['Logout'])){
       <?php } ?>
     </ul>
   </div>
-    
+
   <hr>
 <img src="images/bac.png" width="100%" height="20%">
-<div class="container" style="margin: 0 0 0 0; width:100%;">
+<div class="container" style="margin: 0 0 0 0; padding-bottom: 5%;width:100%;">
     <div class="contentAboutUs">
         <p class="title ">Connect to Your Chosen Restaurant</p>
         <p style="font-size:30px;"><b style="font-style: italic;">		GuideMe in Makkah</b> enables you to make an online booking at your chosen restaurant and in many cases to take advantage of unique promotions.
@@ -48,7 +48,7 @@ if(isset($_GET['Logout'])){
           Alternatively, you can call the restaurant directly via the number provided  on the restaurant page.</p>
         </div>
 
-<img style=" margin: 0 20px 0 0 " src="images/aboutus.png" width="20%" height="450px"  >
+<img style=" margin: 0 20px 0 0;padding-bottom: 50%;" src="images/aboutus.png" width="20%" height="450px"  >
 
       </div>
 
