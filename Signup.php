@@ -12,6 +12,7 @@ if (isset($_POST['firstName'])) {
   $dbc = mysqli_connect("localhost","root","root");
   //$dbc = mysqli_connect("localhost","root","12345678");
   mysqli_select_db($dbc,"db");
+  if(!empty($firstName) || !empty($lastName) || !empty($email) || !empty($pass) ) {
   $insertNewUser = "INSERT INTO user (user_email,user_password,user_first_name,user_last_name)
   VALUES ('$email','$pass','$firstName','$lastName')";
   @mysqli_query ($dbc, $insertNewUser);
@@ -52,6 +53,23 @@ if (isset($_POST['firstName'])) {
     });
     </script>';
   }
+}else{
+  echo '
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
+  <script>
+  $( document ).ready(function() {
+    swal({
+      title: \'Oops..\',
+      text: \'Please fill all the fields \',
+      type: \'error\',
+    }, function(isConfirm) {
+      document.location.href="/login.html"
+    });
+  });
+  </script>';
+
+}
   mysqli_close($dbc);
 }
 ?>

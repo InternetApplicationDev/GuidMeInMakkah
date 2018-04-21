@@ -31,6 +31,7 @@ button:hover svg {
   -o-transition: -o-transform 0.15s;
   -ms-transition: -ms-transform 0.15s;
   transition: transform 0.15s;
+    z-index: 999;
 }
 button svg {
   position: absolute;
@@ -43,6 +44,7 @@ button svg {
   -o-transition: -o-transform 0.15s;
   -ms-transition: -ms-transform 0.15s;
   transition: transform 0.15s;
+    z-index: 999;
 }
 button svg path {
   fill: #2d7586;

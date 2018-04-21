@@ -161,29 +161,29 @@ function ConfirmDelete(){
 		confirmButtonText: 'Yes, delete it!'
 	}).then((result) => {
 		if (result.value) {
-			 window.location.href = 'profile.php?Delete';
+			window.location.href = 'profile.php?Delete';
 		}else{
 			window.location.href = 'profile.php';
 		}
 	});
+}
+/////////////////////////////////////////////////// footer Developers ///////////////////////////////////////////////////
+function showDevFunction() {
+	var x = document.getElementById("developersNames");
+	var footer = document.getElementById("theFooter");
+	if(x.style.display=="block"){
+		x.style.display="none";
+		footer.style.height = "75px";
+	} else {
+		x.style.display="block";
+		footer.style.height = "180px";
 	}
-	/////////////////////////////////////////////////// footer Developers ///////////////////////////////////////////////////
-	function showDevFunction() {
-		var x = document.getElementById("developersNames");
-		var footer = document.getElementById("theFooter");
-		if(x.style.display=="block"){
-			x.style.display="none";
-			footer.style.height = "75px";
-		} else {
-			x.style.display="block";
-			footer.style.height = "180px";
-		}
-	}
+}
 
-	/////////////////////////////////////////////////// footer siteMap ///////////////////////////////////////////////////
-	function showSiteMap(){
-		swal({
-			imageUrl: './images/GuideMeInMakkah_small.png',
-			showConfirmButton: false,
-		});
-	}
+/////////////////////////////////////////////////// footer siteMap ///////////////////////////////////////////////////
+function showSiteMap(){
+	swal({
+		imageUrl: './images/GuideMeInMakkah_small.png',
+		showConfirmButton: false,
+	});
+}
