@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2018 at 08:47 PM
--- Server version: 5.7.17-log
+-- Generation Time: Apr 21, 2018 at 06:05 PM
+-- Server version: 5.7.15-log
 -- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -43,14 +43,14 @@ CREATE TABLE `cafe` (
 --
 
 INSERT INTO `cafe` (`cafe_id`, `cafe_name`, `cafe_info`, `cafe_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`) VALUES
-(1, 'Caffe Bene', 'caffeBenecaffeBenecaffeBene', 'images/address/Caffe_Bene.png', 0, '2018-04-14', '0000-00-00', 3, 'images/coffeePic/caffeBene.png'),
-(2, 'Costa Coffee', 'costa coffee', 'images/address/Costa_Coffee.png', 653, '2018-04-18', '0000-00-00', 3, 'images/coffeePic/costa_coffee.png'),
-(3, 'Dunkin Donuts', 'dunkin donutsdunkin donutsdunkin donuts', 'images/address/Dunkin_Donuts.png', 54356, '2018-04-04', '2018-04-03', 4, 'images/coffeePic/dunkin_donuts.png'),
-(4, 'Mado', 'mado', 'images/address/Mado.png', 65346834, '2018-04-17', '2018-04-04', 3, 'images/coffeePic/mado.png'),
-(5, 'pappa roti', 'pappa rotipappa roti', 'images/address/pappa_roti.png', 65363684, '2018-04-11', '2018-04-17', 3, 'images/coffeePic/pappa_roti.png'),
-(6, 'Starbucks', 'starbucksstarbucks', 'images/address/Starbucks.png', 35136, '2018-04-10', '2018-04-16', 4, 'images/coffeePic/starbucks.png'),
-(7, 'coffeeStation', 'for women only', '', 573892759, '2018-04-14', '2018-04-30', 3, 'images/coffeePic/coffeeStation.png'),
-(8, 'tarwiga', 'for women only', '', 378902547, '2018-04-30', '2018-05-18', 4, 'images/coffeePic/tarwiga.png');
+(1, 'Caffe Bene', 'Raw coffee beans grown in respectively different places such as Ethiopia, Columbia, Brazil ..ect', 'images/address/Caffe_Bene.png', 0, '2018-04-14', '0000-00-00', 3, 'images/coffeePic/caffeBene.png'),
+(2, 'Costa Coffee', 'Hand-making a cup of coffee is an art that takes time and skill to perfect.', 'images/address/Costa_Coffee.png', 653, '2018-04-18', '0000-00-00', 3, 'images/coffeePic/costa_coffee.png'),
+(3, 'Dunkin Donuts', 'full of great-tasting items that will get you going and keep you running throughout your busy day.', 'images/address/Dunkin_Donuts.png', 54356, '2018-04-04', '2018-04-03', 4, 'images/coffeePic/dunkin_donuts.png'),
+(4, 'Mado', 'Mado Ice-cream, which has earned well-deserved fame all over the world with its unique flavor', 'images/address/Mado.png', 65346834, '2018-04-17', '2018-04-04', 3, 'images/coffeePic/mado.png'),
+(5, 'pappa roti', 'golden brown buns are crispy on the outside while light and fluffy in the inside.', 'images/address/pappa_roti.png', 65363684, '2018-04-11', '2018-04-17', 3, 'images/coffeePic/pappa_roti.png'),
+(6, 'Starbucks', 'ur coffee masters have distilled their years of tasting knowledge down to three simple questions', 'images/address/Starbucks.png', 35136, '2018-04-10', '2018-04-16', 4, 'images/coffeePic/starbucks.png'),
+(7, 'coffeeStation', 'started in 1983 as a small doughnut and coffee stand next to a train station.', '', 573892759, '2018-04-14', '2018-04-30', 3, 'images/coffeePic/coffeeStation.png'),
+(8, 'tarwiga', 'A cafe located in makkah for women only', '', 378902547, '2018-04-30', '2018-05-18', 4, 'images/coffeePic/tarwiga.png');
 
 -- --------------------------------------------------------
 
@@ -187,13 +187,13 @@ CREATE TABLE `restaurants` (
 
 INSERT INTO `restaurants` (`restaurant_id`, `restaurant_name`, `restaurants_info`, `restaurants_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`, `menu`) VALUES
 (1, 'Al-Baik', 'Al-Baik is a major fast food restaurant chain in Saudi Arabia that primarily sells broasted chicken ', 'images/address/albaik.png', 54136, '2018-04-11', '2018-04-11', 3, 'images/resturantPics/albaik.png', 'images/resturantPics/Menu_2.jpg'),
-(2, 'Burger King', 'Burger King is an American global chain of hamburger fast food restaurants.', 'images/address/Burger_King.png', 312352, '2018-04-02', '2018-04-10', 0, 'images/resturantPics/burgerKing.png', ''),
+(2, 'Burger King', 'Burger King is an American global chain of hamburger fast food restaurants.', 'images/address/Burger_King.png', 312352, '2018-04-02', '2018-04-10', 1, 'images/resturantPics/burgerKing.png', ''),
 (3, 'Dominos Pizaa', 'Domino\'s Pizza is an American pizza restaurant chain founded in 1960.', 'images/address/Dominos_Pizaa.png', 625362, '2018-04-10', '2018-04-25', 5, 'images/resturantPics/dominosPizaa.png', ''),
 (4, 'Hardee\'s', 'Hardee\'s  is an American-based fast-food restaurant chain operated by CKE Restaurants Holdings, Inc.', 'images/address/Hardees.png', 3513, '2018-04-05', '2018-04-11', 3, 'images/resturantPics/hardees.png', ''),
 (5, 'Kudo', 'Kudo is a large fast food chain in Saudi Arabia, established in 1988', 'images/address/Kudo.png', 3435, '2018-04-12', '2018-04-13', 2, 'images/resturantPics/kudo.png', ''),
 (6, 'Subway', 'Subway is an American fast food restaurant franchise that primarily purveys submarine sandwiches (su', 'images/address/Subway.psd', 8451356, '2018-04-06', '2018-04-19', 3, 'images/resturantPics/subway.png', ''),
 (7, 'senees', 'Senses restaurant is the Polish culinary window to the world', '', 654126784, '2018-04-11', '2018-04-18', 4, 'images/resturantPics/senees.png', ''),
-(8, 'FiveGuys', 'Five Guys is an American fast casual restaurant chain focused on hamburgers, hot dogs, and French fr', '', 640126543, '2018-04-01', '2018-04-23', 4, 'images/resturantPics/FiveGuies.png', '');
+(8, 'FiveGuys', 'Five Guys is an American fast casual restaurant chain focused on hamburgers, hot dogs, and French', '', 640126543, '2018-04-01', '2018-04-23', 4, 'images/resturantPics/FiveGuies.png', '');
 
 -- --------------------------------------------------------
 

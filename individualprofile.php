@@ -207,7 +207,6 @@ function checkThisPageAsFavor($userNum,$pageName){
 		$pageName =$_GET[className];
 		searchUserNameInIndexFile($userName,$pageName);
 		addUserNameComment($userName,$comments,$pageName);
-		addUserRate($userName,$userRate,$pageName);
 	}
 
 	if($_GET[favo] == "unhreat"){
