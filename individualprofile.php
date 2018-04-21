@@ -440,9 +440,8 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 
 		<!-- if your long in -->
 		<?php if ($_COOKIE['theuser']){ ?>
-			<?php
-				echo "<form action=\"individualprofile.php?id={$_GET[id]} & className={$_GET[className]}\" method=\"post\" >";
-				?>
+			<?php echo "<form action=\"individualprofile.php?id={$_GET[id]} & className={$_GET[className]}\" method=\"post\" >"; ?>
+				
 				  <table>
 					<tr>
 					  <?php $r = $bar->retrieveUsername($_COOKIE['theuser']); ?>
@@ -473,19 +472,15 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 			<center><p style="font-size: 20px; color: red;">YOU MUST LOGIN FIRST TO ADD COMMANTS</p></center>
 		<?php } ?>
 
-
-
-  <br> <br> <br><hr><hr><br> <br>
+		<br> <br> <br><hr><hr><br> <br>
 
 		<div class="Comment">
 		<?php
 		// how many comments of this page from file and prinit
 		$path ="Users/Files/Comments/".$_GET[className].".txt";
-
 			if (is_readable($path)){
-				$data = file ($path);
+			$data = file ($path);
 			$n = count ($data);
-
 			for ( $j=0; $j < $n; $j++){
 			$getUseANDCom = retrieveUsersComments($data[$j]);
 			// select user name from DB by id
