@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2018 at 08:19 PM
+-- Generation Time: Apr 21, 2018 at 08:47 PM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -61,7 +61,7 @@ INSERT INTO `cafe` (`cafe_id`, `cafe_name`, `cafe_info`, `cafe_address`, `phone`
 CREATE TABLE `cafeandrest` (
   `cafeAndRest_id` int(10) UNSIGNED NOT NULL,
   `cafeAndRest_name` varchar(100) NOT NULL,
-  `cafeAndRest_info` varchar(100) NOT NULL,
+  `cafeAndRest_info` varchar(225) NOT NULL,
   `cafeAndRest_address` varchar(100) NOT NULL,
   `phone` int(11) NOT NULL,
   `start_date` date NOT NULL,
@@ -75,14 +75,14 @@ CREATE TABLE `cafeandrest` (
 --
 
 INSERT INTO `cafeandrest` (`cafeAndRest_id`, `cafeAndRest_name`, `cafeAndRest_info`, `cafeAndRest_address`, `phone`, `start_date`, `close_date`, `rate`, `profile_pic`) VALUES
-(1, 'Raffles Creamery', 'Raffles Creamery ', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/Raffles_Creamery.png'),
-(2, 'Zamzam cafe', '', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/Zamzam_cafe.png'),
-(3, 'Feld D\'saji', '', '', 45189043, '2018-04-07', '2018-04-28', 3, 'images/coffeeAndReturantPic/_Feld D saji_ l.png'),
-(4, 'aldeerah', '', '', 537890436, '2018-04-05', '2018-04-24', 4, 'images/coffeeAndReturantPic/aldeerah.png'),
-(5, 'hayat', '', '', 456789034, '2018-04-08', '2018-04-22', 3, 'images/coffeeAndReturantPic/hayat.png'),
-(6, 'InterContinental Dar Al Tawhid', '', '', 547109341, '2018-04-10', '2018-04-23', 4, 'images/coffeeAndReturantPic/InterContinental Dar Al Tawhid.png'),
-(7, 'rout66', '', '', 432875015, '2018-04-05', '2018-04-24', 4, 'images/coffeeAndReturantPic/rout.png'),
-(8, 'tea launge', '', '', 432576890, '2018-04-06', '2018-04-26', 3, 'images/coffeeAndReturantPic/tea launge.png');
+(1, 'Raffles Creamery', 'This artistic, informal and fun-filled café provides a perfect hangout for your family and children on the terrace featuring a stunning view of the Grand Mosque and the Holy Kaaba.', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/Raffles_Creamery.png'),
+(2, 'Zamzam cafe', 'ZamZam Makkah greets the people who enjoy the magnificent view of the holy Kaaba and Masjid Haram mosque.', '', 0, '0000-00-00', '0000-00-00', 0, 'images/coffeeAndReturantPic/Zamzam_cafe.png'),
+(3, 'Feld D\'saji', 'D’Saji Restaurant & Café was formed as a unit in 1984 when the focus was directed on cafeteria services,', '', 45189043, '2018-04-07', '2018-04-28', 3, 'images/coffeeAndReturantPic/_Feld D saji_ l.png'),
+(4, 'aldeerah', 'Aldeerah”, which translates as “The Homeland”, was carefully chosen to reflect one of our main goals: to be a home away from home for all those craving dishes from Saudi Arabia.', '', 537890436, '2018-04-05', '2018-04-24', 4, 'images/coffeeAndReturantPic/aldeerah.png'),
+(5, 'hayat', 'Situated at the heart of the holy city of Makkah, Jabal Omar Hyatt Regency Makkah offers visitors a unique hospitality experience, blending comfort and convenience in an elegant atmosphere.', '', 456789034, '2018-04-08', '2018-04-22', 3, 'images/coffeeAndReturantPic/hayat.png'),
+(6, 'InterContinental Dar Al Tawhid', 'Offering exceptional cuisin complemented by Islamic atmosphere and design', '', 547109341, '2018-04-10', '2018-04-23', 4, 'images/coffeeAndReturantPic/InterContinental Dar Al Tawhid.png'),
+(7, 'rout 66', 'Enjoying the adventure inside the route 66 restaurant will never be less than the route 66 story it self. ', '', 432875015, '2018-04-05', '2018-04-24', 4, 'images/coffeeAndReturantPic/rout.png'),
+(8, 'tea launge', 'This exclusive but informal lounge accommodates up to 30 guests, and serves a variety of light snacks, sandwiches, freshly-made ice cream and freshly-baked patisserie from the counter, along with a wide variety of gourmet tea', '', 432576890, '2018-04-06', '2018-04-26', 3, 'images/coffeeAndReturantPic/tea launge.png');
 
 -- --------------------------------------------------------
 
