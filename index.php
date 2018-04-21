@@ -48,9 +48,9 @@ if(isset($_GET['Logout'])){
           $idReturant=2;
           $idBoth=3;
 
-          echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" title="Cafe"/></a>';
-          echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" title="Restaurant" /></a>';
-          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" title="Cafe And Restaurant" /></a>';
+          echo '<a href="listPage.php?id='.$idCoffee.'" > <div class="tooltip"><img id="Cafe" src="images/icons/coffee-cup.png"/></a><span class="tooltiptext">Cafe</span></div>';
+          echo '<a href="listPage.php?id='.$idReturant.'"> <div class="tooltip"><img id="Restaurant" src="images/icons/tray.png"/></a><span class="tooltiptext">Restaurant</span></div>';
+          echo '<a href="listPage.php?id='.$idBoth.'"> <div class="tooltip"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png"/></a><span class="tooltiptext">Cafe And Restaurant</span></div>';
           ?>
         </div>
       </div>
@@ -61,9 +61,9 @@ if(isset($_GET['Logout'])){
           $idReturant=2;
           $idBoth=3;
 
-          echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" title="Cafe"/> </a>';
-          echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" title="Restaurant" /></a>';
-          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" title="Cafe And Restaurant" /></a>';
+          echo '<a href="listPage.php?id='.$idCoffee.'"> <div class="tooltip"><img id="Cafe" src="images/icons/coffee-cup.png"/> </a><span class="tooltiptext">Cafe</span></div>';
+          echo '<a href="listPage.php?id='.$idReturant.'"> <div class="tooltip"><img id="Restaurant" src="images/icons/tray.png"/></a><span class="tooltiptext">Restaurant</span></div>';
+          echo '<a href="listPage.php?id='.$idBoth.'"> <div class="tooltip"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png"/></a><span class="tooltiptext">Cafe And Restaurant</span></div>';
           ?>
 
         </div>
@@ -75,9 +75,9 @@ if(isset($_GET['Logout'])){
           $idReturant=2;
           $idBoth=3;
 
-          echo '<a href="listPage.php?id='.$idCoffee.'" ><img id="Cafe" src="images/icons/coffee-cup.png" title="Cafe" /></a>';
-          echo '<a href="listPage.php?id='.$idReturant.'"><img id="Restaurant" src="images/icons/tray.png" title="Restaurant" /></a>';
-          echo '<a href="listPage.php?id='.$idBoth.'"><img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png" title="Cafe And Restaurant" /></a>';
+          echo '<a href="listPage.php?id='.$idCoffee.'" > <div class="tooltip"> <img id="Cafe" src="images/icons/coffee-cup.png"/></a> <span class="tooltiptext">Cafe</span></div>';
+          echo '<a href="listPage.php?id='.$idReturant.'"> <div class="tooltip"> <img id="Restaurant" src="images/icons/tray.png"/></a> <span class="tooltiptext">Restaurant</span></div>';
+          echo '<a href="listPage.php?id='.$idBoth.'"> <div class="tooltip"> <img id="CafeAndRestaurant" src="images/icons/trayAndCoffee.png"/></a> <span class="tooltiptext">Cafe And Restaurant</span></div> ';
           ?>
 
         </div>
