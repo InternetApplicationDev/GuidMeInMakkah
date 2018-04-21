@@ -137,7 +137,25 @@ function retrieveUsersComments($userNameWithHisComment){
 function addUserFavor($userNum,$pageName){
 	$dbc = mysqli_connect ('localhost', 'root', 'root');
 	if (@mysqli_select_db ($dbc,'db')) {
-			$sql = "INSERT INTO userfav (user_id,fav_name) VALUES ({$userNum},\"{$pageName}\")";
+		$phatOfImg ="";
+		if($_GET[id]==1){
+			$query = "SELECT profile_pic FROM cafe WHERE cafe_name=\"{$pageName}\" ";
+			$result = mysqli_query($dbc,$query);
+			$value = mysqli_fetch_array($result);
+			$phatOfImg=$value['profile_pic'];
+		}else if($_GET[id]==2){
+			$query = "SELECT profile_pic FROM restaurants WHERE restaurant_name=\"{$pageName}\" ";
+			$result = mysqli_query($dbc,$query);
+			$value = mysqli_fetch_array($result);
+			$phatOfImg=$value['profile_pic'];
+			
+		}else{
+			$query = "SELECT profile_pic FROM cafeandrest WHERE cafeAndRest_name=\"{$pageName}\" ";
+			$result = mysqli_query($dbc,$query);
+			$value = mysqli_fetch_array($result);
+			$phatOfImg=$value['profile_pic'];
+		}
+		$sql = "INSERT INTO userfav (user_id,fav_name,fav_img) VALUES ({$userNum},\"{$pageName}\",\"{$phatOfImg}\")";
 		if ($dbc->query($sql) === TRUE) {
 			return;
 		}else{
@@ -164,6 +182,22 @@ function deleteUserFavor($userNum,$pageName){
 	}
 }
 
+function checkThisPageAsFavor($userNum,$pageName){
+	$dbc = mysqli_connect ('localhost', 'root', 'root');
+	if (@mysqli_select_db ($dbc,'db')) {
+			$query = "SELECT fav_name FROM userfav WHERE user_id={$userNum} AND fav_name=\"{$pageName}\" ";
+			$result = mysqli_query($dbc,$query);
+			if ($result->num_rows) {
+				return $result->num_rows;
+			}else{
+				return $result->num_rows;
+			}
+	}
+	else {
+		die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b></p>');
+	}
+}
+
 ?>
 <?php
 	if(isset($_POST["getStarValue"])){
@@ -176,10 +210,11 @@ function deleteUserFavor($userNum,$pageName){
 		addUserRate($userName,$userRate,$pageName);
 	}
 
-	if($_GET[favo] == "unheart"){
+	if($_GET[favo] == "unhreat"){
 		 deleteUserFavor($_COOKIE['theuser'],$_GET[className]); 
-	}else if($_GET[favo] == "heart"){
-		 addUserFavor($_COOKIE['theuser'],$_GET[className]);
+	}else if($_GET[favo] == "hreat"){
+		addUserFavor($_COOKIE['theuser'],$_GET[className]);
+		
 	}
 ?>
 <html class="theBackGround">
@@ -193,19 +228,18 @@ function deleteUserFavor($userNum,$pageName){
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 	<script >
-		var heart ="unheart";
 		function changeImageOnclick() {
+			var heartFlag = "unhreat";
 			// add to database as favor page
 			<?php if ($_COOKIE['theuser']){ ?>
-				if (heart == "unheart")
+				if (<?php echo checkThisPageAsFavor($_COOKIE['theuser'],$_GET[className]); ?> == 1)
 				{
-					window.location.href = "individualprofile.php?id=<?php echo $_GET[id] ?> & className=<?php echo $_GET[className] ?> & favo=heart";
-					//document.getElementById("imgClickAndChange").src = "images/hreat.png";
-					//heart="heart";
+					window.location.href = "individualprofile.php?id=<?php echo $_GET[id] ?> & className=<?php echo $_GET[className] ?> & favo=unhreat";
+				
 				}
 				else
 				{
-					window.location.href = "individualprofile.php?id=<?php echo $_GET[id] ?> & className=<?php echo $_GET[className] ?> & favo=unheart";
+					window.location.href = "individualprofile.php?id=<?php echo $_GET[id] ?> & className=<?php echo $_GET[className] ?> & favo=hreat";
 				}
 			<?php } else { ?>
 				alert("you must log in first");
@@ -363,7 +397,18 @@ function deleteUserFavor($userNum,$pageName){
 			}
 		?>
     </div>
-	<img  src="images/unhreat.png" title= "favorite"  onclick="changeImageOnclick()" id="imgClickAndChange" class="image_heart"/>
+	<?php 
+		$favorImg = "images/".$_GET[favoet].".png";
+		if($_COOKIE['theuser']){
+			// if user make this page as favorat img
+			if(checkThisPageAsFavor($_COOKIE['theuser'],$_GET[className])){
+				$favorImg = "images/hreat.png";
+			}else{
+				$favorImg = "images/unhreat.png";
+			}
+		}
+	?>
+	<img  src=<?php echo"{$favorImg}" ?> title= "favorite"  onclick="changeImageOnclick()" id="imgClickAndChange" class="image_heart"/>
 
     <div class="contenerOfAddress"> <!-- ADDERSS -->
        <h1 id="addr">Address</h1>

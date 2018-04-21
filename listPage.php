@@ -88,7 +88,7 @@ if(isset($_GET['Logout'])){
 
 
           print"<div class=\"box\">
-          <a href=\"individualprofile.php?id={$_GET[id]} & className={$r[$i][0]}\"  type=\"button\" value=\"Input Button\" >
+          <a href=\"individualprofile.php?id={$_GET[id]} & className={$r[$i][0]} & favoet=unhreat\"  type=\"button\" value=\"Input Button\" >
           <img src=\"{$r[$i][1]}\" alt=\"Avatar\" class=\"img\">
           <div class=\"overlay\"></div>
           </a>
@@ -119,7 +119,7 @@ if(isset($_GET['Logout'])){
 
 
           print"<div class=\"box\">
-          <a href=\"individualprofile.php?id={$_GET[id]} & className={$r[$i][0]}\"  type=\"button\" value=\"Input Button\" >
+          <a href=\"individualprofile.php?id={$_GET[id]} & className={$r[$i][0]} & favoet=unhreat\"  type=\"button\" value=\"Input Button\" >
           <img src=\"{$r[$i][1]}\" alt=\"Avatar\" class=\"img\">
           <div class=\"overlay\"></div>
           </a>
@@ -144,7 +144,7 @@ if(isset($_GET['Logout'])){
           </div>";*/
 
           print"<div class=\"box\">
-          <a href=\"individualprofile.php?id={$_GET[id]} & className={$r[$i][0]}\"  type=\"button\" value=\"Input Button\" >
+          <a href=\"individualprofile.php?id={$_GET[id]} & className={$r[$i][0]} & favoet=unhreat\"  type=\"button\" value=\"Input Button\" >
           <img src=\"{$r[$i][1]}\" alt=\"Avatar\" class=\"img\">
           <div class=\"overlay\"></div>
           </a>
