@@ -149,6 +149,9 @@ function validateEmail(Email) {
 	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
 	return isEmpty(Email) || re.test(Email);
 }
+function myFunction() {
+    document.getElementById("contactUsForm").reset();
+}
 /////////////////////////////////////////////////// Delete Profile ///////////////////////////////////////////////////
 function ConfirmDelete(){
 	swal({

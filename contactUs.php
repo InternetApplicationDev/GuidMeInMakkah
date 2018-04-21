@@ -41,22 +41,21 @@ if(isset($_GET['Logout'])){
     </ul>
   </div>
 
-<div class="content" style="width:50%; margin-top: 6%">
-  <a style="margin-left:40%;" href ="index.php"><img src="images/logo-small-black.png"/></a>
-<h2 class = "welcomeText"> Welcome To Guide Me In Makkah </h2>
-
-     <input type="text" name = "name" id= "data_3" placeholder="Enter your name" 
-     class="roundTextArea"/>
+  <div class="content" style="width:50%; margin-top: 6%">
+    <a style="margin-left:40%;" href ="index.php"><img src="images/logo-small-black.png"/></a>
+    <h2 class = "welcomeText"> Welcome To Guide Me In Makkah </h2>
+    <form id="contactUsForm">
+      <input type="text" name = "name" id= "data_3" placeholder="Enter your name"
+      class="roundTextArea"/>
       <input type="text" id="data_5" name="email"  placeholder="example@xxxxx.com" class="roundTextArea"/>
-     
-        <select name="feedback" id="data_3" size="1" class="roundTextArea">
-          <option>Help</option>
-          <option>Suggestion</option>
-          <option>Complaint</option>
-          <option>Idea</option>
-        </select>
-        <textarea name="suggestion" placeholder="Write Here" class="roundTextArea" ></textarea><br/><br/>
-        <div class="hanlebutton">
+      <select name="feedback" id="data_3" size="1" class="roundTextArea">
+        <option>Help</option>
+        <option>Suggestion</option>
+        <option>Complaint</option>
+        <option>Idea</option>
+      </select>
+      <textarea name="suggestion" placeholder="Write Here" class="roundTextArea" ></textarea><br/><br/>
+      <div class="hanlebutton">
         <button style="margin: 0 0 0 220px " id="send">
           <p>Send</p>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
@@ -64,7 +63,7 @@ if(isset($_GET['Logout'])){
             M202.992,332.528v124.517l58.738-67.927L202.992,332.528z"></path>
           </svg>
         </button>
-        <button style="margin: 0 200px 0 0;" id="clear">
+        <button style="margin: 0 200px 0 0;" id="clear" onclick="clearContactUs();" >
           <p>Clear</p>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
             <metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
@@ -72,41 +71,41 @@ if(isset($_GET['Logout'])){
           </svg>
         </button>
       </div>
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <script  src="js/flyaway.js"></script>
-      </div>
-    </div> 
-
-
-
-
-    <div class="footer" id="theFooter">
-      <div class="footbar">
-        <ul class="footmenu">
-          <li><a href="#" onclick="showDevFunction()">Developers</a></li>
-          <li><a href="about.php">About us</a></li>
-          <li><a href="contactUs.php">Contact us</a></li>
-          <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
-          <li><a  href="#">
-            <img src='images/small_cookies.png' onmouseover="showCookies(this);" onmouseout="backCookies(this);" />
-          </a></li>
-        </ul>
-        <div id="developersNames">
-          <ul class="devNames">
-            <li>Ebtsam Alkhuzai</li>
-            <li>Esraa Samkari</li>
-            <li>Joanna Assaeedi</li>
-            <li>Joud Alajlan</li>
-            <li>Rozan Alghamdi</li>
-            <li>Wafaa Alshaikhi</li>
-          </ul>
-        </div>
-        <div id="cookieDisplay">
-          <ul class="cookie">
-            <li>This Website Use Cookies</li>
-          </ul>
-        </div>
-      </div>
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      <script  src="js/flyaway.js"></script>
     </div>
-  </body>
-  </html>
+  </form>
+
+
+
+
+<div class="footer" id="theFooter">
+  <div class="footbar">
+    <ul class="footmenu">
+      <li><a href="#" onclick="showDevFunction()">Developers</a></li>
+      <li><a href="about.php">About us</a></li>
+      <li><a href="contactUs.php">Contact us</a></li>
+      <li><a href="#" onclick="showSiteMap()">siteMap</a></li>
+      <li><a  href="#">
+        <img src='images/small_cookies.png' onmouseover="showCookies(this);" onmouseout="backCookies(this);" />
+      </a></li>
+    </ul>
+    <div id="developersNames">
+      <ul class="devNames">
+        <li>Ebtsam Alkhuzai</li>
+        <li>Esraa Samkari</li>
+        <li>Joanna Assaeedi</li>
+        <li>Joud Alajlan</li>
+        <li>Rozan Alghamdi</li>
+        <li>Wafaa Alshaikhi</li>
+      </ul>
+    </div>
+    <div id="cookieDisplay">
+      <ul class="cookie">
+        <li>This Website Use Cookies</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
