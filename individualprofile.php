@@ -440,7 +440,7 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 
 		<!-- if your long in -->
 		<?php if ($_COOKIE['theuser']){ ?>
-			<?php echo "<form action=\"individualprofile.php?id={$_GET[id]} & className={$_GET[className]}\" method=\"post\" >"; ?>
+			<?php echo "<form id=\"commentsForm\" action=\"individualprofile.php?id={$_GET[id]} & className={$_GET[className]}\" method=\"post\" >"; ?>
 				
 				  <table>
 					<tr>
@@ -463,13 +463,13 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 					   </div></td>
 					  </tr>
 					</table></td>
-					<td><input type="submit" value="Submit" name="submit"></td>
+					<td><input type="button" value="Submit" onclick="checkTA()"></td>
 					<td><input id="starValue" name="getStarValue" type="hidden" value="0"></td>
 				  </tr>
 				</table>
 			  </form>
 		<?php }else{ ?>
-			<center><p style="font-size: 20px; color: red;">YOU MUST LOGIN FIRST TO ADD COMMANTS</p></center>
+			<center><p style="font-size: 15px; color: red;">YOU MUST LOGIN FIRST TO ADD COMMANTS</p></center>
 		<?php } ?>
 
 		<br> <br> <br><hr><hr><br> <br>
