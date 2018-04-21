@@ -49,7 +49,7 @@ if (isset($_POST['Email'])) {
 }
 ?>
 <!DOCTYPE html>
-<html class="theBackGround">
+<html class="theBackGroundS">
 <head>
   <title>Log in</title>
   <!-- Font -->

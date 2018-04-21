@@ -56,7 +56,7 @@ if (isset($_POST['firstName'])) {
 }
 ?>
 <!DOCTYPE html>
-<html class="theBackGround">
+<html class="theBackGroundS">
 <head>
   <title>Sign Up</title>
   <!-- Font -->

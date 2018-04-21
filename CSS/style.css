@@ -145,6 +145,13 @@
   background-position: center;
   background-size: 100%;
 }
+.theBackGroundS{
+  max-height: 100%;
+  height: 100%;
+  background-image: url("../images/test.png");
+  background-position: center;
+  background-size: 100%;
+}
 .centerPage{
   width: 85%;
   margin: 5%;
