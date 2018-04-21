@@ -43,6 +43,7 @@ function RarrowOnclick() {
 function checkTA(){
 	// chack user comment from text area
 	if(document.getElementById("TAtest").value.trim().length < 1){
+		
 		alert("please enter something");
 	}else{
 		document.getElementById("commentsForm").submit();

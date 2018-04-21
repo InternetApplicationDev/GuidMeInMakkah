@@ -226,6 +226,8 @@ function checkThisPageAsFavor($userNum,$pageName){
 	<script type = "text/javascript" src = "JS/javaScript.js"></script>
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
 	<script >
 		function changeImageOnclick() {
 			var heartFlag = "unhreat";
@@ -233,6 +235,7 @@ function checkThisPageAsFavor($userNum,$pageName){
 			<?php if ($_COOKIE['theuser']){ ?>
 				if (<?php echo checkThisPageAsFavor($_COOKIE['theuser'],$_GET[className]); ?> == 1)
 				{
+					
 					window.location.href = "individualprofile.php?id=<?php echo $_GET[id] ?> & className=<?php echo $_GET[className] ?> & favo=unhreat";
 
 				}
@@ -241,7 +244,17 @@ function checkThisPageAsFavor($userNum,$pageName){
 					window.location.href = "individualprofile.php?id=<?php echo $_GET[id] ?> & className=<?php echo $_GET[className] ?> & favo=hreat";
 				}
 			<?php } else { ?>
-				alert("you must log in first");
+				<?php
+					 echo '
+					$( document ).ready(function() {
+					  swal({
+						title: \'Oops..\',
+						text: \'You have must login first\',
+						type: \'error\',
+					  }, function(isConfirm) {
+					  });
+					});';
+				?>
 			<?php } ?>
 		}
 	  function Slider(){
