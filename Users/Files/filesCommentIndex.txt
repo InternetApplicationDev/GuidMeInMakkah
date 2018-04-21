@@ -1,6 +1,3 @@
-[1](page name,page,Caffe Bene,Dunkin Donuts,Burger King,Kudo,Zamzam cafe)
-[2](page name,page)
-[3](page name,page)
-[4](page name,page)
-[58](Dunkin Donuts)
-[11](Caffe Bene)
+
+[1](Kudo,Dunkin Donuts,Dominos Pizaa,tarwiga)
+[3](Dominos Pizaa,Raffles Creamery)

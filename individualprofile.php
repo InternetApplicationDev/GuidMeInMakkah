@@ -224,10 +224,10 @@ function checkThisPageAsFavor($userNum,$pageName){
 	<!-- customized CSS and JS -->
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
 	<script type = "text/javascript" src = "JS/javaScript.js"></script>
+	<script    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script   src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://unpkg.com/sweetalert2@7.17.0/dist/sweetalert2.all.js"></script>
 	<script >
 		function changeImageOnclick() {
 			var heartFlag = "unhreat";
@@ -492,22 +492,22 @@ $r = $bar->individualRestaurant($_GET[className],$_GET[id]);
 		// how many comments of this page from file and prinit
 		$path ="Users/Files/Comments/".$_GET[className].".txt";
 			if (is_readable($path)){
-			$data = file ($path);
-			$n = count ($data);
-			for ( $j=0; $j < $n; $j++){
-			$getUseANDCom = retrieveUsersComments($data[$j]);
-			// select user name from DB by id
-			$r = $bar->retrieveUsername($getUseANDCom[0]);
-			?>
-			<div class="commentsUserBox" >
-			<p class="userNameInComment"><?php echo $r[0]; ?></p>
-			<img src=<?php echo "{$r[1]}"; ?> />
-			<div><p class="userCommentInComment"><?php echo $getUseANDCom[1]; ?></p></div>
-			</div>
-			<?php
-			echo '<br><hr>';
-			} // for end
-		}
+				$data = file ($path);
+				$n = count ($data);
+				for ( $j=0; $j < $n; $j++){
+				$getUseANDCom = retrieveUsersComments($data[$j]);
+				// select user name from DB by id
+				$r = $bar->retrieveUsername($getUseANDCom[0]);
+				?>
+				<div class="commentsUserBox" >
+				<p class="userNameInComment"><?php echo $r[0]; ?></p>
+				<img src=<?php echo "{$r[1]}"; ?> />
+				<div><p class="userCommentInComment"><?php echo $getUseANDCom[1]; ?></p></div>
+				</div>
+				<?php
+				echo '<br><hr>';
+				} // for end
+			}
 		?>
 
 		</div>
