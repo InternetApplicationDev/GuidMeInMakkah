@@ -977,4 +977,6 @@ label:hover ~ label::before,
 }
 .Favorite img{
   padding-left: 4%;
-}
+  width:150px;
+  height:150px;
+  border-radius: 50%;

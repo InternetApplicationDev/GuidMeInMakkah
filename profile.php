@@ -328,11 +328,23 @@ function retrieveAllComment($userName,$pageName){
       <?php } ?>
     </div>
     <div class="Favorite">
-      <img src="images/add.png"/>
-      <img src="images/add.png"/>
-      <img src="images/add.png"/>
-      <img src="images/add.png"/>
-      <img src="images/add.png"/>
+		<?php 
+			$dbc = mysqli_connect ('localhost', 'root', 'root');//conn
+		    if(@mysqli_select_db ($dbc,'db')) {
+				$query = "SELECT fav_img FROM userfav WHERE user_id = {$_COOKIE['theuser']}";
+				if ($r = mysqli_query ($dbc, $query)) {
+				  while ($row = mysqli_fetch_array ($r)) {	//fetch array get the rows
+					echo "<img src=\"{$row["fav_img"]}\"/>";
+				  }//end of if
+				}
+				else { // Query didn't run.
+				  die ('<p>Could not retrieve the data because: <b>' . mysqli_error($dbc) . "</b>. The query was $query.</p>");}
+				}
+			else {
+				die ('<p>Could not select the database because: <b>' . mysqli_error($dbc) . '</b></p>');
+			}
+
+		?>
     </div>
     <div class="container">
       <div class="profileComments">
