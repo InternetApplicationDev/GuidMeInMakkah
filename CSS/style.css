@@ -987,7 +987,7 @@ label:hover ~ label::before,
 .tooltip {
     position: relative;
     display: inline-block;
-
+    padding: 20px ;
   /*  border-bottom: 1px dotted black; */
 }
 
